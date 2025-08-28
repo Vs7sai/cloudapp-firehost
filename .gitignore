@@ -13,3 +13,9 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Firebase credentials (sensitive - do not commit)
+backend/data/questions/*.json
+*.json
+!package.json
+!package-lock.json
