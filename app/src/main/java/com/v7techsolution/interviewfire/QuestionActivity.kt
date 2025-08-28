@@ -110,16 +110,8 @@ class QuestionActivity : AppCompatActivity() {
         // Set up search functionality with robust error handling
         setupSearchFunctionality()
         
-        // Set up pull-to-refresh (only for question section, not answer scrolling)
-        swipeRefreshLayout.setOnRefreshListener {
-            // Show refresh indicator
-            swipeRefreshLayout.isRefreshing = true
-            
-            // Reload questions from backend
-            val topic = intent.getStringExtra("topic") ?: "AWS"
-            val difficulty = intent.getStringExtra("difficulty") ?: "beginner"
-            loadQuestions(topic, difficulty)
-        }
+        // Set up pull-to-refresh with smart scroll detection
+        setupSmartRefreshControl()
         
         // Set refresh colors
         swipeRefreshLayout.setColorSchemeResources(
@@ -129,12 +121,185 @@ class QuestionActivity : AppCompatActivity() {
             android.R.color.holo_red_light
         )
         
+        // Configure refresh behavior to be less sensitive
+        swipeRefreshLayout.setDistanceToTriggerSync(200) // Increase distance required to trigger refresh
+        swipeRefreshLayout.setSize(SwipeRefreshLayout.DEFAULT) // Use default size
+        
         // Set up scroll detection for answer section
         setupAnswerScrollDetection()
         
-        // Configure SwipeRefreshLayout to only work on question section
+        // Configure SwipeRefreshLayout to not interfere with answer scrolling
         swipeRefreshLayout.setNestedScrollingEnabled(false)
-        swipeRefreshLayout.setDistanceToTriggerSync(200)
+        
+        // Additional scroll-based refresh prevention
+        preventScrollBasedRefresh()
+        
+        // Show refresh guidance to user
+        showRefreshGuidance()
+    }
+    
+    private fun showRefreshGuidance() {
+        // Show user guidance about refresh functionality
+        try {
+            // You can show a tooltip or help text here
+            Log.d(TAG, "Refresh guidance: Pull down from top to refresh questions")
+            
+            // Optional: Show a one-time help message
+            // This could be a Snackbar or Toast for first-time users
+        } catch (e: Exception) {
+            Log.e(TAG, "Error showing refresh guidance", e)
+        }
+    }
+    
+    private fun provideRefreshFeedback() {
+        // Provide comprehensive feedback about refresh state
+        val answerScrollView = findViewById<ScrollView>(R.id.answer_scroll_view)
+        val isAtTop = answerScrollView.scrollY == 0
+        
+        if (isAtTop) {
+            // Show positive feedback that refresh is available
+            Log.d(TAG, "Refresh feedback: Available at top")
+        } else {
+            // Show guidance to user
+            Log.d(TAG, "Refresh feedback: Scroll to top first")
+            // You can add visual indicators here if needed
+        }
+    }
+    
+    private fun handleLongAnswerRefresh() {
+        // Handle refresh behavior for long answers
+        val answerScrollView = findViewById<ScrollView>(R.id.answer_scroll_view)
+        val contentHeight = answerScrollView.getChildAt(0).height
+        val viewportHeight = answerScrollView.height
+        val isLongAnswer = contentHeight > viewportHeight * 2 // More than 2x viewport height
+        
+        if (isLongAnswer) {
+            // For long answers, be more strict about refresh
+            swipeRefreshLayout.setDistanceToTriggerSync(300) // Increase distance
+            Log.d(TAG, "Long answer detected - increased refresh threshold")
+        } else {
+            // For short answers, use normal threshold
+            swipeRefreshLayout.setDistanceToTriggerSync(200)
+            Log.d(TAG, "Short answer - normal refresh threshold")
+        }
+    }
+    
+    private fun setupSmartRefreshControl() {
+        val answerScrollView = findViewById<ScrollView>(R.id.answer_scroll_view)
+        var isRefreshing = false
+        
+        // Only allow refresh when at the very top of the content
+        swipeRefreshLayout.setOnRefreshListener {
+            // Prevent multiple refresh calls
+            if (isRefreshing) {
+                swipeRefreshLayout.isRefreshing = false
+                return@setOnRefreshListener
+            }
+            
+            // Check if we're at the top of the answer scroll view
+            if (answerScrollView.scrollY == 0) {
+                isRefreshing = true
+                // Show refresh indicator
+                swipeRefreshLayout.isRefreshing = true
+                
+                // Reload questions from backend
+                val topic = intent.getStringExtra("topic") ?: "AWS"
+                val difficulty = intent.getStringExtra("difficulty") ?: "beginner"
+                loadQuestions(topic, difficulty)
+            } else {
+                // Handle accidental refresh
+                handleAccidentalRefresh()
+            }
+        }
+        
+        // Custom refresh trigger logic
+        var isRefreshEnabled = true
+        answerScrollView.setOnScrollChangeListener { _, _, scrollY, _, _ ->
+            // Enable refresh only when at the very top
+            isRefreshEnabled = scrollY == 0
+            swipeRefreshLayout.isEnabled = isRefreshEnabled
+            
+            // Provide visual feedback about refresh availability
+            if (isRefreshEnabled) {
+                Log.d(TAG, "Refresh enabled - at top of content")
+                // Show subtle visual indicator that refresh is available
+                showRefreshAvailableIndicator()
+            } else {
+                Log.d(TAG, "Refresh disabled - scrolling in answer section")
+                // Hide refresh indicator
+                hideRefreshAvailableIndicator()
+            }
+        }
+        
+        // Set up child scroll up callback for better refresh control
+        swipeRefreshLayout.setOnChildScrollUpCallback { _, _ ->
+            // Only allow refresh when the answer scroll view is at the top
+            answerScrollView.scrollY == 0
+        }
+        
+        // Initially enable refresh
+        swipeRefreshLayout.isEnabled = true
+    }
+    
+    private fun resetRefreshState() {
+        try {
+            swipeRefreshLayout.isRefreshing = false
+            // Re-enable refresh when at top
+            val answerScrollView = findViewById<ScrollView>(R.id.answer_scroll_view)
+            swipeRefreshLayout.isEnabled = answerScrollView.scrollY == 0
+        } catch (e: Exception) {
+            Log.e(TAG, "Error resetting refresh state", e)
+        }
+    }
+    
+    private fun handleAccidentalRefresh() {
+        // If refresh is triggered while not at top, show user feedback
+        val answerScrollView = findViewById<ScrollView>(R.id.answer_scroll_view)
+        if (answerScrollView.scrollY > 0) {
+            // Provide haptic feedback
+            try {
+                val vibrator = getSystemService(android.content.Context.VIBRATOR_SERVICE) as android.os.Vibrator
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                    val effect = android.os.VibrationEffect.createOneShot(100, android.os.VibrationEffect.DEFAULT_AMPLITUDE)
+                    vibrator.vibrate(effect)
+                } else {
+                    @Suppress("DEPRECATION")
+                    vibrator.vibrate(100)
+                }
+            } catch (e: Exception) {
+                Log.e(TAG, "Error providing haptic feedback", e)
+            }
+            
+            Toast.makeText(this, "Scroll to top to refresh", Toast.LENGTH_SHORT).show()
+            resetRefreshState()
+        }
+    }
+    
+    private fun handleRefreshEdgeCases() {
+        // Handle cases where refresh might get stuck
+        swipeRefreshLayout.setOnRefreshListener {
+            try {
+                // Check if we're at the top of the answer scroll view
+                val answerScrollView = findViewById<ScrollView>(R.id.answer_scroll_view)
+                if (answerScrollView.scrollY == 0) {
+                    // Show refresh indicator
+                    swipeRefreshLayout.isRefreshing = true
+                    
+                    // Reload questions from backend
+                    val topic = intent.getStringExtra("topic") ?: "AWS"
+                    val difficulty = intent.getStringExtra("difficulty") ?: "beginner"
+                    loadQuestions(topic, difficulty)
+                } else {
+                    // Cancel refresh if not at top
+                    swipeRefreshLayout.isRefreshing = false
+                    Log.d(TAG, "Refresh cancelled - not at top of content")
+                }
+            } catch (e: Exception) {
+                Log.e(TAG, "Error during refresh", e)
+                swipeRefreshLayout.isRefreshing = false
+                Toast.makeText(this, "Refresh failed: ${e.message}", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
     
     private fun setupSearchFunctionality() {
@@ -223,12 +388,12 @@ class QuestionActivity : AppCompatActivity() {
                 if (actionId == android.view.inputmethod.EditorInfo.IME_ACTION_DONE) {
                     Log.d(TAG, "Editor action DONE - performing search")
                     performSearch()
-                    true
-                } else {
-                    false
-                }
+                true
+            } else {
+                false
             }
-            
+        }
+        
             // 4. Set up focus change listener
             searchInput.onFocusChangeListener = android.view.View.OnFocusChangeListener { _, hasFocus ->
                 Log.d(TAG, "Search input focus changed: $hasFocus")
@@ -340,8 +505,11 @@ class QuestionActivity : AppCompatActivity() {
             }
         }
         
-        // Detect scroll events to provide feedback
+        // Detect scroll events to provide feedback and manage refresh state
         answerScrollView.setOnScrollChangeListener { _, _, scrollY, _, oldScrollY ->
+            // Update refresh state based on scroll position
+            swipeRefreshLayout.isEnabled = scrollY == 0
+            
             if (scrollY > oldScrollY) {
                 // Scrolling down - hide hint after a delay
                 scrollHint.postDelayed({
@@ -356,9 +524,10 @@ class QuestionActivity : AppCompatActivity() {
                     }
                 }, 1000)
             } else if (scrollY == 0) {
-                // At the top - show hint again
+                // At the top - show hint again and enable refresh
                 scrollHint.visibility = View.VISIBLE
                 scrollHint.alpha = 1f
+                swipeRefreshLayout.isEnabled = true
             }
         }
     }
@@ -372,42 +541,42 @@ class QuestionActivity : AppCompatActivity() {
             val apiService = retrofit.create(CloudInterviewApiService::class.java)
             
             apiService.getQuestions(topic, difficulty).enqueue(object : Callback<QuestionsResponse> {
-                override fun onResponse(call: Call<QuestionsResponse>, response: Response<QuestionsResponse>) {
+            override fun onResponse(call: Call<QuestionsResponse>, response: Response<QuestionsResponse>) {
                     // Stop refresh indicator
                     try {
-                        swipeRefreshLayout?.isRefreshing = false
+                        resetRefreshState()
                     } catch (e: Exception) {
                         Log.e(TAG, "Error stopping refresh", e)
                     }
                     
-                    if (response.isSuccessful && response.body() != null) {
-                        val questionsResponse = response.body()!!
-                        if (questionsResponse.success && questionsResponse.data.questions.isNotEmpty()) {
-                            questions = questionsResponse.data.questions
-                            Log.d(TAG, "Loaded ${questions.size} questions")
-                            displayCurrentQuestion()
-                        } else {
-                            Log.e(TAG, "No questions found or API failed")
-                            showError("No questions available for this topic and difficulty level.")
-                        }
+                if (response.isSuccessful && response.body() != null) {
+                    val questionsResponse = response.body()!!
+                    if (questionsResponse.success && questionsResponse.data.questions.isNotEmpty()) {
+                        questions = questionsResponse.data.questions
+                        Log.d(TAG, "Loaded ${questions.size} questions")
+                        displayCurrentQuestion()
                     } else {
-                        Log.e(TAG, "API call unsuccessful: ${response.code()}")
-                        showError("Failed to load questions. Please try again.")
+                        Log.e(TAG, "No questions found or API failed")
+                        showError("No questions available for this topic and difficulty level.")
                     }
+                } else {
+                    Log.e(TAG, "API call unsuccessful: ${response.code()}")
+                    showError("Failed to load questions. Please try again.")
                 }
-                
-                override fun onFailure(call: Call<QuestionsResponse>, t: Throwable) {
+            }
+            
+            override fun onFailure(call: Call<QuestionsResponse>, t: Throwable) {
                     // Stop refresh indicator
                     try {
-                        swipeRefreshLayout?.isRefreshing = false
+                        resetRefreshState()
                     } catch (e: Exception) {
                         Log.e(TAG, "Error stopping refresh", e)
                     }
                     
-                    Log.e(TAG, "API call failed", t)
-                    showError("Network error. Please check your internet connection.")
-                }
-            })
+                Log.e(TAG, "API call failed", t)
+                showError("Network error. Please check your internet connection.")
+            }
+        })
         } catch (e: Exception) {
             Log.e(TAG, "Error loading questions", e)
             showError("Error: ${e.message}")
@@ -418,6 +587,9 @@ class QuestionActivity : AppCompatActivity() {
         if (questions.isEmpty()) return
         
         val question = questions[currentQuestionIndex]
+        
+        // Handle refresh behavior based on answer length
+        handleLongAnswerRefresh()
         
         // Update question text
         questionText.text = question.text
@@ -568,5 +740,49 @@ class QuestionActivity : AppCompatActivity() {
         // Show keyboard again
         val imm = getSystemService(android.content.Context.INPUT_METHOD_SERVICE) as android.view.inputmethod.InputMethodManager
         imm.showSoftInput(searchInput, android.view.inputmethod.InputMethodManager.SHOW_IMPLICIT)
+    }
+
+    private fun showRefreshAvailableIndicator() {
+        // Show subtle visual feedback that refresh is available
+        try {
+            // You can add a subtle animation or color change here
+            // For now, we'll just log it
+            Log.d(TAG, "Refresh indicator: Available")
+        } catch (e: Exception) {
+            Log.e(TAG, "Error showing refresh indicator", e)
+        }
+    }
+
+    private fun hideRefreshAvailableIndicator() {
+        // Hide refresh availability indicator
+        try {
+            // You can add a subtle animation or color change here
+            // For now, we'll just log it
+            Log.d(TAG, "Refresh indicator: Not available")
+        } catch (e: Exception) {
+            Log.e(TAG, "Error hiding refresh indicator", e)
+        }
+    }
+    
+    private fun preventScrollBasedRefresh() {
+        // Additional safety to prevent refresh during active scrolling
+        val answerScrollView = findViewById<ScrollView>(R.id.answer_scroll_view)
+        
+        // Disable refresh if user is actively scrolling
+        answerScrollView.setOnTouchListener { _, event ->
+            when (event.action) {
+                android.view.MotionEvent.ACTION_MOVE -> {
+                    // Disable refresh during scroll
+                    swipeRefreshLayout.isEnabled = false
+                    false // Don't consume the event
+                }
+                android.view.MotionEvent.ACTION_UP -> {
+                    // Re-enable refresh only if at top
+                    swipeRefreshLayout.isEnabled = answerScrollView.scrollY == 0
+                    false // Don't consume the event
+                }
+                else -> false
+            }
+        }
     }
 }
