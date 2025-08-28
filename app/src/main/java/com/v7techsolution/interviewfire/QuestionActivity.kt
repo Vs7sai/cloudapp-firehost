@@ -136,6 +136,40 @@ class QuestionActivity : AppCompatActivity() {
         
         // Show refresh guidance to user
         showRefreshGuidance()
+        
+        // Set up dynamic bottom navigation handling
+        setupDynamicBottomNavigation()
+    }
+    
+    private fun setupDynamicBottomNavigation() {
+        // Handle system window insets for dynamic bottom navigation
+        val rootView = findViewById<android.view.View>(android.R.id.content)
+        rootView.setOnApplyWindowInsetsListener { _, insets ->
+            val bottomInset = insets.systemWindowInsets.bottom
+            val bottomNavigation = findViewById<LinearLayout>(R.id.bottom_navigation)
+            
+            // Add bottom padding to account for system navigation bar
+            if (bottomInset > 0) {
+                bottomNavigation.setPadding(
+                    bottomNavigation.paddingLeft,
+                    bottomNavigation.paddingTop,
+                    bottomNavigation.paddingRight,
+                    bottomInset + 16 // 16dp base padding + system inset
+                )
+                Log.d(TAG, "System navigation bar detected, added ${bottomInset}dp bottom padding")
+            } else {
+                // Reset to default padding if no system navigation bar
+                bottomNavigation.setPadding(
+                    bottomNavigation.paddingLeft,
+                    bottomNavigation.paddingTop,
+                    bottomNavigation.paddingRight,
+                    16
+                )
+                Log.d(TAG, "No system navigation bar, using default padding")
+            }
+            
+            insets
+        }
     }
     
     private fun showRefreshGuidance() {
