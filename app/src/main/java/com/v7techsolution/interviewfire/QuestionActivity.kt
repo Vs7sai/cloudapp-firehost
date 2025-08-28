@@ -110,7 +110,7 @@ class QuestionActivity : AppCompatActivity() {
         // Set up search functionality with robust error handling
         setupSearchFunctionality()
         
-        // Set up pull-to-refresh (only for top-level refresh, not answer scrolling)
+        // Set up pull-to-refresh (only for question section, not answer scrolling)
         swipeRefreshLayout.setOnRefreshListener {
             // Show refresh indicator
             swipeRefreshLayout.isRefreshing = true
@@ -132,8 +132,9 @@ class QuestionActivity : AppCompatActivity() {
         // Set up scroll detection for answer section
         setupAnswerScrollDetection()
         
-        // Configure SwipeRefreshLayout to not interfere with answer scrolling
+        // Configure SwipeRefreshLayout to only work on question section
         swipeRefreshLayout.setNestedScrollingEnabled(false)
+        swipeRefreshLayout.setDistanceToTriggerSync(200)
     }
     
     private fun setupSearchFunctionality() {
