@@ -70,7 +70,21 @@
                 android:textStyle="bold"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
-                android:elevation="2dp" />
+                android:elevation="2dp"
+                android:textCursorDrawable="@android:color/transparent"
+                android:textIsSelectable="true"
+                android:selectAllOnFocus="false"
+                android:scrollHorizontally="false"
+                android:scrollbars="none"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:importantForAccessibility="yes"
+                android:importantForAutofill="yes"
+                android:longClickable="false"
+                android:contextClickable="false"
+                android:breakStrategy="simple"
+                android:hyphenationFrequency="none" />
 
         </LinearLayout>
 
@@ -242,10 +256,27 @@
                 app:cardElevation="12dp"
                 app:cardBackgroundColor="@color/white">
 
-                <ScrollView
+                <!-- Scroll Hint Text -->
+                <TextView
+                    android:id="@+id/scroll_hint"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fillViewport="true">
+                    android:text="📜 Scroll to read full answer"
+                    android:textColor="#666666"
+                    android:textSize="12sp"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:background="#F0F0F0"
+                    android:visibility="gone" />
+
+                <ScrollView
+                    android:id="@+id/answer_scroll_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fillViewport="true"
+                    android:scrollbars="vertical"
+                    android:fadeScrollbars="false"
+                    android:overScrollMode="always">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -263,6 +294,8 @@
                             android:textColor="@color/text_primary"
                             android:textSize="16sp"
                             android:lineSpacingExtra="4dp" />
+
+
 
                     </LinearLayout>
 

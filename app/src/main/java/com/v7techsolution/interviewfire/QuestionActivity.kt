@@ -15,6 +15,8 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import android.widget.LinearLayout
+import android.widget.ScrollView
+import com.v7techsolution.interviewfire.api.CloudInterviewApiService
 
 class QuestionActivity : AppCompatActivity() {
     
@@ -105,62 +107,8 @@ class QuestionActivity : AppCompatActivity() {
             switchDifficulty("pro")
         }
         
-        // Set up search functionality
-        searchInput.setOnEditorActionListener { _, actionId, _ ->
-            if (actionId == android.view.inputmethod.EditorInfo.IME_ACTION_DONE) {
-                performSearch()
-                true
-            } else {
-                false
-            }
-        }
-        
-        // Add click listener for search input
-        searchInput.setOnClickListener {
-            // Show keyboard and focus on input immediately
-            searchInput.requestFocus()
-            val imm = getSystemService(android.content.Context.INPUT_METHOD_SERVICE) as android.view.inputmethod.InputMethodManager
-            imm.showSoftInput(searchInput, android.view.inputmethod.InputMethodManager.SHOW_IMPLICIT)
-        }
-        
-        // Add click listener for entire search container
-        findViewById<LinearLayout>(R.id.search_container).setOnClickListener {
-            // Show keyboard and focus on input when clicking anywhere on search container
-            searchInput.requestFocus()
-            val imm = getSystemService(android.content.Context.INPUT_METHOD_SERVICE) as android.view.inputmethod.InputMethodManager
-            imm.showSoftInput(searchInput, android.view.inputmethod.InputMethodManager.SHOW_IMPLICIT)
-        }
-        
-        // Also add focus change listener for better keyboard handling
-        searchInput.onFocusChangeListener = android.view.View.OnFocusChangeListener { _, hasFocus ->
-            if (hasFocus) {
-                // Show keyboard when input gets focus
-                val imm = getSystemService(android.content.Context.INPUT_METHOD_SERVICE) as android.view.inputmethod.InputMethodManager
-                imm.showSoftInput(searchInput, android.view.inputmethod.InputMethodManager.SHOW_IMPLICIT)
-            }
-        }
-        
-        // Add text change listener for intelligent search
-        searchInput.addTextChangedListener(object : android.text.TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
-            override fun afterTextChanged(s: android.text.Editable?) {
-                val text = s?.toString()?.trim() ?: ""
-                
-                // Auto-search when user types 2 or more digits
-                if (text.length >= 2 && text.all { it.isDigit() }) {
-                    val questionNumber = text.toIntOrNull()
-                    if (questionNumber != null && questionNumber > 0 && questionNumber <= questions.size) {
-                        // Valid question number - auto-jump after a short delay
-                        searchInput.postDelayed({
-                            if (searchInput.text.toString().trim() == text) {
-                                performSearch()
-                            }
-                        }, 500) // 500ms delay for better user experience
-                    }
-                }
-            }
-        })
+        // Set up search functionality with robust error handling
+        setupSearchFunctionality()
         
         // Set up pull-to-refresh
         swipeRefreshLayout.setOnRefreshListener {
@@ -185,48 +133,286 @@ class QuestionActivity : AppCompatActivity() {
         findViewById<android.widget.ImageView>(R.id.back_arrow).setOnClickListener {
             finish()
         }
+        
+        // Set up scroll detection for answer section
+        setupAnswerScrollDetection()
+    }
+    
+    private fun setupSearchFunctionality() {
+        try {
+            Log.d(TAG, "Setting up search functionality...")
+            
+            // 1. Set up search input click listener with mobile support
+            searchInput.setOnClickListener {
+                Log.d(TAG, "Search input clicked")
+                activateSearchInput()
+            }
+            
+            // Enhanced touch listener for the white input area
+            searchInput.setOnTouchListener { _, event ->
+                when (event.action) {
+                    android.view.MotionEvent.ACTION_DOWN -> {
+                        Log.d(TAG, "Search input touch down - showing cursor")
+                        // Show cursor immediately on touch down
+                        searchInput.requestFocus()
+                        searchInput.setSelection(searchInput.text.length)
+                        true
+                    }
+                    android.view.MotionEvent.ACTION_UP -> {
+                        Log.d(TAG, "Search input touch up - activating input")
+                        activateSearchInput()
+                        true
+                    }
+                    android.view.MotionEvent.ACTION_MOVE -> {
+                        // Keep cursor visible while touching
+                        if (searchInput.hasFocus()) {
+                            searchInput.setSelection(searchInput.text.length)
+                        }
+                        true
+                    }
+                    else -> false
+                }
+            }
+            
+            // 2. Set up search container click listener with mobile support
+            try {
+                val searchContainer = findViewById<LinearLayout>(R.id.search_container)
+                if (searchContainer != null) {
+                    // Click listener
+                    searchContainer.setOnClickListener {
+                        Log.d(TAG, "Search container clicked")
+                        activateSearchInput()
+                    }
+                    
+                    // Enhanced touch listener for mobile
+                    searchContainer.setOnTouchListener { _, event ->
+                        when (event.action) {
+                            android.view.MotionEvent.ACTION_DOWN -> {
+                                Log.d(TAG, "Search container touch down")
+                                // Show cursor immediately on touch down
+                                searchInput.requestFocus()
+                                searchInput.setSelection(searchInput.text.length)
+                                true
+                            }
+                            android.view.MotionEvent.ACTION_UP -> {
+                                Log.d(TAG, "Search container touch up")
+                                activateSearchInput()
+                                true
+                            }
+                            android.view.MotionEvent.ACTION_MOVE -> {
+                                // Keep cursor visible while touching
+                                if (searchInput.hasFocus()) {
+                                    searchInput.setSelection(searchInput.text.length)
+                                }
+                                true
+                            }
+                            else -> false
+                        }
+                    }
+                    
+                    Log.d(TAG, "Search container touch and click listeners set successfully")
+                } else {
+                    Log.e(TAG, "Search container not found!")
+                }
+            } catch (e: Exception) {
+                Log.e(TAG, "Error setting up search container listeners", e)
+            }
+            
+            // 3. Set up editor action listener
+            searchInput.setOnEditorActionListener { _, actionId, _ ->
+                Log.d(TAG, "Editor action: $actionId")
+                if (actionId == android.view.inputmethod.EditorInfo.IME_ACTION_DONE) {
+                    Log.d(TAG, "Editor action DONE - performing search")
+                    performSearch()
+                    true
+                } else {
+                    false
+                }
+            }
+            
+            // 4. Set up focus change listener
+            searchInput.onFocusChangeListener = android.view.View.OnFocusChangeListener { _, hasFocus ->
+                Log.d(TAG, "Search input focus changed: $hasFocus")
+                if (hasFocus) {
+                    try {
+                        // Ensure cursor is visible when focus is gained
+                        searchInput.setSelection(searchInput.text.length)
+                        
+                        val imm = getSystemService(android.content.Context.INPUT_METHOD_SERVICE) as android.view.inputmethod.InputMethodManager
+                        imm.showSoftInput(searchInput, android.view.inputmethod.InputMethodManager.SHOW_IMPLICIT)
+                        
+                        // Keep cursor visible for 15 seconds
+                        searchInput.postDelayed({
+                            if (searchInput.hasFocus()) {
+                                searchInput.setSelection(searchInput.text.length) // Ensure cursor is still visible
+                            }
+                        }, 15000) // 15 seconds
+                        
+                        Log.d(TAG, "Keyboard shown on focus, cursor will stay visible for 15 seconds")
+                    } catch (e: Exception) {
+                        Log.e(TAG, "Error showing keyboard on focus", e)
+                    }
+                }
+            }
+            
+            // 5. Set up text change listener for auto-search
+            searchInput.addTextChangedListener(object : android.text.TextWatcher {
+                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+                override fun afterTextChanged(s: android.text.Editable?) {
+                    val text = s?.toString()?.trim() ?: ""
+                    Log.d(TAG, "Search text changed: '$text'")
+                    
+                    // Keep cursor visible after text changes
+                    searchInput.postDelayed({
+                        if (searchInput.hasFocus()) {
+                            searchInput.setSelection(searchInput.text.length)
+                        }
+                    }, 100) // Small delay to ensure cursor is visible
+                    
+                    // Auto-search when user types 2 or more digits
+                    if (text.length >= 2 && text.all { it.isDigit() }) {
+                        val questionNumber = text.toIntOrNull()
+                        if (questionNumber != null && questionNumber > 0 && questionNumber <= questions.size) {
+                            Log.d(TAG, "Auto-search triggered for question $questionNumber")
+                            // Valid question number - auto-jump after a short delay
+                            searchInput.postDelayed({
+                                if (searchInput.text.toString().trim() == text) {
+                                    Log.d(TAG, "Executing auto-search")
+                                    performSearch()
+                                }
+                            }, 500) // 500ms delay for better user experience
+                        }
+                    }
+                }
+            })
+            
+            Log.d(TAG, "Search functionality setup completed successfully")
+            
+        } catch (e: Exception) {
+            Log.e(TAG, "Critical error setting up search functionality", e)
+            Toast.makeText(this, "Search setup failed: ${e.message}", Toast.LENGTH_SHORT).show()
+        }
+    }
+    
+    private fun activateSearchInput() {
+        try {
+            Log.d(TAG, "Activating search input...")
+            
+            // Focus and show cursor for at least 15 seconds
+            searchInput.requestFocus()
+            searchInput.setSelection(searchInput.text.length) // Move cursor to end
+            
+            // Ensure cursor is blinking and visible
+            searchInput.postDelayed({
+                if (searchInput.hasFocus()) {
+                    searchInput.setSelection(searchInput.text.length)
+                }
+            }, 100) // Small delay to ensure cursor is visible
+            
+            val imm = getSystemService(android.content.Context.INPUT_METHOD_SERVICE) as android.view.inputmethod.InputMethodManager
+            imm.showSoftInput(searchInput, android.view.inputmethod.InputMethodManager.SHOW_IMPLICIT)
+            
+            // Keep cursor visible for 15 seconds
+            searchInput.postDelayed({
+                if (searchInput.hasFocus()) {
+                    searchInput.setSelection(searchInput.text.length) // Ensure cursor is still visible
+                }
+            }, 15000) // 15 seconds
+            
+            Log.d(TAG, "Search input activated, cursor will stay visible for 15 seconds")
+            
+        } catch (e: Exception) {
+            Log.e(TAG, "Error activating search input", e)
+        }
+    }
+    
+    private fun setupAnswerScrollDetection() {
+        val answerScrollView = findViewById<ScrollView>(R.id.answer_scroll_view)
+        val scrollHint = findViewById<TextView>(R.id.scroll_hint)
+        
+        // Show scroll hint if content is scrollable
+        answerScrollView.viewTreeObserver.addOnGlobalLayoutListener {
+            val isScrollable = answerScrollView.getChildAt(0).height > answerScrollView.height
+            scrollHint.visibility = if (isScrollable) View.VISIBLE else View.GONE
+            
+            if (isScrollable) {
+                Log.d(TAG, "Answer content is scrollable - showing scroll hint")
+            }
+        }
+        
+        // Detect scroll events to provide feedback
+        answerScrollView.setOnScrollChangeListener { _, _, scrollY, _, oldScrollY ->
+            if (scrollY > oldScrollY) {
+                // Scrolling down - hide hint after a delay
+                scrollHint.postDelayed({
+                    if (scrollY > 100) { // Hide hint after scrolling down a bit
+                        scrollHint.animate()
+                            .alpha(0f)
+                            .setDuration(500)
+                            .withEndAction {
+                                scrollHint.visibility = View.GONE
+                            }
+                            .start()
+                    }
+                }, 1000)
+            } else if (scrollY == 0) {
+                // At the top - show hint again
+                scrollHint.visibility = View.VISIBLE
+                scrollHint.alpha = 1f
+            }
+        }
     }
     
     private fun loadQuestions(topic: String, difficulty: String) {
         Log.d(TAG, "Loading questions for $topic - $difficulty")
         
-        ApiClient.apiService.getQuestions(topic, difficulty).enqueue(object : Callback<QuestionsResponse> {
-            override fun onResponse(call: Call<QuestionsResponse>, response: Response<QuestionsResponse>) {
-                // Stop refresh indicator
-                try {
-                    swipeRefreshLayout?.isRefreshing = false
-                } catch (e: Exception) {
-                    Log.e(TAG, "Error stopping refresh", e)
-                }
-                
-                if (response.isSuccessful && response.body() != null) {
-                    val questionsResponse = response.body()!!
-                    if (questionsResponse.success && questionsResponse.data.questions.isNotEmpty()) {
-                        questions = questionsResponse.data.questions
-                        Log.d(TAG, "Loaded ${questions.size} questions")
-                        displayCurrentQuestion()
-                    } else {
-                        Log.e(TAG, "No questions found or API failed")
-                        showError("No questions available for this topic and difficulty level.")
-                    }
-                } else {
-                    Log.e(TAG, "API call unsuccessful: ${response.code()}")
-                    showError("Failed to load questions. Please try again.")
-                }
-            }
+        try {
+            // Create API client with dynamic base URL
+            val retrofit = ApiClient.createRetrofit(this)
+            val apiService = retrofit.create(CloudInterviewApiService::class.java)
             
-            override fun onFailure(call: Call<QuestionsResponse>, t: Throwable) {
-                // Stop refresh indicator
-                try {
-                    swipeRefreshLayout?.isRefreshing = false
-                } catch (e: Exception) {
-                    Log.e(TAG, "Error stopping refresh", e)
+            apiService.getQuestions(topic, difficulty).enqueue(object : Callback<QuestionsResponse> {
+                override fun onResponse(call: Call<QuestionsResponse>, response: Response<QuestionsResponse>) {
+                    // Stop refresh indicator
+                    try {
+                        swipeRefreshLayout?.isRefreshing = false
+                    } catch (e: Exception) {
+                        Log.e(TAG, "Error stopping refresh", e)
+                    }
+                    
+                    if (response.isSuccessful && response.body() != null) {
+                        val questionsResponse = response.body()!!
+                        if (questionsResponse.success && questionsResponse.data.questions.isNotEmpty()) {
+                            questions = questionsResponse.data.questions
+                            Log.d(TAG, "Loaded ${questions.size} questions")
+                            displayCurrentQuestion()
+                        } else {
+                            Log.e(TAG, "No questions found or API failed")
+                            showError("No questions available for this topic and difficulty level.")
+                        }
+                    } else {
+                        Log.e(TAG, "API call unsuccessful: ${response.code()}")
+                        showError("Failed to load questions. Please try again.")
+                    }
                 }
                 
-                Log.e(TAG, "API call failed", t)
-                showError("Network error. Please check your internet connection.")
-            }
-        })
+                override fun onFailure(call: Call<QuestionsResponse>, t: Throwable) {
+                    // Stop refresh indicator
+                    try {
+                        swipeRefreshLayout?.isRefreshing = false
+                    } catch (e: Exception) {
+                        Log.e(TAG, "Error stopping refresh", e)
+                    }
+                    
+                    Log.e(TAG, "API call failed", t)
+                    showError("Network error. Please check your internet connection.")
+                }
+            })
+        } catch (e: Exception) {
+            Log.e(TAG, "Error loading questions", e)
+            showError("Error: ${e.message}")
+        }
     }
     
     private fun displayCurrentQuestion() {
@@ -333,8 +519,37 @@ class QuestionActivity : AppCompatActivity() {
         val imm = getSystemService(android.content.Context.INPUT_METHOD_SERVICE) as android.view.inputmethod.InputMethodManager
         imm.hideSoftInputFromWindow(searchInput.windowToken, 0)
         
-        // Show success message
-        val questionText = if (questionNumber == 1) "1st" else if (questionNumber == 2) "2nd" else if (questionNumber == 3) "3rd" else "${questionNumber}th"
+        // Show success message with proper ordinal numbers
+        val questionText = when (questionNumber) {
+            1 -> "1st"
+            2 -> "2nd"
+            3 -> "3rd"
+            21 -> "21st"
+            22 -> "22nd"
+            23 -> "23rd"
+            31 -> "31st"
+            32 -> "32nd"
+            33 -> "33rd"
+            41 -> "41st"
+            42 -> "42nd"
+            43 -> "43rd"
+            51 -> "51st"
+            52 -> "52nd"
+            53 -> "53rd"
+            61 -> "61st"
+            62 -> "62nd"
+            63 -> "63rd"
+            71 -> "71st"
+            72 -> "72nd"
+            73 -> "73rd"
+            81 -> "81st"
+            82 -> "82nd"
+            83 -> "83rd"
+            91 -> "91st"
+            92 -> "92nd"
+            93 -> "93rd"
+            else -> "${questionNumber}th"
+        }
         Toast.makeText(this, "Jumped to $questionText question", Toast.LENGTH_SHORT).show()
         
         // Log the jump for debugging

@@ -20,6 +20,7 @@ import com.v7techsolution.interviewfire.api.models.TopicsResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import com.v7techsolution.interviewfire.api.CloudInterviewApiService
 
 class MainActivity : AppCompatActivity() {
     private lateinit var topicsContainer: LinearLayout
@@ -162,10 +163,19 @@ class MainActivity : AppCompatActivity() {
     
     private fun loadTopicsFromBackend() {
         Log.d(TAG, "Loading topics from backend...")
+        Log.d(TAG, "Network available: $isNetworkAvailable")
         
         try {
-            ApiClient.apiService.getTopics().enqueue(object : Callback<TopicsResponse> {
+            // Create API client with dynamic base URL
+            val retrofit = ApiClient.createRetrofit(this)
+            val apiService = retrofit.create(CloudInterviewApiService::class.java)
+            
+            Log.d(TAG, "Making API call to getTopics()...")
+            apiService.getTopics().enqueue(object : Callback<TopicsResponse> {
                 override fun onResponse(call: Call<TopicsResponse>, response: Response<TopicsResponse>) {
+                    Log.d(TAG, "API Response received: ${response.code()}")
+                    Log.d(TAG, "Response body: ${response.body()}")
+                    
                     // Stop refresh indicator
                     try {
                         swipeRefreshLayout?.isRefreshing = false
@@ -176,8 +186,11 @@ class MainActivity : AppCompatActivity() {
                     try {
                         if (response.isSuccessful && response.body() != null) {
                             val topicsResponse = response.body()!!
+                            Log.d(TAG, "Topics response success: ${topicsResponse.success}")
+                            Log.d(TAG, "Topics data size: ${topicsResponse.data.size}")
+                            
                             if (topicsResponse.success && topicsResponse.data.isNotEmpty()) {
-                                Log.d(TAG, "Topics loaded: ${topicsResponse.data.size}")
+                                Log.d(TAG, "Topics loaded successfully: ${topicsResponse.data.size}")
                                 createTopicCards(topicsResponse.data)
                             } else {
                                 Log.e(TAG, "Topics API failed or empty data")
@@ -199,6 +212,10 @@ class MainActivity : AppCompatActivity() {
                 }
                 
                 override fun onFailure(call: Call<TopicsResponse>, t: Throwable) {
+                    Log.e(TAG, "API Call Failed with exception: ${t.javaClass.simpleName}")
+                    Log.e(TAG, "Error message: ${t.message}")
+                    Log.e(TAG, "Full stack trace:", t)
+                    
                     // Stop refresh indicator
                     try {
                         swipeRefreshLayout?.isRefreshing = false
