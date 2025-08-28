@@ -110,7 +110,7 @@ class QuestionActivity : AppCompatActivity() {
         // Set up search functionality with robust error handling
         setupSearchFunctionality()
         
-        // Set up pull-to-refresh
+        // Set up pull-to-refresh (only for top-level refresh, not answer scrolling)
         swipeRefreshLayout.setOnRefreshListener {
             // Show refresh indicator
             swipeRefreshLayout.isRefreshing = true
@@ -129,13 +129,11 @@ class QuestionActivity : AppCompatActivity() {
             android.R.color.holo_red_light
         )
         
-        // Set up back button
-        findViewById<android.widget.ImageView>(R.id.back_arrow).setOnClickListener {
-            finish()
-        }
-        
         // Set up scroll detection for answer section
         setupAnswerScrollDetection()
+        
+        // Configure SwipeRefreshLayout to not interfere with answer scrolling
+        swipeRefreshLayout.setNestedScrollingEnabled(false)
     }
     
     private fun setupSearchFunctionality() {

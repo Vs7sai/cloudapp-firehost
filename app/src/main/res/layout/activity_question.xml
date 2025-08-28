@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/background_gray">
 
-    <!-- Top Bar with Back Arrow and Progress -->
+    <!-- Top Bar with Progress -->
     <LinearLayout
         android:id="@+id/top_bar"
         android:layout_width="match_parent"
@@ -16,19 +16,7 @@
         android:gravity="center_vertical"
         android:padding="16dp">
 
-        <!-- Back Arrow -->
-        <ImageView
-            android:id="@+id/back_arrow"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:src="@drawable/ic_arrow_back"
-            app:tint="@color/white"
-            android:clickable="true"
-            android:focusable="true"
-            android:background="?android:attr/selectableItemBackgroundBorderless"
-            android:padding="4dp" />
-
-        <!-- Search Bar - Left Side -->
+        <!-- Search Bar - Left Side (Responsive) -->
         <LinearLayout
             android:id="@+id/search_container"
             android:layout_width="0dp"
@@ -37,7 +25,8 @@
             android:orientation="horizontal"
             android:background="@drawable/search_background"
             android:padding="12dp"
-            android:layout_marginStart="32dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
             android:gravity="center_vertical"
             android:elevation="4dp"
             android:clickable="true"
@@ -94,7 +83,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="end"
-            android:layout_marginStart="16dp">
+            android:layout_marginStart="8dp">
 
             <TextView
                 android:id="@+id/progress_text"
@@ -169,7 +158,7 @@
         android:scaleType="centerInside"
         android:elevation="8dp" />
 
-    <!-- Main Content with Refresh -->
+    <!-- Main Content with Refresh (Only for top-level refresh) -->
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipeRefreshLayout"
         android:layout_width="match_parent"
@@ -183,22 +172,23 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- Question Card -->
+            <!-- Question Card - Height wraps content -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/question_card"
                 android:layout_width="match_parent"
-                android:layout_height="400dp"
+                android:layout_height="wrap_content"
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackground"
                 app:cardCornerRadius="30dp"
                 app:cardElevation="12dp"
                 app:cardBackgroundColor="@color/purple_500"
-                android:layout_marginTop="-16dp">
+                android:layout_marginTop="-16dp"
+                android:minHeight="120dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="32dp"
                     android:gravity="center">
@@ -213,7 +203,7 @@
                         android:textStyle="bold"
                         android:gravity="center"
                         android:lineSpacingExtra="6dp"
-                        android:layout_weight="1" />
+                        android:minHeight="80dp" />
 
                     <!-- Pagination dots -->
                     <LinearLayout
@@ -250,7 +240,8 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/explanation_card"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:layout_marginTop="-20dp"
                 app:cardCornerRadius="25dp"
                 app:cardElevation="12dp"
@@ -272,7 +263,7 @@
                 <ScrollView
                     android:id="@+id/answer_scroll_view"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:fillViewport="true"
                     android:scrollbars="vertical"
                     android:fadeScrollbars="false"
@@ -294,8 +285,6 @@
                             android:textColor="@color/text_primary"
                             android:textSize="16sp"
                             android:lineSpacingExtra="4dp" />
-
-
 
                     </LinearLayout>
 
