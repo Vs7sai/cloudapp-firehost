@@ -1,0 +1,63 @@
+[
+  {
+    "id": "aws",
+    "name": "AWS",
+    "color": "#FF9900",
+    "icon": "☁️"
+  },
+  {
+    "id": "kubernetes",
+    "name": "Kubernetes", 
+    "color": "#326CE5",
+    "icon": "⚙️"
+  },
+  {
+    "id": "terraform",
+    "name": "Terraform",
+    "color": "#623CE4",
+    "icon": "🏗️"
+  },
+  {
+    "id": "ansible",
+    "name": "Ansible",
+    "color": "#EE0000",
+    "icon": "🔧"
+  },
+  {
+    "id": "git",
+    "name": "Git",
+    "color": "#F05032",
+    "icon": "📝"
+  },
+  {
+    "id": "docker",
+    "name": "Docker",
+    "color": "#0db7ed",
+    "icon": "🐳"
+  },
+  {
+    "id": "bitbucket",
+    "name": "Bitbucket",
+    "color": "#0052CC",
+    "icon": "📦"
+  },
+  {
+    "id": "gcp",
+    "name": "GCP",
+    "color": "#4285F4",
+    "icon": "☁️"
+  },
+  {
+    "id": "alibaba",
+    "name": "Alibaba Cloud",
+    "color": "#FF6A00",
+    "icon": "🛒"
+  },
+  {
+    "id": "vamsi",
+    "name": "Vamsi",
+    "color": "#FF6A00",
+    "icon": "⚙️"
+  }
+]
+

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Large screen optimizations -->
+    <dimen name="spacing_small">12dp</dimen>
+    <dimen name="spacing_medium">20dp</dimen>
+    <dimen name="spacing_large">32dp</dimen>
+    
+    <!-- Larger text for large screens -->
+    <dimen name="text_size_small">14sp</dimen>
+    <dimen name="text_size_medium">16sp</dimen>
+    <dimen name="text_size_large">18sp</dimen>
+    <dimen name="text_size_xlarge">22sp</dimen>
+    
+    <!-- Spacious card layout -->
+    <dimen name="card_margin">12dp</dimen>
+    <dimen name="icon_size_medium">56dp</dimen>
+</resources>

@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Cloud Interview Prep</string>
+    <string name="choose_topic">Choose your topic</string>
+    <string name="home">Home</string>
+    <string name="bookmarks">Bookmarks</string>
+    <string name="profile">Profile</string>
+    <string name="beginner">Beginner</string>
+    <string name="beginner_desc">Perfect for getting started</string>
+    <string name="medium">Medium</string>
+    <string name="medium_desc">For intermediate knowledge</string>
+    <string name="pro">Pro</string>
+    <string name="pro_desc">Advanced level questions</string>
+    <string name="choose_difficulty">Choose difficulty level</string>
+    
+    <!-- Google Sign-In Strings -->
+    <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="welcome_message">Welcome, %1$s!</string>
+    <string name="sign_in_failed">Sign-in failed: %1$s</string>
+    <string name="sign_in_cancelled">Sign-in cancelled</string>
+    <string name="signed_out_successfully">Signed out successfully</string>
+    
+    <!-- Login Activity Strings -->
+    <string name="welcome_message_login">Welcome to Cloud Interview Prep!\nPlease sign in to continue.</string>
+    <string name="signing_in_message">Signing in...</string>
+    <string name="authenticating_message">Authenticating with Firebase...</string>
+    <string name="login_info_message">Secure authentication powered by Google</string>
+    <string name="app_version">Version 1.0</string>
+</resources>
