@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "601810266687",
+    "project_id": "interviewfire-df24e",
+    "storage_bucket": "interviewfire-df24e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:601810266687:android:b876ff19f1b73c5a24268a",
+        "android_client_info": {
+          "package_name": "com.v7techsolution.interviewfire"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "601810266687-d5eh4o6ibascsfumpm83gkh1se7b1s5u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.v7techsolution.interviewfire",
+            "certificate_hash": "78684506c5bcd1e48f3cbe620265fad6b250774a"
+          }
+        },
+        {
+          "client_id": "601810266687-4rqujkoqqaf91brjaa6tihms4usfeemv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-dP9PniK7_PsUaK30LKPtCIB0z7McjQs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "601810266687-4rqujkoqqaf91brjaa6tihms4usfeemv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
