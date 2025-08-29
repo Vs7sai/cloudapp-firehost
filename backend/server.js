@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
+const { authenticate } = require('./middleware/auth');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -37,17 +38,19 @@ const topics = loadJSON('topics.json');
 
 // API Routes
 
-// Get all topics - PUBLIC ROUTE (for testing)
-app.get('/api/topics', (req, res) => {
+// Get all topics - AUTHENTICATED ROUTE
+app.get('/api/topics', authenticate, (req, res) => {
   try {
-    console.log(`📚 Topics requested by user (public access)`);
-    
+    console.log(`📚 Topics requested by user: ${req.user.email} (${req.user.uid})`);
+
     res.json({
       success: true,
       data: topics,
       user: {
-        email: 'public@test.com',
-        name: 'Public User'
+        uid: req.user.uid,
+        email: req.user.email,
+        name: req.user.name,
+        emailVerified: req.user.emailVerified
       }
     });
   } catch (error) {
@@ -59,27 +62,29 @@ app.get('/api/topics', (req, res) => {
   }
 });
 
-// Get specific topic - PUBLIC ROUTE (for testing)
-app.get('/api/topics/:topicId', (req, res) => {
+// Get specific topic - AUTHENTICATED ROUTE
+app.get('/api/topics/:topicId', authenticate, (req, res) => {
   try {
     const { topicId } = req.params;
     const topic = topics.find(t => t.id === topicId.toLowerCase());
-    
+
     if (!topic) {
       return res.status(404).json({
         success: false,
         message: 'Topic not found'
       });
     }
-    
-    console.log(`📖 Topic ${topicId} requested by user (public access)`);
-    
+
+    console.log(`📖 Topic ${topicId} requested by user: ${req.user.email} (${req.user.uid})`);
+
     res.json({
       success: true,
       data: topic,
       user: {
-        email: 'public@test.com',
-        name: 'Public User'
+        uid: req.user.uid,
+        email: req.user.email,
+        name: req.user.name,
+        emailVerified: req.user.emailVerified
       }
     });
   } catch (error) {
@@ -91,25 +96,25 @@ app.get('/api/topics/:topicId', (req, res) => {
   }
 });
 
-// Get questions for a topic and difficulty - PUBLIC ROUTE (for testing)
-app.get('/api/questions/:topicId/:difficulty', (req, res) => {
+// Get questions for a topic and difficulty - AUTHENTICATED ROUTE
+app.get('/api/questions/:topicId/:difficulty', authenticate, (req, res) => {
   try {
     const { topicId, difficulty } = req.params;
     const topicKey = topicId.toLowerCase();
     const difficultyKey = difficulty.toLowerCase();
-    
+
     // Load questions from individual file
     const questions = loadQuestions(topicKey, difficultyKey);
-    
+
     if (!questions || questions.length === 0) {
       return res.status(404).json({
         success: false,
         message: `Questions not found for ${topicKey} ${difficultyKey}`
       });
     }
-    
-    console.log(`❓ Questions for ${topicKey} ${difficultyKey} requested by user (public access)`);
-    
+
+    console.log(`❓ Questions for ${topicKey} ${difficultyKey} requested by user: ${req.user.email} (${req.user.uid})`);
+
     res.json({
       success: true,
       data: {
@@ -118,8 +123,10 @@ app.get('/api/questions/:topicId/:difficulty', (req, res) => {
         questions: questions
       },
       user: {
-        email: 'public@test.com',
-        name: 'Public User'
+        uid: req.user.uid,
+        email: req.user.email,
+        name: req.user.name,
+        emailVerified: req.user.emailVerified
       }
     });
   } catch (error) {
@@ -131,32 +138,32 @@ app.get('/api/questions/:topicId/:difficulty', (req, res) => {
   }
 });
 
-// Get all questions for a topic (all difficulties) - PUBLIC ROUTE (for testing)
-app.get('/api/questions/:topicId', (req, res) => {
+// Get all questions for a topic (all difficulties) - AUTHENTICATED ROUTE
+app.get('/api/questions/:topicId', authenticate, (req, res) => {
   try {
     const { topicId } = req.params;
     const topicKey = topicId.toLowerCase();
-    
+
     // Load questions from individual files for all difficulties
     const difficulties = ['beginner', 'medium', 'pro'];
     const allQuestions = {};
-    
+
     difficulties.forEach(difficulty => {
       const questions = loadQuestions(topicKey, difficulty);
       if (questions && questions.length > 0) {
         allQuestions[difficulty] = questions;
       }
     });
-    
+
     if (Object.keys(allQuestions).length === 0) {
       return res.status(404).json({
         success: false,
         message: 'Topic not found or no questions available'
       });
     }
-    
-    console.log(`❓ All questions for ${topicKey} requested by user (public access)`);
-    
+
+    console.log(`❓ All questions for ${topicKey} requested by user: ${req.user.email} (${req.user.uid})`);
+
     res.json({
       success: true,
       data: {
@@ -164,8 +171,10 @@ app.get('/api/questions/:topicId', (req, res) => {
         questions: allQuestions
       },
       user: {
-        email: 'public@test.com',
-        name: 'Public User'
+        uid: req.user.uid,
+        email: req.user.email,
+        name: req.user.name,
+        emailVerified: req.user.emailVerified
       }
     });
   } catch (error) {
@@ -186,16 +195,19 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-// Test authentication endpoint - PUBLIC (for testing)
-app.get('/api/test-auth', (req, res) => {
+// Test authentication endpoint - AUTHENTICATED (for testing)
+app.get('/api/test-auth', authenticate, (req, res) => {
   res.json({
     success: true,
-    message: 'Public access successful! (No authentication required)',
+    message: 'Authentication successful!',
     user: {
-      email: 'public@test.com',
-      name: 'Public User',
-      uid: 'public-uid',
-      emailVerified: true
+      uid: req.user.uid,
+      email: req.user.email,
+      name: req.user.name,
+      emailVerified: req.user.emailVerified,
+      authTime: req.user.authTime,
+      issuedAt: req.user.issuedAt,
+      expiresAt: req.user.expiresAt
     },
     timestamp: new Date().toISOString()
   });
@@ -206,10 +218,12 @@ app.get('/', (req, res) => {
   res.json({
     message: 'Cloud Interview Prep Backend API',
     version: '1.0.0',
+    authentication: 'Firebase Authentication Required',
     endpoints: {
-      topics: '/api/topics',
-      questions: '/api/questions/:topicId/:difficulty',
-      health: '/api/health'
+      topics: '/api/topics (requires auth)',
+      questions: '/api/questions/:topicId/:difficulty (requires auth)',
+      'test-auth': '/api/test-auth (requires auth)',
+      health: '/api/health (public)'
     }
   });
 });

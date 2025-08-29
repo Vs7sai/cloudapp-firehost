@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import com.google.firebase.auth.FirebaseAuth
 import com.v7techsolution.interviewfire.api.ApiClient
 import com.v7techsolution.interviewfire.api.models.Topic
 import com.v7techsolution.interviewfire.api.models.TopicsResponse
@@ -34,27 +35,34 @@ class MainActivity : AppCompatActivity() {
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        
+
         Log.d(TAG, "MainActivity onCreate started")
-        
+
         try {
+            // Check authentication first
+            if (!isUserAuthenticated()) {
+                Log.d(TAG, "User not authenticated, redirecting to LoginActivity")
+                redirectToLogin()
+                return
+            }
+
             // Hide the default action bar to remove any title
             supportActionBar?.hide()
-            
+
             setContentView(R.layout.activity_main)
-            
+
             // Initialize views
             initializeViews()
-            
+
             // Setup pull-to-refresh
             setupSwipeRefresh()
-            
+
             // Setup network monitoring
             setupNetworkCallback()
-            
+
             // Check internet connectivity and load topics
             checkInternetConnectivity()
-            
+
         } catch (e: Exception) {
             Log.e(TAG, "Critical error in MainActivity onCreate", e)
             Toast.makeText(this, "App initialization failed: ${e.message}", Toast.LENGTH_LONG).show()
@@ -63,17 +71,23 @@ class MainActivity : AppCompatActivity() {
     
     private fun initializeViews() {
         Log.d(TAG, "Initializing views...")
-        
+
         try {
             // Main views
             topicsContainer = findViewById(R.id.topics_container)
             swipeRefreshLayout = findViewById(R.id.swipeRefreshLayout)
-            
+
             // Initialize connectivity manager
             connectivityManager = ContextCompat.getSystemService(this, ConnectivityManager::class.java)!!
-            
+
+            // Set up profile button click listener for logout
+            val profileButton = findViewById<LinearLayout>(R.id.nav_profile)
+            profileButton.setOnClickListener {
+                showLogoutDialog()
+            }
+
             Log.d(TAG, "Views initialized successfully")
-            
+
         } catch (e: Exception) {
             Log.e(TAG, "Error initializing views", e)
             Toast.makeText(this, "Error initializing views: ${e.message}", Toast.LENGTH_LONG).show()
@@ -552,18 +566,18 @@ class MainActivity : AppCompatActivity() {
         try {
             if (topicsContainer != null) {
                 topicsContainer.removeAllViews()
-                
+
                 // Get screen dimensions for responsive design
                 val displayMetrics = resources.displayMetrics
                 val density = displayMetrics.density
                 val isTablet = displayMetrics.widthPixels / density > 600
-                
+
                 // Dynamic sizing based on screen size
                 val padding = if (isTablet) 64 else 32
                 val iconSize = if (isTablet) 64f else 48f
                 val titleSize = if (isTablet) 24f else 18f
                 val messageSize = if (isTablet) 20f else 16f
-                
+
                 val errorLayout = LinearLayout(this).apply {
                     orientation = LinearLayout.VERTICAL
                     layoutParams = LinearLayout.LayoutParams(
@@ -573,7 +587,7 @@ class MainActivity : AppCompatActivity() {
                     gravity = android.view.Gravity.CENTER
                     setPadding((padding * density).toInt(), (padding * density).toInt(), (padding * density).toInt(), (padding * density).toInt())
                 }
-                
+
                 val errorIcon = TextView(this).apply {
                     text = "📡" // Network icon
                     textSize = iconSize
@@ -585,7 +599,7 @@ class MainActivity : AppCompatActivity() {
                     }
                     gravity = android.view.Gravity.CENTER
                 }
-                
+
                 val errorMessage = TextView(this).apply {
                     text = message
                     textSize = messageSize
@@ -596,7 +610,7 @@ class MainActivity : AppCompatActivity() {
                     )
                     gravity = android.view.Gravity.CENTER
                 }
-                
+
                 errorLayout.addView(errorIcon)
                 errorLayout.addView(errorMessage)
                 topicsContainer.addView(errorLayout)
@@ -605,4 +619,54 @@ class MainActivity : AppCompatActivity() {
             Log.e(TAG, "Error showing network error message", e)
         }
     }
-} 
+
+    private fun isUserAuthenticated(): Boolean {
+        val currentUser = FirebaseAuth.getInstance().currentUser
+        val isAuthenticated = currentUser != null
+        Log.d(TAG, "User authentication check: $isAuthenticated")
+        return isAuthenticated
+    }
+
+    private fun redirectToLogin() {
+        Log.d(TAG, "Redirecting to LoginActivity")
+        val intent = Intent(this, LoginActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
+        finish()
+    }
+
+    private fun showLogoutDialog() {
+        try {
+            val builder = androidx.appcompat.app.AlertDialog.Builder(this)
+            builder.setTitle("Logout")
+            builder.setMessage("Are you sure you want to logout?")
+            builder.setPositiveButton("Logout") { _, _ ->
+                performLogout()
+            }
+            builder.setNegativeButton("Cancel", null)
+            builder.show()
+        } catch (e: Exception) {
+            Log.e(TAG, "Error showing logout dialog", e)
+            Toast.makeText(this, "Error showing logout dialog", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun performLogout() {
+        try {
+            Log.d(TAG, "Performing logout...")
+
+            // Sign out from Firebase
+            FirebaseAuth.getInstance().signOut()
+
+            // Show logout message
+            Toast.makeText(this, "Logged out successfully", Toast.LENGTH_SHORT).show()
+
+            // Redirect to login
+            redirectToLogin()
+
+        } catch (e: Exception) {
+            Log.e(TAG, "Error during logout", e)
+            Toast.makeText(this, "Logout failed: ${e.message}", Toast.LENGTH_SHORT).show()
+        }
+    }
+}

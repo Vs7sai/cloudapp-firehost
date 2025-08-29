@@ -1,249 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_gray">
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    android:gravity="center"
+    android:padding="32dp">
 
-    <!-- Main Content -->
-    <LinearLayout
+    <!-- App Logo/Icon -->
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@mipmap/ic_launcher"
+        android:layout_marginBottom="24dp"
+        android:contentDescription="@string/app_name" />
+
+    <!-- App Title -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="32sp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Subtitle -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cloud Interview Prep"
+        android:textSize="16sp"
+        android:textColor="@android:color/darker_gray"
+        android:layout_marginBottom="48dp" />
+
+    <!-- Status Message -->
+    <TextView
+        android:id="@+id/status_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign in to continue"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:gravity="center"
+        android:layout_marginBottom="32dp" />
+
+    <!-- Google Sign-In Button -->
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/sign_in_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:orientation="vertical"
-        android:padding="32dp"
-        android:gravity="center">
+        android:layout_marginBottom="24dp" />
 
-        <!-- App Icon -->
-        <ImageView
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:src="@mipmap/ic_launcher"
-            android:layout_marginBottom="32dp"
-            android:contentDescription="@string/app_name" />
-
-        <!-- App Name -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:textSize="28sp"
-            android:textColor="@color/text_primary"
-            android:textStyle="bold"
-            android:layout_marginBottom="16dp" />
-
-        <!-- Welcome Message -->
-        <TextView
-            android:id="@+id/status_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/welcome_message_login"
-            android:textSize="16sp"
-            android:textColor="@color/text_secondary"
-            android:gravity="center"
-            android:layout_marginBottom="48dp" />
-
-        <!-- Authentication Method Toggle -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="24dp"
-            android:gravity="center">
-
-            <Button
-                android:id="@+id/btn_google_signin"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginEnd="8dp"
-                android:text="🔐 Google"
-                android:textColor="@android:color/white"
-                android:background="@drawable/button_glass"
-                android:padding="12dp" />
-
-            <Button
-                android:id="@+id/btn_email_signin"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginStart="8dp"
-                android:text="📧 Email"
-                android:textColor="@android:color/white"
-                android:background="@drawable/button_glass_selected"
-                android:padding="12dp" />
-
-        </LinearLayout>
-
-        <!-- Email/Password Fields (Initially Hidden) -->
-        <LinearLayout
-            android:id="@+id/email_password_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone">
-
-            <!-- Clear Instructions -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="📝 Enter your email and password below"
-                android:textSize="16sp"
-                android:textColor="@color/text_primary"
-                android:gravity="center"
-                android:layout_marginBottom="16dp"
-                android:textStyle="bold" />
-
-            <!-- New User vs Existing User Info -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="20dp"
-                android:background="@drawable/info_background"
-                android:padding="12dp">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="🆕 New User?"
-                    android:textSize="14sp"
-                    android:textColor="@color/purple_700"
-                    android:gravity="center"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="✅ Existing User?"
-                    android:textSize="14sp"
-                    android:textColor="@color/purple_700"
-                    android:gravity="center"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-            <!-- Email Input -->
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:hint="Email"
-                app:boxStrokeColor="@color/purple_500"
-                app:hintTextColor="@color/purple_500"
-                app:boxBackgroundColor="@color/white"
-                android:textColorHint="@color/text_secondary">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/email_input"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
-                    android:textColor="@color/text_primary"
-                    android:textSize="16sp"
-                    android:background="@color/white" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <!-- Password Input -->
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
-                android:hint="Password"
-                app:boxStrokeColor="@color/purple_500"
-                app:hintTextColor="@color/purple_500"
-                app:passwordToggleEnabled="true"
-                app:boxBackgroundColor="@color/white"
-                android:textColorHint="@color/text_secondary">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/password_input"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPassword"
-                    android:textColor="@color/text_primary"
-                    android:textSize="16sp"
-                    android:background="@color/white" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <!-- Sign In Button Only -->
-            <Button
-                android:id="@+id/btn_email_sign_in"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="🔑 SIGN IN WITH EMAIL"
-                android:textColor="@android:color/white"
-                android:background="@drawable/button_glass_selected"
-                android:padding="16dp"
-                android:textSize="18sp"
-                android:layout_marginTop="16dp" />
-
-            <!-- Help Text -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="💡 Enter your email and password to sign in to your account"
-                android:textSize="14sp"
-                android:textColor="@color/text_secondary"
-                android:gravity="center"
-                android:layout_marginTop="16dp"
-                android:padding="12dp"
-                android:background="@drawable/tip_background" />
-
-        </LinearLayout>
-
-        <!-- Google Sign-In Button (Initially Visible) -->
-        <com.google.android.gms.common.SignInButton
-            android:id="@+id/sign_in_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:gravity="center"
-            android:textAlignment="center"
-            android:ellipsize="none"
-            android:singleLine="true"
-            android:scrollHorizontally="false"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp" />
-
-        <!-- Additional Info -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/login_info_message"
-            android:textSize="14sp"
-            android:textColor="@color/text_secondary"
-            android:gravity="center"
-            android:layout_marginTop="48dp"
-            android:alpha="0.7" />
-
-    </LinearLayout>
-
-    <!-- Progress Bar - Moved to Edge of Screen -->
+    <!-- Loading Indicator -->
     <ProgressBar
         android:id="@+id/progress_bar"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:visibility="gone" />
+        android:visibility="gone"
+        android:layout_marginBottom="24dp" />
 
-    <!-- Footer -->
+    <!-- Info Text -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="32dp"
-        android:text="@string/app_version"
-        android:textSize="12sp"
-        android:textColor="@color/text_secondary"
-        android:alpha="0.5" />
+        android:text="Secure authentication powered by Google"
+        android:textSize="14sp"
+        android:textColor="@android:color/darker_gray"
+        android:gravity="center"
+        android:layout_marginTop="32dp" />
 
-</RelativeLayout>
+</LinearLayout>

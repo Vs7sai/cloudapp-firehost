@@ -13,6 +13,7 @@
     <string name="choose_difficulty">Choose difficulty level</string>
     
     <!-- Google Sign-In Strings -->
+    <string name="default_web_client_id">601810266687-d5eh4o6ibascsfumpm83gkh1se7b1s5u.apps.googleusercontent.com</string>
     <string name="sign_in_with_google">Sign in with Google</string>
     <string name="sign_out">Sign Out</string>
     <string name="welcome_message">Welcome, %1$s!</string>
