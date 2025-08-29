@@ -16,12 +16,12 @@
         <!-- Topic Icon/Emoji -->
         <TextView
             android:id="@+id/topic_icon"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="@dimen/icon_size_medium"
+            android:layout_height="@dimen/icon_size_medium"
             android:background="@drawable/circle_background"
             android:gravity="center"
             android:text="📚"
-            android:textSize="24sp"
+            android:textSize="@dimen/text_size_large"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -30,11 +30,14 @@
             android:id="@+id/topic_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="@dimen/spacing_medium"
             android:text="Topic Title"
             android:textColor="@color/purple_500"
-            android:textSize="18sp"
+            android:textSize="@dimen/text_size_xlarge"
             android:textStyle="bold"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:singleLine="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/topic_icon"
             app:layout_constraintTop_toTopOf="@+id/topic_icon" />

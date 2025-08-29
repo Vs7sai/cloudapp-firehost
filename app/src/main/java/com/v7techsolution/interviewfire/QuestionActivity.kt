@@ -23,7 +23,7 @@ class QuestionActivity : AppCompatActivity() {
     private var currentQuestionIndex = 0
     private var questions: List<Question> = emptyList()
     private lateinit var questionText: TextView
-    private lateinit var explanationText: TextView
+    private lateinit var explanationText: MarkdownTextView
     private lateinit var progressText: TextView
     private lateinit var nextButton: android.widget.ImageView
     private lateinit var prevButton: android.widget.ImageView
@@ -78,6 +78,7 @@ class QuestionActivity : AppCompatActivity() {
         proButton = findViewById(R.id.btn_pro)
         searchInput = findViewById(R.id.search_question_input)
         swipeRefreshLayout = findViewById(R.id.swipeRefreshLayout)
+
         
         // Set up navigation buttons
         nextButton.setOnClickListener {
@@ -619,29 +620,42 @@ class QuestionActivity : AppCompatActivity() {
     
     private fun displayCurrentQuestion() {
         if (questions.isEmpty()) return
-        
+
         val question = questions[currentQuestionIndex]
-        
+
         // Handle refresh behavior based on answer length
         handleLongAnswerRefresh()
-        
+
         // Update question text
         questionText.text = question.text
-        
-        // Update explanation text
-        explanationText.text = question.explanation ?: "No explanation available"
-        
+
+        // Update explanation text with Markdown support
+        explanationText.setMarkdownText(question.explanation ?: "No explanation available")
+
         // Update progress
         progressText.text = "${currentQuestionIndex + 1} of ${questions.size}"
-        
+
         // Update navigation button states
         prevButton.visibility = if (currentQuestionIndex > 0) View.VISIBLE else View.INVISIBLE
         nextButton.visibility = if (currentQuestionIndex < questions.size - 1) View.VISIBLE else View.INVISIBLE
+
+        // Display code examples and commands based on question content
+        displayCodeExamples(question)
     }
+
+    private fun displayCodeExamples(question: Question) {
+        // Remove hardcoded examples - only use backend data with syntax highlighting
+        // The MarkdownTextView will automatically handle code blocks from backend data
+        // No additional UI components needed since syntax highlighting is handled by MarkdownTextView
+    }
+
+
+
+
     
     private fun showError(message: String) {
         questionText.text = "Error"
-        explanationText.text = message
+        explanationText.setMarkdownText(message)
         progressText.text = "0 of 0"
         nextButton.visibility = View.INVISIBLE
         prevButton.visibility = View.INVISIBLE

@@ -19,4 +19,4 @@ backend/data/questions/*.json
 *.json
 !package.json
 !package-lock.json
-!backend/interviewfire-df24e-firebase-adminsdk-fbsvc-f952860de1.json
+backend/*-firebase-adminsdk*.json

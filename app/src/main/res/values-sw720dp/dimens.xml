@@ -1,17 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Large screen optimizations -->
+    <!-- Small tablet dimensions (720dp+) -->
+    <dimen name="spacing_micro">6dp</dimen>
     <dimen name="spacing_small">12dp</dimen>
     <dimen name="spacing_medium">20dp</dimen>
     <dimen name="spacing_large">32dp</dimen>
-    
-    <!-- Larger text for large screens -->
+    <dimen name="spacing_xlarge">42dp</dimen>
+
+    <!-- Comfortable text sizes for small tablets -->
+    <dimen name="text_size_micro">12sp</dimen>
     <dimen name="text_size_small">14sp</dimen>
     <dimen name="text_size_medium">16sp</dimen>
     <dimen name="text_size_large">18sp</dimen>
     <dimen name="text_size_xlarge">22sp</dimen>
-    
-    <!-- Spacious card layout -->
+    <dimen name="text_size_xxlarge">26sp</dimen>
+    <dimen name="text_size_huge">30sp</dimen>
+
+    <!-- Tablet card dimensions -->
+    <dimen name="card_corner_radius">16dp</dimen>
+    <dimen name="card_elevation">5dp</dimen>
     <dimen name="card_margin">12dp</dimen>
+    <dimen name="card_padding">20dp</dimen>
+    <dimen name="card_min_height">140dp</dimen>
+
+    <!-- Tablet icon sizes -->
+    <dimen name="icon_size_tiny">28dp</dimen>
+    <dimen name="icon_size_small">36dp</dimen>
     <dimen name="icon_size_medium">56dp</dimen>
+    <dimen name="icon_size_large">76dp</dimen>
+    <dimen name="icon_size_xlarge">96dp</dimen>
+
+    <!-- Tablet button dimensions -->
+    <dimen name="button_height">48dp</dimen>
+    <dimen name="button_padding">14dp</dimen>
+    <dimen name="button_corner_radius">10dp</dimen>
+
+    <!-- Tablet search bar -->
+    <dimen name="search_bar_height">38dp</dimen>
+    <dimen name="search_bar_padding">10dp</dimen>
+    <dimen name="search_input_height">34dp</dimen>
+
+    <!-- Tablet navigation -->
+    <dimen name="nav_bar_height">62dp</dimen>
+    <dimen name="nav_icon_size">26dp</dimen>
+
+    <!-- Tablet screen margins -->
+    <dimen name="screen_margin">20dp</dimen>
+    <dimen name="screen_padding">20dp</dimen>
+    <dimen name="content_margin">20dp</dimen>
+
+    <!-- Tablet progress indicators -->
+    <dimen name="progress_height">5dp</dimen>
+    <dimen name="dot_size">8dp</dimen>
+    <dimen name="divider_height">1dp</dimen>
 </resources>

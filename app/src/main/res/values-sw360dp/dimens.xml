@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Extra small phone dimensions (360dp+) -->
+    <dimen name="spacing_micro">3dp</dimen>
+    <dimen name="spacing_small">6dp</dimen>
+    <dimen name="spacing_medium">12dp</dimen>
+    <dimen name="spacing_large">18dp</dimen>
+    <dimen name="spacing_xlarge">24dp</dimen>
+
+    <!-- Compact text sizes for small screens -->
+    <dimen name="text_size_micro">9sp</dimen>
+    <dimen name="text_size_small">11sp</dimen>
+    <dimen name="text_size_medium">13sp</dimen>
+    <dimen name="text_size_large">15sp</dimen>
+    <dimen name="text_size_xlarge">17sp</dimen>
+    <dimen name="text_size_xxlarge">19sp</dimen>
+    <dimen name="text_size_huge">22sp</dimen>
+
+    <!-- Compact card dimensions -->
+    <dimen name="card_corner_radius">10dp</dimen>
+    <dimen name="card_elevation">3dp</dimen>
+    <dimen name="card_margin">6dp</dimen>
+    <dimen name="card_padding">12dp</dimen>
+    <dimen name="card_min_height">100dp</dimen>
+
+    <!-- Smaller icons for compact screens -->
+    <dimen name="icon_size_tiny">20dp</dimen>
+    <dimen name="icon_size_small">28dp</dimen>
+    <dimen name="icon_size_medium">40dp</dimen>
+    <dimen name="icon_size_large">52dp</dimen>
+    <dimen name="icon_size_xlarge">64dp</dimen>
+
+    <!-- Compact button dimensions -->
+    <dimen name="button_height">38dp</dimen>
+    <dimen name="button_padding">10dp</dimen>
+    <dimen name="button_corner_radius">6dp</dimen>
+
+    <!-- Compact search bar -->
+    <dimen name="search_bar_height">28dp</dimen>
+    <dimen name="search_bar_padding">6dp</dimen>
+    <dimen name="search_input_height">24dp</dimen>
+
+    <!-- Navigation dimensions -->
+    <dimen name="nav_bar_height">52dp</dimen>
+    <dimen name="nav_icon_size">22dp</dimen>
+
+    <!-- Tight screen margins -->
+    <dimen name="screen_margin">12dp</dimen>
+    <dimen name="screen_padding">12dp</dimen>
+    <dimen name="content_margin">12dp</dimen>
+
+    <!-- Progress indicators -->
+    <dimen name="progress_height">3dp</dimen>
+    <dimen name="dot_size">5dp</dimen>
+    <dimen name="divider_height">1dp</dimen>
+</resources>
