@@ -15,66 +15,56 @@ import kotlin.coroutines.suspendCoroutine
 
 object ApiClient {
 
+    // Token manager to handle Firebase ID tokens
+    private object TokenManager {
+        private var currentToken: String? = null
+        private var tokenExpiry: Long = 0
+
+        fun getToken(): String? {
+            // Check if token is expired (tokens expire after 1 hour)
+            if (currentToken != null && System.currentTimeMillis() < tokenExpiry) {
+                return currentToken
+            }
+            return null
+        }
+
+        fun setToken(token: String) {
+            currentToken = token
+            // Set expiry to 50 minutes from now (tokens last 1 hour, refresh after 50 min)
+            tokenExpiry = System.currentTimeMillis() + (50 * 60 * 1000)
+        }
+
+        fun clearToken() {
+            currentToken = null
+            tokenExpiry = 0
+        }
+    }
+
     // Authentication interceptor to add Firebase ID token to requests
     private class AuthInterceptor : Interceptor {
         override fun intercept(chain: Interceptor.Chain): Response {
             val original = chain.request()
 
-            // Get Firebase ID token asynchronously
-            val idToken = getFirebaseIdToken()
+            // Get cached token from TokenManager
+            val idToken = TokenManager.getToken()
             if (idToken != null) {
-                android.util.Log.d("AuthInterceptor", "Adding auth token to request")
+                android.util.Log.d("AuthInterceptor", "Adding cached auth token to request")
                 val request = original.newBuilder()
                     .header("Authorization", "Bearer $idToken")
                     .build()
                 return chain.proceed(request)
             } else {
-                android.util.Log.w("AuthInterceptor", "No auth token available - proceeding without auth")
+                android.util.Log.w("AuthInterceptor", "No cached auth token available - proceeding without auth")
             }
 
             return chain.proceed(original)
         }
-
-        private fun getFirebaseIdToken(): String? {
-            return try {
-                val user = FirebaseAuth.getInstance().currentUser
-                if (user == null) {
-                    android.util.Log.w("AuthInterceptor", "No authenticated user")
-                    return null
-                }
-
-                // For development/testing, create a mock token if user exists
-                // This simulates a Firebase ID token format
-                val mockToken = createMockFirebaseToken(user.uid)
-                android.util.Log.d("AuthInterceptor", "Using mock Firebase ID token for user: ${user.email}")
-                mockToken
-
-            } catch (e: Exception) {
-                android.util.Log.e("AuthInterceptor", "Error getting Firebase ID token", e)
-                null
-            }
-        }
-
-        private fun createMockFirebaseToken(uid: String): String {
-            // Create a mock Firebase ID token format for development
-            // This mimics the structure of a real Firebase ID token
-            val header = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9" // Mock header
-            val payload = android.util.Base64.encodeToString(
-                "{\"iss\":\"https://securetoken.google.com/mock-project\",\"aud\":\"mock-project\",\"auth_time\":${System.currentTimeMillis()/1000},\"user_id\":\"$uid\",\"sub\":\"$uid\",\"iat\":${System.currentTimeMillis()/1000},\"exp\":${(System.currentTimeMillis()/1000) + 3600},\"email\":\"user@example.com\",\"email_verified\":true}".toByteArray(),
-                android.util.Base64.NO_WRAP
-            )
-            val signature = "mock_signature_for_development"
-            return "$header.$payload.$signature"
-        }
     }
 
-    // Dynamic base URL based on device type
+    // Firebase Functions base URL
     private fun getBaseUrl(context: Context): String {
-        return if (isEmulator(context)) {
-            "http://10.0.2.2:3000/" // For Android emulator
-        } else {
-            "http://192.168.31.6:3000/" // For physical device (your computer's IP)
-        }
+      // Use Firebase Functions URL for production
+      return "https://api-y2udp4rn3q-uc.a.run.app/"
     }
     
     // Check if running on emulator
@@ -92,11 +82,15 @@ object ApiClient {
     // Create Retrofit instance with dynamic base URL and authentication
     fun createRetrofit(context: Context): Retrofit {
         val baseUrl = getBaseUrl(context)
-        android.util.Log.d("ApiClient", "Using base URL: $baseUrl")
+        android.util.Log.d("ApiClient", "🔗 Using base URL: $baseUrl")
+        android.util.Log.d("ApiClient", "🌐 Full API endpoint will be: ${baseUrl}topics")
 
         // Create OkHttpClient with authentication interceptor
         val okHttpClient = OkHttpClient.Builder()
             .addInterceptor(AuthInterceptor())
+            .connectTimeout(30, java.util.concurrent.TimeUnit.SECONDS)
+            .readTimeout(30, java.util.concurrent.TimeUnit.SECONDS)
+            .writeTimeout(30, java.util.concurrent.TimeUnit.SECONDS)
             .build()
 
         return Retrofit.Builder()
@@ -104,6 +98,38 @@ object ApiClient {
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
+    }
+    
+    // Function to refresh Firebase ID token and store it in TokenManager
+    fun refreshFirebaseToken(onComplete: (String?) -> Unit) {
+        val user = FirebaseAuth.getInstance().currentUser
+        if (user != null) {
+            user.getIdToken(true)
+                .addOnSuccessListener { result ->
+                    val token = result.token
+                    if (token != null) {
+                        TokenManager.setToken(token)
+                        android.util.Log.d("ApiClient", "Firebase ID token refreshed and cached")
+                        onComplete(token)
+                    } else {
+                        android.util.Log.w("ApiClient", "Failed to get Firebase ID token")
+                        onComplete(null)
+                    }
+                }
+                .addOnFailureListener { exception ->
+                    android.util.Log.e("ApiClient", "Error refreshing Firebase ID token", exception)
+                    onComplete(null)
+                }
+        } else {
+            android.util.Log.w("ApiClient", "No authenticated user")
+            onComplete(null)
+        }
+    }
+    
+    // Function to clear cached token (call this on sign out)
+    fun clearCachedToken() {
+        TokenManager.clearToken()
+        android.util.Log.d("ApiClient", "Cached Firebase ID token cleared")
     }
     
     // Legacy static instance (for backward compatibility)
