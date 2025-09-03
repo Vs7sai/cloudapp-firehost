@@ -3,12 +3,16 @@ package com.v7techsolution.interviewfire
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import com.google.firebase.auth.FirebaseAuth
+import com.v7techsolution.interviewfire.HomeFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -34,6 +38,9 @@ class MainActivity : AppCompatActivity() {
 
             setContentView(R.layout.activity_main)
 
+            // Setup dynamic navigation handling
+            setupDynamicNavigation()
+
             // Initialize navigation
             initializeNavigation()
 
@@ -45,6 +52,52 @@ class MainActivity : AppCompatActivity() {
         } catch (e: Exception) {
             Log.e(TAG, "Critical error in MainActivity onCreate", e)
             Toast.makeText(this, "App initialization failed: ${e.message}", Toast.LENGTH_LONG).show()
+        }
+    }
+    
+    /**
+     * Setup dynamic navigation handling
+     * - If system navigation bar is present (bottomInset > 0), move BottomNavigationView above it
+     * - If no system navigation bar (bottomInset == 0), keep at bottom
+     */
+    private fun setupDynamicNavigation() {
+        try {
+            Log.d(TAG, "Setting up dynamic navigation handling...")
+
+            val bottomNavigation = findViewById<LinearLayout>(R.id.bottom_navigation)
+
+            if (bottomNavigation != null) {
+                Log.d(TAG, "Bottom navigation found, applying dynamic margin...")
+
+                // Use WindowInsets to handle system navigation bar
+                ViewCompat.setOnApplyWindowInsetsListener(bottomNavigation) { view, windowInsets ->
+                    val systemBarsInsets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
+                    val bottomInset = systemBarsInsets.bottom
+
+                    Log.d(TAG, "System bars bottom inset: ${bottomInset}px")
+
+                    val layoutParams = view.layoutParams as androidx.constraintlayout.widget.ConstraintLayout.LayoutParams
+
+                    // Apply bottom margin equal to the system navigation bar height
+                    // This moves the navigation above the system bar if present, or keeps it at bottom if not
+                    layoutParams.bottomMargin = bottomInset
+
+                    view.layoutParams = layoutParams
+                    windowInsets
+                }
+
+                // Force apply insets
+                ViewCompat.requestApplyInsets(bottomNavigation)
+
+                Log.d(TAG, "Dynamic navigation setup completed")
+
+            } else {
+                Log.e(TAG, "Bottom navigation view not found")
+            }
+
+        } catch (e: Exception) {
+            Log.e(TAG, "Error setting up navigation", e)
+            Toast.makeText(this, "Error setting up navigation: ${e.message}", Toast.LENGTH_SHORT).show()
         }
     }
     
