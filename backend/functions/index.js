@@ -16,6 +16,7 @@ const fs = require('fs');
 const path = require('path');
 const { authenticate } = require('./middleware/auth');
 const { apiGateway } = require('./middleware/apiGateway');
+const { apiKeyAuth } = require('./middleware/apiKey');
 
 // For cost control, you can set the maximum number of containers that can be
 // running at the same time. This helps mitigate the impact of unexpected
@@ -32,8 +33,50 @@ setGlobalOptions({ maxInstances: 10 });
 // Create Express app
 const app = express();
 
-// Basic middleware
-app.use(cors({ origin: true }));
+// Enhanced CORS configuration
+const corsOptions = {
+  origin: function (origin, callback) {
+    // Allow requests with no origin (mobile apps, Postman, etc.)
+    if (!origin) return callback(null, true);
+    
+    // List of allowed origins
+    const allowedOrigins = [
+      'https://yourdomain.com',
+      'https://www.yourdomain.com',
+      'http://localhost:3000',
+      'http://localhost:8080',
+      'http://127.0.0.1:3000',
+      'http://127.0.0.1:8080'
+    ];
+    
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      console.log(`🚫 CORS blocked origin: ${origin}`);
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: [
+    'Origin',
+    'X-Requested-With',
+    'Content-Type',
+    'Accept',
+    'Authorization',
+    'X-API-Key',
+    'X-ApiKey'
+  ],
+  exposedHeaders: [
+    'X-RateLimit-Limit',
+    'X-RateLimit-Remaining',
+    'X-RateLimit-Reset',
+    'X-RateLimit-Burst-Limit',
+    'X-RateLimit-Burst-Remaining'
+  ]
+};
+
+app.use(cors(corsOptions));
 app.use(express.json({ limit: '1mb' })); // Limit request size
 
 // Apply API Gateway middleware
@@ -261,6 +304,49 @@ app.get('/api/gateway/status', apiGateway.healthCheck());
 
 // API Gateway info endpoint - PUBLIC ROUTE
 app.get('/api/gateway/info', apiGateway.gatewayInfo());
+
+// API Key management endpoints - PROTECTED ROUTES
+app.post('/api/admin/create-api-key', apiGateway.createProtectedRoute(async (req, res) => {
+  try {
+    const { name, permissions, expiresInDays } = req.body;
+    
+    // Only allow admin users to create API keys
+    if (!req.user.email || !req.user.email.includes('@yourdomain.com')) {
+      return res.status(403).json({
+        success: false,
+        error: 'Access denied',
+        message: 'Only admin users can create API keys'
+      });
+    }
+    
+    const result = await apiKeyAuth.createAPIKey(
+      name || 'Generated API Key',
+      permissions || ['read'],
+      expiresInDays || 365
+    );
+    
+    if (result.success) {
+      res.json({
+        success: true,
+        message: 'API key created successfully',
+        apiKey: result.apiKey,
+        expiresAt: result.expiresAt
+      });
+    } else {
+      res.status(500).json({
+        success: false,
+        error: 'Failed to create API key',
+        message: result.error
+      });
+    }
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: 'Internal server error',
+      message: error.message
+    });
+  }
+}));
 
 // Test authentication endpoint - PROTECTED ROUTE (via API Gateway)
 app.get('/api/test-auth', apiGateway.createProtectedRoute((req, res) => {

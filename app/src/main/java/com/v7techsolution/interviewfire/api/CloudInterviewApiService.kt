@@ -2,13 +2,14 @@ package com.v7techsolution.interviewfire.api
 
 import com.v7techsolution.interviewfire.api.models.QuestionsResponse
 import com.v7techsolution.interviewfire.api.models.TopicsResponse
+import com.v7techsolution.interviewfire.api.models.ApiResponse
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface CloudInterviewApiService {
     
-    // Protected endpoints (require authentication)
+    // Protected endpoints (require authentication) - Direct Cloud Functions endpoints
     @GET("api/topics")
     fun getTopics(): Call<TopicsResponse>
     
@@ -27,16 +28,7 @@ interface CloudInterviewApiService {
     @GET("api/test-auth")
     fun testAuth(): Call<ApiResponse>
     
-    // Public endpoints (no authentication required)
+    // Public endpoints (no authentication required) - Direct Cloud Functions endpoints
     @GET("api/health")
     fun getHealth(): Call<ApiResponse>
-    
-    @GET("api/gateway/status")
-    fun getGatewayStatus(): Call<ApiResponse>
-    
-    @GET("api/gateway/info")
-    fun getGatewayInfo(): Call<ApiResponse>
-    
-    @GET("/")
-    fun getApiInfo(): Call<ApiResponse>
 } 

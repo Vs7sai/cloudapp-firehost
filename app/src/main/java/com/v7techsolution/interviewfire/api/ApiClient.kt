@@ -47,20 +47,23 @@ object ApiClient {
 
             // Get cached token from TokenManager
             val idToken = TokenManager.getToken()
+            
+            // Build request with headers
+            val requestBuilder = original.newBuilder()
+                .header("User-Agent", "CloudInterviewApp/1.0.0 (Android)")
+                .header("Accept", "application/json")
+                .header("Content-Type", "application/json")
+            
+            // Add Firebase ID token if available
             if (idToken != null) {
                 android.util.Log.d("AuthInterceptor", "Adding cached auth token to request")
-                val request = original.newBuilder()
-                    .header("Authorization", "Bearer $idToken")
-                    .header("User-Agent", "CloudInterviewApp/1.0.0 (Android)")
-                    .header("Accept", "application/json")
-                    .header("Content-Type", "application/json")
-                    .build()
-                return chain.proceed(request)
+                requestBuilder.header("Authorization", "Bearer $idToken")
             } else {
-                android.util.Log.w("AuthInterceptor", "No cached auth token available - proceeding without auth")
+                android.util.Log.w("AuthInterceptor", "No cached auth token available")
             }
-
-            return chain.proceed(original)
+            
+            val request = requestBuilder.build()
+            return chain.proceed(request)
         }
     }
 
@@ -78,7 +81,7 @@ object ApiClient {
                 android.util.Log.d("RateLimitInterceptor", "Rate limit remaining: $rateLimitRemaining")
             }
             
-            if (response.code == 429) {
+            if (response.code() == 429) {
                 android.util.Log.w("RateLimitInterceptor", "Rate limit exceeded. Retry after: $retryAfter seconds")
             }
             
@@ -86,10 +89,15 @@ object ApiClient {
         }
     }
 
-    // Firebase Functions base URL
+    // Direct Cloud Functions URL (simplified architecture)
     private fun getBaseUrl(context: Context): String {
-      // Use Cloud Run URL directly for better reliability
-      // API endpoints now include /api prefix
+      // Using direct Cloud Functions URL for optimal performance and simplicity
+      return "https://api-y2udp4rn3q-uc.a.run.app/"
+    }
+    
+    // Direct Cloud Functions URL for authentication (bypass API Gateway)
+    private fun getDirectBaseUrl(context: Context): String {
+      // Use direct Cloud Functions URL for authentication
       return "https://api-y2udp4rn3q-uc.a.run.app/"
     }
     

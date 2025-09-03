@@ -19,16 +19,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Welcome Header -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Welcome to InterviewFire"
-                android:textSize="@dimen/text_size_xlarge"
-                android:textColor="@color/text_primary"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:layout_marginBottom="@dimen/spacing_large" />
+
 
             <!-- Topic Cards Grid -->
             <LinearLayout

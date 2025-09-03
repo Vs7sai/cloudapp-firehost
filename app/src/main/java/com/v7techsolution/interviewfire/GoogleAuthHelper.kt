@@ -40,6 +40,7 @@ class GoogleAuthHelper(private val activity: Activity) {
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(activity.getString(R.string.default_web_client_id))
             .requestEmail()
+            .requestProfile()
             .build()
 
         googleSignInClient = GoogleSignIn.getClient(activity, gso)
@@ -60,6 +61,13 @@ class GoogleAuthHelper(private val activity: Activity) {
         auth.signOut()
         googleSignInClient.signOut()
     }
+    
+    fun clearSignInState() {
+        Log.d(TAG, "Clearing sign-in state")
+        googleSignInClient.signOut().addOnCompleteListener {
+            Log.d(TAG, "Google Sign-In state cleared")
+        }
+    }
 
     fun handleSignInResult(data: Intent?) {
         try {
@@ -75,11 +83,15 @@ class GoogleAuthHelper(private val activity: Activity) {
             }
         } catch (e: ApiException) {
             Log.e(TAG, "Google Sign-In failed with exception", e)
+            Log.e(TAG, "Error code: ${e.statusCode}, Message: ${e.message}")
             val errorMessage = when (e.statusCode) {
+                7 -> "Network error - check your internet connection and try again"
                 12500 -> "Google Play Services not available"
                 12501 -> "Sign-in cancelled by user"
                 12502 -> "Sign-in failed"
-                else -> "Google Sign-In failed: ${e.message}"
+                12503 -> "Sign-in failed - invalid configuration"
+                10 -> "Developer error - check your configuration"
+                else -> "Google Sign-In failed (Code: ${e.statusCode}): ${e.message}"
             }
             authCallback?.onAuthFailed(errorMessage)
         }
