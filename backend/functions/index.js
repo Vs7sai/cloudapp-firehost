@@ -38,10 +38,25 @@ app.use(express.json());
 // Load data
 const loadJSON = (filename) => {
   try {
-    const data = fs.readFileSync(path.join(__dirname, 'data', filename), 'utf8');
-    return JSON.parse(data);
+    const filepath = path.join(__dirname, 'data', filename);
+    console.log(`🔍 Attempting to load file: ${filepath}`);
+    console.log(`🔍 __dirname: ${__dirname}`);
+    console.log(`🔍 Current working directory: ${process.cwd()}`);
+    
+    if (!fs.existsSync(filepath)) {
+      console.error(`❌ File does not exist: ${filepath}`);
+      return null;
+    }
+    
+    const data = fs.readFileSync(filepath, 'utf8');
+    console.log(`✅ File loaded successfully: ${filename}`);
+    console.log(`📊 Data length: ${data.length} characters`);
+    
+    const parsed = JSON.parse(data);
+    console.log(`✅ JSON parsed successfully, topics count: ${Array.isArray(parsed) ? parsed.length : 'not an array'}`);
+    return parsed;
   } catch (error) {
-    console.error(`Error loading ${filename}:`, error);
+    console.error(`❌ Error loading ${filename}:`, error);
     return null;
   }
 };
@@ -59,15 +74,27 @@ const loadQuestions = (topic, difficulty) => {
 };
 
 const topics = loadJSON('topics.json');
+console.log(`🚀 Topics loaded at startup: ${topics ? 'SUCCESS' : 'FAILED'}`);
+if (topics) {
+  console.log(`📚 Topics count: ${topics.length}`);
+  console.log(`📚 First topic: ${JSON.stringify(topics[0])}`);
+}
 
 // API Routes
 
 // Get all topics - AUTHENTICATED ROUTE
-app.get('/topics', authenticate, (req, res) => {
+app.get('/api/topics', authenticate, (req, res) => {
   try {
     logger.info(`📚 Topics requested by user: ${req.user.email} (${req.user.uid})`);
+    
+    console.log(`🔍 Topics variable: ${topics ? 'EXISTS' : 'NULL'}`);
+    if (topics) {
+      console.log(`📊 Topics type: ${typeof topics}`);
+      console.log(`📊 Topics length: ${Array.isArray(topics) ? topics.length : 'not an array'}`);
+      console.log(`📊 Topics preview: ${JSON.stringify(topics).substring(0, 200)}...`);
+    }
 
-    res.json({
+    const response = {
       success: true,
       data: topics,
       user: {
@@ -76,8 +103,13 @@ app.get('/topics', authenticate, (req, res) => {
         name: req.user.name,
         emailVerified: req.user.emailVerified
       }
-    });
+    };
+    
+    console.log(`📤 Sending response: ${JSON.stringify(response).substring(0, 300)}...`);
+    
+    res.json(response);
   } catch (error) {
+    console.error(`❌ Error in topics endpoint:`, error);
     res.status(500).json({
       success: false,
       message: 'Error fetching topics',
@@ -87,7 +119,7 @@ app.get('/topics', authenticate, (req, res) => {
 });
 
 // Get specific topic - AUTHENTICATED ROUTE
-app.get('/topics/:topicId', authenticate, (req, res) => {
+app.get('/api/topics/:topicId', authenticate, (req, res) => {
   try {
     const { topicId } = req.params;
     const topic = topics.find(t => t.id === topicId.toLowerCase());
@@ -121,7 +153,7 @@ app.get('/topics/:topicId', authenticate, (req, res) => {
 });
 
 // Get questions for a topic and difficulty - AUTHENTICATED ROUTE
-app.get('/questions/:topicId/:difficulty', authenticate, (req, res) => {
+app.get('/api/questions/:topicId/:difficulty', authenticate, (req, res) => {
   try {
     const { topicId, difficulty } = req.params;
     const topicKey = topicId.toLowerCase();
@@ -163,7 +195,7 @@ app.get('/questions/:topicId/:difficulty', authenticate, (req, res) => {
 });
 
 // Get all questions for a topic (all difficulties) - AUTHENTICATED ROUTE
-app.get('/questions/:topicId', authenticate, (req, res) => {
+app.get('/api/questions/:topicId', authenticate, (req, res) => {
   try {
     const { topicId } = req.params;
     const topicKey = topicId.toLowerCase();
@@ -211,29 +243,26 @@ app.get('/questions/:topicId', authenticate, (req, res) => {
 });
 
 // Health check endpoint
-app.get('/health', (req, res) => {
+app.get('/api/health', (req, res) => {
   res.json({
     success: true,
-    message: 'Cloud Interview Prep Backend API is running on Firebase Functions',
-    timestamp: new Date().toISOString()
+    message: 'Backend server is running',
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime()
   });
 });
 
 // Test authentication endpoint - AUTHENTICATED (for testing)
-app.get('/test-auth', authenticate, (req, res) => {
+app.get('/api/test-auth', authenticate, (req, res) => {
   res.json({
     success: true,
-    message: 'Authentication successful!',
+    message: 'Authentication successful',
     user: {
       uid: req.user.uid,
       email: req.user.email,
       name: req.user.name,
-      emailVerified: req.user.emailVerified,
-      authTime: req.user.authTime,
-      issuedAt: req.user.issuedAt,
-      expiresAt: req.user.expiresAt
-    },
-    timestamp: new Date().toISOString()
+      emailVerified: req.user.emailVerified
+    }
   });
 });
 

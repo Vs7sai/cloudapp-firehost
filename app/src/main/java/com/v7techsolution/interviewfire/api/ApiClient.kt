@@ -63,7 +63,8 @@ object ApiClient {
 
     // Firebase Functions base URL
     private fun getBaseUrl(context: Context): String {
-      // Use Firebase Functions URL for production
+      // Use Cloud Run URL directly for better reliability
+      // API endpoints now include /api prefix
       return "https://api-y2udp4rn3q-uc.a.run.app/"
     }
     

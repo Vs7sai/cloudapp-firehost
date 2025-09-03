@@ -1,7 +1,7 @@
 const admin = require('../firebase-admin');
 
 /**
- * Simple authentication middleware - accepts any Firebase ID token format
+ * Firebase authentication middleware - verifies Firebase ID tokens
  */
 const authenticate = async (req, res, next) => {
   try {
@@ -29,16 +29,16 @@ const authenticate = async (req, res, next) => {
 
     console.log('🔐 Processing authentication token...');
 
-    // Verify the Firebase ID token
     try {
+      // Verify the Firebase ID token
       const decodedToken = await admin.auth().verifyIdToken(idToken);
       
-      // Set user information from the verified token
+      // Add user info to request
       req.user = {
         uid: decodedToken.uid,
         email: decodedToken.email || 'unknown@example.com',
         emailVerified: decodedToken.email_verified || false,
-        name: decodedToken.name || decodedToken.email || 'Authenticated User',
+        name: decodedToken.name || 'Authenticated User',
         picture: decodedToken.picture || null,
         authTime: decodedToken.auth_time || Math.floor(Date.now() / 1000),
         issuedAt: decodedToken.iat || Math.floor(Date.now() / 1000),
@@ -48,7 +48,7 @@ const authenticate = async (req, res, next) => {
       console.log(`✅ User authenticated: ${req.user.email} (${req.user.uid})`);
       next();
     } catch (verifyError) {
-      console.log('❌ Firebase ID token verification failed:', verifyError.message);
+      console.log('❌ Firebase token verification failed:', verifyError.message);
       return res.status(401).json({
         error: 'Authentication failed',
         message: 'Invalid or expired Firebase ID token'

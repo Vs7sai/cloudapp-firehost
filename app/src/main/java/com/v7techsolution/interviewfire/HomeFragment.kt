@@ -46,8 +46,68 @@ class HomeFragment : Fragment() {
         // Setup pull-to-refresh
         setupSwipeRefresh()
 
+        // Show loading state immediately
+        showLoadingState()
+
         // Load topics from backend
         loadTopicsFromBackend()
+    }
+
+    private fun showLoadingState() {
+        try {
+            if (topicsContainer != null) {
+                topicsContainer.removeAllViews()
+
+                // Get screen dimensions for responsive design
+                val displayMetrics = resources.displayMetrics
+                val density = displayMetrics.density
+                val isTablet = displayMetrics.widthPixels / density > 600
+
+                // Dynamic sizing based on screen size
+                val padding = if (isTablet) 64 else 32
+                val iconSize = if (isTablet) 64f else 48f
+                val messageSize = if (isTablet) 20f else 16f
+
+                val loadingLayout = LinearLayout(requireContext()).apply {
+                    orientation = LinearLayout.VERTICAL
+                    layoutParams = LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                    )
+                    gravity = android.view.Gravity.CENTER
+                    setPadding((padding * density).toInt(), (padding * density).toInt(), (padding * density).toInt(), (padding * density).toInt())
+                }
+
+                val loadingIcon = TextView(requireContext()).apply {
+                    text = "⏳"
+                    textSize = iconSize
+                    layoutParams = LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                    ).apply {
+                        bottomMargin = (16 * density).toInt()
+                    }
+                    gravity = android.view.Gravity.CENTER
+                }
+
+                val loadingMessage = TextView(requireContext()).apply {
+                    text = "Loading topics..."
+                    textSize = messageSize
+                    setTextColor(ContextCompat.getColor(context, R.color.text_primary))
+                    layoutParams = LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                    )
+                    gravity = android.view.Gravity.CENTER
+                }
+
+                loadingLayout.addView(loadingIcon)
+                loadingLayout.addView(loadingMessage)
+                topicsContainer.addView(loadingLayout)
+            }
+        } catch (e: Exception) {
+            Log.e(TAG, "Error showing loading state", e)
+        }
     }
 
     private fun initializeViews(view: View) {
@@ -92,78 +152,96 @@ class HomeFragment : Fragment() {
         Log.d(TAG, "Loading topics from backend...")
 
         try {
-            // Create API client with dynamic base URL
-            val retrofit = ApiClient.createRetrofit(requireContext())
-            val apiService = retrofit.create(CloudInterviewApiService::class.java)
+            // First refresh the Firebase ID token to ensure we have a valid one
+            ApiClient.refreshFirebaseToken { token ->
+                if (token != null) {
+                    Log.d(TAG, "Firebase ID token refreshed successfully, making API call...")
+                    
+                    // Create API client with dynamic base URL
+                    val retrofit = ApiClient.createRetrofit(requireContext())
+                    val apiService = retrofit.create(CloudInterviewApiService::class.java)
 
-            Log.d(TAG, "Making API call to getTopics()...")
-            apiService.getTopics().enqueue(object : Callback<TopicsResponse> {
-                override fun onResponse(call: Call<TopicsResponse>, response: Response<TopicsResponse>) {
-                    Log.d(TAG, "API Response received: ${response.code()}")
-                    Log.d(TAG, "Response body: ${response.body()}")
+                    Log.d(TAG, "Making API call to getTopics()...")
+                    apiService.getTopics().enqueue(object : Callback<TopicsResponse> {
+                        override fun onResponse(call: Call<TopicsResponse>, response: Response<TopicsResponse>) {
+                            Log.d(TAG, "API Response received: ${response.code()}")
+                            Log.d(TAG, "Response body: ${response.body()}")
 
-                    // Stop refresh indicator
-                    try {
-                        swipeRefreshLayout?.isRefreshing = false
-                    } catch (e: Exception) {
-                        Log.e(TAG, "Error stopping refresh", e)
-                    }
-
-                    try {
-                        if (response.isSuccessful && response.body() != null) {
-                            val topicsResponse = response.body()!!
-                            Log.d(TAG, "Topics response success: ${topicsResponse.success}")
-                            Log.d(TAG, "Topics data size: ${topicsResponse.data.size}")
-
-                            if (topicsResponse.success && topicsResponse.data.isNotEmpty()) {
-                                Log.d(TAG, "Topics loaded successfully: ${topicsResponse.data.size}")
-                                createTopicCards(topicsResponse.data)
-                            } else {
-                                Log.e(TAG, "Topics API failed or empty data")
-                                showBackendError("Backend server returned empty data. Please try again later.")
+                            // Stop refresh indicator
+                            try {
+                                swipeRefreshLayout?.isRefreshing = false
+                            } catch (e: Exception) {
+                                Log.e(TAG, "Error stopping refresh", e)
                             }
-                        } else {
-                            Log.e(TAG, "Topics API call unsuccessful: ${response.code()}")
-                            when (response.code()) {
-                                404 -> showBackendError("Backend server not found. Please check if the server is running.")
-                                500 -> showBackendError("Backend server error. Please try again later.")
-                                503 -> showBackendError("Backend server is temporarily unavailable. Please try again later.")
-                                else -> showBackendError("Backend server error (${response.code()}). Please try again later.")
+
+                            try {
+                                if (response.isSuccessful && response.body() != null) {
+                                    val topicsResponse = response.body()!!
+                                    Log.d(TAG, "Topics response success: ${topicsResponse.success}")
+                                    Log.d(TAG, "Topics data size: ${topicsResponse.data.size}")
+
+                                    if (topicsResponse.success && topicsResponse.data.isNotEmpty()) {
+                                        Log.d(TAG, "Topics loaded successfully: ${topicsResponse.data.size}")
+                                        createTopicCards(topicsResponse.data)
+                                    } else {
+                                        Log.e(TAG, "Topics API failed or empty data")
+                                        showBackendError("Backend server returned empty data. Please try again later.")
+                                    }
+                                } else {
+                                    Log.e(TAG, "Topics API call unsuccessful: ${response.code()}")
+                                    when (response.code()) {
+                                        401 -> showBackendError("Authentication failed. Please sign in again.")
+                                        404 -> showBackendError("Backend server not found. Please check if the server is running.")
+                                        500 -> showBackendError("Backend server error. Please try again later.")
+                                        503 -> showBackendError("Backend server is temporarily unavailable. Please try again later.")
+                                        else -> showBackendError("Backend server error (${response.code()}). Please try again later.")
+                                    }
+                                }
+                            } catch (e: Exception) {
+                                Log.e(TAG, "Error processing topics response", e)
+                                showBackendError("Error processing server response. Please try again.")
                             }
                         }
-                    } catch (e: Exception) {
-                        Log.e(TAG, "Error processing topics response", e)
-                        showBackendError("Error processing server response. Please try again.")
-                    }
-                }
 
-                override fun onFailure(call: Call<TopicsResponse>, t: Throwable) {
-                    Log.e(TAG, "API Call Failed with exception: ${t.javaClass.simpleName}")
-                    Log.e(TAG, "Error message: ${t.message}")
-                    Log.e(TAG, "Full stack trace:", t)
+                        override fun onFailure(call: Call<TopicsResponse>, t: Throwable) {
+                            Log.e(TAG, "API Call Failed with exception: ${t.javaClass.simpleName}")
+                            Log.e(TAG, "Error message: ${t.message}")
+                            Log.e(TAG, "Full stack trace:", t)
 
+                            // Stop refresh indicator
+                            try {
+                                swipeRefreshLayout?.isRefreshing = false
+                            } catch (e: Exception) {
+                                Log.e(TAG, "Error stopping refresh", e)
+                            }
+
+                            Log.e(TAG, "Topics API call failed", t)
+
+                            // Check what type of network error occurred
+                            when {
+                                t.message?.contains("timeout", ignoreCase = true) == true ->
+                                    showBackendError("Backend server is taking too long to respond. Please try again.")
+                                t.message?.contains("unable to resolve host", ignoreCase = true) == true ->
+                                    showBackendError("Cannot connect to backend server. Please check your internet connection.")
+                                t.message?.contains("failed to connect", ignoreCase = true) == true ->
+                                    showBackendError("Backend server is not reachable. Please check if the server is running.")
+                                else ->
+                                    showBackendError("Network error: ${t.message}. Please check your connection and try again.")
+                            }
+                        }
+                    })
+                } else {
+                    Log.e(TAG, "Failed to refresh Firebase ID token")
+                    showBackendError("Authentication failed. Please sign in again.")
+                    
                     // Stop refresh indicator
                     try {
                         swipeRefreshLayout?.isRefreshing = false
                     } catch (e: Exception) {
                         Log.e(TAG, "Error stopping refresh", e)
                     }
-
-                    Log.e(TAG, "Topics API call failed", t)
-
-                    // Check what type of network error occurred
-                    when {
-                        t.message?.contains("timeout", ignoreCase = true) == true ->
-                            showBackendError("Backend server is taking too long to respond. Please try again.")
-                        t.message?.contains("unable to resolve host", ignoreCase = true) == true ->
-                            showBackendError("Cannot connect to backend server. Please check your internet connection.")
-                        t.message?.contains("failed to connect", ignoreCase = true) == true ->
-                            showBackendError("Backend server is not reachable. Please check if the server is running.")
-                        else ->
-                            showBackendError("Network error: ${t.message}. Please check your connection and try again.")
-                    }
                 }
-            })
+            }
         } catch (e: Exception) {
             Log.e(TAG, "Error loading topics", e)
             showBackendError("Error: ${e.message}")
