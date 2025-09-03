@@ -51,6 +51,9 @@ object ApiClient {
                 android.util.Log.d("AuthInterceptor", "Adding cached auth token to request")
                 val request = original.newBuilder()
                     .header("Authorization", "Bearer $idToken")
+                    .header("User-Agent", "CloudInterviewApp/1.0.0 (Android)")
+                    .header("Accept", "application/json")
+                    .header("Content-Type", "application/json")
                     .build()
                 return chain.proceed(request)
             } else {
@@ -58,6 +61,28 @@ object ApiClient {
             }
 
             return chain.proceed(original)
+        }
+    }
+
+    // Rate limit interceptor to handle rate limiting responses
+    private class RateLimitInterceptor : Interceptor {
+        override fun intercept(chain: Interceptor.Chain): Response {
+            val response = chain.proceed(chain.request())
+            
+            // Check for rate limit headers
+            val rateLimitRemaining = response.header("X-RateLimit-Remaining")
+            val rateLimitReset = response.header("X-RateLimit-Reset")
+            val retryAfter = response.header("Retry-After")
+            
+            if (rateLimitRemaining != null) {
+                android.util.Log.d("RateLimitInterceptor", "Rate limit remaining: $rateLimitRemaining")
+            }
+            
+            if (response.code == 429) {
+                android.util.Log.w("RateLimitInterceptor", "Rate limit exceeded. Retry after: $retryAfter seconds")
+            }
+            
+            return response
         }
     }
 
@@ -86,9 +111,10 @@ object ApiClient {
         android.util.Log.d("ApiClient", "🔗 Using base URL: $baseUrl")
         android.util.Log.d("ApiClient", "🌐 Full API endpoint will be: ${baseUrl}topics")
 
-        // Create OkHttpClient with authentication interceptor
+        // Create OkHttpClient with authentication and rate limit interceptors
         val okHttpClient = OkHttpClient.Builder()
             .addInterceptor(AuthInterceptor())
+            .addInterceptor(RateLimitInterceptor())
             .connectTimeout(30, java.util.concurrent.TimeUnit.SECONDS)
             .readTimeout(30, java.util.concurrent.TimeUnit.SECONDS)
             .writeTimeout(30, java.util.concurrent.TimeUnit.SECONDS)

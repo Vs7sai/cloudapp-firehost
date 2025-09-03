@@ -15,6 +15,7 @@ const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
 const { authenticate } = require('./middleware/auth');
+const { apiGateway } = require('./middleware/apiGateway');
 
 // For cost control, you can set the maximum number of containers that can be
 // running at the same time. This helps mitigate the impact of unexpected
@@ -31,9 +32,12 @@ setGlobalOptions({ maxInstances: 10 });
 // Create Express app
 const app = express();
 
-// Middleware
+// Basic middleware
 app.use(cors({ origin: true }));
-app.use(express.json());
+app.use(express.json({ limit: '1mb' })); // Limit request size
+
+// Apply API Gateway middleware
+apiGateway.applyMiddleware(app);
 
 // Load data
 const loadJSON = (filename) => {
@@ -82,8 +86,8 @@ if (topics) {
 
 // API Routes
 
-// Get all topics - AUTHENTICATED ROUTE
-app.get('/api/topics', authenticate, (req, res) => {
+// Get all topics - PROTECTED ROUTE (via API Gateway)
+app.get('/api/topics', apiGateway.createProtectedRoute((req, res) => {
   try {
     logger.info(`📚 Topics requested by user: ${req.user.email} (${req.user.uid})`);
     
@@ -116,10 +120,10 @@ app.get('/api/topics', authenticate, (req, res) => {
       error: error.message
     });
   }
-});
+}));
 
-// Get specific topic - AUTHENTICATED ROUTE
-app.get('/api/topics/:topicId', authenticate, (req, res) => {
+// Get specific topic - PROTECTED ROUTE (via API Gateway)
+app.get('/api/topics/:topicId', apiGateway.createProtectedRoute((req, res) => {
   try {
     const { topicId } = req.params;
     const topic = topics.find(t => t.id === topicId.toLowerCase());
@@ -150,10 +154,10 @@ app.get('/api/topics/:topicId', authenticate, (req, res) => {
       error: error.message
     });
   }
-});
+}));
 
-// Get questions for a topic and difficulty - AUTHENTICATED ROUTE
-app.get('/api/questions/:topicId/:difficulty', authenticate, (req, res) => {
+// Get questions for a topic and difficulty - PROTECTED ROUTE (via API Gateway)
+app.get('/api/questions/:topicId/:difficulty', apiGateway.createProtectedRoute((req, res) => {
   try {
     const { topicId, difficulty } = req.params;
     const topicKey = topicId.toLowerCase();
@@ -192,10 +196,10 @@ app.get('/api/questions/:topicId/:difficulty', authenticate, (req, res) => {
       error: error.message
     });
   }
-});
+}));
 
-// Get all questions for a topic (all difficulties) - AUTHENTICATED ROUTE
-app.get('/api/questions/:topicId', authenticate, (req, res) => {
+// Get all questions for a topic (all difficulties) - PROTECTED ROUTE (via API Gateway)
+app.get('/api/questions/:topicId', apiGateway.createProtectedRoute((req, res) => {
   try {
     const { topicId } = req.params;
     const topicKey = topicId.toLowerCase();
@@ -240,20 +244,26 @@ app.get('/api/questions/:topicId', authenticate, (req, res) => {
       error: error.message
     });
   }
-});
+}));
 
-// Health check endpoint
-app.get('/api/health', (req, res) => {
+// Health check endpoint - PUBLIC ROUTE
+app.get('/api/health', apiGateway.createPublicRoute((req, res) => {
   res.json({
     success: true,
     message: 'Backend server is running',
     timestamp: new Date().toISOString(),
     uptime: process.uptime()
   });
-});
+}));
 
-// Test authentication endpoint - AUTHENTICATED (for testing)
-app.get('/api/test-auth', authenticate, (req, res) => {
+// API Gateway status endpoint - PUBLIC ROUTE
+app.get('/api/gateway/status', apiGateway.healthCheck());
+
+// API Gateway info endpoint - PUBLIC ROUTE
+app.get('/api/gateway/info', apiGateway.gatewayInfo());
+
+// Test authentication endpoint - PROTECTED ROUTE (via API Gateway)
+app.get('/api/test-auth', apiGateway.createProtectedRoute((req, res) => {
   res.json({
     success: true,
     message: 'Authentication successful',
@@ -264,23 +274,36 @@ app.get('/api/test-auth', authenticate, (req, res) => {
       emailVerified: req.user.emailVerified
     }
   });
-});
+}));
 
-// Root endpoint
-app.get('/', (req, res) => {
+// Root endpoint - PUBLIC ROUTE
+app.get('/', apiGateway.createPublicRoute((req, res) => {
   res.json({
     message: 'Cloud Interview Prep Backend API',
-    version: '1.0.0',
-    platform: 'Firebase Functions',
-    authentication: 'Firebase Authentication Required',
+    version: '2.0.0',
+    platform: 'Firebase Functions with API Gateway',
+    features: [
+      'Firebase Authentication',
+      'Rate Limiting',
+      'Security Headers',
+      'Request Validation',
+      'IP Blocking',
+      'Suspicious User Detection'
+    ],
     endpoints: {
-      topics: '/topics (requires auth)',
-      questions: '/questions/:topicId/:difficulty (requires auth)',
-      'test-auth': '/test-auth (requires auth)',
-      health: '/health (public)'
+      topics: '/api/topics (protected)',
+      questions: '/api/questions/:topicId/:difficulty (protected)',
+      'test-auth': '/api/test-auth (protected)',
+      health: '/api/health (public)',
+      'gateway-status': '/api/gateway/status (public)',
+      'gateway-info': '/api/gateway/info (public)'
+    },
+    rateLimits: {
+      authenticated: '100 requests per 15 minutes, 20 burst per minute',
+      unauthenticated: '50 requests per 15 minutes, 10 burst per minute'
     }
   });
-});
+}));
 
 // Error handling middleware
 app.use((err, req, res, next) => {
