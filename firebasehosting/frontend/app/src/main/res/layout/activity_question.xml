@@ -171,86 +171,53 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="@dimen/spacing_micro">
+            android:padding="0dp">
 
-            <!-- Question Card - Positioned at top with full width -->
+            <!-- Question Card - Fixed 25% height with auto-sizing text -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/question_card"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_height="0dp"
+                android:layout_weight="0.25"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="2dp"
                 app:cardCornerRadius="@dimen/card_corner_radius"
                 app:cardElevation="@dimen/card_elevation"
                 app:cardBackgroundColor="@color/purple_500"
-                android:layout_marginTop="@dimen/spacing_micro"
-                android:layout_marginStart="@dimen/screen_margin"
-                android:layout_marginEnd="@dimen/screen_margin"
-                android:minHeight="@dimen/card_min_height">
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground">
 
-                <LinearLayout
+                <TextView
+                    android:id="@+id/question_text"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="24dp"
-                    android:paddingTop="20dp"
-                    android:paddingBottom="20dp"
-                    android:gravity="center">
-
-                    <TextView
-                        android:id="@+id/question_text"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="What is AWS?"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/text_size_huge"
-                        android:textStyle="bold"
-                        android:gravity="center"
-                        android:lineSpacingExtra="@dimen/spacing_micro"
-                        android:minHeight="@dimen/icon_size_large" />
-
-                    <!-- Pagination dots -->
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center"
-                        android:layout_marginTop="12dp">
-
-                        <View
-                            android:layout_width="@dimen/dot_size"
-                            android:layout_height="@dimen/dot_size"
-                            android:background="@drawable/dot_selected"
-                            android:layout_marginEnd="@dimen/spacing_micro" />
-
-                        <View
-                            android:layout_width="@dimen/dot_size"
-                            android:layout_height="@dimen/dot_size"
-                            android:background="@drawable/dot_unselected"
-                            android:layout_marginEnd="@dimen/spacing_micro" />
-
-                        <View
-                            android:layout_width="@dimen/dot_size"
-                            android:layout_height="@dimen/dot_size"
-                            android:background="@drawable/dot_unselected" />
-
-                    </LinearLayout>
-
-                </LinearLayout>
+                    android:layout_height="match_parent"
+                    android:text="What is AWS?"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:padding="16dp"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="12sp"
+                    android:autoSizeMaxTextSize="24sp"
+                    android:autoSizeStepGranularity="1sp"
+                    android:includeFontPadding="false"
+                    android:layout_gravity="center" />
 
             </androidx.cardview.widget.CardView>
 
-            <!-- Explanation Card - Connected to Question Card -->
+            <!-- Explanation Card - Takes remaining 75% space -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/explanation_card"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"
-                android:layout_marginTop="@dimen/spacing_micro"
-                android:layout_marginStart="@dimen/screen_margin"
-                android:layout_marginEnd="@dimen/screen_margin"
-                android:layout_marginBottom="@dimen/screen_margin"
+                android:layout_weight="0.75"
+                android:layout_marginTop="2dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
                 app:cardCornerRadius="@dimen/card_corner_radius"
                 app:cardElevation="@dimen/card_elevation"
                 app:cardBackgroundColor="@color/white">
