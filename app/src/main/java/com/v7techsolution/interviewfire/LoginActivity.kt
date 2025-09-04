@@ -30,6 +30,10 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
         
+        // Force status bar color to purple
+        window.statusBarColor = getColor(R.color.purple_500)
+        window.navigationBarColor = getColor(R.color.purple_500)
+        
         // Initialize Firebase Auth
         firebaseAuth = FirebaseAuth.getInstance()
         

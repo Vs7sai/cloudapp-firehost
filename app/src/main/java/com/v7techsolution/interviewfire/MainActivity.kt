@@ -35,6 +35,10 @@ class MainActivity : AppCompatActivity() {
 
             // Hide the default action bar to remove any title
             supportActionBar?.hide()
+            
+            // Force status bar color to purple
+            window.statusBarColor = getColor(R.color.purple_500)
+            window.navigationBarColor = getColor(R.color.purple_500)
 
             setContentView(R.layout.activity_main)
 
