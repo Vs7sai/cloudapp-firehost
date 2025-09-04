@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.v7techsolution.interviewfire.app-mergeDebugResources-59:/values-sw320dp-v13/values-sw320dp-v13.xml",
+            "map": [
+                {
+                    "source": "/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/res/values-sw320dp/dimens.xml",
+                    "from": {
+                        "startLines": "14,15,5,4,3,10,9,8,11",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "507,549,185,139,95,374,326,279,421",
+                        "endColumns": "41,47,44,45,43,46,47,46,47",
+                        "endOffsets": "544,592,225,180,134,416,369,321,464"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,97,145,190,236,280,327,375,422",
+                        "endColumns": "41,47,44,45,43,46,47,46,47",
+                        "endOffsets": "92,140,185,231,275,322,370,417,465"
+                    }
+                }
+            ]
+        }
+    ]
+}

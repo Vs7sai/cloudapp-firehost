@@ -15,21 +15,59 @@ import kotlin.coroutines.suspendCoroutine
 
 object ApiClient {
 
-    // No token management needed for static JSON API
+    private val firebaseAuth = FirebaseAuth.getInstance()
 
-    // Simple interceptor for static JSON API (no authentication headers needed)
-    private class StaticApiInterceptor : Interceptor {
+    // Authentication interceptor that adds Firebase ID token to requests
+    private class AuthInterceptor : Interceptor {
         override fun intercept(chain: Interceptor.Chain): Response {
             val original = chain.request()
+            val url = original.url.toString()
 
-            // Build request with basic headers for static JSON API
+            // Skip authentication for static JSON files (Firebase Hosting)
+            if (url.endsWith(".json")) {
+                android.util.Log.d("AuthInterceptor", "Skipping authentication for static JSON file: $url")
+                val requestBuilder = original.newBuilder()
+                    .header("User-Agent", "CloudInterviewApp/1.0.0 (Android)")
+                    .header("Accept", "application/json")
+                    .header("Content-Type", "application/json")
+                return chain.proceed(requestBuilder.build())
+            }
+
+            // Get Firebase ID token for authenticated endpoints
+            val idToken = getFirebaseIdToken()
+            
+            // Build request with authentication headers
             val requestBuilder = original.newBuilder()
                 .header("User-Agent", "CloudInterviewApp/1.0.0 (Android)")
                 .header("Accept", "application/json")
                 .header("Content-Type", "application/json")
             
+            // Add Authorization header if token is available
+            if (idToken != null) {
+                requestBuilder.header("Authorization", "Bearer $idToken")
+                android.util.Log.d("AuthInterceptor", "Added Firebase ID token to request")
+            } else {
+                android.util.Log.w("AuthInterceptor", "No Firebase ID token available")
+            }
+            
             val request = requestBuilder.build()
             return chain.proceed(request)
+        }
+        
+        private fun getFirebaseIdToken(): String? {
+            return try {
+                val currentUser = firebaseAuth.currentUser
+                if (currentUser != null) {
+                    // Get the ID token synchronously (this is a simplified approach)
+                    // In production, you should use the async version
+                    currentUser.getIdToken(false).result?.token
+                } else {
+                    null
+                }
+            } catch (e: Exception) {
+                android.util.Log.e("AuthInterceptor", "Error getting Firebase ID token", e)
+                null
+            }
         }
     }
 
@@ -47,7 +85,7 @@ object ApiClient {
                 android.util.Log.d("RateLimitInterceptor", "Rate limit remaining: $rateLimitRemaining")
             }
             
-            if (response.code() == 429) {
+            if (response.code == 429) {
                 android.util.Log.w("RateLimitInterceptor", "Rate limit exceeded. Retry after: $retryAfter seconds")
             }
             
@@ -85,9 +123,9 @@ object ApiClient {
         android.util.Log.d("ApiClient", "🔗 Using base URL: $baseUrl")
         android.util.Log.d("ApiClient", "🌐 Full API endpoint will be: ${baseUrl}topics")
 
-        // Create OkHttpClient with static API and rate limit interceptors
+        // Create OkHttpClient with authentication and rate limit interceptors
         val okHttpClient = OkHttpClient.Builder()
-            .addInterceptor(StaticApiInterceptor())
+            .addInterceptor(AuthInterceptor())
             .addInterceptor(RateLimitInterceptor())
             .connectTimeout(30, java.util.concurrent.TimeUnit.SECONDS)
             .readTimeout(30, java.util.concurrent.TimeUnit.SECONDS)
@@ -101,17 +139,40 @@ object ApiClient {
             .build()
     }
     
-    // No authentication required for static JSON API
+    // Refresh Firebase ID token
     fun refreshFirebaseToken(onComplete: (String?) -> Unit) {
-        // Static JSON API doesn't require authentication
-        android.util.Log.d("ApiClient", "No authentication required for static JSON API")
-        onComplete("no-auth-required")
+        val currentUser = firebaseAuth.currentUser
+        if (currentUser != null) {
+            currentUser.getIdToken(true)
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        val token = task.result?.token
+                        android.util.Log.d("ApiClient", "Firebase ID token refreshed successfully")
+                        onComplete(token)
+                    } else {
+                        android.util.Log.e("ApiClient", "Failed to refresh Firebase ID token", task.exception)
+                        onComplete(null)
+                    }
+                }
+        } else {
+            android.util.Log.w("ApiClient", "No authenticated user found")
+            onComplete(null)
+        }
     }
     
-    // No token management needed for static JSON API
+    // Clear cached token (sign out)
     fun clearCachedToken() {
-        android.util.Log.d("ApiClient", "No token management needed for static JSON API")
+        firebaseAuth.signOut()
+        android.util.Log.d("ApiClient", "User signed out, token cleared")
     }
+    
+    // Check if user is authenticated
+    fun isUserAuthenticated(): Boolean {
+        return firebaseAuth.currentUser != null
+    }
+    
+    // Get current user
+    fun getCurrentUser() = firebaseAuth.currentUser
     
     // Legacy static instance (for backward compatibility)
     private var retrofit: Retrofit? = null

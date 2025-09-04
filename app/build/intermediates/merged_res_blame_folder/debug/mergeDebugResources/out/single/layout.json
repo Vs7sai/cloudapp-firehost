@@ -1,0 +1,50 @@
+[
+    {
+        "merged": "com.v7techsolution.interviewfire.app-mergeDebugResources-60:/layout/activity_login_simple.xml",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/layout/activity_login_simple.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-mergeDebugResources-60:/layout/activity_login_test.xml",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/layout/activity_login_test.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-mergeDebugResources-60:/layout/dialog_auth.xml",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/layout/dialog_auth.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-mergeDebugResources-60:/layout/notification_settings_dialog.xml",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/layout/notification_settings_dialog.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-mergeDebugResources-60:/layout/activity_main.xml",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-mergeDebugResources-60:/layout/fragment_home.xml",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-mergeDebugResources-60:/layout/item_topic_card.xml",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/layout/item_topic_card.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-mergeDebugResources-60:/layout/activity_topic.xml",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/layout/activity_topic.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-mergeDebugResources-60:/layout/activity_question.xml",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/layout/activity_question.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-mergeDebugResources-60:/layout/activity_main_dynamic.xml",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/layout/activity_main_dynamic.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-mergeDebugResources-60:/layout/activity_login.xml",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-mergeDebugResources-60:/layout/item_topic_card_responsive.xml",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/layout/item_topic_card_responsive.xml"
+    }
+]

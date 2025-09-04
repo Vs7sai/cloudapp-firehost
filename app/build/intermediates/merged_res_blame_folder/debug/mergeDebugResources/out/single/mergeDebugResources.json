@@ -1,0 +1,258 @@
+[
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/layout_activity_main.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/drawable_beginner_background.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/drawable/beginner_background.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/drawable_button_selected_rounded.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/drawable/button_selected_rounded.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/drawable_dot_selected.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/drawable/dot_selected.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/drawable_button_glass_unselected.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/drawable/button_glass_unselected.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/layout_activity_topic.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/layout/activity_topic.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/drawable_google_signin_button_glass.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/drawable/google_signin_button_glass.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/layout_activity_main_dynamic.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/layout/activity_main_dynamic.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/drawable_button_glass_selected.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/drawable/button_glass_selected.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/drawable_arrow_background_enhanced.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/drawable/arrow_background_enhanced.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/layout_notification_settings_dialog.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/layout/notification_settings_dialog.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/layout_item_topic_card_responsive.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/layout/item_topic_card_responsive.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/drawable_button_unselected_rounded.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/drawable/button_unselected_rounded.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/xml_network_security_config.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/xml/network_security_config.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/drawable_button_unselected.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/drawable/button_unselected.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/drawable_search_input_background.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/drawable/search_input_background.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/drawable_button_selected.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/drawable/button_selected.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/xml_data_extraction_rules.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/drawable_button_glass.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/drawable/button_glass.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/drawable_circle_background.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/drawable/circle_background.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/drawable_glass_bottom_bar.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/drawable/glass_bottom_bar.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/layout_activity_login_test.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/layout/activity_login_test.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/drawable_topic_text_hover.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/drawable/topic_text_hover.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/drawable_arrow_background.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/drawable/arrow_background.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/drawable_info_background.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/drawable/info_background.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/drawable_ic_email.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/drawable/ic_email.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/layout_activity_login_simple.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/layout/activity_login_simple.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/drawable_topic_card_gradient.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/drawable/topic_card_gradient.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/drawable_search_background.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/drawable/search_background.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/drawable_pro_background.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/drawable/pro_background.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/drawable_dot_unselected.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/drawable/dot_unselected.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/drawable_google_signin_button.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/drawable/google_signin_button.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/drawable_ic_chevron_left.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/drawable/ic_chevron_left.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/drawable_google_signin_button_solid.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/drawable/google_signin_button_solid.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/drawable_ic_chevron_right.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/drawable/ic_chevron_right.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/drawable_badge_background.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/drawable/badge_background.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/drawable_medium_background.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/drawable/medium_background.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/xml_backup_rules.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/drawable_ic_lock.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/drawable/ic_lock.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/layout_activity_login.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/drawable_ic_google.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/drawable/ic_google.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/layout_fragment_home.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/drawable_arrow_background_visible.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/drawable/arrow_background_visible.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/drawable_suggestion_background.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/drawable/suggestion_background.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/layout_dialog_auth.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/layout/dialog_auth.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/layout_activity_question.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/layout/activity_question.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/layout_item_topic_card.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/layout/item_topic_card.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/drawable_ic_arrow_back.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/drawable/ic_arrow_back.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/drawable_tip_background.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/drawable/tip_background.xml"
+    },
+    {
+        "merged": "com.v7techsolution.interviewfire.app-debug-61:/drawable_progress_background.xml.flat",
+        "source": "com.v7techsolution.interviewfire.app-main-63:/drawable/progress_background.xml"
+    }
+]
