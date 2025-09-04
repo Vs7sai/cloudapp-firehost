@@ -152,17 +152,13 @@ class HomeFragment : Fragment() {
         Log.d(TAG, "Loading topics from backend...")
 
         try {
-            // First refresh the Firebase ID token to ensure we have a valid one
-            ApiClient.refreshFirebaseToken { token ->
-                if (token != null) {
-                    Log.d(TAG, "Firebase ID token refreshed successfully, making API call...")
-                    
-                    // Create API client with dynamic base URL
-                    val retrofit = ApiClient.createRetrofit(requireContext())
-                    val apiService = retrofit.create(CloudInterviewApiService::class.java)
+            Log.d(TAG, "Making API call to getTopics()...")
+            
+            // Create API client with dynamic base URL
+            val retrofit = ApiClient.createRetrofit(requireContext())
+            val apiService = retrofit.create(CloudInterviewApiService::class.java)
 
-                    Log.d(TAG, "Making API call to getTopics()...")
-                    apiService.getTopics().enqueue(object : Callback<TopicsResponse> {
+            apiService.getTopics().enqueue(object : Callback<TopicsResponse> {
                         override fun onResponse(call: Call<TopicsResponse>, response: Response<TopicsResponse>) {
                             Log.d(TAG, "API Response received: ${response.code()}")
                             Log.d(TAG, "Response body: ${response.body()}")
@@ -230,18 +226,6 @@ class HomeFragment : Fragment() {
                             }
                         }
                     })
-                } else {
-                    Log.e(TAG, "Failed to refresh Firebase ID token")
-                    showBackendError("Authentication failed. Please sign in again.")
-                    
-                    // Stop refresh indicator
-                    try {
-                        swipeRefreshLayout?.isRefreshing = false
-                    } catch (e: Exception) {
-                        Log.e(TAG, "Error stopping refresh", e)
-                    }
-                }
-            }
         } catch (e: Exception) {
             Log.e(TAG, "Error loading topics", e)
             showBackendError("Error: ${e.message}")

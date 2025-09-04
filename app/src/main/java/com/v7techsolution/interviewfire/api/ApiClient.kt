@@ -15,52 +15,18 @@ import kotlin.coroutines.suspendCoroutine
 
 object ApiClient {
 
-    // Token manager to handle Firebase ID tokens
-    private object TokenManager {
-        private var currentToken: String? = null
-        private var tokenExpiry: Long = 0
+    // No token management needed for static JSON API
 
-        fun getToken(): String? {
-            // Check if token is expired (tokens expire after 1 hour)
-            if (currentToken != null && System.currentTimeMillis() < tokenExpiry) {
-                return currentToken
-            }
-            return null
-        }
-
-        fun setToken(token: String) {
-            currentToken = token
-            // Set expiry to 50 minutes from now (tokens last 1 hour, refresh after 50 min)
-            tokenExpiry = System.currentTimeMillis() + (50 * 60 * 1000)
-        }
-
-        fun clearToken() {
-            currentToken = null
-            tokenExpiry = 0
-        }
-    }
-
-    // Authentication interceptor to add Firebase ID token to requests
-    private class AuthInterceptor : Interceptor {
+    // Simple interceptor for static JSON API (no authentication headers needed)
+    private class StaticApiInterceptor : Interceptor {
         override fun intercept(chain: Interceptor.Chain): Response {
             val original = chain.request()
 
-            // Get cached token from TokenManager
-            val idToken = TokenManager.getToken()
-            
-            // Build request with headers
+            // Build request with basic headers for static JSON API
             val requestBuilder = original.newBuilder()
                 .header("User-Agent", "CloudInterviewApp/1.0.0 (Android)")
                 .header("Accept", "application/json")
                 .header("Content-Type", "application/json")
-            
-            // Add Firebase ID token if available
-            if (idToken != null) {
-                android.util.Log.d("AuthInterceptor", "Adding cached auth token to request")
-                requestBuilder.header("Authorization", "Bearer $idToken")
-            } else {
-                android.util.Log.w("AuthInterceptor", "No cached auth token available")
-            }
             
             val request = requestBuilder.build()
             return chain.proceed(request)
@@ -89,16 +55,16 @@ object ApiClient {
         }
     }
 
-    // Direct Cloud Functions URL (simplified architecture)
+    // Firebase Hosting URL (static JSON API)
     private fun getBaseUrl(context: Context): String {
-      // Using direct Cloud Functions URL for optimal performance and simplicity
-      return "https://api-y2udp4rn3q-uc.a.run.app/"
+      // Using Firebase Hosting URL for static JSON API
+      return "https://interviewfire-df24e.web.app/"
     }
     
-    // Direct Cloud Functions URL for authentication (bypass API Gateway)
+    // Firebase Hosting URL for authentication (same as main URL)
     private fun getDirectBaseUrl(context: Context): String {
-      // Use direct Cloud Functions URL for authentication
-      return "https://api-y2udp4rn3q-uc.a.run.app/"
+      // Use Firebase Hosting URL for authentication
+      return "https://interviewfire-df24e.web.app/"
     }
     
     // Check if running on emulator
@@ -119,9 +85,9 @@ object ApiClient {
         android.util.Log.d("ApiClient", "🔗 Using base URL: $baseUrl")
         android.util.Log.d("ApiClient", "🌐 Full API endpoint will be: ${baseUrl}topics")
 
-        // Create OkHttpClient with authentication and rate limit interceptors
+        // Create OkHttpClient with static API and rate limit interceptors
         val okHttpClient = OkHttpClient.Builder()
-            .addInterceptor(AuthInterceptor())
+            .addInterceptor(StaticApiInterceptor())
             .addInterceptor(RateLimitInterceptor())
             .connectTimeout(30, java.util.concurrent.TimeUnit.SECONDS)
             .readTimeout(30, java.util.concurrent.TimeUnit.SECONDS)
@@ -135,36 +101,16 @@ object ApiClient {
             .build()
     }
     
-    // Function to refresh Firebase ID token and store it in TokenManager
+    // No authentication required for static JSON API
     fun refreshFirebaseToken(onComplete: (String?) -> Unit) {
-        val user = FirebaseAuth.getInstance().currentUser
-        if (user != null) {
-            user.getIdToken(true)
-                .addOnSuccessListener { result ->
-                    val token = result.token
-                    if (token != null) {
-                        TokenManager.setToken(token)
-                        android.util.Log.d("ApiClient", "Firebase ID token refreshed and cached")
-                        onComplete(token)
-                    } else {
-                        android.util.Log.w("ApiClient", "Failed to get Firebase ID token")
-                        onComplete(null)
-                    }
-                }
-                .addOnFailureListener { exception ->
-                    android.util.Log.e("ApiClient", "Error refreshing Firebase ID token", exception)
-                    onComplete(null)
-                }
-        } else {
-            android.util.Log.w("ApiClient", "No authenticated user")
-            onComplete(null)
-        }
+        // Static JSON API doesn't require authentication
+        android.util.Log.d("ApiClient", "No authentication required for static JSON API")
+        onComplete("no-auth-required")
     }
     
-    // Function to clear cached token (call this on sign out)
+    // No token management needed for static JSON API
     fun clearCachedToken() {
-        TokenManager.clearToken()
-        android.util.Log.d("ApiClient", "Cached Firebase ID token cleared")
+        android.util.Log.d("ApiClient", "No token management needed for static JSON API")
     }
     
     // Legacy static instance (for backward compatibility)

@@ -571,6 +571,8 @@ class QuestionActivity : AppCompatActivity() {
         Log.d(TAG, "Loading questions for $topic - $difficulty")
         
         try {
+            Log.d(TAG, "Making API call to getQuestions()...")
+            
             // Create API client with dynamic base URL
             val retrofit = ApiClient.createRetrofit(this)
             val apiService = retrofit.create(CloudInterviewApiService::class.java)

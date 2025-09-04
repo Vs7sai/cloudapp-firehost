@@ -9,26 +9,17 @@ import retrofit2.http.Path
 
 interface CloudInterviewApiService {
     
-    // Protected endpoints (require authentication) - Direct Cloud Functions endpoints
-    @GET("api/topics")
+    // Static JSON endpoints (Firebase Hosting) - No authentication required for static files
+    @GET("api/topics.json")
     fun getTopics(): Call<TopicsResponse>
     
-    @GET("api/topics/{topicId}")
-    fun getTopic(@Path("topicId") topicId: String): Call<TopicsResponse>
-    
-    @GET("api/questions/{topicId}/{difficulty}")
+    @GET("api/questions/{topicId}/{difficulty}.json")
     fun getQuestions(
         @Path("topicId") topicId: String,
         @Path("difficulty") difficulty: String
     ): Call<QuestionsResponse>
     
-    @GET("api/questions/{topicId}")
-    fun getAllQuestions(@Path("topicId") topicId: String): Call<QuestionsResponse>
-    
-    @GET("api/test-auth")
-    fun testAuth(): Call<ApiResponse>
-    
-    // Public endpoints (no authentication required) - Direct Cloud Functions endpoints
-    @GET("api/health")
+    // Public endpoints (no authentication required) - Static JSON endpoints
+    @GET("api/health.json")
     fun getHealth(): Call<ApiResponse>
 } 
