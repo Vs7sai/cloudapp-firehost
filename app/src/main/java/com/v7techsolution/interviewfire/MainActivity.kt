@@ -12,6 +12,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import com.google.firebase.auth.FirebaseAuth
+import com.google.android.gms.ads.MobileAds
 import com.v7techsolution.interviewfire.HomeFragment
 
 class MainActivity : AppCompatActivity() {
@@ -41,6 +42,11 @@ class MainActivity : AppCompatActivity() {
             window.navigationBarColor = getColor(R.color.purple_500)
 
             setContentView(R.layout.activity_main)
+
+            // Initialize AdMob
+            MobileAds.initialize(this) { initializationStatus ->
+                Log.d(TAG, "AdMob initialization complete: ${initializationStatus.adapterStatusMap}")
+            }
 
             // Setup dynamic navigation handling
             setupDynamicNavigation()

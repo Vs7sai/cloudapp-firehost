@@ -57,6 +57,18 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
     
+    // Jetpack Compose
+    implementation("androidx.compose.ui:ui:1.5.4")
+    implementation("androidx.compose.ui:ui-tooling-preview:1.5.4")
+    implementation("androidx.compose.material3:material3:1.1.2")
+    implementation("androidx.activity:activity-compose:1.8.1")
+    
+    // Accompanist for AutoSizeText and other utilities
+    implementation("com.google.accompanist:accompanist-placeholder-material:0.28.0")
+    implementation("com.google.accompanist:accompanist-flowlayout:0.28.0")
+    implementation("com.google.accompanist:accompanist-systemuicontroller:0.28.0")
+    implementation("com.google.accompanist:accompanist-insets:0.28.0")
+    
     // Firebase Authentication
     implementation(platform("com.google.firebase:firebase-bom:32.7.0"))
     implementation("com.google.firebase:firebase-auth-ktx")
@@ -64,6 +76,9 @@ dependencies {
     
     // Google Sign-In
     implementation("com.google.android.gms:play-services-auth:20.7.0")
+    
+    // Google AdMob
+    implementation("com.google.android.gms:play-services-ads:22.6.0")
     
     // Markdown rendering
     implementation("io.noties.markwon:core:4.6.2")

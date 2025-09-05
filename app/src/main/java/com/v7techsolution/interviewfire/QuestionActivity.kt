@@ -1,11 +1,13 @@
 package com.v7techsolution.interviewfire
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatTextView
 import androidx.cardview.widget.CardView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.v7techsolution.interviewfire.api.ApiClient
@@ -22,7 +24,9 @@ class QuestionActivity : AppCompatActivity() {
     
     private var currentQuestionIndex = 0
     private var questions: List<Question> = emptyList()
-    private lateinit var questionText: TextView
+    private lateinit var adMobHelper: AdMobHelper
+    private var questionsAnswered = 0
+    private lateinit var questionText: AppCompatTextView
     private lateinit var explanationText: MarkdownTextView
     private lateinit var progressText: TextView
     private lateinit var nextButton: android.widget.ImageView
@@ -40,6 +44,14 @@ class QuestionActivity : AppCompatActivity() {
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Check authentication first
+        if (!AuthHelper.isUserAuthenticated()) {
+            Log.d(TAG, "User not authenticated, redirecting to LoginActivity")
+            redirectToLogin()
+            return
+        }
+
         setContentView(R.layout.activity_question)
         
         // Hide the default action bar to remove any title
@@ -79,12 +91,28 @@ class QuestionActivity : AppCompatActivity() {
         searchInput = findViewById(R.id.search_question_input)
         swipeRefreshLayout = findViewById(R.id.swipeRefreshLayout)
 
+        // Initialize AdMob
+        adMobHelper = AdMobHelper(this)
+        adMobHelper.initialize()
         
         // Set up navigation buttons
         nextButton.setOnClickListener {
             if (currentQuestionIndex < questions.size - 1) {
                 currentQuestionIndex++
-                displayCurrentQuestion()
+                questionsAnswered++
+                
+                // Show ad every 12th question
+                if (questionsAnswered % 12 == 0) {
+                    Log.d(TAG, "Showing ad after $questionsAnswered questions")
+                    adMobHelper.showInterstitialAd(this) {
+                        // Continue to next question after ad is closed
+                        displayCurrentQuestion()
+                    }
+                    // Preload next ad
+                    adMobHelper.preloadAd()
+                } else {
+                    displayCurrentQuestion()
+                }
             }
         }
         
@@ -834,5 +862,13 @@ class QuestionActivity : AppCompatActivity() {
                 else -> false
             }
         }
+    }
+
+    private fun redirectToLogin() {
+        Log.d(TAG, "Redirecting to LoginActivity")
+        val intent = Intent(this, LoginActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
+        finish()
     }
 }
