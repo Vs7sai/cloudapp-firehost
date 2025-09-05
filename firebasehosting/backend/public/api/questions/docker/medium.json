@@ -1,0 +1,371 @@
+{
+  "success": true,
+  "data": {
+    "topic": "docker",
+    "difficulty": "medium",
+    "questions": 
+[
+  {
+    "id": 1,
+    "text": "You want to run a simple Nginx web server in a Docker container. How would you do this, ensuring it's accessible from your machine's port 80?",
+    "explanation": "To run an Nginx container and map its internal port 80 to your host's port 80, you use the `docker run` command with the `-p` flag.\n```bash\ndocker run -d -p 80:80 --name my-nginx-web nginx\n```\n**Explanation:**\n* `docker run`: Command to start a new container.\n* `-d`: Runs the container in detached mode (in the background).\n* `-p 80:80`: Publishes (maps) port 80 from the container to port 80 on your host machine. The format is `host_port:container_port`.\n* `--name my-nginx-web`: Assigns a human-readable name to your container.\n* `nginx`: The name of the Docker image to use."
+  },
+  {
+    "id": 2,
+    "text": "You have several Docker containers running, and some that have exited. How can you see a list of all containers, both running and stopped?",
+    "explanation": "To list all Docker containers, including those that are currently stopped, you use the `docker ps` command with the `-a` flag.\n```bash\ndocker ps -a\n```\n**Explanation:**\n* `docker ps`: Lists only currently running containers by default.\n* `-a` or `--all`: Shows all containers, regardless of their status (running, exited, created)."
+  },
+  {
+    "id": 3,
+    "text": "You have a `Dockerfile` in your current directory to build a custom application image. How do you build this image and tag it with a meaningful name and version?",
+    "explanation": "To build a Docker image from a `Dockerfile` in your current directory and tag it, you use the `docker build` command with the `-t` flag.\n```bash\n# Assuming your Dockerfile is in the current directory\ndocker build -t my-custom-app:1.0 .\n```\n**Explanation:**\n* `docker build`: Command to build an image from a Dockerfile.\n* `-t my-custom-app:1.0`: Tags the image with the name `my-custom-app` and version `1.0`. The format is `name:tag`.\n* `.`: Specifies the build context, which is the current directory. Docker sends all files in this directory to the Docker daemon, allowing `COPY` instructions in the Dockerfile to work."
+  },
+  {
+    "id": 4,
+    "text": "You want to remove a specific Docker container that is no longer needed. How do you do this?",
+    "explanation": "To remove a Docker container, you use the `docker rm` command followed by the container's name or ID. If the container is running, you'll need to stop it first or force removal.\n```bash\n# First, stop the container if it's running\ndocker stop my-container-name\n\n# Then, remove the container\ndocker rm my-container-name\n\n# Or, to force removal of a running container (use with caution)\ndocker rm -f my-container-name\n```\n**Explanation:**\n* `docker stop`: Sends a SIGTERM signal to the container, allowing it to gracefully shut down.\n* `docker rm`: Removes the container from your system.\n* `-f`: (force) Kills the container immediately and then removes it."
+  },
+  {
+    "id": 5,
+    "text": "You have an old Docker image that is taking up space. How can you remove it from your local machine?",
+    "explanation": "To remove a Docker image from your local machine, you use the `docker rmi` command followed by the image name or ID. You cannot remove an image if a container is currently using it.\n```bash\ndocker rmi my-old-image:1.0\n\n# To remove an image by ID (e.g., if multiple tags exist or no tag)\ndocker rmi 123abc456def # Replace with actual image ID\n```\n**Explanation:**\n* `docker rmi`: Removes one or more images.\n* You may need to stop and remove any containers that are based on the image first, before you can remove the image itself."
+  },
+  {
+    "id": 6,
+    "text": "You've pulled a large image from Docker Hub, but you realize you don't need it. How can you remove all dangling (untagged and unused) images from your system to free up space?",
+    "explanation": "To remove all dangling images, which are layers that are not associated with any tagged images, you can use the `docker image prune` command.\n```bash\ndocker image prune\n```\n**Explanation:**\n* `docker image prune`: Removes all dangling images by default.\n* You can also use `docker system prune` to remove all unused Docker data (containers, images, volumes, networks), which is more comprehensive."
+  },
+  {
+    "id": 7,
+    "text": "You want to create a Dockerfile for a simple Python application. What are the essential instructions you'd include to copy your code and install dependencies?",
+    "explanation": "A basic Dockerfile for a Python application would include instructions to specify a base image, set a working directory, copy application files, install dependencies, and define the command to run the application.\n\n**`Dockerfile` example:**\n```dockerfile\n# Use an official Python runtime as a parent image\nFROM python:3.9-slim-buster\n\n# Set the working directory in the container\nWORKDIR /app\n\n# Copy the current directory contents into the container at /app\nCOPY . /app\n\n# Install any needed packages specified in requirements.txt\nRUN pip install --no-cache-dir -r requirements.txt\n\n# Make port 80 available to the world outside this container\nEXPOSE 80\n\n# Run app.py when the container launches\nCMD [\"python\", \"app.py\"]\n```\n**Explanation:**\n* `FROM`: Specifies the base image for your build.\n* `WORKDIR`: Sets the default directory inside the container for subsequent instructions.\n* `COPY . /app`: Copies all files from your build context (local directory) into the `/app` directory inside the container.\n* `RUN pip install ...`: Executes a command during the image build process to install dependencies.\n* `EXPOSE`: Informs Docker that the container listens on the specified network ports at runtime (documentation only, doesn't publish).\n* `CMD`: Provides defaults for an executing container. This is the command that will run when the container starts."
+  },
+  {
+    "id": 8,
+    "text": "You need to inspect a running container's logs to debug an issue. How do you view the logs of a container named `my-web-app-container`?",
+    "explanation": "To view the logs of a running Docker container, you use the `docker logs` command.\n```bash\ndocker logs my-web-app-container\n```\n**Explanation:**\n* `docker logs`: Fetches the logs of a container.\n* You can also use `docker logs -f my-web-app-container` to 'follow' the logs in real-time, similar to `tail -f`."
+  },
+  {
+    "id": 9,
+    "text": "You want to access a shell inside a running Docker container to inspect its file system or run some commands directly. How do you do that?",
+    "explanation": "To execute a command inside a running container, often to get an interactive shell, you use the `docker exec` command.\n```bash\ndocker exec -it my-web-app-container bash\n# Or, for Alpine/BusyBox images which might not have bash:\ndocker exec -it my-web-app-container sh\n```\n**Explanation:**\n* `docker exec`: Executes a command in a running container.\n* `-it`: Combines `-i` (interactive) and `-t` (pseudo-TTY), which is necessary for an interactive shell session.\n* `my-web-app-container`: The name or ID of your running container.\n* `bash` or `sh`: The shell command you want to run inside the container."
+  },
+  {
+    "id": 10,
+    "text": "Your application running in a Docker container generates important data that you need to persist even if the container is removed or recreated. How do you ensure this data is saved?",
+    "explanation": "To persist data generated by or used by a Docker container, you should use **Docker Volumes**. Volumes are the preferred mechanism for persisting data generated by and used by Docker containers, separating the storage from the container's lifecycle.\n```bash\n# Create a named volume\ndocker volume create my-app-data\n\n# Run your container, mounting the volume\ndocker run -d -p 80:80 -v my-app-data:/app/data --name my-data-app my-app-image\n```\n**Explanation:**\n* `docker volume create my-app-data`: Creates a named volume on your Docker host.\n* `-v my-app-data:/app/data`: Mounts the named volume `my-app-data` to the `/app/data` directory inside the container. Data written to `/app/data` by the container will now be stored persistently in the `my-app-data` volume."
+  },
+  {
+    "id": 11,
+    "text": "You have a configuration file on your host machine that your container needs to read. You want to provide this file to the container without baking it into the image. How do you do this?",
+    "explanation": "To share a host file or directory directly with a container, you can use a **bind mount**. This is useful for development or injecting configuration files at runtime.\n```bash\ndocker run -d -p 80:80 -v /path/to/my/config.conf:/etc/nginx/nginx.conf --name my-nginx-config nginx\n```\n**Explanation:**\n* `-v /path/to/my/config.conf:/etc/nginx/nginx.conf`: Creates a bind mount. The format is `host_path:container_path`. The file `config.conf` from your host machine will appear as `nginx.conf` inside the container at `/etc/nginx/`."
+  },
+  {
+    "id": 12,
+    "text": "You're building a Docker image for a multi-stage application. What Dockerfile instruction allows you to define different build stages to create a smaller final image?",
+    "explanation": "The `FROM` instruction, when used multiple times with an `AS` alias, enables **multi-stage builds**. This allows you to use a larger base image with development tools for building, and then copy only the necessary artifacts to a smaller, leaner final image.\n\n**`Dockerfile` example:**\n```dockerfile\n# Stage 1: Build the application\nFROM golang:1.20 AS builder\nWORKDIR /app\nCOPY . .\nRUN go build -o /app/my-app\n\n# Stage 2: Create the final, smaller image\nFROM alpine:latest\nWORKDIR /app\nCOPY --from=builder /app/my-app .\nCMD [\"./my-app\"]\n```\n**Explanation:**\n* `FROM golang:1.20 AS builder`: Defines the first stage named `builder` using a Go build image.\n* `COPY --from=builder /app/my-app .`: In the second stage, this copies *only* the compiled binary from the `builder` stage into the final `alpine` image. This prevents all the Go build tools and intermediate files from ending up in the production image, significantly reducing its size."
+  },
+  {
+    "id": 13,
+    "text": "You want to link two containers, say a web application container and a database container, so they can communicate with each other using their service names. How do you achieve this with Docker's networking features?",
+    "explanation": "To enable seamless communication between containers using service names, you should create a **user-defined bridge network** and connect both containers to it.\n```bash\n# 1. Create a custom bridge network\ndocker network create my-app-network\n\n# 2. Run the database container and connect it to the network\ndocker run -d --name my-db --network my-app-network -e MYSQL_ROOT_PASSWORD=secret mysql:5.7\n\n# 3. Run the web application container and connect it to the same network\ndocker run -d --name my-web-app --network my-app-network -p 80:80 my-web-app-image\n```\n**Explanation:**\n* `docker network create my-app-network`: Creates a new bridge network. Containers on the same user-defined bridge network can communicate with each other by their container names (which act as DNS hostnames).\n* `--network my-app-network`: Connects the container to the specified network.\n* Now, `my-web-app` container can reach the database container simply by addressing `my-db` (e.g., `mysql://my-db:3306/mydb`)."
+  },
+  {
+    "id": 14,
+    "text": "You've created a custom Docker image and want to share it with your team. How do you push it to Docker Hub?",
+    "explanation": "To push an image to Docker Hub, you first need to tag it with your Docker Hub username/repository and then use the `docker push` command. You must be logged in to Docker Hub via `docker login`.\n```bash\n# 1. Log in to Docker Hub (if not already logged in)\ndocker login\n\n# 2. Tag your image with your Docker Hub username and repository\ndocker tag my-custom-app:1.0 your-dockerhub-username/my-custom-app:1.0\n\n# 3. Push the tagged image to Docker Hub\ndocker push your-dockerhub-username/my-custom-app:1.0\n```\n**Explanation:**\n* `docker login`: Authenticates your Docker CLI with Docker Hub.\n* `docker tag`: Creates a new tag (alias) for an existing image. The format `your-dockerhub-username/repository:tag` is required for pushing to Docker Hub.\n* `docker push`: Uploads the image to the specified registry."
+  },
+  {
+    "id": 15,
+    "text": "Your Docker container (e.g., a batch job) occasionally fails due to transient issues. How can you configure it to automatically restart a few times before giving up?",
+    "explanation": "You can configure a container's restart policy using the `--restart` flag with `docker run`. This tells Docker how to behave when a container exits.\n```bash\ndocker run -d --name my-batch-job --restart on-failure:3 my-batch-job-image\n```\n**Explanation:**\n* `--restart on-failure:3`: This policy will restart the container only if it exits with a non-zero exit code (indicating a failure), and it will attempt to restart a maximum of 3 times. Other common policies include:\n    * `no`: Do not automatically restart.\n    * `on-failure`: Restart only if the container exits with a non-zero exit code.\n    * `always`: Always restart the container, even if it exits cleanly. This is good for long-running services.\n    * `unless-stopped`: Always restart unless the container is explicitly stopped or Docker daemon is stopped."
+  },
+  {
+    "id": 16,
+    "text": "You want to limit the CPU and memory resources that a specific Docker container can consume to prevent it from hogging system resources. How do you set these limits during container creation?",
+    "explanation": "You can set resource limits for CPU and memory using the `--cpus` and `--memory` flags with `docker run`.\n```bash\ndocker run -d --name my-limited-app --cpus=\"0.5\" --memory=\"512m\" my-resource-intensive-app\n```\n**Explanation:**\n* `--cpus=\"0.5\"`: Limits the container to use a maximum of 0.5 of a CPU core. (e.g., half of one CPU core).\n* `--memory=\"512m\"`: Limits the container's memory usage to 512 megabytes. You can use 'b', 'k', 'm', or 'g' suffixes for bytes, kilobytes, megabytes, or gigabytes."
+  },
+  {
+    "id": 17,
+    "text": "You've made changes to your Dockerfile and rebuilt your image. Now, when you run a new container, it's still using cached layers from the old build. How do you force Docker to rebuild the image from scratch, ignoring the cache?",
+    "explanation": "To force Docker to rebuild an image without using the build cache, you use the `--no-cache` flag with `docker build`.\n```bash\ndocker build --no-cache -t my-custom-app:2.0 .\n```\n**Explanation:**\n* `--no-cache`: Instructs Docker to not use the build cache. Each instruction in the Dockerfile will be executed anew, creating a fresh layer."
+  },
+  {
+    "id": 18,
+    "text": "You have a `docker-compose.yml` file to define a multi-container application. How do you start all the services defined in this file?",
+    "explanation": "To start all services defined in a `docker-compose.yml` file, you use the `docker compose up` command in the directory containing the file.\n```bash\ndocker compose up -d\n```\n**Explanation:**\n* `docker compose up`: Builds (if necessary) and starts all services defined in `docker-compose.yml`.\n* `-d`: Runs the containers in detached mode (in the background)."
+  },
+  {
+    "id": 19,
+    "text": "You've started a multi-container application using Docker Compose, and now you want to stop and remove all containers, networks, and volumes associated with that application. How do you clean up?",
+    "explanation": "To stop and remove all resources (containers, networks, default volumes) created by `docker compose up`, you use `docker compose down`.\n```bash\ndocker compose down\n```\n**Explanation:**\n* `docker compose down`: Stops containers and removes containers, networks, and any volumes created by the `up` command, specified in the `docker-compose.yml` file.\n* To remove named volumes as well, you'd add `-v` or `--volumes`: `docker compose down -v`."
+  },
+  {
+    "id": 20,
+    "text": "You have a running container that is unresponsive. How do you forcefully stop it immediately without waiting for a graceful shutdown?",
+    "explanation": "To forcefully stop a running container, you use the `docker kill` command.\n```bash\ndocker kill my-unresponsive-container\n```\n**Explanation:**\n* `docker kill`: Sends a SIGKILL signal to the container, which terminates it immediately without giving it time to shut down gracefully.\n* In contrast, `docker stop` sends a SIGTERM, allowing for graceful shutdown, and only after a timeout does it send a SIGKILL."
+  },
+  {
+    "id": 21,
+    "text": "You want to clear all stopped containers, unused networks, and dangling images from your Docker system to free up disk space. What single command can achieve this comprehensive cleanup?",
+    "explanation": "To perform a comprehensive cleanup of unused Docker resources, you use the `docker system prune` command.\n```bash\ndocker system prune -a\n```\n**Explanation:**\n* `docker system prune`: Removes stopped containers, all unused networks, dangling images, and build cache.\n* `-a` or `--all`: In addition to what `docker system prune` removes, it also removes all dangling *and* unused images (images not associated with any container).\n* This command will ask for confirmation before proceeding."
+  },
+  {
+    "id": 22,
+    "text": "You're writing a Dockerfile, and your application needs to execute a specific script or command when the container starts. This command should always run, and arguments passed to `docker run` should be appended to it. Which Dockerfile instruction should you use?",
+    "explanation": "The `ENTRYPOINT` instruction should be used when you want a container to run as an executable. Arguments passed to `docker run` will be appended to the `ENTRYPOINT` command.\n\n**`Dockerfile` example:**\n```dockerfile\nFROM alpine\nWORKDIR /app\nCOPY my_script.sh .\nRUN chmod +x my_script.sh\nENTRYPOINT [\"./my_script.sh\"]\n# CMD [\"--arg1\", \"--arg2\"] # Optional: default arguments for ENTRYPOINT\n```\n**How to run:**\n```bash\ndocker build -t my-entrypoint-app .\ndocker run my-entrypoint-app --verbose # '--verbose' will be passed as an argument to my_script.sh\n```\n**Explanation:**\n* `ENTRYPOINT`: Configures a container that will run as an executable. It defines the primary command that will be executed when the container starts.\n* If `CMD` is also provided in the Dockerfile, its values become default arguments for the `ENTRYPOINT`. If arguments are passed on the `docker run` command line, they override the `CMD` but are appended to the `ENTRYPOINT`."
+  },
+  {
+    "id": 23,
+    "text": "You have an image you want to test by running a one-off command (e.g., checking its version) without actually running the container as a long-lived service. How do you do that?",
+    "explanation": "You can override the default `CMD` or `ENTRYPOINT` of an image by passing commands directly to `docker run`.\n```bash\ndocker run my-image:latest cat /etc/os-release\n# Or to run an interactive shell for quick inspection\ndocker run -it my-image:latest bash\n```\n**Explanation:**\n* Any command specified after the image name in `docker run` will override the image's `CMD` instruction. If the image has an `ENTRYPOINT`, the provided command will be appended to the `ENTRYPOINT`."
+  },
+  {
+    "id": 24,
+    "text": "You want to create a lightweight image for your static website. What's a good minimal base image to start with in your Dockerfile?",
+    "explanation": "For static websites or any application that doesn't need a full operating system, `nginx:alpine` or simply `alpine` are excellent choices due to their small size.\n\n**`Dockerfile` example for static website:**\n```dockerfile\nFROM nginx:alpine\nWORKDIR /usr/share/nginx/html\nCOPY ./html .\nEXPOSE 80\nCMD [\"nginx\", \"-g\", \"daemon off;\"]\n```\n**Explanation:**\n* `alpine` is a very small Linux distribution, making Docker images based on it significantly smaller than those based on Ubuntu or Debian. `nginx:alpine` specifically provides a lightweight Nginx server."
+  },
+  {
+    "id": 25,
+    "text": "You want to map a port from your container to a *randomly available* port on your host machine. How would you specify this mapping?",
+    "explanation": "You can let Docker assign a random host port by only specifying the container port in the `-p` flag.\n```bash\ndocker run -d -p 80 --name my-random-port-nginx nginx\n```\n**Explanation:**\n* `-p 80`: Tells Docker to map the container's port 80 to a random available port on the host. You can then find the assigned port using `docker ps`."
+  },
+  {
+    "id": 26,
+    "text": "How do you inspect the detailed configuration of a running Docker container (e.g., its IP address, mapped ports, volumes)?",
+    "explanation": "To get detailed low-level information about a Docker object (container, image, volume, network), you use the `docker inspect` command.\n```bash\ndocker inspect my-running-container\n```\n**Explanation:**\n* `docker inspect`: Returns a JSON array containing detailed information about the specified object. You can parse this JSON to extract specific details like network settings (`NetworkSettings.IPAddress`), port bindings (`HostConfig.PortBindings`), and mounted volumes."
+  },
+  {
+    "id": 27,
+    "text": "You have a Dockerfile that downloads dependencies (e.g., `npm install`). You want to optimize the build cache so that subsequent builds are faster if only your application code changes, not the dependencies.",
+    "explanation": "Order your Dockerfile instructions strategically to leverage Docker's build cache. Place instructions that change less frequently (like dependency installation) before instructions that change often (like copying application code).\n\n**`Dockerfile` example:**\n```dockerfile\nFROM node:18-alpine\nWORKDIR /app\n\n# Copy package.json and package-lock.json first to cache npm install\nCOPY package*.json ./\nRUN npm install # This layer will be cached if package*.json doesn't change\n\n# Copy the rest of the application code\nCOPY . .\n\nCMD [\"npm\", \"start\"]\n```\n**Explanation:**\n* Docker caches each layer. When rebuilding, it checks if an instruction has changed. If `package*.json` doesn't change, the `npm install` layer is reused, saving significant build time even if your application code changes later."
+  },
+  {
+    "id": 28,
+    "text": "You want to see a list of all images available on your local machine, including their size and creation date.",
+    "explanation": "To list all Docker images on your local machine, you use the `docker images` command.\n```bash\ndocker images\n# Or, for more detailed information and filtering:\ndocker images ls\n```\n**Explanation:**\n* `docker images`: Displays a list of all images you have downloaded or built locally, showing repository, tag, image ID, creation date, and size."
+  },
+  {
+    "id": 29,
+    "text": "Your container needs to run with elevated privileges, similar to running a process as `root` on the host, for specific tasks (e.g., manipulating network interfaces). How do you grant it this access?",
+    "explanation": "To run a container with elevated privileges, you use the `--privileged` flag with `docker run`.\n```bash\ndocker run -d --name my-privileged-container --privileged my-special-image\n```\n**Explanation:**\n* `--privileged`: Gives the container access to all devices on the host and allows it to perform almost all operations that the host can perform. This is a powerful and potentially insecure option; use with extreme caution and only when absolutely necessary."
+  },
+  {
+    "id": 30,
+    "text": "You want to pause a running container temporarily without stopping it entirely. How do you do that, and how do you resume it?",
+    "explanation": "To pause a running container, you use `docker pause`, and to resume it, you use `docker unpause`.\n```bash\n# Pause the container\ndocker pause my-running-container\n\n# Resume the container\ndocker unpause my-running-container\n```\n**Explanation:**\n* `docker pause`: Suspends all processes in the specified container.\n* `docker unpause`: Unpauses all processes in the specified container."
+  },
+  {
+    "id": 31,
+    "text": "You need to change the default command that runs when your container starts, for an image that uses `CMD`. How do you specify a different command during `docker run`?",
+    "explanation": "You can override the `CMD` instruction of a Docker image by simply passing a command directly after the image name in `docker run`.\n```bash\ndocker run my-image:latest echo \"Hello from custom command!\"\n```\n**Explanation:**\n* If an image defines a `CMD`, the command provided after the image name on the `docker run` line will replace that `CMD`. If the image also defines an `ENTRYPOINT`, the command you provide will be treated as arguments to the `ENTRYPOINT`."
+  },
+  {
+    "id": 32,
+    "text": "You want to copy files from your host machine into a running Docker container. How do you achieve this?",
+    "explanation": "To copy files between a host and a running container, you use the `docker cp` command.\n```bash\n# Copy local_file.txt from host to /app/destination/ in container\ndocker cp local_file.txt my-container-name:/app/destination/\n\n# Copy entire_directory/ from host to /app/destination/ in container\ndocker cp entire_directory/ my-container-name:/app/destination/\n```\n**Explanation:**\n* `docker cp <source_path> <destination_path>`: The source/destination can be either a local path or a container path (specified as `container_name:/path/`)."
+  },
+  {
+    "id": 33,
+    "text": "You want to copy files from a running Docker container to your host machine. How do you achieve this?",
+    "explanation": "Similar to copying files into a container, `docker cp` also works for copying files out of a container.\n```bash\n# Copy container_file.log from /var/log/ in container to local_destination/\ndocker cp my-container-name:/var/log/container_file.log ./local_destination/\n\n# Copy container_data/ from container to local_destination/\ndocker cp my-container-name:/app/data/container_data/ ./local_destination/\n```\n**Explanation:**\n* `docker cp <source_path> <destination_path>`: The source/destination can be either a local path or a container path. The order determines the direction of copy."
+  },
+  {
+    "id": 34,
+    "text": "You need to expose a specific environment variable from your host machine to a Docker container. How do you pass this environment variable during container creation?",
+    "explanation": "You can pass environment variables to a container using the `-e` or `--env` flag with `docker run`.\n```bash\ndocker run -d -p 80:80 -e APP_ENV=production -e DB_HOST=my-db --name my-env-app my-app-image\n```\n**Explanation:**\n* `-e APP_ENV=production`: Sets the `APP_ENV` environment variable inside the container to `production`.\n* You can use multiple `-e` flags to set multiple variables.\n* If the environment variable exists on your host and you want to pass it with the same name and value, you can just use `-e VAR_NAME` (e.g., `docker run -e MY_SECRET_KEY ...`)."
+  },
+  {
+    "id": 35,
+    "text": "You want to prevent a Docker container from starting automatically when the Docker daemon starts. How do you configure its restart policy?",
+    "explanation": "To prevent a container from automatically restarting, you set its `--restart` policy to `no`.\n```bash\ndocker run -d --name my-manual-start-app --restart no my-app-image\n```\n**Explanation:**\n* `--restart no`: Ensures that the container will *not* automatically restart if it stops for any reason, nor will it restart when the Docker daemon itself restarts. You would have to manually start it using `docker start my-manual-start-app`."
+  },
+  {
+    "id": 36,
+    "text": "You want to tag an existing Docker image with multiple tags, for example, `my-app:latest` and `my-app:v2.0` for the same image ID. How do you do that?",
+    "explanation": "You can apply multiple tags to the same Docker image ID using the `docker tag` command multiple times.\n```bash\n# Assume you have 'my-app:1.0' and want to tag it as 'latest' and 'v2.0'\ndocker tag my-app:1.0 my-app:latest\ndocker tag my-app:1.0 my-app:v2.0\n```\n**Explanation:**\n* `docker tag <source_image> <target_image>`: Creates an additional reference (tag) to an existing image ID. It doesn't create a new image, just another name for the same image layers."
+  },
+  {
+    "id": 37,
+    "text": "You want to connect to an existing user-defined bridge network (e.g., `my-app-network`) with a new container. How do you specify this connection during container creation?",
+    "explanation": "You use the `--network` flag with `docker run` to connect a container to a specific user-defined network.\n```bash\ndocker run -d --name my-new-service --network my-app-network my-service-image\n```\n**Explanation:**\n* `--network my-app-network`: Connects the `my-new-service` container to the `my-app-network` bridge network. This allows it to communicate with other containers on the same network using their container names as hostnames."
+  },
+  {
+    "id": 38,
+    "text": "You want to rename a running or stopped Docker container. How do you do this?",
+    "explanation": "You can rename a Docker container using the `docker rename` command.\n```bash\ndocker rename old-container-name new-container-name\n```\n**Explanation:**\n* `docker rename`: Changes the name of an existing container. This works whether the container is running or stopped."
+  },
+  {
+    "id": 39,
+    "text": "You want to pull a specific version of an image from Docker Hub, not just the `latest` tag. How do you specify the version?",
+    "explanation": "To pull a specific version (tag) of an image, you append the tag to the image name separated by a colon.\n```bash\ndocker pull ubuntu:20.04\n```\n**Explanation:**\n* `ubuntu:20.04`: Specifies that you want the image with the tag `20.04` from the `ubuntu` repository. If no tag is specified, Docker defaults to `latest`."
+  },
+  {
+    "id": 40,
+    "text": "You want to delete all stopped Docker containers from your system to clean up resources quickly.",
+    "explanation": "To remove all stopped containers, you can use the `docker container prune` command.\n```bash\ndocker container prune\n```\n**Explanation:**\n* `docker container prune`: Removes all stopped containers that are not associated with any running services."
+  },
+  {
+    "id": 41,
+    "text": "You have a `docker-compose.yml` file, but you only want to start a specific service defined within it, not all of them. How do you do that?",
+    "explanation": "You can specify the service name(s) after the `docker compose up` command.\n```bash\ndocker compose up -d web_service\n# To start both web_service and db_service\ndocker compose up -d web_service db_service\n```\n**Explanation:**\n* `docker compose up <service_name>`: Starts only the specified service(s) and any dependencies they might have."
+  },
+  {
+    "id": 42,
+    "text": "You want to view the real-time resource usage (CPU, Memory, Network I/O) of your running Docker containers.",
+    "explanation": "To view live streaming resource usage statistics for your running containers, use `docker stats`.\n```bash\ndocker stats\n# To view stats for specific containers\ndocker stats my-container-1 my-container-2\n```\n**Explanation:**\n* `docker stats`: Provides a live stream of resource usage, including CPU percentage, memory usage, network I/O, and block I/O for all or specified running containers."
+  },
+  {
+    "id": 43,
+    "text": "You need to temporarily commit the changes made to a running container into a new image. How do you do this?",
+    "explanation": "To create a new image from the changes made in a container, you use the `docker commit` command.\n```bash\ndocker commit my-running-container my-custom-image:new-version\n```\n**Explanation:**\n* `docker commit`: Creates a new image from the changes in a container. This is generally discouraged for production workflows (prefer Dockerfiles), but useful for quick snapshots or debugging."
+  },
+  {
+    "id": 44,
+    "text": "You want to find out which host port a container's internal port (e.g., 80) is mapped to, if Docker assigned it randomly.",
+    "explanation": "You can use `docker port` to find the public-facing port of a container's mapped port.\n```bash\ndocker port my-container-name 80\n# Example output: 0.0.0.0:32768\n```\n**Explanation:**\n* `docker port <container_name> <container_port>`: Returns the host port(s) mapped to the specified container port."
+  },
+  {
+    "id": 45,
+    "text": "You need to build a Docker image for a web application, and it depends on a specific secret file (e.g., an API key) during the build process, but you don't want this secret to end up in the final image layers. How can you handle this securely?",
+    "explanation": "Use **multi-stage builds** and **build secrets** (Docker BuildKit required) to pass secrets to the build process without baking them into the final image.\n\n**`Dockerfile` example with BuildKit secret:**\n```dockerfile\n# Dockerfile (requires BuildKit, enabled by default in newer Docker Desktop/Engine)\n# DOCKER_BUILDKIT=1 docker build --secret id=mysecret,src=./api_key.txt -t my-app .\n\nFROM alpine/git AS secret_reader\nRUN --mount=type=secret,id=mysecret,dst=/tmp/api_key.txt \\\n    cat /tmp/api_key.txt > /tmp/temp_key.txt # Use the secret but don't commit to layer\n\nFROM alpine\nWORKDIR /app\nCOPY --from=secret_reader /tmp/temp_key.txt .\n# ... rest of your app logic using temp_key.txt ...\n```\n**Build Command:**\n```bash\nDOCKER_BUILDKIT=1 docker build --secret id=mysecret,src=./api_key.txt -t my-app:1.0 .\n```\n**Explanation:**\n* `--secret id=mysecret,src=./api_key.txt`: This flag on `docker build` makes `api_key.txt` available as a build secret named `mysecret`.\n* `RUN --mount=type=secret,id=mysecret,dst=/tmp/api_key.txt`: Inside the Dockerfile, this `RUN` instruction *mounts* the secret into the build stage at `/tmp/api_key.txt`. It's only available during that specific `RUN` command and doesn't become part of the image layer.\n* Multi-stage build is then used to ensure the temporary file that used the secret (if any) is not carried to the final image."
+  },
+  {
+    "id": 46,
+    "text": "You want to create a named Docker network for your application stack and ensure it uses a specific subnet (e.g., `172.18.0.0/16`) for IP addressing. How do you create this network?",
+    "explanation": "You can create a custom bridge network with a specified subnet using the `--subnet` flag with `docker network create`.\n```bash\ndocker network create --driver bridge --subnet 172.18.0.0/16 my-custom-subnet-network\n```\n**Explanation:**\n* `--driver bridge`: Specifies that it's a bridge network (default if not specified).\n* `--subnet 172.18.0.0/16`: Defines the IP address range for the network. Containers connected to this network will get IP addresses from this range."
+  },
+  {
+    "id": 47,
+    "text": "You need to list all Docker networks currently configured on your system.",
+    "explanation": "To list all Docker networks, use the `docker network ls` command.\n```bash\ndocker network ls\n```\n**Explanation:**\n* `docker network ls`: Shows all Docker networks, including the default `bridge`, `host`, and `none` networks, plus any user-defined networks."
+  },
+  {
+    "id": 48,
+    "text": "You want to remove a Docker network that is no longer in use. How do you do that?",
+    "explanation": "To remove a Docker network, use the `docker network rm` command.\n```bash\ndocker network rm my-unused-network\n```\n**Explanation:**\n* `docker network rm`: Removes one or more networks. You cannot remove a network if containers are still connected to it."
+  },
+  {
+    "id": 49,
+    "text": "You want to change the command that a running container executes. Is it possible, and if so, how?",
+    "explanation": "No, you cannot change the command that a container executes *after* it has started. The command is part of the container's immutable configuration defined at creation (based on `CMD` or `ENTRYPOINT` in the image, or overridden during `docker run`).\n\n**Workaround:**\nIf you need to run a *new* command inside the container, use `docker exec`. If you need the container to start with a *different* default command permanently, you must stop the existing container, remove it, and then run a new container from the same image with the desired command override, or rebuild the image with a new Dockerfile definition."
+  },
+  {
+    "id": 50,
+    "text": "You're building an image and your `COPY` instruction fails because one of the source files or directories doesn't exist. How can you exclude specific files or directories from being sent to the Docker daemon during the build context?",
+    "explanation": "You can create a `.dockerignore` file in the root of your build context (same directory as your Dockerfile) to specify files and directories to exclude. This improves build performance and prevents sensitive files from being accidentally copied.\n\n**`.dockerignore` example:**\n```\n# Exclude git-related files/folders\n.git\n.gitignore\n\n# Exclude temporary files and logs\n*.tmp\nlogs/\n\n# Exclude specific sensitive files\nsecrets.env\n```\n**Explanation:**\n* `.dockerignore`: Works similarly to `.gitignore`. Each line specifies a pattern for files or directories to ignore during the `docker build` process. These files/directories will not be sent from your local build context to the Docker daemon, saving time and space during the build."
+  },
+  {
+    "id": 51,
+    "text": "You want to run a container in interactive mode so you can input commands and see output directly, without it detaching.",
+    "explanation": "To run a container in interactive mode and keep your terminal attached to its standard input/output, use the `-it` flags.\n```bash\ndocker run -it ubuntu bash\n```\n**Explanation:**\n* `-i`: (interactive) Keeps STDIN open even if not attached.\n* `-t`: (pseudo-TTY) Allocates a pseudo-TTY, which makes the output from the container look like a regular terminal.\n* `bash`: The command to run an interactive shell inside the `ubuntu` container. The container will exit when you type `exit` in the shell."
+  },
+  {
+    "id": 52,
+    "text": "You want to list all running containers, but only show their IDs and names, without all the other details.",
+    "explanation": "You can format the output of `docker ps` using the `--format` flag.\n```bash\ndocker ps --format \"{{.ID}}\\t{{.Names}}\"\n```\n**Explanation:**\n* `--format`: Allows you to specify the output format using Go template syntax.\n* `{{.ID}}`: Represents the container ID.\n* `{{.Names}}`: Represents the container name.\n* `\\t`: Adds a tab space between the ID and the name for readability."
+  },
+  {
+    "id": 53,
+    "text": "You need to stop all currently running Docker containers on your system. How do you do that efficiently?",
+    "explanation": "You can combine `docker ps -q` (to get only container IDs) with `docker stop` to stop all running containers.\n```bash\ndocker stop $(docker ps -q)\n```\n**Explanation:**\n* `docker ps -q`: Lists only the numeric IDs of all running containers.\n* `$(...)`: This is shell command substitution. The output of `docker ps -q` becomes the arguments for `docker stop`, effectively stopping every listed container."
+  },
+  {
+    "id": 54,
+    "text": "You want to remove all stopped Docker containers and all untagged (dangling) images from your system to reclaim disk space.",
+    "explanation": "To remove all stopped containers and all dangling images, you can use `docker system prune` without the `-a` flag.\n```bash\ndocker system prune\n```\n**Explanation:**\n* `docker system prune`: This command removes:\n    * All stopped containers\n    * All networks not used by at least one container\n    * All dangling images (images that are not tagged and not referenced by any container)\n    * All dangling build cache."
+  },
+  {
+    "id": 55,
+    "text": "You're debugging a container, and you want to see the processes running inside it. How do you list them?",
+    "explanation": "You can use `docker top` to view the running processes inside a container.\n```bash\ndocker top my-running-container\n```\n**Explanation:**\n* `docker top`: Displays the running processes of a container, similar to the `top` command on a Linux host."
+  },
+  {
+    "id": 56,
+    "text": "You want to check the disk space used by Docker images, containers, volumes, and build cache.",
+    "explanation": "To get a summary of Docker disk usage, use `docker system df`.\n```bash\ndocker system df\n# For more detailed breakdown, including reclaimable space:\ndocker system df -v\n```\n**Explanation:**\n* `docker system df`: Provides a summary of disk usage by various Docker components. Inspired by the `df` (disk free) command in Unix-like systems."
+  },
+  {
+    "id": 57,
+    "text": "You need to change the default user inside a running container, for example, from `root` to a specific non-root user (if defined in the image). How do you do that for an `exec` session?",
+    "explanation": "You can specify the user for a `docker exec` session using the `-u` or `--user` flag.\n```bash\ndocker exec -u myuser my-running-container whoami\n# Or to get a shell as a specific user\ndocker exec -it -u anotheruser my-running-container bash\n```\n**Explanation:**\n* `-u <user_name_or_uid>`: Executes the command as the specified user or UID within the container. The user must exist inside the container's image."
+  },
+  {
+    "id": 58,
+    "text": "You want to create a new Docker image directly from a running container's current state, without a Dockerfile. How would you do that?",
+    "explanation": "You can create a new image from a running or stopped container's filesystem changes using `docker commit`.\n```bash\ndocker commit my-modified-container my-new-image:snapshot\n```\n**Explanation:**\n* `docker commit <container_name_or_id> <new_image_name>:<tag>`: Creates a new image layer on top of the container's base image, incorporating any changes made within the container's writable layer."
+  },
+  {
+    "id": 59,
+    "text": "Your containerized application needs to communicate with services directly on the host machine's network interfaces, bypassing Docker's default bridge networking. How do you configure the container to use the host's network stack?",
+    "explanation": "You can configure a container to use the host's network namespace by setting the `--network` mode to `host`.\n```bash\ndocker run -d --network host --name my-host-network-app my-app-image\n```\n**Explanation:**\n* `--network host`: This tells Docker not to create a separate network namespace for the container. Instead, the container uses the network stack of the Docker host. This means the container's ports are directly exposed on the host's interfaces without any port mapping, and `localhost` inside the container refers to the host machine."
+  },
+  {
+    "id": 60,
+    "text": "You want to inspect the history of an image, showing all the layers it's composed of and the Dockerfile instructions that created them.",
+    "explanation": "To view the history of a Docker image, use `docker history`.\n```bash\ndocker history my-image:latest\n```\n**Explanation:**\n* `docker history`: Displays the history of an image, showing each layer, its size, and the command that was executed to create that layer. This can be helpful for understanding image size or debugging build issues."
+  },
+  {
+    "id": 61,
+    "text": "You want to run a container that automatically removes itself when it exits, to keep your system clean after one-off tasks.",
+    "explanation": "Use the `--rm` flag with `docker run` to automatically remove the container upon exit.\n```bash\ndocker run --rm my-one-off-job-image\n```\n**Explanation:**\n* `--rm`: Automatically removes the container filesystem when the container exits. This is useful for short-lived or batch containers to prevent clutter."
+  },
+  {
+    "id": 62,
+    "text": "You need to change the default logging driver or set specific logging options for a container (e.g., limit log file size). How do you do this during `docker run`?",
+    "explanation": "You can configure logging options using the `--log-driver` and `--log-opt` flags with `docker run`.\n```bash\ndocker run -d --name my-log-limited-app --log-opt max-size=10m --log-opt max-file=3 my-app-image\n```\n**Explanation:**\n* `--log-opt max-size=10m`: Limits the maximum size of a log file to 10 megabytes.\n* `--log-opt max-file=3`: Specifies that Docker should keep a maximum of 3 log files before rotating them. These options help prevent log files from consuming too much disk space."
+  },
+  {
+    "id": 63,
+    "text": "You have a `docker-compose.yml` file and want to rebuild only a specific service's image (e.g., `web_app`) without rebuilding other services or starting anything.",
+    "explanation": "You can use `docker compose build` and specify the service name.\n```bash\ndocker compose build web_app\n```\n**Explanation:**\n* `docker compose build`: Builds images for services. If no service name is provided, it builds images for all services. If a service name is provided, it builds only that service's image."
+  },
+  {
+    "id": 64,
+    "text": "You want to create a Docker volume with specific options, such as using a different driver or setting labels, before mounting it to a container.",
+    "explanation": "You can specify volume options using `docker volume create`.\n```bash\ndocker volume create --driver local --opt type=nfs --opt o=addr=192.168.1.1,rw --name my-nfs-volume\n```\n**Explanation:**\n* `--driver local`: Specifies the volume driver. `local` is the default, but you might use others for network storage.\n* `--opt`: Allows you to pass driver-specific options (e.g., `type` and `o` for NFS mounts).\n* `--name`: Assigns a name to the volume."
+  },
+  {
+    "id": 65,
+    "text": "You need to access a container using its short ID instead of its full name or long ID. How can you reliably get a short ID?",
+    "explanation": "The `docker ps` and `docker images` commands display short IDs by default. You can also use `--format` for just the ID.\n```bash\n# Get short ID of a running container\ndocker ps --format \"{{.ID}}\" -n 1 # Get the latest container's ID\n# Example: 123abc456def (first few characters of the full ID)\n```\n**Explanation:**\n* Docker allows you to use the first few unique characters of a container or image ID as a shorthand. As long as it's unique among your current containers/images, Docker will resolve it."
+  },
+  {
+    "id": 66,
+    "text": "You want to make your Docker container always run with a specific hostname (e.g., `my-app-server`) instead of a randomly generated one. How do you set this?",
+    "explanation": "You can set a container's hostname using the `--hostname` flag with `docker run`.\n```bash\ndocker run -d --name my-app-container --hostname my-app-server my-app-image\n```\n**Explanation:**\n* `--hostname my-app-server`: Sets the hostname inside the container to `my-app-server`. This can be useful for applications that rely on their hostname for internal identification or configuration."
+  },
+  {
+    "id": 67,
+    "text": "You have a Python web application that intermittently fails due to a 'database connection refused' error when starting up in a Docker container, even though the database container starts fine. You're using Docker Compose. How would you diagnose and fix this common race condition?",
+    "explanation": "This is a classic race condition where the web application container tries to connect to the database before the database service is fully ready to accept connections. Docker Compose's `depends_on` only ensures container *start order*, not *service readiness*. The fix involves adding a `healthcheck` to the database service and making the web application `depends_on` the database's `service_healthy` condition.\n\n**Proposed `docker-compose.yml` modification:**\n```yaml\nversion: '3.8'\nservices:\n  db:\n    image: postgres:13\n    environment:\n      POSTGRES_DB: mydatabase\n      POSTGRES_USER: user\n      POSTGRES_PASSWORD: password\n    volumes:\n      - db_data:/var/lib/postgresql/data\n    healthcheck:\n      test: [\"CMD-SHELL\", \"pg_isready -U user -d mydatabase\"]\n      interval: 5s\n      timeout: 5s\n      retries: 5\n      start_period: 10s # Give the DB some initial time to boot before checking\n\n  web:\n    build: .\n    ports:\n      - \"8000:8000\"\n    depends_on:\n      db:\n        condition: service_healthy # Wait until the DB reports healthy\n    environment:\n      DATABASE_URL: postgresql://user:password@db:5432/mydatabase\n\nvolumes:\n  db_data:\n```\n\n**Explanation & Flowchart (Text-based):**\n1.  **DB Service `healthcheck`:** Defines a command (`pg_isready` for PostgreSQL) that Docker will periodically run *inside* the `db` container. If the command exits with `0`, the service is healthy; otherwise, it's unhealthy.\n2.  **`interval`**, `timeout`**, `retries`**, `start_period`**: Configure how often, for how long, how many times, and after what initial period Docker checks the health.\n3.  **`web` Service `depends_on` with `condition: service_healthy`**: This crucial part tells Docker Compose to not only start `db` before `web`, but also to *wait* until the `db` service's health check passes before starting the `web` service."
+  },
+  {
+    "id": 68,
+    "text": "You have a multi-service application defined in `docker-compose.yml`. You want to allow your `frontend` service to communicate with your `backend` service, but prevent external access to the `backend` directly. How do you configure this networking?",
+    "explanation": "You should use a user-defined bridge network and declare it as `internal` for the `backend` service, and connect only the `frontend` to both an external-facing network and the internal network.\n\n**`docker-compose.yml` example:**\n```yaml\nversion: '3.8'\nservices:\n  frontend:\n    build: ./frontend\n    ports:\n      - \"80:80\" # Publicly accessible\n    networks:\n      - public_network\n      - internal_backend_network # Connects to backend\n\n  backend:\n    build: ./backend\n    networks:\n      - internal_backend_network # Only accessible via this network\n\nnetworks:\n  public_network:\n    driver: bridge # Default, but explicit for clarity\n  internal_backend_network:\n    driver: bridge\n    internal: true # This makes the network internal\n```\n\n**Explanation:**\n1.  **`internal: true` for `internal_backend_network`**: This property ensures that no external connections can directly reach services on this network. Docker will not create any port mappings or routing rules from the host to containers on this internal network.\n2.  **`frontend` service network configuration**: It's connected to `public_network` (which allows port mapping to the host) and also to `internal_backend_network`.\n3.  **`backend` service network configuration**: It's *only* connected to `internal_backend_network`.\n\nThis setup allows `frontend` to communicate with `backend` (using `backend` as the hostname within the `internal_backend_network`) while `backend` remains isolated from direct external access."
+  },
+  {
+    "id": 69,
+    "text": "Your Docker image is excessively large, leading to slow build times and deployment. It's a Go application. Describe how you would significantly reduce its size using a multi-stage Dockerfile.",
+    "explanation": "Large images often contain build tools, source code, and intermediate artifacts that are not needed at runtime. Multi-stage builds are the ideal solution to strip these unnecessary components.\n\n**Original (problematic) `Dockerfile` example (conceptual):**\n```dockerfile\n# Bad: everything in one stage\nFROM golang:1.20\nWORKDIR /app\nCOPY . .\nRUN go mod tidy\nRUN go build -o myapp .\nCMD [\"./myapp\"]\n```\n\n**Optimized `Dockerfile` with multi-stage build:**\n```dockerfile\n# Stage 1: Build the application\nFROM golang:1.20 AS builder\nWORKDIR /app\nCOPY go.mod go.sum ./\nRUN go mod download\nCOPY . .\nRUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix nocgo -o myapp .\n\n# Stage 2: Create the final, smaller runtime image\nFROM alpine:latest\nWORKDIR /root/\nCOPY --from=builder /app/myapp .\nEXPOSE 8080\nCMD [\"./myapp\"]\n```\n\n**Explanation & Optimization Flow:**\n1.  **First `FROM` (Builder Stage)**: Uses a larger `golang:1.20` image, which contains all necessary build tools (Go compiler, Go modules, etc.). This stage is given an alias `AS builder`.\n2.  **Dependency Caching (`COPY go.mod go.sum` then `go mod download`)**: Copying dependency files (`go.mod`, `go.sum`) first and then running `go mod download` allows Docker to cache this layer. If only source code changes (not dependencies), this expensive `RUN` step will be skipped in subsequent builds.\n3.  **Static Compilation (`CGO_ENABLED=0 ...`)**: For Go applications, compiling with `CGO_ENABLED=0 GOOS=linux` creates a statically linked binary, which means it doesn't rely on C libraries from the base image. This is crucial for using extremely minimal images like `alpine` or even `scratch` in the final stage.\n4.  **Second `FROM` (Runtime Stage)**: Uses a significantly smaller base image like `alpine:latest` (or `scratch` for Go static binaries). This image contains only the bare minimum OS components.\n5.  **`COPY --from=builder`**: This instruction is the core of multi-stage builds. It copies *only* the compiled `myapp` binary from the `builder` stage into the `/root/` directory of the `alpine` image. All the Go build tools and source code from the `builder` stage are left behind and do not make it into the final image."
+  },
+  {
+    "id": 70,
+    "text": "You are deploying a legacy application that requires specific network settings (e.g., multicast or specific ARP configurations) that are not easily supported by Docker's default bridge network. How would you containerize this application to meet its networking demands?",
+    "explanation": "For such advanced networking requirements, you would typically use **Host Network Mode** or **Macvlan Network Driver**.\n\n1.  **Host Network Mode (`--network host`):**\n    This option bypasses Docker's virtual networking and directly uses the host's network stack. The container won't have its own IP address; instead, it shares the host's IP address and network interfaces.\n    ```bash\n    docker run -d --network host --name my-legacy-app my-legacy-app-image\n    ```\n    **Pros:** Simplest way to get full network access, low overhead.\n    **Cons:** Less isolation, potential port conflicts with host services, network rules applied to the host affect the container, not scalable for multiple instances of the same app.\n\n2.  **Macvlan Network Driver:**\n    This driver allows you to assign a MAC address to a container, making it appear as a physical device on your network. Each container gets its own unique IP address from your physical network's subnet, effectively bypassing the Docker bridge completely.\n    ```bash\n    # First, inspect your host's network interface (e.g., eth0)\n    ip a\n\n    # Then, create a macvlan network, specifying the parent interface and subnet\n    docker network create -d macvlan \\\n      --subnet=192.168.1.0/24 \\\n      --gateway=192.168.1.1 \\\n      -o parent=eth0 my-macvlan-network\n\n    # Now, run your container, connecting it to the macvlan network\n    docker run -d --network my-macvlan-network --name my-legacy-app my-legacy-app-image\n    ```\n    **Pros:** Full network isolation, containers appear as distinct devices on the physical network, supports advanced network features (multicast, specific IP assignments).\n    **Cons:** More complex to set up, requires careful IP management, parent interface must be dedicated (or a sub-interface) to Docker, can be tricky on Wi-Fi."
+  },
+  {
+    "id": 71,
+    "text": "You are building a CI/CD pipeline and want to ensure that your Docker images are secure and free of known vulnerabilities before deployment. What steps would you integrate into your pipeline to achieve this?",
+    "explanation": "Integrating vulnerability scanning into your CI/CD pipeline is a critical security practice. This typically involves using a dedicated image scanning tool.\n\n**Pipeline Steps (Conceptual Flow):**\n```\n[Developer commits code]\n       |\n       V\n[CI/CD Triggered]\n       |\n       V\n[1. Build Docker Image (docker build -t my-app:$(GIT_COMMIT) .)]\n       |\n       V\n[2. Scan Docker Image for Vulnerabilities]\n       |\n       +--- Scan Fails (e.g., high-severity CVEs detected) ---\n       |               V\n       |       [Fail Build / Notify Team]\n       |               |\n       |               V\n       |       [Developer fixes vulnerabilities, new commit]\n       |\n       +--- Scan Passes ---\n               |\n               V\n[3. Push Image to Container Registry (docker push my-app:$(GIT_COMMIT))]\n       |\n       V\n[4. Deploy Image to Environment (e.g., Docker Swarm, Kubernetes, ECS)]\n```\n\n**Tools & Commands:**\nPopular open-source image scanning tools include **Trivy**, **Clair**, and **Grype**.\n\n**Example (using Trivy):**\nAssuming `trivy` is installed in your CI/CD environment:\n\n1.  **Build Stage (e.g., in `Jenkinsfile`, `.gitlab-ci.yml`, `github-actions.yml`):**\n    ```bash\n    docker build -t my-app:$(GIT_COMMIT) .\n    ```\n\n2.  **Scan Stage:**\n    ```bash\n    # Basic scan and exit with non-zero code if critical/high vulnerabilities are found\n    trivy image --exit-code 1 --severity CRITICAL,HIGH my-app:$(GIT_COMMIT)\n\n    # Or, to just output the report and continue (less strict)\n    # trivy image my-app:$(GIT_COMMIT)\n\n    # More detailed output for a report\n    # trivy image --format json -o security_report.json my-app:$(GIT_COMMIT)\n    ```\n\n**Key Considerations:**\n* **Tool Selection:** Choose a scanner that integrates well with your pipeline and provides comprehensive vulnerability databases.\n* **Severity Thresholds:** Define what level of vulnerability (e.g., Critical, High) should fail the build.\n* **Base Image Security:** Start with minimal, regularly updated base images (e.g., `alpine`, `distroless`) to reduce the attack surface.\n* **Dependency Management:** Ensure your application's dependencies are also kept up-to-date and scanned."
+  }
+]
+  },
+  "user": {
+    "uid": "static-user",
+    "email": "static@example.com",
+    "name": "Static User",
+    "emailVerified": true
+  }
+}
