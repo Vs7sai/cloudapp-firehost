@@ -38,7 +38,7 @@
   {
     "id": 7,
     "text": "How do you set up real-time log streaming from containers?",
-    "explanation": "Use `docker logs -f` for console output or configure logging drivers for external systems.\n\n**Console Streaming:**\n```bash\n# Follow single container logs\ndocker logs -f my-container\n\n# Follow compose service logs\ndocker compose logs -f web_app\n```\n\n**External Logging (Production):**\n```yaml\n# docker-compose.yml with syslog\nservices:\n  my-app:\n    image: my-app:latest\n    logging:\n      driver: syslog\n      options:\n        syslog-address: \"udp://localhost:514\"\n        tag: \"my-app-logs\"\n```\n\n**Available Drivers:**\n• `json-file` - Default, with rotation options\n• `syslog` - Send to syslog server\n• `fluentd` - Send to Fluentd\n• `awslogs` - Send to CloudWatch\n• `gcp-logging` - Send to Google Cloud"}
+    "explanation": "Use `docker logs -f` for console output or configure logging drivers for external systems.\n\n**Console Streaming:**\n```bash\n# Follow single container logs\ndocker logs -f my-container\n\n# Follow compose service logs\ndocker compose logs -f web_app\n```\n\n**External Logging (Production):**\n```yaml\n# docker-compose.yml with syslog\nservices:\n  my-app:\n    image: my-app:latest\n    logging:\n      driver: syslog\n      options:\n        syslog-address: \"udp://localhost:514\"\n        tag: \"my-app-logs\"\n```\n\n**Available Drivers:**\n• `json-file` - Default, with rotation options\n• `syslog` - Send to syslog server\n• `fluentd` - Send to Fluentd\n• `awslogs` - Send to CloudWatch\n• `gcp-logging` - Send to Google Cloud"
   },
   {
     "id": 8,
