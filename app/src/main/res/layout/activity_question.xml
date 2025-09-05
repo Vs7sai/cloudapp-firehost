@@ -173,32 +173,31 @@
             android:orientation="vertical"
             android:padding="@dimen/spacing_micro">
 
-            <!-- Question Card - Positioned at top with full width -->
+            <!-- Question Card - Fixed at 25% screen height with blue background -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/question_card"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="0.25"
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackground"
                 app:cardCornerRadius="@dimen/card_corner_radius"
                 app:cardElevation="@dimen/card_elevation"
-                app:cardBackgroundColor="@color/purple_500"
-                android:layout_marginTop="@dimen/spacing_micro"
+                app:cardBackgroundColor="@color/google_blue"
                 android:layout_marginStart="@dimen/screen_margin"
-                android:layout_marginEnd="@dimen/screen_margin"
-                android:minHeight="@dimen/card_min_height">
+                android:layout_marginEnd="@dimen/screen_margin">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:padding="24dp"
-                    android:paddingTop="20dp"
-                    android:paddingBottom="20dp"
+                    android:paddingTop="0dp"
+                    android:paddingBottom="0dp"
                     android:gravity="center">
 
-                    <TextView
+                    <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/question_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -208,7 +207,10 @@
                         android:textStyle="bold"
                         android:gravity="center"
                         android:lineSpacingExtra="@dimen/spacing_micro"
-                        android:minHeight="@dimen/icon_size_large" />
+                        app:autoSizeTextType="uniform"
+                        app:autoSizeMinTextSize="12sp"
+                        app:autoSizeMaxTextSize="100sp"
+                        app:autoSizeStepGranularity="2sp" />
 
                     <!-- Pagination dots -->
                     <LinearLayout
@@ -216,7 +218,7 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:gravity="center"
-                        android:layout_marginTop="12dp">
+                        android:layout_marginTop="0dp">
 
                         <View
                             android:layout_width="@dimen/dot_size"
@@ -246,7 +248,7 @@
                 android:id="@+id/explanation_card"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_weight="0.75"
                 android:layout_marginTop="@dimen/spacing_micro"
                 android:layout_marginStart="@dimen/screen_margin"
                 android:layout_marginEnd="@dimen/screen_margin"
@@ -306,7 +308,7 @@
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
-    <!-- Bottom Navigation with Difficulty Levels -->
+    <!-- Dynamic Bottom Navigation with Difficulty Levels -->
     <LinearLayout
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
@@ -320,49 +322,7 @@
         android:fitsSystemWindows="true"
         android:clipToPadding="false">
 
-        <Button
-            android:id="@+id/btn_beginner"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/button_height"
-            android:layout_weight="1"
-            android:layout_marginEnd="@dimen/spacing_small"
-            android:background="@drawable/button_glass_selected"
-            android:text="@string/beginner"
-            android:textColor="#F0000000"
-            android:textSize="@dimen/text_size_medium"
-            android:textAllCaps="false"
-            android:textStyle="bold"
-            android:gravity="center_horizontal|bottom"
-            android:paddingBottom="@dimen/spacing_small" />
-
-        <Button
-            android:id="@+id/btn_medium"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/button_height"
-            android:layout_weight="1"
-            android:layout_marginStart="@dimen/spacing_micro"
-            android:layout_marginEnd="@dimen/spacing_micro"
-            android:background="@drawable/button_glass_unselected"
-            android:text="@string/medium"
-            android:textColor="#C0000000"
-            android:textSize="@dimen/text_size_medium"
-            android:textAllCaps="false"
-            android:gravity="center_horizontal|bottom"
-            android:paddingBottom="@dimen/spacing_small" />
-
-        <Button
-            android:id="@+id/btn_pro"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/button_height"
-            android:layout_weight="1"
-            android:layout_marginStart="@dimen/spacing_small"
-            android:background="@drawable/button_glass_unselected"
-            android:text="@string/pro"
-            android:textColor="#C0000000"
-            android:textSize="@dimen/text_size_medium"
-            android:textAllCaps="false"
-            android:gravity="center_horizontal|bottom"
-            android:paddingBottom="@dimen/spacing_small" />
+        <!-- Dynamic buttons will be added here programmatically -->
 
     </LinearLayout>
 </RelativeLayout>

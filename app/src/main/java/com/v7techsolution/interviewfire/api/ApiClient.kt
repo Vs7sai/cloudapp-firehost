@@ -17,38 +17,26 @@ object ApiClient {
 
     private val firebaseAuth = FirebaseAuth.getInstance()
 
-    // Authentication interceptor that adds Firebase ID token to requests
+    // Client-side authentication interceptor (checks auth before making requests)
     private class AuthInterceptor : Interceptor {
         override fun intercept(chain: Interceptor.Chain): Response {
             val original = chain.request()
             val url = original.url.toString()
 
-            // Skip authentication for static JSON files (Firebase Hosting)
-            if (url.endsWith(".json")) {
-                android.util.Log.d("AuthInterceptor", "Skipping authentication for static JSON file: $url")
-                val requestBuilder = original.newBuilder()
-                    .header("User-Agent", "CloudInterviewApp/1.0.0 (Android)")
-                    .header("Accept", "application/json")
-                    .header("Content-Type", "application/json")
-                return chain.proceed(requestBuilder.build())
+            // Check if user is authenticated before making API calls
+            if (!isUserAuthenticated()) {
+                android.util.Log.e("AuthInterceptor", "User not authenticated, blocking API call to: $url")
+                // Throw an exception to be caught by the calling code
+                throw SecurityException("Authentication required: Please sign in to access this content")
             }
 
-            // Get Firebase ID token for authenticated endpoints
-            val idToken = getFirebaseIdToken()
+            android.util.Log.d("AuthInterceptor", "User authenticated, allowing API call to: $url")
             
-            // Build request with authentication headers
+            // Build request with standard headers (no auth token needed for static files)
             val requestBuilder = original.newBuilder()
                 .header("User-Agent", "CloudInterviewApp/1.0.0 (Android)")
                 .header("Accept", "application/json")
                 .header("Content-Type", "application/json")
-            
-            // Add Authorization header if token is available
-            if (idToken != null) {
-                requestBuilder.header("Authorization", "Bearer $idToken")
-                android.util.Log.d("AuthInterceptor", "Added Firebase ID token to request")
-            } else {
-                android.util.Log.w("AuthInterceptor", "No Firebase ID token available")
-            }
             
             val request = requestBuilder.build()
             return chain.proceed(request)
@@ -93,9 +81,9 @@ object ApiClient {
         }
     }
 
-    // Firebase Hosting URL (static JSON API)
+    // Firebase Hosting URL (static JSON files with client-side auth)
     private fun getBaseUrl(context: Context): String {
-      // Using Firebase Hosting URL for static JSON API
+      // Using Firebase Hosting URL for static JSON files (protected by client-side auth)
       return "https://interviewfire-df24e.web.app/"
     }
     

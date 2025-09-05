@@ -32,4 +32,12 @@
     <color name="google_text">#5F6368</color>
     <color name="google_border">#DADCE0</color>
     <color name="google_focus">#E8F0FE</color>
+    
+    <!-- Dynamic Difficulty Colors -->
+    <color name="beginner_color">#4CAF50</color>
+    <color name="medium_color">#FF9800</color>
+    <color name="pro_color">#F44336</color>
+    <color name="commands_color">#9C27B0</color>
+    <color name="example_color">#2196F3</color>
+    <color name="default_difficulty_color">#607D8B</color>
 </resources>

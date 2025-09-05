@@ -1,0 +1,18 @@
+{
+    "success": true,
+    "data": {
+        "alibaba": ["beginner", "medium", "pro"],
+        "ansible": ["beginner", "medium", "pro"],
+        "aws": ["beginner", "medium", "pro"],
+        "azure": ["beginner", "medium", "pro"],
+        "bitbucket": ["beginner", "medium", "pro"],
+        "docker": ["beginner", "medium", "pro"],
+        "gcp": ["beginner", "medium", "pro"],
+        "git": ["beginner", "medium", "pro"],
+        "kubernetes": ["beginner", "medium", "pro"],
+        "terraform": ["beginner", "medium", "pro"],
+        "vamsi": ["beginner", "medium", "pro"]
+    },
+    "message": "Available difficulties for each topic",
+    "last_updated": "2024-09-05T11:00:00Z"
+}
