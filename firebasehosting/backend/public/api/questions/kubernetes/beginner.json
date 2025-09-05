@@ -7,8 +7,7 @@
       {
         "id": 1,
         "text": "What is Kubernetes?",
-        "explanation": "Imagine you have many small digital boxes (containers) that contain your applications. Managing these boxes – making sure they are always running, updated, and have enough resources – can be very complicated. \n\n**Kubernetes (often called K8s)** is like a very smart **orchestra conductor** or a **robot manager** for these digital boxes. Its main job is to **automatically handle** where your application boxes run, make sure they stay healthy, and quickly give them more resources if many people start using your app. It ties everything together so your applications run smoothly and reliably, without you having to manually move or start each box.",
-        "image_suggestion": "A high-level diagram showing a Kubernetes cluster managing multiple containers, with arrows indicating automation and scaling."
+        "explanation": "Imagine you have many small digital boxes (containers) that contain your applications. Managing these boxes – making sure they are always running, updated, and have enough resources – can be very complicated. \n\n**Kubernetes (often called K8s)** is like a very smart **orchestra conductor** or a **robot manager** for these digital boxes. Its main job is to **automatically handle** where your application boxes run, make sure they stay healthy, and quickly give them more resources if many people start using your app. It ties everything together so your applications run smoothly and reliably, without you having to manually move or start each box."
       },
       {
         "id": 2,
@@ -18,38 +17,32 @@
       {
         "id": 3,
         "text": "What is a Kubernetes Cluster?",
-        "explanation": "A Kubernetes **cluster** is simply a **group of interconnected computers** (called 'nodes') that work together as a single, powerful machine to run your applications. Instead of running apps on one computer, you spread them across many.\n\nThis group has two main types of computers:\n\n* **Control Plane (the 'brain'):** This computer (or set of computers) makes all the decisions about where your apps run and how they behave.\n* **Worker Nodes (the 'workers'):** These are the computers where your actual applications (in their containers) live and run.",
-        "image_suggestion": "A diagram depicting a Kubernetes cluster with a 'Control Plane' box connected to multiple 'Worker Node' boxes."
+        "explanation": "A Kubernetes **cluster** is simply a **group of interconnected computers** (called 'nodes') that work together as a single, powerful machine to run your applications. Instead of running apps on one computer, you spread them across many.\n\nThis group has two main types of computers:\n\n* **Control Plane (the 'brain'):** This computer (or set of computers) makes all the decisions about where your apps run and how they behave.\n* **Worker Nodes (the 'workers'):** These are the computers where your actual applications (in their containers) live and run."
       },
       {
         "id": 4,
         "text": "What is a Node in Kubernetes?",
-        "explanation": "In a Kubernetes cluster, a **Node** is just **one single computer** that forms part of the group. It can be a real physical machine or a virtual one in the cloud.\n\nIts job is to:\n\n* **Provide computing power:** It has CPU, memory, and storage for your apps.\n* **Run your applications:** It hosts the small digital boxes (Pods) that contain your applications.\n* **Communicate with the brain:** It constantly talks to the 'Control Plane' to get instructions and report its status.",
-        "image_suggestion": "A detailed diagram of a single Worker Node showing components like Kubelet, Kube-proxy, and Container Runtime, with Pods running on top."
+        "explanation": "In a Kubernetes cluster, a **Node** is just **one single computer** that forms part of the group. It can be a real physical machine or a virtual one in the cloud.\n\nIts job is to:\n\n* **Provide computing power:** It has CPU, memory, and storage for your apps.\n* **Run your applications:** It hosts the small digital boxes (Pods) that contain your applications.\n* **Communicate with the brain:** It constantly talks to the 'Control Plane' to get instructions and report its status."
       },
       {
         "id": 5,
         "text": "What is the Control Plane (Master Node) in Kubernetes?",
         "explanation": "The **Control Plane** (sometimes called the 'master node' in older terms) is the **decision-making center** of your Kubernetes cluster. It's like the main office or the general of an army.\n\nIts main responsibilities are to:\n\n* **Orchestrate everything:** Decides where to place your applications (Pods) on the worker nodes.\n* **Monitor health:** Keeps an eye on all worker nodes and applications to ensure they are healthy.\n* **Maintain desired state:** If you say you want 3 copies of your app running, the Control Plane makes sure exactly 3 are always active, even if one crashes.\n\nIt doesn't run your application containers directly, but it directs the worker nodes on what to do.",
-        "image_suggestion": "A diagram focusing on the Control Plane components (API Server, etcd, Scheduler, Controller Manager) and their interactions."
       },
       {
         "id": 6,
         "text": "Name the key components of the Kubernetes Control Plane.",
         "explanation": "The Control Plane has several specialized 'offices' or parts that work together:\n\n* **Kube-apiserver:** This is like the **main switchboard or receptionist**. Everyone (humans and other parts of Kubernetes) talks to this part to give instructions or ask for information about the cluster.\n* **etcd:** This is the **cluster's memory or database**. It stores *everything* about the cluster's current situation and your desired settings – like what apps should run, where they are, and how many copies you want.\n* **Kube-scheduler:** This is the **task allocator**. It looks for any new applications that need to run and intelligently decides *which* worker node is the best fit for them, considering their needs (like CPU or memory).\n* **Kube-controller-manager:** This is like a **group of persistent employees**. Each 'controller' within it has a specific job to ensure that the cluster's *actual* state matches your *desired* state (e.g., if you want 3 app copies, a controller ensures 3 are running).\n* **Cloud-controller-manager (optional):** If you're running Kubernetes in a cloud (like AWS, Google Cloud, Azure), this part helps Kubernetes talk to that specific cloud provider to manage things like network load balancers or storage.",
-        "image_suggestion": "A block diagram showing each Control Plane component and arrows indicating their primary communication paths, especially to etcd and API Server."
       },
       {
         "id": 7,
         "text": "Name the key components of a Worker Node in Kubernetes.",
         "explanation": "Each Worker Node has its own set of tools to perform its duties:\n\n* **Kubelet:** This is the **node's diligent agent**. It's the primary communicator with the Control Plane. It receives instructions (like 'run this application Pod') and ensures that the containers specified in those instructions are actually running and healthy on its node.\n* **Kube-proxy:** This is the **node's network traffic cop**. It manages the network rules on the node, making sure that when people try to reach your application, their requests are correctly sent to the right container (Pod) on that node. It also helps with basic load balancing.\n* **Container Runtime:** This is the **container engine itself** (like Docker, containerd, or CRI-O). It's the software responsible for actually starting, stopping, and managing the individual containers that make up your application Pods.",
-        "image_suggestion": "A diagram illustrating the internal components of a Worker Node and how they interact with Pods and the Control Plane."
       },
       {
         "id": 8,
         "text": "What is a Pod in Kubernetes?",
         "explanation": "Think of a **Pod** as the **smallest building block** in Kubernetes, like a tiny, self-contained apartment building.\n\nHere's what makes it special:\n\n* **It runs your application:** A Pod always contains at least one of your application containers.\n* **It can have helpers:** Sometimes, a Pod might have a main application container plus one or more smaller 'helper' containers (called sidecars) that do things like logging or monitoring for the main app.\n* **Shared resources:** All containers *inside the same Pod* share the same network address (IP address) and can easily share storage, making it perfect for tightly related parts of your application.",
-        "image_suggestion": "A visual of a Pod as a logical box, containing one or more tightly coupled containers (e.g., app container + sidecar log shipper) sharing a network and volume."
       },
       {
         "id": 9,
@@ -60,13 +53,11 @@
         "id": 10,
         "text": "What is a Deployment in Kubernetes?",
         "explanation": "A **Deployment** is your blueprint for **how to run and update your application** in Kubernetes. It's like telling Kubernetes, 'I want this version of my app, with this many copies, and if I update it, here's how to do it safely.'\n\nIt helps you:\n\n* **Ensure copies are running:** If you say you want 3 copies (replicas) of your app, the Deployment constantly works to make sure 3 Pods are always active. If one crashes, it replaces it automatically.\n* **Update safely:** It manages rolling updates, meaning it replaces old versions of your app with new ones gradually, without downtime.\n* **Rollback easily:** If a new version has problems, it allows you to quickly revert to a previous, stable version.",
-        "image_suggestion": "A diagram showing a Deployment object controlling a ReplicaSet, which in turn manages multiple identical Pods across different Worker Nodes."
       },
       {
         "id": 11,
         "text": "What is a Service in Kubernetes?",
         "explanation": "Imagine you have many copies of your web application (Pods) running, but their addresses (IPs) keep changing as they are created or restarted. How do other parts of your application or users find them?\n\nThat's where a **Service** comes in. A Service is like a **permanent, unchanging postal address** for a group of Pods. It provides:\n\n* **Stable access:** A single, consistent IP address and DNS name that never changes, even if the Pods behind it do.\n* **Load balancing:** It automatically distributes incoming traffic across all healthy Pods that belong to it.\n* **Decoupling:** It separates how your app is accessed from how it actually runs, making your system more flexible.",
-        "image_suggestion": "A diagram with external traffic reaching a Service, which then load balances connections to multiple Pods behind it, demonstrating the stable IP."
       },
       {
         "id": 12,
