@@ -13,13 +13,21 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.android.gms.ads.MobileAds
+import android.Manifest
+import android.content.pm.PackageManager
+import android.os.Build
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import com.v7techsolution.interviewfire.HomeFragment
 
 class MainActivity : AppCompatActivity() {
 
     companion object {
         private const val TAG = "MainActivity"
+        private const val NOTIFICATION_PERMISSION_REQUEST_CODE = 3001
     }
+    
+    private lateinit var notificationHelper: NotificationHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,6 +56,10 @@ class MainActivity : AppCompatActivity() {
                 Log.d(TAG, "AdMob initialization complete: ${initializationStatus.adapterStatusMap}")
             }
 
+            // Initialize notifications
+            notificationHelper = NotificationHelper(this)
+            setupNotifications()
+
             // Setup dynamic navigation handling
             setupDynamicNavigation()
 
@@ -62,6 +74,57 @@ class MainActivity : AppCompatActivity() {
         } catch (e: Exception) {
             Log.e(TAG, "Critical error in MainActivity onCreate", e)
             Toast.makeText(this, "App initialization failed: ${e.message}", Toast.LENGTH_LONG).show()
+        }
+    }
+    
+    // Setup notifications
+    private fun setupNotifications() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            // Request notification permission for Android 13+
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) 
+                != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(
+                    this,
+                    arrayOf(Manifest.permission.POST_NOTIFICATIONS),
+                    NOTIFICATION_PERMISSION_REQUEST_CODE
+                )
+            } else {
+                scheduleNotifications()
+            }
+        } else {
+            // For older Android versions, schedule notifications directly
+            scheduleNotifications()
+        }
+    }
+    
+    // Schedule daily notifications
+    private fun scheduleNotifications() {
+        try {
+            notificationHelper.scheduleAllDailyNotifications()
+            Log.d(TAG, "Daily study notifications scheduled successfully")
+        } catch (e: Exception) {
+            Log.e(TAG, "Error scheduling notifications", e)
+        }
+    }
+    
+    // Handle permission results
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        
+        when (requestCode) {
+            NOTIFICATION_PERMISSION_REQUEST_CODE -> {
+                if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    Log.d(TAG, "Notification permission granted")
+                    scheduleNotifications()
+                } else {
+                    Log.w(TAG, "Notification permission denied")
+                    Toast.makeText(this, "Notifications disabled. You won't receive study reminders.", Toast.LENGTH_LONG).show()
+                }
+            }
         }
     }
     

@@ -9,6 +9,8 @@
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
     <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:allowBackup="true"
@@ -55,6 +57,20 @@
             android:name=".QuestionActivity"
             android:exported="false"
             android:parentActivityName=".TopicActivity" />
+
+        <!-- Notification Receiver -->
+        <receiver
+            android:name=".NotificationReceiver"
+            android:exported="false" />
+
+        <!-- Boot Receiver to reschedule notifications after device restart -->
+        <receiver
+            android:name=".BootReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
 
     </application>
 
