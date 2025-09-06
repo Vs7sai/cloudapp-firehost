@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.v7techsolution.interviewfire.app-mergeDebugResources-59:/values-en-rIN/values-en-rIN.xml",
+            "outputFile": "com.v7techsolution.interviewfire.app-mergeDebugResources-62:/values-en-rIN/values-en-rIN.xml",
             "map": [
                 {
                     "source": "/Users/vamsisai/.gradle/caches/8.13/transforms/db7688cfe8eefe3209312f97b1b6b068/transformed/appcompat-1.7.1/res/values-en-rIN/values-en-rIN.xml",

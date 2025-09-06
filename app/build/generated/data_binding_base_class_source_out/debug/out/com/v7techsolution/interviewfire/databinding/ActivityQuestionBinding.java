@@ -13,6 +13,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatTextView;
 import androidx.cardview.widget.CardView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewbinding.ViewBinding;
@@ -67,7 +68,7 @@ public final class ActivityQuestionBinding implements ViewBinding {
   public final CardView questionCard;
 
   @NonNull
-  public final TextView questionText;
+  public final AppCompatTextView questionText;
 
   @NonNull
   public final TextView scrollHint;
@@ -90,9 +91,10 @@ public final class ActivityQuestionBinding implements ViewBinding {
       @NonNull Button btnMedium, @NonNull ImageView btnNext, @NonNull ImageView btnPrevious,
       @NonNull Button btnPro, @NonNull TextView difficultyText, @NonNull CardView explanationCard,
       @NonNull MarkdownTextView explanationText, @NonNull TextView progressText,
-      @NonNull CardView questionCard, @NonNull TextView questionText, @NonNull TextView scrollHint,
-      @NonNull LinearLayout searchContainer, @NonNull EditText searchQuestionInput,
-      @NonNull SwipeRefreshLayout swipeRefreshLayout, @NonNull LinearLayout topBar) {
+      @NonNull CardView questionCard, @NonNull AppCompatTextView questionText,
+      @NonNull TextView scrollHint, @NonNull LinearLayout searchContainer,
+      @NonNull EditText searchQuestionInput, @NonNull SwipeRefreshLayout swipeRefreshLayout,
+      @NonNull LinearLayout topBar) {
     this.rootView = rootView;
     this.answerScrollView = answerScrollView;
     this.bookmarkIcon = bookmarkIcon;
@@ -221,7 +223,7 @@ public final class ActivityQuestionBinding implements ViewBinding {
       }
 
       id = R.id.question_text;
-      TextView questionText = ViewBindings.findChildViewById(rootView, id);
+      AppCompatTextView questionText = ViewBindings.findChildViewById(rootView, id);
       if (questionText == null) {
         break missingId;
       }

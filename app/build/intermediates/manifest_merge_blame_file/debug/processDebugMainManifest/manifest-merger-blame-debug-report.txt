@@ -30,398 +30,717 @@
 17-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:11:5-66
 17-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:11:22-63
 18    <uses-permission android:name="android.permission.WAKE_LOCK" />
-18-->[com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:24:5-68
-18-->[com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:24:22-65
-19    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
-19-->[com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:25:5-79
-19-->[com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:25:22-76
-20    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_ATTRIBUTION" />
-20-->[com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:26:5-88
-20-->[com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:26:22-85
+18-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:12:5-68
+18-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:12:22-65
+19    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+19-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:13:5-81
+19-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:13:22-78
+20    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+20-->[com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:26:5-79
+20-->[com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:26:22-76
 21    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_AD_ID" />
-21-->[com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:27:5-82
-21-->[com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:27:22-79
-22    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
-22-->[com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:26:5-110
-22-->[com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:26:22-107
-23
-24    <permission
-24-->[androidx.core:core:1.17.0] /Users/vamsisai/.gradle/caches/8.13/transforms/d29ef8606abb89d799eeeb54460f73ef/transformed/core-1.17.0/AndroidManifest.xml:22:5-24:47
-25        android:name="com.v7techsolution.interviewfire.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-25-->[androidx.core:core:1.17.0] /Users/vamsisai/.gradle/caches/8.13/transforms/d29ef8606abb89d799eeeb54460f73ef/transformed/core-1.17.0/AndroidManifest.xml:23:9-81
-26        android:protectionLevel="signature" />
-26-->[androidx.core:core:1.17.0] /Users/vamsisai/.gradle/caches/8.13/transforms/d29ef8606abb89d799eeeb54460f73ef/transformed/core-1.17.0/AndroidManifest.xml:24:9-44
-27
-28    <uses-permission android:name="com.v7techsolution.interviewfire.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-28-->[androidx.core:core:1.17.0] /Users/vamsisai/.gradle/caches/8.13/transforms/d29ef8606abb89d799eeeb54460f73ef/transformed/core-1.17.0/AndroidManifest.xml:26:5-97
-28-->[androidx.core:core:1.17.0] /Users/vamsisai/.gradle/caches/8.13/transforms/d29ef8606abb89d799eeeb54460f73ef/transformed/core-1.17.0/AndroidManifest.xml:26:22-94
+21-->[com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:27:5-82
+21-->[com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:27:22-79
+22    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_ATTRIBUTION" />
+22-->[com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:28:5-88
+22-->[com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:28:22-85
+23    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_TOPICS" /> <!-- Android package visibility setting -->
+23-->[com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:29:5-83
+23-->[com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:29:22-80
+24    <queries>
+24-->[com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:35:5-51:15
+25
+26        <!-- For browser content -->
+27        <intent>
+27-->[com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:38:9-44:18
+28            <action android:name="android.intent.action.VIEW" />
+28-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:36:17-69
+28-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:36:25-66
 29
-30    <application
-30-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:13:5-48:19
-31        android:allowBackup="true"
-31-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:14:9-35
-32        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-32-->[androidx.core:core:1.17.0] /Users/vamsisai/.gradle/caches/8.13/transforms/d29ef8606abb89d799eeeb54460f73ef/transformed/core-1.17.0/AndroidManifest.xml:28:18-86
-33        android:dataExtractionRules="@xml/data_extraction_rules"
-33-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:15:9-65
-34        android:debuggable="true"
-35        android:extractNativeLibs="false"
-36        android:fullBackupContent="@xml/backup_rules"
-36-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:16:9-54
-37        android:icon="@mipmap/ic_launcher"
-37-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:17:9-43
-38        android:label="@string/app_name"
-38-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:18:9-41
-39        android:networkSecurityConfig="@xml/network_security_config"
-39-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:19:9-69
-40        android:roundIcon="@mipmap/ic_launcher_round"
-40-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:21:9-54
-41        android:supportsRtl="true"
-41-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:22:9-35
-42        android:theme="@style/Theme.M"
-42-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:23:9-39
-43        android:usesCleartextTraffic="true" >
-43-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:20:9-44
-44        <activity
-44-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:25:9-32:20
-45            android:name="com.v7techsolution.interviewfire.LoginActivity"
-45-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:26:13-42
-46            android:exported="true" >
-46-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:27:13-36
-47            <intent-filter>
-47-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:28:13-31:29
-48                <action android:name="android.intent.action.MAIN" />
-48-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:29:17-69
-48-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:29:25-66
-49
-50                <category android:name="android.intent.category.LAUNCHER" />
-50-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:30:17-77
-50-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:30:27-74
-51            </intent-filter>
-52        </activity>
-53        <activity
-53-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:34:9-36:40
-54            android:name="com.v7techsolution.interviewfire.MainActivity"
-54-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:35:13-41
-55            android:exported="false" />
-55-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:36:13-37
-56        <activity
-56-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:38:9-41:58
-57            android:name="com.v7techsolution.interviewfire.TopicActivity"
-57-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:39:13-42
-58            android:exported="false"
-58-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:40:13-37
-59            android:parentActivityName="com.v7techsolution.interviewfire.MainActivity" />
-59-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:41:13-55
-60        <activity
-60-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:43:9-46:59
-61            android:name="com.v7techsolution.interviewfire.QuestionActivity"
-61-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:44:13-45
-62            android:exported="false"
-62-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:45:13-37
-63            android:parentActivityName="com.v7techsolution.interviewfire.TopicActivity" />
-63-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:46:13-56
-64        <activity
-64-->[com.google.android.gms:play-services-auth:20.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/c6eb486341c55c827e42efe9583a3c75/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:23:9-27:75
-65            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-65-->[com.google.android.gms:play-services-auth:20.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/c6eb486341c55c827e42efe9583a3c75/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:24:13-93
-66            android:excludeFromRecents="true"
-66-->[com.google.android.gms:play-services-auth:20.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/c6eb486341c55c827e42efe9583a3c75/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:25:13-46
-67            android:exported="false"
-67-->[com.google.android.gms:play-services-auth:20.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/c6eb486341c55c827e42efe9583a3c75/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:26:13-37
-68            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-68-->[com.google.android.gms:play-services-auth:20.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/c6eb486341c55c827e42efe9583a3c75/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:27:13-72
-69        <!--
-70            Service handling Google Sign-In user revocation. For apps that do not integrate with
-71            Google Sign-In, this service will never be started.
-72        -->
-73        <service
-73-->[com.google.android.gms:play-services-auth:20.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/c6eb486341c55c827e42efe9583a3c75/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:33:9-37:51
-74            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-74-->[com.google.android.gms:play-services-auth:20.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/c6eb486341c55c827e42efe9583a3c75/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:34:13-89
-75            android:exported="true"
-75-->[com.google.android.gms:play-services-auth:20.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/c6eb486341c55c827e42efe9583a3c75/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:35:13-36
-76            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
-76-->[com.google.android.gms:play-services-auth:20.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/c6eb486341c55c827e42efe9583a3c75/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:36:13-107
-77            android:visibleToInstantApps="true" />
-77-->[com.google.android.gms:play-services-auth:20.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/c6eb486341c55c827e42efe9583a3c75/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:37:13-48
-78        <service
-78-->[com.google.firebase:firebase-auth-ktx:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/42259942f3acc037aeaeb2ef4279e85f/transformed/jetified-firebase-auth-ktx-22.3.0/AndroidManifest.xml:8:9-14:19
-79            android:name="com.google.firebase.components.ComponentDiscoveryService"
-79-->[com.google.firebase:firebase-auth-ktx:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/42259942f3acc037aeaeb2ef4279e85f/transformed/jetified-firebase-auth-ktx-22.3.0/AndroidManifest.xml:9:13-84
-80            android:directBootAware="true"
-80-->[com.google.firebase:firebase-common:20.4.2] /Users/vamsisai/.gradle/caches/8.13/transforms/5952104836f850703473c7f5c8d4d6ab/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:32:13-43
-81            android:exported="false" >
-81-->[com.google.firebase:firebase-auth-ktx:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/42259942f3acc037aeaeb2ef4279e85f/transformed/jetified-firebase-auth-ktx-22.3.0/AndroidManifest.xml:10:13-37
-82            <meta-data
-82-->[com.google.firebase:firebase-auth-ktx:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/42259942f3acc037aeaeb2ef4279e85f/transformed/jetified-firebase-auth-ktx-22.3.0/AndroidManifest.xml:11:13-13:85
-83                android:name="com.google.firebase.components:com.google.firebase.auth.ktx.FirebaseAuthLegacyRegistrar"
-83-->[com.google.firebase:firebase-auth-ktx:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/42259942f3acc037aeaeb2ef4279e85f/transformed/jetified-firebase-auth-ktx-22.3.0/AndroidManifest.xml:12:17-119
-84                android:value="com.google.firebase.components.ComponentRegistrar" />
-84-->[com.google.firebase:firebase-auth-ktx:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/42259942f3acc037aeaeb2ef4279e85f/transformed/jetified-firebase-auth-ktx-22.3.0/AndroidManifest.xml:13:17-82
-85            <meta-data
-85-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:69:13-71:85
-86                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-86-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:70:17-109
-87                android:value="com.google.firebase.components.ComponentRegistrar" />
-87-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:71:17-82
-88            <meta-data
-88-->[com.google.firebase:firebase-analytics-ktx:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2da891b90a5e3c6aeb7bfa8bfe8a2be9/transformed/jetified-firebase-analytics-ktx-21.5.0/AndroidManifest.xml:11:13-13:85
-89                android:name="com.google.firebase.components:com.google.firebase.analytics.ktx.FirebaseAnalyticsLegacyRegistrar"
-89-->[com.google.firebase:firebase-analytics-ktx:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2da891b90a5e3c6aeb7bfa8bfe8a2be9/transformed/jetified-firebase-analytics-ktx-21.5.0/AndroidManifest.xml:12:17-129
-90                android:value="com.google.firebase.components.ComponentRegistrar" />
-90-->[com.google.firebase:firebase-analytics-ktx:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2da891b90a5e3c6aeb7bfa8bfe8a2be9/transformed/jetified-firebase-analytics-ktx-21.5.0/AndroidManifest.xml:13:17-82
-91            <meta-data
-91-->[com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:37:13-39:85
-92                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
-92-->[com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:38:17-139
-93                android:value="com.google.firebase.components.ComponentRegistrar" />
-93-->[com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:39:17-82
-94            <meta-data
-94-->[com.google.firebase:firebase-installations:17.2.0] /Users/vamsisai/.gradle/caches/8.13/transforms/b28b5a26da58a50b3ea548e0fb66c96e/transformed/jetified-firebase-installations-17.2.0/AndroidManifest.xml:15:13-17:85
-95                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar"
-95-->[com.google.firebase:firebase-installations:17.2.0] /Users/vamsisai/.gradle/caches/8.13/transforms/b28b5a26da58a50b3ea548e0fb66c96e/transformed/jetified-firebase-installations-17.2.0/AndroidManifest.xml:16:17-130
-96                android:value="com.google.firebase.components.ComponentRegistrar" />
-96-->[com.google.firebase:firebase-installations:17.2.0] /Users/vamsisai/.gradle/caches/8.13/transforms/b28b5a26da58a50b3ea548e0fb66c96e/transformed/jetified-firebase-installations-17.2.0/AndroidManifest.xml:17:17-82
-97            <meta-data
-97-->[com.google.firebase:firebase-installations:17.2.0] /Users/vamsisai/.gradle/caches/8.13/transforms/b28b5a26da58a50b3ea548e0fb66c96e/transformed/jetified-firebase-installations-17.2.0/AndroidManifest.xml:18:13-20:85
-98                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
-98-->[com.google.firebase:firebase-installations:17.2.0] /Users/vamsisai/.gradle/caches/8.13/transforms/b28b5a26da58a50b3ea548e0fb66c96e/transformed/jetified-firebase-installations-17.2.0/AndroidManifest.xml:19:17-127
-99                android:value="com.google.firebase.components.ComponentRegistrar" />
-99-->[com.google.firebase:firebase-installations:17.2.0] /Users/vamsisai/.gradle/caches/8.13/transforms/b28b5a26da58a50b3ea548e0fb66c96e/transformed/jetified-firebase-installations-17.2.0/AndroidManifest.xml:20:17-82
-100            <meta-data
-100-->[com.google.firebase:firebase-common-ktx:20.4.2] /Users/vamsisai/.gradle/caches/8.13/transforms/b02c86d54beaf0466ddcf633683ae24e/transformed/jetified-firebase-common-ktx-20.4.2/AndroidManifest.xml:12:13-14:85
-101                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
-101-->[com.google.firebase:firebase-common-ktx:20.4.2] /Users/vamsisai/.gradle/caches/8.13/transforms/b02c86d54beaf0466ddcf633683ae24e/transformed/jetified-firebase-common-ktx-20.4.2/AndroidManifest.xml:13:17-116
-102                android:value="com.google.firebase.components.ComponentRegistrar" />
-102-->[com.google.firebase:firebase-common-ktx:20.4.2] /Users/vamsisai/.gradle/caches/8.13/transforms/b02c86d54beaf0466ddcf633683ae24e/transformed/jetified-firebase-common-ktx-20.4.2/AndroidManifest.xml:14:17-82
-103            <meta-data
-103-->[com.google.firebase:firebase-common:20.4.2] /Users/vamsisai/.gradle/caches/8.13/transforms/5952104836f850703473c7f5c8d4d6ab/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:35:13-37:85
-104                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
-104-->[com.google.firebase:firebase-common:20.4.2] /Users/vamsisai/.gradle/caches/8.13/transforms/5952104836f850703473c7f5c8d4d6ab/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:36:17-109
-105                android:value="com.google.firebase.components.ComponentRegistrar" />
-105-->[com.google.firebase:firebase-common:20.4.2] /Users/vamsisai/.gradle/caches/8.13/transforms/5952104836f850703473c7f5c8d4d6ab/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:37:17-82
-106        </service>
-107
-108        <activity
-108-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:29:9-46:20
-109            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
-109-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:30:13-80
-110            android:excludeFromRecents="true"
-110-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:31:13-46
-111            android:exported="true"
-111-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:32:13-36
-112            android:launchMode="singleTask"
-112-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:33:13-44
-113            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-113-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:34:13-72
-114            <intent-filter>
-114-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:35:13-45:29
-115                <action android:name="android.intent.action.VIEW" />
-115-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:36:17-69
-115-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:36:25-66
-116
-117                <category android:name="android.intent.category.DEFAULT" />
-117-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:38:17-76
-117-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:38:27-73
-118                <category android:name="android.intent.category.BROWSABLE" />
-118-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:39:17-78
-118-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:39:27-75
-119
-120                <data
-120-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:41:17-44:51
-121                    android:host="firebase.auth"
-121-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:42:21-49
-122                    android:path="/"
-122-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:43:21-37
-123                    android:scheme="genericidp" />
-123-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:44:21-48
-124            </intent-filter>
-125        </activity>
-126        <activity
-126-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:47:9-64:20
-127            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
-127-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:48:13-79
-128            android:excludeFromRecents="true"
-128-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:49:13-46
-129            android:exported="true"
-129-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:50:13-36
-130            android:launchMode="singleTask"
-130-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:51:13-44
-131            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-131-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:52:13-72
-132            <intent-filter>
-132-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:53:13-63:29
-133                <action android:name="android.intent.action.VIEW" />
-133-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:36:17-69
-133-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:36:25-66
-134
-135                <category android:name="android.intent.category.DEFAULT" />
-135-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:38:17-76
-135-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:38:27-73
-136                <category android:name="android.intent.category.BROWSABLE" />
-136-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:39:17-78
-136-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:39:27-75
-137
-138                <data
-138-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:41:17-44:51
-139                    android:host="firebase.auth"
-139-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:42:21-49
-140                    android:path="/"
-140-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:43:21-37
-141                    android:scheme="recaptcha" />
-141-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:44:21-48
-142            </intent-filter>
-143        </activity>
-144        <activity
-144-->[com.google.android.gms:play-services-base:18.0.1] /Users/vamsisai/.gradle/caches/8.13/transforms/390395656da0292db36e20118b715480/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
-145            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-145-->[com.google.android.gms:play-services-base:18.0.1] /Users/vamsisai/.gradle/caches/8.13/transforms/390395656da0292db36e20118b715480/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
-146            android:exported="false"
-146-->[com.google.android.gms:play-services-base:18.0.1] /Users/vamsisai/.gradle/caches/8.13/transforms/390395656da0292db36e20118b715480/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
-147            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-147-->[com.google.android.gms:play-services-base:18.0.1] /Users/vamsisai/.gradle/caches/8.13/transforms/390395656da0292db36e20118b715480/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
-148
-149        <property
-149-->[com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:30:9-32:61
-150            android:name="android.adservices.AD_SERVICES_CONFIG"
-150-->[com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:31:13-65
-151            android:resource="@xml/ga_ad_services_config" />
-151-->[com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:32:13-58
-152
-153        <provider
-153-->[com.google.firebase:firebase-common:20.4.2] /Users/vamsisai/.gradle/caches/8.13/transforms/5952104836f850703473c7f5c8d4d6ab/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:23:9-28:39
-154            android:name="com.google.firebase.provider.FirebaseInitProvider"
-154-->[com.google.firebase:firebase-common:20.4.2] /Users/vamsisai/.gradle/caches/8.13/transforms/5952104836f850703473c7f5c8d4d6ab/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:24:13-77
-155            android:authorities="com.v7techsolution.interviewfire.firebaseinitprovider"
-155-->[com.google.firebase:firebase-common:20.4.2] /Users/vamsisai/.gradle/caches/8.13/transforms/5952104836f850703473c7f5c8d4d6ab/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:25:13-72
-156            android:directBootAware="true"
-156-->[com.google.firebase:firebase-common:20.4.2] /Users/vamsisai/.gradle/caches/8.13/transforms/5952104836f850703473c7f5c8d4d6ab/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:26:13-43
-157            android:exported="false"
-157-->[com.google.firebase:firebase-common:20.4.2] /Users/vamsisai/.gradle/caches/8.13/transforms/5952104836f850703473c7f5c8d4d6ab/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:27:13-37
-158            android:initOrder="100" />
-158-->[com.google.firebase:firebase-common:20.4.2] /Users/vamsisai/.gradle/caches/8.13/transforms/5952104836f850703473c7f5c8d4d6ab/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:28:13-36
-159
-160        <receiver
-160-->[com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:29:9-33:20
-161            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
-161-->[com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:30:13-85
-162            android:enabled="true"
-162-->[com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:31:13-35
-163            android:exported="false" >
-163-->[com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:32:13-37
-164        </receiver>
-165
-166        <service
-166-->[com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:35:9-38:40
-167            android:name="com.google.android.gms.measurement.AppMeasurementService"
-167-->[com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:36:13-84
-168            android:enabled="true"
-168-->[com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:37:13-35
-169            android:exported="false" />
-169-->[com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:38:13-37
-170        <service
-170-->[com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:39:9-43:72
-171            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
-171-->[com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:40:13-87
-172            android:enabled="true"
-172-->[com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:41:13-35
-173            android:exported="false"
-173-->[com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:42:13-37
-174            android:permission="android.permission.BIND_JOB_SERVICE" />
-174-->[com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:43:13-69
-175
-176        <provider
-176-->[androidx.emoji2:emoji2:1.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ae1abe10971591039c92a2ca541835d2/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
-177            android:name="androidx.startup.InitializationProvider"
-177-->[androidx.emoji2:emoji2:1.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ae1abe10971591039c92a2ca541835d2/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:25:13-67
-178            android:authorities="com.v7techsolution.interviewfire.androidx-startup"
-178-->[androidx.emoji2:emoji2:1.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ae1abe10971591039c92a2ca541835d2/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:26:13-68
-179            android:exported="false" >
-179-->[androidx.emoji2:emoji2:1.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ae1abe10971591039c92a2ca541835d2/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:27:13-37
-180            <meta-data
-180-->[androidx.emoji2:emoji2:1.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ae1abe10971591039c92a2ca541835d2/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
-181                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-181-->[androidx.emoji2:emoji2:1.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ae1abe10971591039c92a2ca541835d2/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:30:17-75
-182                android:value="androidx.startup" />
-182-->[androidx.emoji2:emoji2:1.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ae1abe10971591039c92a2ca541835d2/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:31:17-49
-183            <meta-data
-183-->[androidx.lifecycle:lifecycle-process:2.8.7] /Users/vamsisai/.gradle/caches/8.13/transforms/60d77d2c6b94b0a4facad7f289f0fb54/transformed/jetified-lifecycle-process-2.8.7/AndroidManifest.xml:29:13-31:52
-184                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-184-->[androidx.lifecycle:lifecycle-process:2.8.7] /Users/vamsisai/.gradle/caches/8.13/transforms/60d77d2c6b94b0a4facad7f289f0fb54/transformed/jetified-lifecycle-process-2.8.7/AndroidManifest.xml:30:17-78
-185                android:value="androidx.startup" />
-185-->[androidx.lifecycle:lifecycle-process:2.8.7] /Users/vamsisai/.gradle/caches/8.13/transforms/60d77d2c6b94b0a4facad7f289f0fb54/transformed/jetified-lifecycle-process-2.8.7/AndroidManifest.xml:31:17-49
-186            <meta-data
-186-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:29:13-31:52
-187                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-187-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:30:17-85
-188                android:value="androidx.startup" />
-188-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:31:17-49
-189        </provider>
-190
-191        <uses-library
-191-->[androidx.window:window:1.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/190a1d405c8947bd65defbb59840bf2f/transformed/jetified-window-1.0.0/AndroidManifest.xml:25:9-27:40
-192            android:name="androidx.window.extensions"
-192-->[androidx.window:window:1.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/190a1d405c8947bd65defbb59840bf2f/transformed/jetified-window-1.0.0/AndroidManifest.xml:26:13-54
-193            android:required="false" />
-193-->[androidx.window:window:1.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/190a1d405c8947bd65defbb59840bf2f/transformed/jetified-window-1.0.0/AndroidManifest.xml:27:13-37
-194        <uses-library
-194-->[androidx.window:window:1.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/190a1d405c8947bd65defbb59840bf2f/transformed/jetified-window-1.0.0/AndroidManifest.xml:28:9-30:40
-195            android:name="androidx.window.sidecar"
-195-->[androidx.window:window:1.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/190a1d405c8947bd65defbb59840bf2f/transformed/jetified-window-1.0.0/AndroidManifest.xml:29:13-51
-196            android:required="false" />
-196-->[androidx.window:window:1.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/190a1d405c8947bd65defbb59840bf2f/transformed/jetified-window-1.0.0/AndroidManifest.xml:30:13-37
-197        <uses-library
-197-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Users/vamsisai/.gradle/caches/8.13/transforms/5e4ee54108d13a596389128c3fe0e080/transformed/jetified-ads-adservices-1.0.0-beta05/AndroidManifest.xml:23:9-25:40
-198            android:name="android.ext.adservices"
-198-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Users/vamsisai/.gradle/caches/8.13/transforms/5e4ee54108d13a596389128c3fe0e080/transformed/jetified-ads-adservices-1.0.0-beta05/AndroidManifest.xml:24:13-50
-199            android:required="false" />
-199-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Users/vamsisai/.gradle/caches/8.13/transforms/5e4ee54108d13a596389128c3fe0e080/transformed/jetified-ads-adservices-1.0.0-beta05/AndroidManifest.xml:25:13-37
+30            <category android:name="android.intent.category.BROWSABLE" />
+30-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:39:17-78
+30-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:39:27-75
+31
+32            <data android:scheme="https" />
+32-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:41:17-44:51
+32-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:44:21-48
+33        </intent>
+34        <!-- End of browser content -->
+35        <!-- For CustomTabsService -->
+36        <intent>
+36-->[com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:47:9-49:18
+37            <action android:name="android.support.customtabs.action.CustomTabsService" />
+37-->[com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:48:13-90
+37-->[com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:48:21-87
+38        </intent>
+39        <!-- End of CustomTabsService -->
+40    </queries>
+41
+42    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+42-->[com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:26:5-110
+42-->[com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:26:22-107
+43    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+43-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:28:5-77
+43-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:28:22-74
+44
+45    <permission
+45-->[androidx.core:core:1.17.0] /Users/vamsisai/.gradle/caches/8.13/transforms/d29ef8606abb89d799eeeb54460f73ef/transformed/core-1.17.0/AndroidManifest.xml:22:5-24:47
+46        android:name="com.v7techsolution.interviewfire.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+46-->[androidx.core:core:1.17.0] /Users/vamsisai/.gradle/caches/8.13/transforms/d29ef8606abb89d799eeeb54460f73ef/transformed/core-1.17.0/AndroidManifest.xml:23:9-81
+47        android:protectionLevel="signature" />
+47-->[androidx.core:core:1.17.0] /Users/vamsisai/.gradle/caches/8.13/transforms/d29ef8606abb89d799eeeb54460f73ef/transformed/core-1.17.0/AndroidManifest.xml:24:9-44
+48
+49    <uses-permission android:name="com.v7techsolution.interviewfire.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+49-->[androidx.core:core:1.17.0] /Users/vamsisai/.gradle/caches/8.13/transforms/d29ef8606abb89d799eeeb54460f73ef/transformed/core-1.17.0/AndroidManifest.xml:26:5-97
+49-->[androidx.core:core:1.17.0] /Users/vamsisai/.gradle/caches/8.13/transforms/d29ef8606abb89d799eeeb54460f73ef/transformed/core-1.17.0/AndroidManifest.xml:26:22-94
+50
+51    <application
+51-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:15:5-75:19
+52        android:allowBackup="true"
+52-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:16:9-35
+53        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+53-->[androidx.core:core:1.17.0] /Users/vamsisai/.gradle/caches/8.13/transforms/d29ef8606abb89d799eeeb54460f73ef/transformed/core-1.17.0/AndroidManifest.xml:28:18-86
+54        android:dataExtractionRules="@xml/data_extraction_rules"
+54-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:17:9-65
+55        android:debuggable="true"
+56        android:extractNativeLibs="false"
+57        android:fullBackupContent="@xml/backup_rules"
+57-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:18:9-54
+58        android:icon="@mipmap/ic_launcher"
+58-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:19:9-43
+59        android:label="@string/app_name"
+59-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:20:9-41
+60        android:networkSecurityConfig="@xml/network_security_config"
+60-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:21:9-69
+61        android:roundIcon="@mipmap/ic_launcher_round"
+61-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:23:9-54
+62        android:supportsRtl="true"
+62-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:24:9-35
+63        android:theme="@style/Theme.M"
+63-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:25:9-39
+64        android:usesCleartextTraffic="true" >
+64-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:22:9-44
+65
+66        <!-- AdMob App ID -->
+67        <meta-data
+67-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:28:9-30:70
+68            android:name="com.google.android.gms.ads.APPLICATION_ID"
+68-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:29:13-69
+69            android:value="ca-app-pub-9672937825247791~7373622085" />
+69-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:30:13-67
+70
+71        <!-- Fix for AdMob manifest merger conflict -->
+72        <property
+72-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:33:9-36:48
+73            android:name="android.adservices.AD_SERVICES_CONFIG"
+73-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:34:13-65
+74            android:resource="@xml/gma_ad_services_config" />
+74-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:35:13-59
+75
+76        <activity
+76-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:38:9-45:20
+77            android:name="com.v7techsolution.interviewfire.LoginActivity"
+77-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:39:13-42
+78            android:exported="true" >
+78-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:40:13-36
+79            <intent-filter>
+79-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:41:13-44:29
+80                <action android:name="android.intent.action.MAIN" />
+80-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:42:17-69
+80-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:42:25-66
+81
+82                <category android:name="android.intent.category.LAUNCHER" />
+82-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:43:17-77
+82-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:43:27-74
+83            </intent-filter>
+84        </activity>
+85        <activity
+85-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:47:9-49:39
+86            android:name="com.v7techsolution.interviewfire.MainActivity"
+86-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:48:13-41
+87            android:exported="true" />
+87-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:49:13-36
+88        <activity
+88-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:51:9-54:58
+89            android:name="com.v7techsolution.interviewfire.TopicActivity"
+89-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:52:13-42
+90            android:exported="false"
+90-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:53:13-37
+91            android:parentActivityName="com.v7techsolution.interviewfire.MainActivity" />
+91-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:54:13-55
+92        <activity
+92-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:56:9-59:59
+93            android:name="com.v7techsolution.interviewfire.QuestionActivity"
+93-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:57:13-45
+94            android:exported="false"
+94-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:58:13-37
+95            android:parentActivityName="com.v7techsolution.interviewfire.TopicActivity" />
+95-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:59:13-56
+96
+97        <!-- Notification Receiver -->
+98        <receiver
+98-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:62:9-64:40
+99            android:name="com.v7techsolution.interviewfire.NotificationReceiver"
+99-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:63:13-49
+100            android:exported="false" />
+100-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:64:13-37
+101
+102        <!-- Boot Receiver to reschedule notifications after device restart -->
+103        <receiver
+103-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:67:9-73:20
+104            android:name="com.v7techsolution.interviewfire.BootReceiver"
+104-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:68:13-41
+105            android:exported="false" >
+105-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:69:13-37
+106            <intent-filter>
+106-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:70:13-72:29
+107                <action android:name="android.intent.action.BOOT_COMPLETED" />
+107-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:71:17-79
+107-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:71:25-76
+108            </intent-filter>
+109        </receiver>
+110
+111        <activity
+111-->[com.google.android.gms:play-services-auth:20.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/c6eb486341c55c827e42efe9583a3c75/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:23:9-27:75
+112            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+112-->[com.google.android.gms:play-services-auth:20.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/c6eb486341c55c827e42efe9583a3c75/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:24:13-93
+113            android:excludeFromRecents="true"
+113-->[com.google.android.gms:play-services-auth:20.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/c6eb486341c55c827e42efe9583a3c75/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:25:13-46
+114            android:exported="false"
+114-->[com.google.android.gms:play-services-auth:20.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/c6eb486341c55c827e42efe9583a3c75/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:26:13-37
+115            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+115-->[com.google.android.gms:play-services-auth:20.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/c6eb486341c55c827e42efe9583a3c75/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:27:13-72
+116        <!--
+117            Service handling Google Sign-In user revocation. For apps that do not integrate with
+118            Google Sign-In, this service will never be started.
+119        -->
+120        <service
+120-->[com.google.android.gms:play-services-auth:20.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/c6eb486341c55c827e42efe9583a3c75/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:33:9-37:51
+121            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+121-->[com.google.android.gms:play-services-auth:20.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/c6eb486341c55c827e42efe9583a3c75/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:34:13-89
+122            android:exported="true"
+122-->[com.google.android.gms:play-services-auth:20.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/c6eb486341c55c827e42efe9583a3c75/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:35:13-36
+123            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+123-->[com.google.android.gms:play-services-auth:20.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/c6eb486341c55c827e42efe9583a3c75/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:36:13-107
+124            android:visibleToInstantApps="true" />
+124-->[com.google.android.gms:play-services-auth:20.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/c6eb486341c55c827e42efe9583a3c75/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:37:13-48
+125        <service
+125-->[com.google.firebase:firebase-auth-ktx:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/42259942f3acc037aeaeb2ef4279e85f/transformed/jetified-firebase-auth-ktx-22.3.0/AndroidManifest.xml:8:9-14:19
+126            android:name="com.google.firebase.components.ComponentDiscoveryService"
+126-->[com.google.firebase:firebase-auth-ktx:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/42259942f3acc037aeaeb2ef4279e85f/transformed/jetified-firebase-auth-ktx-22.3.0/AndroidManifest.xml:9:13-84
+127            android:directBootAware="true"
+127-->[com.google.firebase:firebase-common:20.4.2] /Users/vamsisai/.gradle/caches/8.13/transforms/5952104836f850703473c7f5c8d4d6ab/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:32:13-43
+128            android:exported="false" >
+128-->[com.google.firebase:firebase-auth-ktx:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/42259942f3acc037aeaeb2ef4279e85f/transformed/jetified-firebase-auth-ktx-22.3.0/AndroidManifest.xml:10:13-37
+129            <meta-data
+129-->[com.google.firebase:firebase-auth-ktx:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/42259942f3acc037aeaeb2ef4279e85f/transformed/jetified-firebase-auth-ktx-22.3.0/AndroidManifest.xml:11:13-13:85
+130                android:name="com.google.firebase.components:com.google.firebase.auth.ktx.FirebaseAuthLegacyRegistrar"
+130-->[com.google.firebase:firebase-auth-ktx:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/42259942f3acc037aeaeb2ef4279e85f/transformed/jetified-firebase-auth-ktx-22.3.0/AndroidManifest.xml:12:17-119
+131                android:value="com.google.firebase.components.ComponentRegistrar" />
+131-->[com.google.firebase:firebase-auth-ktx:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/42259942f3acc037aeaeb2ef4279e85f/transformed/jetified-firebase-auth-ktx-22.3.0/AndroidManifest.xml:13:17-82
+132            <meta-data
+132-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:69:13-71:85
+133                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+133-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:70:17-109
+134                android:value="com.google.firebase.components.ComponentRegistrar" />
+134-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:71:17-82
+135            <meta-data
+135-->[com.google.firebase:firebase-analytics-ktx:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2da891b90a5e3c6aeb7bfa8bfe8a2be9/transformed/jetified-firebase-analytics-ktx-21.5.0/AndroidManifest.xml:11:13-13:85
+136                android:name="com.google.firebase.components:com.google.firebase.analytics.ktx.FirebaseAnalyticsLegacyRegistrar"
+136-->[com.google.firebase:firebase-analytics-ktx:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2da891b90a5e3c6aeb7bfa8bfe8a2be9/transformed/jetified-firebase-analytics-ktx-21.5.0/AndroidManifest.xml:12:17-129
+137                android:value="com.google.firebase.components.ComponentRegistrar" />
+137-->[com.google.firebase:firebase-analytics-ktx:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2da891b90a5e3c6aeb7bfa8bfe8a2be9/transformed/jetified-firebase-analytics-ktx-21.5.0/AndroidManifest.xml:13:17-82
+138            <meta-data
+138-->[com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:37:13-39:85
+139                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+139-->[com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:38:17-139
+140                android:value="com.google.firebase.components.ComponentRegistrar" />
+140-->[com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:39:17-82
+141            <meta-data
+141-->[com.google.firebase:firebase-installations:17.2.0] /Users/vamsisai/.gradle/caches/8.13/transforms/b28b5a26da58a50b3ea548e0fb66c96e/transformed/jetified-firebase-installations-17.2.0/AndroidManifest.xml:15:13-17:85
+142                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar"
+142-->[com.google.firebase:firebase-installations:17.2.0] /Users/vamsisai/.gradle/caches/8.13/transforms/b28b5a26da58a50b3ea548e0fb66c96e/transformed/jetified-firebase-installations-17.2.0/AndroidManifest.xml:16:17-130
+143                android:value="com.google.firebase.components.ComponentRegistrar" />
+143-->[com.google.firebase:firebase-installations:17.2.0] /Users/vamsisai/.gradle/caches/8.13/transforms/b28b5a26da58a50b3ea548e0fb66c96e/transformed/jetified-firebase-installations-17.2.0/AndroidManifest.xml:17:17-82
+144            <meta-data
+144-->[com.google.firebase:firebase-installations:17.2.0] /Users/vamsisai/.gradle/caches/8.13/transforms/b28b5a26da58a50b3ea548e0fb66c96e/transformed/jetified-firebase-installations-17.2.0/AndroidManifest.xml:18:13-20:85
+145                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+145-->[com.google.firebase:firebase-installations:17.2.0] /Users/vamsisai/.gradle/caches/8.13/transforms/b28b5a26da58a50b3ea548e0fb66c96e/transformed/jetified-firebase-installations-17.2.0/AndroidManifest.xml:19:17-127
+146                android:value="com.google.firebase.components.ComponentRegistrar" />
+146-->[com.google.firebase:firebase-installations:17.2.0] /Users/vamsisai/.gradle/caches/8.13/transforms/b28b5a26da58a50b3ea548e0fb66c96e/transformed/jetified-firebase-installations-17.2.0/AndroidManifest.xml:20:17-82
+147            <meta-data
+147-->[com.google.firebase:firebase-common-ktx:20.4.2] /Users/vamsisai/.gradle/caches/8.13/transforms/b02c86d54beaf0466ddcf633683ae24e/transformed/jetified-firebase-common-ktx-20.4.2/AndroidManifest.xml:12:13-14:85
+148                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
+148-->[com.google.firebase:firebase-common-ktx:20.4.2] /Users/vamsisai/.gradle/caches/8.13/transforms/b02c86d54beaf0466ddcf633683ae24e/transformed/jetified-firebase-common-ktx-20.4.2/AndroidManifest.xml:13:17-116
+149                android:value="com.google.firebase.components.ComponentRegistrar" />
+149-->[com.google.firebase:firebase-common-ktx:20.4.2] /Users/vamsisai/.gradle/caches/8.13/transforms/b02c86d54beaf0466ddcf633683ae24e/transformed/jetified-firebase-common-ktx-20.4.2/AndroidManifest.xml:14:17-82
+150            <meta-data
+150-->[com.google.firebase:firebase-common:20.4.2] /Users/vamsisai/.gradle/caches/8.13/transforms/5952104836f850703473c7f5c8d4d6ab/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:35:13-37:85
+151                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
+151-->[com.google.firebase:firebase-common:20.4.2] /Users/vamsisai/.gradle/caches/8.13/transforms/5952104836f850703473c7f5c8d4d6ab/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:36:17-109
+152                android:value="com.google.firebase.components.ComponentRegistrar" />
+152-->[com.google.firebase:firebase-common:20.4.2] /Users/vamsisai/.gradle/caches/8.13/transforms/5952104836f850703473c7f5c8d4d6ab/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:37:17-82
+153        </service>
+154
+155        <activity
+155-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:29:9-46:20
+156            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+156-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:30:13-80
+157            android:excludeFromRecents="true"
+157-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:31:13-46
+158            android:exported="true"
+158-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:32:13-36
+159            android:launchMode="singleTask"
+159-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:33:13-44
+160            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+160-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:34:13-72
+161            <intent-filter>
+161-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:35:13-45:29
+162                <action android:name="android.intent.action.VIEW" />
+162-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:36:17-69
+162-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:36:25-66
+163
+164                <category android:name="android.intent.category.DEFAULT" />
+164-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:38:17-76
+164-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:38:27-73
+165                <category android:name="android.intent.category.BROWSABLE" />
+165-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:39:17-78
+165-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:39:27-75
+166
+167                <data
+167-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:41:17-44:51
+168                    android:host="firebase.auth"
+168-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:42:21-49
+169                    android:path="/"
+169-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:43:21-37
+170                    android:scheme="genericidp" />
+170-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:44:21-48
+171            </intent-filter>
+172        </activity>
+173        <activity
+173-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:47:9-64:20
+174            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+174-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:48:13-79
+175            android:excludeFromRecents="true"
+175-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:49:13-46
+176            android:exported="true"
+176-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:50:13-36
+177            android:launchMode="singleTask"
+177-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:51:13-44
+178            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+178-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:52:13-72
+179            <intent-filter>
+179-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:53:13-63:29
+180                <action android:name="android.intent.action.VIEW" />
+180-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:36:17-69
+180-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:36:25-66
+181
+182                <category android:name="android.intent.category.DEFAULT" />
+182-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:38:17-76
+182-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:38:27-73
+183                <category android:name="android.intent.category.BROWSABLE" />
+183-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:39:17-78
+183-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:39:27-75
+184
+185                <data
+185-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:41:17-44:51
+186                    android:host="firebase.auth"
+186-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:42:21-49
+187                    android:path="/"
+187-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:43:21-37
+188                    android:scheme="recaptcha" />
+188-->[com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:44:21-48
+189            </intent-filter>
+190        </activity>
+191        <activity
+191-->[com.google.android.gms:play-services-base:18.0.1] /Users/vamsisai/.gradle/caches/8.13/transforms/390395656da0292db36e20118b715480/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+192            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+192-->[com.google.android.gms:play-services-base:18.0.1] /Users/vamsisai/.gradle/caches/8.13/transforms/390395656da0292db36e20118b715480/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+193            android:exported="false"
+193-->[com.google.android.gms:play-services-base:18.0.1] /Users/vamsisai/.gradle/caches/8.13/transforms/390395656da0292db36e20118b715480/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+194            android:theme="@android:style/Theme.Translucent.NoTitleBar" /> <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
+194-->[com.google.android.gms:play-services-base:18.0.1] /Users/vamsisai/.gradle/caches/8.13/transforms/390395656da0292db36e20118b715480/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+195        <activity
+195-->[com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:56:9-61:43
+196            android:name="com.google.android.gms.ads.AdActivity"
+196-->[com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:57:13-65
+197            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+197-->[com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:58:13-122
+198            android:exported="false"
+198-->[com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:59:13-37
+199            android:theme="@android:style/Theme.Translucent" />
+199-->[com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:60:13-61
 200
-201        <meta-data
-201-->[com.google.android.gms:play-services-basement:18.2.0] /Users/vamsisai/.gradle/caches/8.13/transforms/37bacd677f170d33d860cb5131dd19cd/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:21:9-23:69
-202            android:name="com.google.android.gms.version"
-202-->[com.google.android.gms:play-services-basement:18.2.0] /Users/vamsisai/.gradle/caches/8.13/transforms/37bacd677f170d33d860cb5131dd19cd/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:22:13-58
-203            android:value="@integer/google_play_services_version" />
-203-->[com.google.android.gms:play-services-basement:18.2.0] /Users/vamsisai/.gradle/caches/8.13/transforms/37bacd677f170d33d860cb5131dd19cd/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:23:13-66
-204
-205        <receiver
-205-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:34:9-52:20
-206            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-206-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:35:13-76
-207            android:directBootAware="false"
-207-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:36:13-44
-208            android:enabled="true"
-208-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:37:13-35
-209            android:exported="true"
-209-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:38:13-36
-210            android:permission="android.permission.DUMP" >
-210-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:39:13-57
-211            <intent-filter>
-211-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:40:13-42:29
-212                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-212-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:41:17-91
-212-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:41:25-88
-213            </intent-filter>
-214            <intent-filter>
-214-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:43:13-45:29
-215                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-215-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:44:17-85
-215-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:44:25-82
-216            </intent-filter>
-217            <intent-filter>
-217-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:46:13-48:29
-218                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-218-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:47:17-88
-218-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:47:25-85
-219            </intent-filter>
-220            <intent-filter>
-220-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:49:13-51:29
-221                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-221-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:50:17-95
-221-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:50:25-92
-222            </intent-filter>
-223        </receiver>
-224    </application>
-225
-226</manifest>
+201        <provider
+201-->[com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:63:9-68:43
+202            android:name="com.google.android.gms.ads.MobileAdsInitProvider"
+202-->[com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:64:13-76
+203            android:authorities="com.v7techsolution.interviewfire.mobileadsinitprovider"
+203-->[com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:65:13-73
+204            android:exported="false"
+204-->[com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:66:13-37
+205            android:initOrder="100" />
+205-->[com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:67:13-36
+206
+207        <service
+207-->[com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:70:9-74:43
+208            android:name="com.google.android.gms.ads.AdService"
+208-->[com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:71:13-64
+209            android:enabled="true"
+209-->[com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:72:13-35
+210            android:exported="false" />
+210-->[com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:73:13-37
+211
+212        <activity
+212-->[com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:76:9-80:43
+213            android:name="com.google.android.gms.ads.OutOfContextTestingActivity"
+213-->[com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:77:13-82
+214            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+214-->[com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:78:13-122
+215            android:exported="false" />
+215-->[com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:79:13-37
+216        <activity
+216-->[com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:81:9-88:43
+217            android:name="com.google.android.gms.ads.NotificationHandlerActivity"
+217-->[com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:82:13-82
+218            android:excludeFromRecents="true"
+218-->[com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:83:13-46
+219            android:exported="false"
+219-->[com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:84:13-37
+220            android:launchMode="singleTask"
+220-->[com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:85:13-44
+221            android:taskAffinity=""
+221-->[com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:86:13-36
+222            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+222-->[com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:87:13-72
+223
+224        <receiver
+224-->[com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:29:9-33:20
+225            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+225-->[com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:30:13-85
+226            android:enabled="true"
+226-->[com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:31:13-35
+227            android:exported="false" >
+227-->[com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:32:13-37
+228        </receiver>
+229
+230        <service
+230-->[com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:35:9-38:40
+231            android:name="com.google.android.gms.measurement.AppMeasurementService"
+231-->[com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:36:13-84
+232            android:enabled="true"
+232-->[com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:37:13-35
+233            android:exported="false" />
+233-->[com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:38:13-37
+234        <service
+234-->[com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:39:9-43:72
+235            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+235-->[com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:40:13-87
+236            android:enabled="true"
+236-->[com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:41:13-35
+237            android:exported="false"
+237-->[com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:42:13-37
+238            android:permission="android.permission.BIND_JOB_SERVICE" />
+238-->[com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:43:13-69
+239
+240        <provider
+240-->[com.google.firebase:firebase-common:20.4.2] /Users/vamsisai/.gradle/caches/8.13/transforms/5952104836f850703473c7f5c8d4d6ab/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:23:9-28:39
+241            android:name="com.google.firebase.provider.FirebaseInitProvider"
+241-->[com.google.firebase:firebase-common:20.4.2] /Users/vamsisai/.gradle/caches/8.13/transforms/5952104836f850703473c7f5c8d4d6ab/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:24:13-77
+242            android:authorities="com.v7techsolution.interviewfire.firebaseinitprovider"
+242-->[com.google.firebase:firebase-common:20.4.2] /Users/vamsisai/.gradle/caches/8.13/transforms/5952104836f850703473c7f5c8d4d6ab/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:25:13-72
+243            android:directBootAware="true"
+243-->[com.google.firebase:firebase-common:20.4.2] /Users/vamsisai/.gradle/caches/8.13/transforms/5952104836f850703473c7f5c8d4d6ab/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:26:13-43
+244            android:exported="false"
+244-->[com.google.firebase:firebase-common:20.4.2] /Users/vamsisai/.gradle/caches/8.13/transforms/5952104836f850703473c7f5c8d4d6ab/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:27:13-37
+245            android:initOrder="100" />
+245-->[com.google.firebase:firebase-common:20.4.2] /Users/vamsisai/.gradle/caches/8.13/transforms/5952104836f850703473c7f5c8d4d6ab/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:28:13-36
+246        <provider
+246-->[androidx.emoji2:emoji2:1.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ae1abe10971591039c92a2ca541835d2/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+247            android:name="androidx.startup.InitializationProvider"
+247-->[androidx.emoji2:emoji2:1.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ae1abe10971591039c92a2ca541835d2/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:25:13-67
+248            android:authorities="com.v7techsolution.interviewfire.androidx-startup"
+248-->[androidx.emoji2:emoji2:1.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ae1abe10971591039c92a2ca541835d2/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:26:13-68
+249            android:exported="false" >
+249-->[androidx.emoji2:emoji2:1.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ae1abe10971591039c92a2ca541835d2/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:27:13-37
+250            <meta-data
+250-->[androidx.emoji2:emoji2:1.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ae1abe10971591039c92a2ca541835d2/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+251                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+251-->[androidx.emoji2:emoji2:1.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ae1abe10971591039c92a2ca541835d2/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:30:17-75
+252                android:value="androidx.startup" />
+252-->[androidx.emoji2:emoji2:1.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ae1abe10971591039c92a2ca541835d2/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:31:17-49
+253            <meta-data
+253-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:36:13-38:52
+254                android:name="androidx.work.WorkManagerInitializer"
+254-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:37:17-68
+255                android:value="androidx.startup" />
+255-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:38:17-49
+256            <meta-data
+256-->[androidx.lifecycle:lifecycle-process:2.8.7] /Users/vamsisai/.gradle/caches/8.13/transforms/60d77d2c6b94b0a4facad7f289f0fb54/transformed/jetified-lifecycle-process-2.8.7/AndroidManifest.xml:29:13-31:52
+257                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+257-->[androidx.lifecycle:lifecycle-process:2.8.7] /Users/vamsisai/.gradle/caches/8.13/transforms/60d77d2c6b94b0a4facad7f289f0fb54/transformed/jetified-lifecycle-process-2.8.7/AndroidManifest.xml:30:17-78
+258                android:value="androidx.startup" />
+258-->[androidx.lifecycle:lifecycle-process:2.8.7] /Users/vamsisai/.gradle/caches/8.13/transforms/60d77d2c6b94b0a4facad7f289f0fb54/transformed/jetified-lifecycle-process-2.8.7/AndroidManifest.xml:31:17-49
+259            <meta-data
+259-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:29:13-31:52
+260                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+260-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:30:17-85
+261                android:value="androidx.startup" />
+261-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:31:17-49
+262        </provider>
+263
+264        <service
+264-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:41:9-46:35
+265            android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"
+265-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:42:13-88
+266            android:directBootAware="false"
+266-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:43:13-44
+267            android:enabled="@bool/enable_system_alarm_service_default"
+267-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:44:13-72
+268            android:exported="false" />
+268-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:45:13-37
+269        <service
+269-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:47:9-53:35
+270            android:name="androidx.work.impl.background.systemjob.SystemJobService"
+270-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:48:13-84
+271            android:directBootAware="false"
+271-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:49:13-44
+272            android:enabled="@bool/enable_system_job_service_default"
+272-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:50:13-70
+273            android:exported="true"
+273-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:51:13-36
+274            android:permission="android.permission.BIND_JOB_SERVICE" />
+274-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:52:13-69
+275        <service
+275-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:54:9-59:35
+276            android:name="androidx.work.impl.foreground.SystemForegroundService"
+276-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:55:13-81
+277            android:directBootAware="false"
+277-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:56:13-44
+278            android:enabled="@bool/enable_system_foreground_service_default"
+278-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:57:13-77
+279            android:exported="false" />
+279-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:58:13-37
+280
+281        <receiver
+281-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:61:9-66:35
+282            android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"
+282-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:62:13-88
+283            android:directBootAware="false"
+283-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:63:13-44
+284            android:enabled="true"
+284-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:64:13-35
+285            android:exported="false" />
+285-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:65:13-37
+286        <receiver
+286-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:67:9-77:20
+287            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy"
+287-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:68:13-106
+288            android:directBootAware="false"
+288-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:69:13-44
+289            android:enabled="false"
+289-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:70:13-36
+290            android:exported="false" >
+290-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:71:13-37
+291            <intent-filter>
+291-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:73:13-76:29
+292                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+292-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:74:17-87
+292-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:74:25-84
+293                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+293-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:75:17-90
+293-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:75:25-87
+294            </intent-filter>
+295        </receiver>
+296        <receiver
+296-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:78:9-88:20
+297            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy"
+297-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:79:13-104
+298            android:directBootAware="false"
+298-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:80:13-44
+299            android:enabled="false"
+299-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:81:13-36
+300            android:exported="false" >
+300-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:82:13-37
+301            <intent-filter>
+301-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:84:13-87:29
+302                <action android:name="android.intent.action.BATTERY_OKAY" />
+302-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:85:17-77
+302-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:85:25-74
+303                <action android:name="android.intent.action.BATTERY_LOW" />
+303-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:86:17-76
+303-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:86:25-73
+304            </intent-filter>
+305        </receiver>
+306        <receiver
+306-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:89:9-99:20
+307            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy"
+307-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:90:13-104
+308            android:directBootAware="false"
+308-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:91:13-44
+309            android:enabled="false"
+309-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:92:13-36
+310            android:exported="false" >
+310-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:93:13-37
+311            <intent-filter>
+311-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:95:13-98:29
+312                <action android:name="android.intent.action.DEVICE_STORAGE_LOW" />
+312-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:96:17-83
+312-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:96:25-80
+313                <action android:name="android.intent.action.DEVICE_STORAGE_OK" />
+313-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:97:17-82
+313-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:97:25-79
+314            </intent-filter>
+315        </receiver>
+316        <receiver
+316-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:100:9-109:20
+317            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy"
+317-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:101:13-103
+318            android:directBootAware="false"
+318-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:102:13-44
+319            android:enabled="false"
+319-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:103:13-36
+320            android:exported="false" >
+320-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:104:13-37
+321            <intent-filter>
+321-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:106:13-108:29
+322                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+322-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:107:17-79
+322-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:107:25-76
+323            </intent-filter>
+324        </receiver>
+325        <receiver
+325-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:110:9-121:20
+326            android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver"
+326-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:111:13-88
+327            android:directBootAware="false"
+327-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:112:13-44
+328            android:enabled="false"
+328-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:113:13-36
+329            android:exported="false" >
+329-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:114:13-37
+330            <intent-filter>
+330-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:116:13-120:29
+331                <action android:name="android.intent.action.BOOT_COMPLETED" />
+331-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:71:17-79
+331-->/Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:71:25-76
+332                <action android:name="android.intent.action.TIME_SET" />
+332-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:118:17-73
+332-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:118:25-70
+333                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+333-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:119:17-81
+333-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:119:25-78
+334            </intent-filter>
+335        </receiver>
+336        <receiver
+336-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:122:9-131:20
+337            android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver"
+337-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:123:13-99
+338            android:directBootAware="false"
+338-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:124:13-44
+339            android:enabled="@bool/enable_system_alarm_service_default"
+339-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:125:13-72
+340            android:exported="false" >
+340-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:126:13-37
+341            <intent-filter>
+341-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:128:13-130:29
+342                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies" />
+342-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:129:17-98
+342-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:129:25-95
+343            </intent-filter>
+344        </receiver>
+345        <receiver
+345-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:132:9-142:20
+346            android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver"
+346-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:133:13-78
+347            android:directBootAware="false"
+347-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:134:13-44
+348            android:enabled="true"
+348-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:135:13-35
+349            android:exported="true"
+349-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:136:13-36
+350            android:permission="android.permission.DUMP" >
+350-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:137:13-57
+351            <intent-filter>
+351-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:139:13-141:29
+352                <action android:name="androidx.work.diagnostics.REQUEST_DIAGNOSTICS" />
+352-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:140:17-88
+352-->[androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:140:25-85
+353            </intent-filter>
+354        </receiver>
+355
+356        <uses-library
+356-->[androidx.window:window:1.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/190a1d405c8947bd65defbb59840bf2f/transformed/jetified-window-1.0.0/AndroidManifest.xml:25:9-27:40
+357            android:name="androidx.window.extensions"
+357-->[androidx.window:window:1.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/190a1d405c8947bd65defbb59840bf2f/transformed/jetified-window-1.0.0/AndroidManifest.xml:26:13-54
+358            android:required="false" />
+358-->[androidx.window:window:1.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/190a1d405c8947bd65defbb59840bf2f/transformed/jetified-window-1.0.0/AndroidManifest.xml:27:13-37
+359        <uses-library
+359-->[androidx.window:window:1.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/190a1d405c8947bd65defbb59840bf2f/transformed/jetified-window-1.0.0/AndroidManifest.xml:28:9-30:40
+360            android:name="androidx.window.sidecar"
+360-->[androidx.window:window:1.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/190a1d405c8947bd65defbb59840bf2f/transformed/jetified-window-1.0.0/AndroidManifest.xml:29:13-51
+361            android:required="false" />
+361-->[androidx.window:window:1.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/190a1d405c8947bd65defbb59840bf2f/transformed/jetified-window-1.0.0/AndroidManifest.xml:30:13-37
+362        <uses-library
+362-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Users/vamsisai/.gradle/caches/8.13/transforms/5e4ee54108d13a596389128c3fe0e080/transformed/jetified-ads-adservices-1.0.0-beta05/AndroidManifest.xml:23:9-25:40
+363            android:name="android.ext.adservices"
+363-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Users/vamsisai/.gradle/caches/8.13/transforms/5e4ee54108d13a596389128c3fe0e080/transformed/jetified-ads-adservices-1.0.0-beta05/AndroidManifest.xml:24:13-50
+364            android:required="false" />
+364-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Users/vamsisai/.gradle/caches/8.13/transforms/5e4ee54108d13a596389128c3fe0e080/transformed/jetified-ads-adservices-1.0.0-beta05/AndroidManifest.xml:25:13-37
+365
+366        <meta-data
+366-->[com.google.android.gms:play-services-basement:18.2.0] /Users/vamsisai/.gradle/caches/8.13/transforms/37bacd677f170d33d860cb5131dd19cd/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:21:9-23:69
+367            android:name="com.google.android.gms.version"
+367-->[com.google.android.gms:play-services-basement:18.2.0] /Users/vamsisai/.gradle/caches/8.13/transforms/37bacd677f170d33d860cb5131dd19cd/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:22:13-58
+368            android:value="@integer/google_play_services_version" />
+368-->[com.google.android.gms:play-services-basement:18.2.0] /Users/vamsisai/.gradle/caches/8.13/transforms/37bacd677f170d33d860cb5131dd19cd/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:23:13-66
+369
+370        <receiver
+370-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:34:9-52:20
+371            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+371-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:35:13-76
+372            android:directBootAware="false"
+372-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:36:13-44
+373            android:enabled="true"
+373-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:37:13-35
+374            android:exported="true"
+374-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:38:13-36
+375            android:permission="android.permission.DUMP" >
+375-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:39:13-57
+376            <intent-filter>
+376-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:40:13-42:29
+377                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+377-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:41:17-91
+377-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:41:25-88
+378            </intent-filter>
+379            <intent-filter>
+379-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:43:13-45:29
+380                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+380-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:44:17-85
+380-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:44:25-82
+381            </intent-filter>
+382            <intent-filter>
+382-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:46:13-48:29
+383                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+383-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:47:17-88
+383-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:47:25-85
+384            </intent-filter>
+385            <intent-filter>
+385-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:49:13-51:29
+386                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+386-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:50:17-95
+386-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:50:25-92
+387            </intent-filter>
+388        </receiver>
+389
+390        <service
+390-->[androidx.room:room-runtime:2.2.5] /Users/vamsisai/.gradle/caches/8.13/transforms/4b57bc43fdd97a9059c907184e6d3f7a/transformed/room-runtime-2.2.5/AndroidManifest.xml:25:9-28:40
+391            android:name="androidx.room.MultiInstanceInvalidationService"
+391-->[androidx.room:room-runtime:2.2.5] /Users/vamsisai/.gradle/caches/8.13/transforms/4b57bc43fdd97a9059c907184e6d3f7a/transformed/room-runtime-2.2.5/AndroidManifest.xml:26:13-74
+392            android:directBootAware="true"
+392-->[androidx.room:room-runtime:2.2.5] /Users/vamsisai/.gradle/caches/8.13/transforms/4b57bc43fdd97a9059c907184e6d3f7a/transformed/room-runtime-2.2.5/AndroidManifest.xml:27:13-43
+393            android:exported="false" />
+393-->[androidx.room:room-runtime:2.2.5] /Users/vamsisai/.gradle/caches/8.13/transforms/4b57bc43fdd97a9059c907184e6d3f7a/transformed/room-runtime-2.2.5/AndroidManifest.xml:28:13-37
+394    </application>
+395
+396</manifest>

@@ -5,9 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
-import android.widget.ScrollView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.google.android.material.button.MaterialButton;
@@ -19,7 +19,7 @@ import java.lang.String;
 
 public final class ActivityLoginBinding implements ViewBinding {
   @NonNull
-  private final ScrollView rootView;
+  private final ConstraintLayout rootView;
 
   @NonNull
   public final MaterialButton btnEmailSignIn;
@@ -39,10 +39,10 @@ public final class ActivityLoginBinding implements ViewBinding {
   @NonNull
   public final ProgressBar progressBar;
 
-  private ActivityLoginBinding(@NonNull ScrollView rootView, @NonNull MaterialButton btnEmailSignIn,
-      @NonNull MaterialButton btnGoogleSignIn, @NonNull MaterialButton btnSignUp,
-      @NonNull TextInputEditText etEmail, @NonNull TextInputEditText etPassword,
-      @NonNull ProgressBar progressBar) {
+  private ActivityLoginBinding(@NonNull ConstraintLayout rootView,
+      @NonNull MaterialButton btnEmailSignIn, @NonNull MaterialButton btnGoogleSignIn,
+      @NonNull MaterialButton btnSignUp, @NonNull TextInputEditText etEmail,
+      @NonNull TextInputEditText etPassword, @NonNull ProgressBar progressBar) {
     this.rootView = rootView;
     this.btnEmailSignIn = btnEmailSignIn;
     this.btnGoogleSignIn = btnGoogleSignIn;
@@ -54,7 +54,7 @@ public final class ActivityLoginBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public ScrollView getRoot() {
+  public ConstraintLayout getRoot() {
     return rootView;
   }
 
@@ -115,7 +115,7 @@ public final class ActivityLoginBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityLoginBinding((ScrollView) rootView, btnEmailSignIn, btnGoogleSignIn,
+      return new ActivityLoginBinding((ConstraintLayout) rootView, btnEmailSignIn, btnGoogleSignIn,
           btnSignUp, etEmail, etPassword, progressBar);
     }
     String missingId = rootView.getResources().getResourceName(id);

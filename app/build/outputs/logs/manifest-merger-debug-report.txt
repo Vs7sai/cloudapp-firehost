@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:2:1-50:12
-INJECTED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:2:1-50:12
-INJECTED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:2:1-50:12
-INJECTED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:2:1-50:12
+ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:2:1-77:12
+INJECTED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:2:1-77:12
+INJECTED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:2:1-77:12
+INJECTED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:2:1-77:12
 MERGED from [androidx.databinding:viewbinding:8.11.1] /Users/vamsisai/.gradle/caches/8.13/transforms/6f8dfa7e6402c2e5380631aa5ca78871/transformed/jetified-viewbinding-8.11.1/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.navigation:navigation-common:2.8.4] /Users/vamsisai/.gradle/caches/8.13/transforms/627a6ae89fc789625256328b2514a87d/transformed/navigation-common-2.8.4/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-common-ktx:2.8.4] /Users/vamsisai/.gradle/caches/8.13/transforms/f4e87d7c15c417d12dd68d63624b19ef/transformed/navigation-common-ktx-2.8.4/AndroidManifest.xml:2:1-7:12
@@ -24,17 +24,24 @@ MERGED from [com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/c
 MERGED from [com.google.android.gms:play-services-auth-api-phone:18.0.1] /Users/vamsisai/.gradle/caches/8.13/transforms/e8f2c3982f6f2e42c2e746a29be224f2/transformed/jetified-play-services-auth-api-phone-18.0.1/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.gms:play-services-auth-base:18.0.4] /Users/vamsisai/.gradle/caches/8.13/transforms/512a01ed8ec2295cf657cf9ef3f26c40/transformed/jetified-play-services-auth-base-18.0.4/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.gms:play-services-fido:20.0.1] /Users/vamsisai/.gradle/caches/8.13/transforms/455f8e73220cecbe9758f0f0d9ac8138/transformed/jetified-play-services-fido-20.0.1/AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.android.gms:play-services-ads:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8f9e3762a9341d9ed8ceb363f90acf14/transformed/jetified-play-services-ads-22.6.0/AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.android.gms:play-services-appset:16.0.1] /Users/vamsisai/.gradle/caches/8.13/transforms/9729ad11a6d35490dac02ed79a7955ba/transformed/jetified-play-services-appset-16.0.1/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ffcfa7383380d76f905d939517314b03/transformed/jetified-firebase-appcheck-interop-17.0.0/AndroidManifest.xml:15:1-25:12
 MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/vamsisai/.gradle/caches/8.13/transforms/390395656da0292db36e20118b715480/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:16:1-24:12
+MERGED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:17:1-95:12
+MERGED from [com.google.android.gms:play-services-ads-base:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ceb96c935b8b473b98bb12b8af2cdea1/transformed/jetified-play-services-ads-base-22.6.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.ump:user-messaging-platform:2.1.0] /Users/vamsisai/.gradle/caches/8.13/transforms/584e0a2c4fbf6fb14cc142ec51136576/transformed/jetified-user-messaging-platform-2.1.0/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.firebase:firebase-analytics-ktx:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2da891b90a5e3c6aeb7bfa8bfe8a2be9/transformed/jetified-firebase-analytics-ktx-21.5.0/AndroidManifest.xml:2:1-17:12
 MERGED from [com.google.firebase:firebase-analytics:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4fd50b75b566dd0e1db50844a03e750f/transformed/jetified-firebase-analytics-21.5.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:17:1-46:12
 MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:17:1-43:12
+MERGED from [com.google.android.gms:play-services-measurement-sdk:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/d2d039d9133fd3740aa27a152862adc6/transformed/jetified-play-services-measurement-sdk-21.5.0/AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/e01dd3fea7e97b09e4cadf99f815180e/transformed/jetified-play-services-measurement-impl-21.5.0/AndroidManifest.xml:17:1-32:12
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/88cdb421971d4124237bdbc5d72d8459/transformed/jetified-play-services-ads-identifier-18.0.0/AndroidManifest.xml:17:1-27:12
 MERGED from [com.google.firebase:firebase-installations:17.2.0] /Users/vamsisai/.gradle/caches/8.13/transforms/b28b5a26da58a50b3ea548e0fb66c96e/transformed/jetified-firebase-installations-17.2.0/AndroidManifest.xml:2:1-24:12
 MERGED from [com.google.firebase:firebase-common-ktx:20.4.2] /Users/vamsisai/.gradle/caches/8.13/transforms/b02c86d54beaf0466ddcf633683ae24e/transformed/jetified-firebase-common-ktx-20.4.2/AndroidManifest.xml:2:1-18:12
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/02a7952cb402b38add7c251d18b8645f/transformed/jetified-firebase-auth-interop-20.0.0/AndroidManifest.xml:2:1-10:12
 MERGED from [com.google.firebase:firebase-common:20.4.2] /Users/vamsisai/.gradle/caches/8.13/transforms/5952104836f850703473c7f5c8d4d6ab/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:15:1-41:12
-MERGED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:17:1-46:12
-MERGED from [com.google.android.gms:play-services-measurement-sdk:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/d2d039d9133fd3740aa27a152862adc6/transformed/jetified-play-services-measurement-sdk-21.5.0/AndroidManifest.xml:17:1-25:12
 MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] /Users/vamsisai/.gradle/caches/8.13/transforms/af4289e2eaa34e6f7b45b9a38fb299b2/transformed/jetified-recaptcha-18.1.2/AndroidManifest.xml:2:1-10:12
 MERGED from [com.google.android.play:integrity:1.1.0] /Users/vamsisai/.gradle/caches/8.13/transforms/790da7a99c2ae9a106803ab595165240/transformed/jetified-integrity-1.1.0/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.firebase:firebase-installations-interop:17.1.1] /Users/vamsisai/.gradle/caches/8.13/transforms/d4450c45f7130507d2d9fb6fee50b91d/transformed/jetified-firebase-installations-interop-17.1.1/AndroidManifest.xml:15:1-19:12
@@ -50,18 +57,19 @@ MERGED from [androidx.transition:transition:1.5.0] /Users/vamsisai/.gradle/cache
 MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/e79fe12095e9a90c902a323aa8796f5c/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/vamsisai/.gradle/caches/8.13/transforms/0fb1f5fdec1ed3dfcd23282a45c7edf7/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/vamsisai/.gradle/caches/8.13/transforms/17b63f5041e60e2db318429831fd0d52/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
-MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/e01dd3fea7e97b09e4cadf99f815180e/transformed/jetified-play-services-measurement-impl-21.5.0/AndroidManifest.xml:17:1-32:12
 MERGED from [com.google.android.gms:play-services-stats:17.0.2] /Users/vamsisai/.gradle/caches/8.13/transforms/bcf896ae0bb39caa1066bc68c4a9c288/transformed/jetified-play-services-stats-17.0.2/AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/24d40c6f5b4fc891ed5fc8ee62dd4eeb/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.loader:loader:1.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/e7832a402db858e4dfbe9727a095c61f/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.browser:browser:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/98390096df4b5a2ee7d2e7bc41cff0b6/transformed/browser-1.4.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/vamsisai/.gradle/caches/8.13/transforms/a1b309596092ddfc61a89c764eb07555/transformed/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/f67a6322b78ab05b0212177a1d528f96/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.customview:customview:1.1.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8ffd2a63bdda6c41e2b810ef81875c1e/transformed/customview-1.1.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.browser:browser:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/98390096df4b5a2ee7d2e7bc41cff0b6/transformed/browser-1.4.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:17:1-145:12
 MERGED from [androidx.window:window:1.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/190a1d405c8947bd65defbb59840bf2f/transformed/jetified-window-1.0.0/AndroidManifest.xml:17:1-33:12
 MERGED from [androidx.core:core:1.17.0] /Users/vamsisai/.gradle/caches/8.13/transforms/d29ef8606abb89d799eeeb54460f73ef/transformed/core-1.17.0/AndroidManifest.xml:17:1-30:12
 MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/vamsisai/.gradle/caches/8.13/transforms/04f899609c68ba20a315d7918448e3a2/transformed/jetified-savedstate-ktx-1.2.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/vamsisai/.gradle/caches/8.13/transforms/b60e612c065975ac16a2ac0cc02c7be9/transformed/jetified-savedstate-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-service:2.8.7] /Users/vamsisai/.gradle/caches/8.13/transforms/0301cc9168035e13e87689f4a37fec2b/transformed/jetified-lifecycle-service-2.8.7/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.7] /Users/vamsisai/.gradle/caches/8.13/transforms/fb0b56a551c3f4fb68033a179d2da3f4/transformed/jetified-lifecycle-runtime-ktx-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.lifecycle:lifecycle-process:2.8.7] /Users/vamsisai/.gradle/caches/8.13/transforms/60d77d2c6b94b0a4facad7f289f0fb54/transformed/jetified-lifecycle-process-2.8.7/AndroidManifest.xml:17:1-35:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.7] /Users/vamsisai/.gradle/caches/8.13/transforms/156df9c097cb4e3e3b7686ad69c1c735/transformed/lifecycle-livedata-core-2.8.7/AndroidManifest.xml:17:1-22:12
@@ -76,7 +84,6 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.8.7] /Users/vamsisai/.g
 MERGED from [androidx.privacysandbox.ads:ads-adservices-java:1.0.0-beta05] /Users/vamsisai/.gradle/caches/8.13/transforms/e087f0a19e46bd8bd491e52fce854521/transformed/jetified-ads-adservices-java-1.0.0-beta05/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Users/vamsisai/.gradle/caches/8.13/transforms/5e4ee54108d13a596389128c3fe0e080/transformed/jetified-ads-adservices-1.0.0-beta05/AndroidManifest.xml:17:1-28:12
 MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /Users/vamsisai/.gradle/caches/8.13/transforms/5aeddd39414c42376549d2af1a079218/transformed/jetified-play-services-tasks-18.0.2/AndroidManifest.xml:2:1-6:12
-MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/88cdb421971d4124237bdbc5d72d8459/transformed/jetified-play-services-ads-identifier-18.0.0/AndroidManifest.xml:17:1-27:12
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/7e6dd6120b322163ad2b48af1b51afa1/transformed/jetified-play-services-measurement-sdk-api-21.5.0/AndroidManifest.xml:17:1-30:12
 MERGED from [com.google.android.gms:play-services-measurement-base:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/209bd190c52c1057974623f5e4470865/transformed/jetified-play-services-measurement-base-21.5.0/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/a681e54d3f779b0a4cdfcdff24ecdc34/transformed/jetified-firebase-measurement-connector-19.0.0/AndroidManifest.xml:17:1-25:12
@@ -84,11 +91,6 @@ MERGED from [com.google.android.gms:play-services-basement:18.2.0] /Users/vamsis
 MERGED from [androidx.fragment:fragment:1.8.5] /Users/vamsisai/.gradle/caches/8.13/transforms/09de3fe0c06c99bb915f4213071ebdee/transformed/fragment-1.8.5/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.fragment:fragment-ktx:1.8.5] /Users/vamsisai/.gradle/caches/8.13/transforms/fc82ea3c4b833b3d5a0a4d42632d63a2/transformed/jetified-fragment-ktx-1.8.5/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.core:core-ktx:1.17.0] /Users/vamsisai/.gradle/caches/8.13/transforms/23d3196c0a34ca8051067d00a2010bea/transformed/jetified-core-ktx-1.17.0/AndroidManifest.xml:2:1-7:12
-MERGED from [io.noties.markwon:html:4.6.2] /Users/vamsisai/.gradle/caches/8.13/transforms/4c70fb40258ef4c91bfdb3c7138d137c/transformed/jetified-html-4.6.2/AndroidManifest.xml:2:1-11:12
-MERGED from [io.noties.markwon:image:4.6.2] /Users/vamsisai/.gradle/caches/8.13/transforms/0ce089e4453137bf6a09f9c63b6a6329/transformed/jetified-image-4.6.2/AndroidManifest.xml:2:1-11:12
-MERGED from [io.noties.markwon:syntax-highlight:4.6.2] /Users/vamsisai/.gradle/caches/8.13/transforms/2ac97d1190e804b67527c158fdb536f6/transformed/jetified-syntax-highlight-4.6.2/AndroidManifest.xml:2:1-11:12
-MERGED from [io.noties.markwon:linkify:4.6.2] /Users/vamsisai/.gradle/caches/8.13/transforms/9dc6f28fecd5406b59b67f682ccca818/transformed/jetified-linkify-4.6.2/AndroidManifest.xml:2:1-11:12
-MERGED from [io.noties.markwon:core:4.6.2] /Users/vamsisai/.gradle/caches/8.13/transforms/aa9a1be1fd7874ae5b2d9f15766e6a04/transformed/jetified-core-4.6.2/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/612d2ff8bad3f0cd2ba6d0303049acc2/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cardview:cardview:1.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/fdc18f730afdfea0046d5e30095662dd/transformed/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:17:1-55:12
@@ -97,10 +99,13 @@ MERGED from [com.google.firebase:firebase-components:17.1.5] /Users/vamsisai/.gr
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/vamsisai/.gradle/caches/8.13/transforms/b6f71e357ebbea76eac872f7258fdfc6/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
 MERGED from [androidx.tracing:tracing:1.2.0] /Users/vamsisai/.gradle/caches/8.13/transforms/1be691a64992cec9a7badb28377dc16d/transformed/jetified-tracing-1.2.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/vamsisai/.gradle/caches/8.13/transforms/16d98c97da8fbd5b4972dda33b942e43/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.room:room-runtime:2.2.5] /Users/vamsisai/.gradle/caches/8.13/transforms/4b57bc43fdd97a9059c907184e6d3f7a/transformed/room-runtime-2.2.5/AndroidManifest.xml:17:1-31:12
 MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/vamsisai/.gradle/caches/8.13/transforms/1f6aa089a75648003cfad83206cb73fb/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/a5c4db11f8876239abb634dbed9b3ee3/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/20a97db2af9366a6171025f443a60dc5/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/f8d446dad7d945e59da790c633d22429/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.sqlite:sqlite-framework:2.1.0] /Users/vamsisai/.gradle/caches/8.13/transforms/c992b3f5aa272fece12892e88903c38b/transformed/sqlite-framework-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.sqlite:sqlite:2.1.0] /Users/vamsisai/.gradle/caches/8.13/transforms/c005cad77bf1f3550f5e340f83dc5ab6/transformed/sqlite-2.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.annotation:annotation-experimental:1.4.1] /Users/vamsisai/.gradle/caches/8.13/transforms/247ff2bbb50733dcb0c300de847d7ce2/transformed/jetified-annotation-experimental-1.4.1/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.core:core-viewtree:1.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/514334e82674b5a3f5749b9d99888105/transformed/jetified-core-viewtree-1.0.0/AndroidManifest.xml:2:1-7:12
 	package
@@ -117,16 +122,18 @@ uses-permission#android.permission.INTERNET
 ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:5:5-67
 MERGED from [com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:25:5-67
 MERGED from [com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:25:5-67
-MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:22:5-67
-MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:22:5-67
-MERGED from [com.google.firebase:firebase-installations:17.2.0] /Users/vamsisai/.gradle/caches/8.13/transforms/b28b5a26da58a50b3ea548e0fb66c96e/transformed/jetified-firebase-installations-17.2.0/AndroidManifest.xml:8:5-67
-MERGED from [com.google.firebase:firebase-installations:17.2.0] /Users/vamsisai/.gradle/caches/8.13/transforms/b28b5a26da58a50b3ea548e0fb66c96e/transformed/jetified-firebase-installations-17.2.0/AndroidManifest.xml:8:5-67
+MERGED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:24:5-67
 MERGED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:23:5-67
 MERGED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:23:5-67
-MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] /Users/vamsisai/.gradle/caches/8.13/transforms/af4289e2eaa34e6f7b45b9a38fb299b2/transformed/jetified-recaptcha-18.1.2/AndroidManifest.xml:7:5-67
-MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] /Users/vamsisai/.gradle/caches/8.13/transforms/af4289e2eaa34e6f7b45b9a38fb299b2/transformed/jetified-recaptcha-18.1.2/AndroidManifest.xml:7:5-67
+MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:22:5-67
+MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:22:5-67
 MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/e01dd3fea7e97b09e4cadf99f815180e/transformed/jetified-play-services-measurement-impl-21.5.0/AndroidManifest.xml:23:5-67
 MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/e01dd3fea7e97b09e4cadf99f815180e/transformed/jetified-play-services-measurement-impl-21.5.0/AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-installations:17.2.0] /Users/vamsisai/.gradle/caches/8.13/transforms/b28b5a26da58a50b3ea548e0fb66c96e/transformed/jetified-firebase-installations-17.2.0/AndroidManifest.xml:8:5-67
+MERGED from [com.google.firebase:firebase-installations:17.2.0] /Users/vamsisai/.gradle/caches/8.13/transforms/b28b5a26da58a50b3ea548e0fb66c96e/transformed/jetified-firebase-installations-17.2.0/AndroidManifest.xml:8:5-67
+MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] /Users/vamsisai/.gradle/caches/8.13/transforms/af4289e2eaa34e6f7b45b9a38fb299b2/transformed/jetified-recaptcha-18.1.2/AndroidManifest.xml:7:5-67
+MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] /Users/vamsisai/.gradle/caches/8.13/transforms/af4289e2eaa34e6f7b45b9a38fb299b2/transformed/jetified-recaptcha-18.1.2/AndroidManifest.xml:7:5-67
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/7e6dd6120b322163ad2b48af1b51afa1/transformed/jetified-play-services-measurement-sdk-api-21.5.0/AndroidManifest.xml:23:5-67
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/7e6dd6120b322163ad2b48af1b51afa1/transformed/jetified-play-services-measurement-sdk-api-21.5.0/AndroidManifest.xml:23:5-67
 	android:name
@@ -135,16 +142,20 @@ uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:6:5-79
 MERGED from [com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:26:5-79
 MERGED from [com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:26:5-79
-MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:23:5-79
-MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:23:5-79
-MERGED from [com.google.firebase:firebase-installations:17.2.0] /Users/vamsisai/.gradle/caches/8.13/transforms/b28b5a26da58a50b3ea548e0fb66c96e/transformed/jetified-firebase-installations-17.2.0/AndroidManifest.xml:7:5-79
-MERGED from [com.google.firebase:firebase-installations:17.2.0] /Users/vamsisai/.gradle/caches/8.13/transforms/b28b5a26da58a50b3ea548e0fb66c96e/transformed/jetified-firebase-installations-17.2.0/AndroidManifest.xml:7:5-79
+MERGED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:25:5-79
+MERGED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:25:5-79
 MERGED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:24:5-79
 MERGED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] /Users/vamsisai/.gradle/caches/8.13/transforms/af4289e2eaa34e6f7b45b9a38fb299b2/transformed/jetified-recaptcha-18.1.2/AndroidManifest.xml:8:5-79
-MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] /Users/vamsisai/.gradle/caches/8.13/transforms/af4289e2eaa34e6f7b45b9a38fb299b2/transformed/jetified-recaptcha-18.1.2/AndroidManifest.xml:8:5-79
+MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:23:5-79
 MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/e01dd3fea7e97b09e4cadf99f815180e/transformed/jetified-play-services-measurement-impl-21.5.0/AndroidManifest.xml:24:5-79
 MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/e01dd3fea7e97b09e4cadf99f815180e/transformed/jetified-play-services-measurement-impl-21.5.0/AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-installations:17.2.0] /Users/vamsisai/.gradle/caches/8.13/transforms/b28b5a26da58a50b3ea548e0fb66c96e/transformed/jetified-firebase-installations-17.2.0/AndroidManifest.xml:7:5-79
+MERGED from [com.google.firebase:firebase-installations:17.2.0] /Users/vamsisai/.gradle/caches/8.13/transforms/b28b5a26da58a50b3ea548e0fb66c96e/transformed/jetified-firebase-installations-17.2.0/AndroidManifest.xml:7:5-79
+MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] /Users/vamsisai/.gradle/caches/8.13/transforms/af4289e2eaa34e6f7b45b9a38fb299b2/transformed/jetified-recaptcha-18.1.2/AndroidManifest.xml:8:5-79
+MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] /Users/vamsisai/.gradle/caches/8.13/transforms/af4289e2eaa34e6f7b45b9a38fb299b2/transformed/jetified-recaptcha-18.1.2/AndroidManifest.xml:8:5-79
+MERGED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:26:5-79
+MERGED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:26:5-79
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/7e6dd6120b322163ad2b48af1b51afa1/transformed/jetified-play-services-measurement-sdk-api-21.5.0/AndroidManifest.xml:24:5-79
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/7e6dd6120b322163ad2b48af1b51afa1/transformed/jetified-play-services-measurement-sdk-api-21.5.0/AndroidManifest.xml:24:5-79
 	android:name
@@ -169,9 +180,29 @@ uses-permission#android.permission.VIBRATE
 ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:11:5-66
 	android:name
 		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:11:22-63
+uses-permission#android.permission.WAKE_LOCK
+ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:12:5-68
+MERGED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:24:5-68
+MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:24:5-68
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/e01dd3fea7e97b09e4cadf99f815180e/transformed/jetified-play-services-measurement-impl-21.5.0/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/e01dd3fea7e97b09e4cadf99f815180e/transformed/jetified-play-services-measurement-impl-21.5.0/AndroidManifest.xml:25:5-68
+MERGED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:25:5-68
+MERGED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/7e6dd6120b322163ad2b48af1b51afa1/transformed/jetified-play-services-measurement-sdk-api-21.5.0/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/7e6dd6120b322163ad2b48af1b51afa1/transformed/jetified-play-services-measurement-sdk-api-21.5.0/AndroidManifest.xml:25:5-68
+	android:name
+		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:12:22-65
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:13:5-81
+REJECTED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:30:5-32:31
+REJECTED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:27:5-81
+	android:name
+		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:13:22-78
 application
-ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:13:5-48:19
-INJECTED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:13:5-48:19
+ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:15:5-75:19
+INJECTED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:15:5-75:19
 MERGED from [com.google.android.material:material:1.12.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4fa04e4edba2625de251bb863a8f9f99/transformed/material-1.12.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.12.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4fa04e4edba2625de251bb863a8f9f99/transformed/material-1.12.0/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.0] /Users/vamsisai/.gradle/caches/8.13/transforms/bcd45809b5ea55fd91d2c66f42376b75/transformed/constraintlayout-2.2.0/AndroidManifest.xml:7:5-20
@@ -184,16 +215,30 @@ MERGED from [com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/c
 MERGED from [com.google.firebase:firebase-auth:22.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2263d6073f72970844ab2a89a8e331cd/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:28:5-73:19
 MERGED from [com.google.android.gms:play-services-fido:20.0.1] /Users/vamsisai/.gradle/caches/8.13/transforms/455f8e73220cecbe9758f0f0d9ac8138/transformed/jetified-play-services-fido-20.0.1/AndroidManifest.xml:7:5-8:19
 MERGED from [com.google.android.gms:play-services-fido:20.0.1] /Users/vamsisai/.gradle/caches/8.13/transforms/455f8e73220cecbe9758f0f0d9ac8138/transformed/jetified-play-services-fido-20.0.1/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.android.gms:play-services-appset:16.0.1] /Users/vamsisai/.gradle/caches/8.13/transforms/9729ad11a6d35490dac02ed79a7955ba/transformed/jetified-play-services-appset-16.0.1/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-appset:16.0.1] /Users/vamsisai/.gradle/caches/8.13/transforms/9729ad11a6d35490dac02ed79a7955ba/transformed/jetified-play-services-appset-16.0.1/AndroidManifest.xml:7:5-20
 MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ffcfa7383380d76f905d939517314b03/transformed/jetified-firebase-appcheck-interop-17.0.0/AndroidManifest.xml:23:5-20
 MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ffcfa7383380d76f905d939517314b03/transformed/jetified-firebase-appcheck-interop-17.0.0/AndroidManifest.xml:23:5-20
 MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/vamsisai/.gradle/caches/8.13/transforms/390395656da0292db36e20118b715480/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:19:5-23:19
 MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/vamsisai/.gradle/caches/8.13/transforms/390395656da0292db36e20118b715480/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:53:5-93:19
+MERGED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:53:5-93:19
+MERGED from [com.google.android.gms:play-services-ads-base:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ceb96c935b8b473b98bb12b8af2cdea1/transformed/jetified-play-services-ads-base-22.6.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-ads-base:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ceb96c935b8b473b98bb12b8af2cdea1/transformed/jetified-play-services-ads-base-22.6.0/AndroidManifest.xml:7:5-20
 MERGED from [com.google.firebase:firebase-analytics-ktx:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2da891b90a5e3c6aeb7bfa8bfe8a2be9/transformed/jetified-firebase-analytics-ktx-21.5.0/AndroidManifest.xml:7:5-15:19
 MERGED from [com.google.firebase:firebase-analytics-ktx:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2da891b90a5e3c6aeb7bfa8bfe8a2be9/transformed/jetified-firebase-analytics-ktx-21.5.0/AndroidManifest.xml:7:5-15:19
 MERGED from [com.google.firebase:firebase-analytics:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4fd50b75b566dd0e1db50844a03e750f/transformed/jetified-firebase-analytics-21.5.0/AndroidManifest.xml:7:5-20
 MERGED from [com.google.firebase:firebase-analytics:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4fd50b75b566dd0e1db50844a03e750f/transformed/jetified-firebase-analytics-21.5.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:28:5-44:19
+MERGED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:28:5-44:19
 MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:29:5-41:19
 MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:29:5-41:19
+MERGED from [com.google.android.gms:play-services-measurement-sdk:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/d2d039d9133fd3740aa27a152862adc6/transformed/jetified-play-services-measurement-sdk-21.5.0/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-measurement-sdk:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/d2d039d9133fd3740aa27a152862adc6/transformed/jetified-play-services-measurement-sdk-21.5.0/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/e01dd3fea7e97b09e4cadf99f815180e/transformed/jetified-play-services-measurement-impl-21.5.0/AndroidManifest.xml:29:5-30:19
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/e01dd3fea7e97b09e4cadf99f815180e/transformed/jetified-play-services-measurement-impl-21.5.0/AndroidManifest.xml:29:5-30:19
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/88cdb421971d4124237bdbc5d72d8459/transformed/jetified-play-services-ads-identifier-18.0.0/AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/88cdb421971d4124237bdbc5d72d8459/transformed/jetified-play-services-ads-identifier-18.0.0/AndroidManifest.xml:25:5-20
 MERGED from [com.google.firebase:firebase-installations:17.2.0] /Users/vamsisai/.gradle/caches/8.13/transforms/b28b5a26da58a50b3ea548e0fb66c96e/transformed/jetified-firebase-installations-17.2.0/AndroidManifest.xml:11:5-22:19
 MERGED from [com.google.firebase:firebase-installations:17.2.0] /Users/vamsisai/.gradle/caches/8.13/transforms/b28b5a26da58a50b3ea548e0fb66c96e/transformed/jetified-firebase-installations-17.2.0/AndroidManifest.xml:11:5-22:19
 MERGED from [com.google.firebase:firebase-common-ktx:20.4.2] /Users/vamsisai/.gradle/caches/8.13/transforms/b02c86d54beaf0466ddcf633683ae24e/transformed/jetified-firebase-common-ktx-20.4.2/AndroidManifest.xml:8:5-16:19
@@ -202,18 +247,14 @@ MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Users/vamsisai/.
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/02a7952cb402b38add7c251d18b8645f/transformed/jetified-firebase-auth-interop-20.0.0/AndroidManifest.xml:7:5-8:19
 MERGED from [com.google.firebase:firebase-common:20.4.2] /Users/vamsisai/.gradle/caches/8.13/transforms/5952104836f850703473c7f5c8d4d6ab/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:22:5-39:19
 MERGED from [com.google.firebase:firebase-common:20.4.2] /Users/vamsisai/.gradle/caches/8.13/transforms/5952104836f850703473c7f5c8d4d6ab/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:22:5-39:19
-MERGED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:28:5-44:19
-MERGED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:28:5-44:19
-MERGED from [com.google.android.gms:play-services-measurement-sdk:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/d2d039d9133fd3740aa27a152862adc6/transformed/jetified-play-services-measurement-sdk-21.5.0/AndroidManifest.xml:22:5-23:19
-MERGED from [com.google.android.gms:play-services-measurement-sdk:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/d2d039d9133fd3740aa27a152862adc6/transformed/jetified-play-services-measurement-sdk-21.5.0/AndroidManifest.xml:22:5-23:19
 MERGED from [com.google.android.play:integrity:1.1.0] /Users/vamsisai/.gradle/caches/8.13/transforms/790da7a99c2ae9a106803ab595165240/transformed/jetified-integrity-1.1.0/AndroidManifest.xml:5:5-6:19
 MERGED from [com.google.android.play:integrity:1.1.0] /Users/vamsisai/.gradle/caches/8.13/transforms/790da7a99c2ae9a106803ab595165240/transformed/jetified-integrity-1.1.0/AndroidManifest.xml:5:5-6:19
 MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ae1abe10971591039c92a2ca541835d2/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ae1abe10971591039c92a2ca541835d2/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
-MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/e01dd3fea7e97b09e4cadf99f815180e/transformed/jetified-play-services-measurement-impl-21.5.0/AndroidManifest.xml:29:5-30:19
-MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/e01dd3fea7e97b09e4cadf99f815180e/transformed/jetified-play-services-measurement-impl-21.5.0/AndroidManifest.xml:29:5-30:19
 MERGED from [com.google.android.gms:play-services-stats:17.0.2] /Users/vamsisai/.gradle/caches/8.13/transforms/bcf896ae0bb39caa1066bc68c4a9c288/transformed/jetified-play-services-stats-17.0.2/AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-stats:17.0.2] /Users/vamsisai/.gradle/caches/8.13/transforms/bcf896ae0bb39caa1066bc68c4a9c288/transformed/jetified-play-services-stats-17.0.2/AndroidManifest.xml:7:5-20
+MERGED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:30:5-143:19
+MERGED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:30:5-143:19
 MERGED from [androidx.window:window:1.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/190a1d405c8947bd65defbb59840bf2f/transformed/jetified-window-1.0.0/AndroidManifest.xml:24:5-31:19
 MERGED from [androidx.window:window:1.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/190a1d405c8947bd65defbb59840bf2f/transformed/jetified-window-1.0.0/AndroidManifest.xml:24:5-31:19
 MERGED from [androidx.core:core:1.17.0] /Users/vamsisai/.gradle/caches/8.13/transforms/d29ef8606abb89d799eeeb54460f73ef/transformed/core-1.17.0/AndroidManifest.xml:28:5-89
@@ -224,8 +265,6 @@ MERGED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Users/vam
 MERGED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Users/vamsisai/.gradle/caches/8.13/transforms/5e4ee54108d13a596389128c3fe0e080/transformed/jetified-ads-adservices-1.0.0-beta05/AndroidManifest.xml:22:5-26:19
 MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /Users/vamsisai/.gradle/caches/8.13/transforms/5aeddd39414c42376549d2af1a079218/transformed/jetified-play-services-tasks-18.0.2/AndroidManifest.xml:5:5-20
 MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /Users/vamsisai/.gradle/caches/8.13/transforms/5aeddd39414c42376549d2af1a079218/transformed/jetified-play-services-tasks-18.0.2/AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/88cdb421971d4124237bdbc5d72d8459/transformed/jetified-play-services-ads-identifier-18.0.0/AndroidManifest.xml:25:5-20
-MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/88cdb421971d4124237bdbc5d72d8459/transformed/jetified-play-services-ads-identifier-18.0.0/AndroidManifest.xml:25:5-20
 MERGED from [com.google.android.gms:play-services-measurement-base:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/209bd190c52c1057974623f5e4470865/transformed/jetified-play-services-measurement-base-21.5.0/AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-measurement-base:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/209bd190c52c1057974623f5e4470865/transformed/jetified-play-services-measurement-base-21.5.0/AndroidManifest.xml:7:5-20
 MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/a681e54d3f779b0a4cdfcdff24ecdc34/transformed/jetified-firebase-measurement-connector-19.0.0/AndroidManifest.xml:22:5-23:19
@@ -238,68 +277,108 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/vamsisai/.gradle/cac
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/vamsisai/.gradle/caches/8.13/transforms/b6f71e357ebbea76eac872f7258fdfc6/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/vamsisai/.gradle/caches/8.13/transforms/16d98c97da8fbd5b4972dda33b942e43/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/vamsisai/.gradle/caches/8.13/transforms/16d98c97da8fbd5b4972dda33b942e43/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.room:room-runtime:2.2.5] /Users/vamsisai/.gradle/caches/8.13/transforms/4b57bc43fdd97a9059c907184e6d3f7a/transformed/room-runtime-2.2.5/AndroidManifest.xml:24:5-29:19
+MERGED from [androidx.room:room-runtime:2.2.5] /Users/vamsisai/.gradle/caches/8.13/transforms/4b57bc43fdd97a9059c907184e6d3f7a/transformed/room-runtime-2.2.5/AndroidManifest.xml:24:5-29:19
 	android:extractNativeLibs
 		INJECTED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.17.0] /Users/vamsisai/.gradle/caches/8.13/transforms/d29ef8606abb89d799eeeb54460f73ef/transformed/core-1.17.0/AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:22:9-35
+		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:24:9-35
 	android:label
-		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:18:9-41
+		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:20:9-41
 	android:fullBackupContent
-		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:16:9-54
+		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:18:9-54
 	android:roundIcon
-		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:21:9-54
+		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:23:9-54
 	android:icon
-		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:17:9-43
+		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:19:9-43
 	android:allowBackup
-		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:14:9-35
+		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:16:9-35
 	android:theme
-		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:23:9-39
+		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:25:9-39
 	android:networkSecurityConfig
-		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:19:9-69
+		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:21:9-69
 	android:dataExtractionRules
-		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:15:9-65
+		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:17:9-65
 	android:usesCleartextTraffic
-		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:20:9-44
+		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:22:9-44
+meta-data#com.google.android.gms.ads.APPLICATION_ID
+ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:28:9-30:70
+	android:value
+		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:30:13-67
+	android:name
+		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:29:13-69
+property#android.adservices.AD_SERVICES_CONFIG
+ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:33:9-36:48
+MERGED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:90:9-92:62
+MERGED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:90:9-92:62
+MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:30:9-32:61
+MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:30:9-32:61
+	android:resource
+		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:35:13-59
+		REJECTED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:92:13-59
+		REJECTED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:32:13-58
+	tools:replace
+		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:36:13-45
+	android:name
+		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:34:13-65
 activity#com.v7techsolution.interviewfire.LoginActivity
-ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:25:9-32:20
+ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:38:9-45:20
 	android:exported
-		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:27:13-36
-	android:name
-		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:26:13-42
-intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:28:13-31:29
-action#android.intent.action.MAIN
-ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:29:17-69
-	android:name
-		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:29:25-66
-category#android.intent.category.LAUNCHER
-ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:30:17-77
-	android:name
-		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:30:27-74
-activity#com.v7techsolution.interviewfire.MainActivity
-ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:34:9-36:40
-	android:exported
-		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:36:13-37
-	android:name
-		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:35:13-41
-activity#com.v7techsolution.interviewfire.TopicActivity
-ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:38:9-41:58
-	android:parentActivityName
-		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:41:13-55
-	android:exported
-		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:40:13-37
+		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:40:13-36
 	android:name
 		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:39:13-42
-activity#com.v7techsolution.interviewfire.QuestionActivity
-ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:43:9-46:59
-	android:parentActivityName
-		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:46:13-56
-	android:exported
-		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:45:13-37
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:41:13-44:29
+action#android.intent.action.MAIN
+ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:42:17-69
 	android:name
-		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:44:13-45
+		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:42:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:43:17-77
+	android:name
+		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:43:27-74
+activity#com.v7techsolution.interviewfire.MainActivity
+ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:47:9-49:39
+	android:exported
+		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:49:13-36
+	android:name
+		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:48:13-41
+activity#com.v7techsolution.interviewfire.TopicActivity
+ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:51:9-54:58
+	android:parentActivityName
+		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:54:13-55
+	android:exported
+		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:53:13-37
+	android:name
+		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:52:13-42
+activity#com.v7techsolution.interviewfire.QuestionActivity
+ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:56:9-59:59
+	android:parentActivityName
+		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:59:13-56
+	android:exported
+		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:58:13-37
+	android:name
+		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:57:13-45
+receiver#com.v7techsolution.interviewfire.NotificationReceiver
+ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:62:9-64:40
+	android:exported
+		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:64:13-37
+	android:name
+		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:63:13-49
+receiver#com.v7techsolution.interviewfire.BootReceiver
+ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:67:9-73:20
+	android:exported
+		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:69:13-37
+	android:name
+		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:68:13-41
+intent-filter#action:name:android.intent.action.BOOT_COMPLETED
+ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:70:13-72:29
+action#android.intent.action.BOOT_COMPLETED
+ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:71:17-79
+	android:name
+		ADDED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml:71:25-76
 uses-sdk
 INJECTED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/vamsisai/AndroidStudioProjects/cloudapp/app/src/main/AndroidManifest.xml
@@ -344,16 +423,34 @@ MERGED from [com.google.android.gms:play-services-auth-base:18.0.4] /Users/vamsi
 MERGED from [com.google.android.gms:play-services-auth-base:18.0.4] /Users/vamsisai/.gradle/caches/8.13/transforms/512a01ed8ec2295cf657cf9ef3f26c40/transformed/jetified-play-services-auth-base-18.0.4/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-fido:20.0.1] /Users/vamsisai/.gradle/caches/8.13/transforms/455f8e73220cecbe9758f0f0d9ac8138/transformed/jetified-play-services-fido-20.0.1/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-fido:20.0.1] /Users/vamsisai/.gradle/caches/8.13/transforms/455f8e73220cecbe9758f0f0d9ac8138/transformed/jetified-play-services-fido-20.0.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-ads:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8f9e3762a9341d9ed8ceb363f90acf14/transformed/jetified-play-services-ads-22.6.0/AndroidManifest.xml:21:5-23:52
+MERGED from [com.google.android.gms:play-services-ads:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8f9e3762a9341d9ed8ceb363f90acf14/transformed/jetified-play-services-ads-22.6.0/AndroidManifest.xml:21:5-23:52
+MERGED from [com.google.android.gms:play-services-appset:16.0.1] /Users/vamsisai/.gradle/caches/8.13/transforms/9729ad11a6d35490dac02ed79a7955ba/transformed/jetified-play-services-appset-16.0.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-appset:16.0.1] /Users/vamsisai/.gradle/caches/8.13/transforms/9729ad11a6d35490dac02ed79a7955ba/transformed/jetified-play-services-appset-16.0.1/AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ffcfa7383380d76f905d939517314b03/transformed/jetified-firebase-appcheck-interop-17.0.0/AndroidManifest.xml:18:5-20:41
 MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ffcfa7383380d76f905d939517314b03/transformed/jetified-firebase-appcheck-interop-17.0.0/AndroidManifest.xml:18:5-20:41
 MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/vamsisai/.gradle/caches/8.13/transforms/390395656da0292db36e20118b715480/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:18:5-43
 MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/vamsisai/.gradle/caches/8.13/transforms/390395656da0292db36e20118b715480/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:21:5-44
+MERGED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:21:5-44
+MERGED from [com.google.android.gms:play-services-ads-base:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ceb96c935b8b473b98bb12b8af2cdea1/transformed/jetified-play-services-ads-base-22.6.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-ads-base:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ceb96c935b8b473b98bb12b8af2cdea1/transformed/jetified-play-services-ads-base-22.6.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.ump:user-messaging-platform:2.1.0] /Users/vamsisai/.gradle/caches/8.13/transforms/584e0a2c4fbf6fb14cc142ec51136576/transformed/jetified-user-messaging-platform-2.1.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.ump:user-messaging-platform:2.1.0] /Users/vamsisai/.gradle/caches/8.13/transforms/584e0a2c4fbf6fb14cc142ec51136576/transformed/jetified-user-messaging-platform-2.1.0/AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-analytics-ktx:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2da891b90a5e3c6aeb7bfa8bfe8a2be9/transformed/jetified-firebase-analytics-ktx-21.5.0/AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-analytics-ktx:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2da891b90a5e3c6aeb7bfa8bfe8a2be9/transformed/jetified-firebase-analytics-ktx-21.5.0/AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-analytics:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4fd50b75b566dd0e1db50844a03e750f/transformed/jetified-firebase-analytics-21.5.0/AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-analytics:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4fd50b75b566dd0e1db50844a03e750f/transformed/jetified-firebase-analytics-21.5.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/d2d039d9133fd3740aa27a152862adc6/transformed/jetified-play-services-measurement-sdk-21.5.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/d2d039d9133fd3740aa27a152862adc6/transformed/jetified-play-services-measurement-sdk-21.5.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/e01dd3fea7e97b09e4cadf99f815180e/transformed/jetified-play-services-measurement-impl-21.5.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/e01dd3fea7e97b09e4cadf99f815180e/transformed/jetified-play-services-measurement-impl-21.5.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/88cdb421971d4124237bdbc5d72d8459/transformed/jetified-play-services-ads-identifier-18.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/88cdb421971d4124237bdbc5d72d8459/transformed/jetified-play-services-ads-identifier-18.0.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-installations:17.2.0] /Users/vamsisai/.gradle/caches/8.13/transforms/b28b5a26da58a50b3ea548e0fb66c96e/transformed/jetified-firebase-installations-17.2.0/AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-installations:17.2.0] /Users/vamsisai/.gradle/caches/8.13/transforms/b28b5a26da58a50b3ea548e0fb66c96e/transformed/jetified-firebase-installations-17.2.0/AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-common-ktx:20.4.2] /Users/vamsisai/.gradle/caches/8.13/transforms/b02c86d54beaf0466ddcf633683ae24e/transformed/jetified-firebase-common-ktx-20.4.2/AndroidManifest.xml:5:5-44
@@ -362,10 +459,6 @@ MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Users/vamsisai/.
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/02a7952cb402b38add7c251d18b8645f/transformed/jetified-firebase-auth-interop-20.0.0/AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-common:20.4.2] /Users/vamsisai/.gradle/caches/8.13/transforms/5952104836f850703473c7f5c8d4d6ab/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:19:5-44
 MERGED from [com.google.firebase:firebase-common:20.4.2] /Users/vamsisai/.gradle/caches/8.13/transforms/5952104836f850703473c7f5c8d4d6ab/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:19:5-44
-MERGED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-measurement-sdk:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/d2d039d9133fd3740aa27a152862adc6/transformed/jetified-play-services-measurement-sdk-21.5.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-measurement-sdk:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/d2d039d9133fd3740aa27a152862adc6/transformed/jetified-play-services-measurement-sdk-21.5.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] /Users/vamsisai/.gradle/caches/8.13/transforms/af4289e2eaa34e6f7b45b9a38fb299b2/transformed/jetified-recaptcha-18.1.2/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] /Users/vamsisai/.gradle/caches/8.13/transforms/af4289e2eaa34e6f7b45b9a38fb299b2/transformed/jetified-recaptcha-18.1.2/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.play:integrity:1.1.0] /Users/vamsisai/.gradle/caches/8.13/transforms/790da7a99c2ae9a106803ab595165240/transformed/jetified-integrity-1.1.0/AndroidManifest.xml:4:5-44
@@ -396,22 +489,22 @@ MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/vamsi
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/vamsisai/.gradle/caches/8.13/transforms/0fb1f5fdec1ed3dfcd23282a45c7edf7/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/vamsisai/.gradle/caches/8.13/transforms/17b63f5041e60e2db318429831fd0d52/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/vamsisai/.gradle/caches/8.13/transforms/17b63f5041e60e2db318429831fd0d52/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/e01dd3fea7e97b09e4cadf99f815180e/transformed/jetified-play-services-measurement-impl-21.5.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/e01dd3fea7e97b09e4cadf99f815180e/transformed/jetified-play-services-measurement-impl-21.5.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-stats:17.0.2] /Users/vamsisai/.gradle/caches/8.13/transforms/bcf896ae0bb39caa1066bc68c4a9c288/transformed/jetified-play-services-stats-17.0.2/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-stats:17.0.2] /Users/vamsisai/.gradle/caches/8.13/transforms/bcf896ae0bb39caa1066bc68c4a9c288/transformed/jetified-play-services-stats-17.0.2/AndroidManifest.xml:5:5-44
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/24d40c6f5b4fc891ed5fc8ee62dd4eeb/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/24d40c6f5b4fc891ed5fc8ee62dd4eeb/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.loader:loader:1.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/e7832a402db858e4dfbe9727a095c61f/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.loader:loader:1.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/e7832a402db858e4dfbe9727a095c61f/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.browser:browser:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/98390096df4b5a2ee7d2e7bc41cff0b6/transformed/browser-1.4.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.browser:browser:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/98390096df4b5a2ee7d2e7bc41cff0b6/transformed/browser-1.4.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/vamsisai/.gradle/caches/8.13/transforms/a1b309596092ddfc61a89c764eb07555/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/vamsisai/.gradle/caches/8.13/transforms/a1b309596092ddfc61a89c764eb07555/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/f67a6322b78ab05b0212177a1d528f96/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/f67a6322b78ab05b0212177a1d528f96/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.customview:customview:1.1.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8ffd2a63bdda6c41e2b810ef81875c1e/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.customview:customview:1.1.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8ffd2a63bdda6c41e2b810ef81875c1e/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.browser:browser:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/98390096df4b5a2ee7d2e7bc41cff0b6/transformed/browser-1.4.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.browser:browser:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/98390096df4b5a2ee7d2e7bc41cff0b6/transformed/browser-1.4.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:21:5-23:41
 MERGED from [androidx.window:window:1.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/190a1d405c8947bd65defbb59840bf2f/transformed/jetified-window-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.window:window:1.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/190a1d405c8947bd65defbb59840bf2f/transformed/jetified-window-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.core:core:1.17.0] /Users/vamsisai/.gradle/caches/8.13/transforms/d29ef8606abb89d799eeeb54460f73ef/transformed/core-1.17.0/AndroidManifest.xml:20:5-44
@@ -420,6 +513,8 @@ MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/vamsisai/.gradle/c
 MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/vamsisai/.gradle/caches/8.13/transforms/04f899609c68ba20a315d7918448e3a2/transformed/jetified-savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/vamsisai/.gradle/caches/8.13/transforms/b60e612c065975ac16a2ac0cc02c7be9/transformed/jetified-savedstate-1.2.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/vamsisai/.gradle/caches/8.13/transforms/b60e612c065975ac16a2ac0cc02c7be9/transformed/jetified-savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-service:2.8.7] /Users/vamsisai/.gradle/caches/8.13/transforms/0301cc9168035e13e87689f4a37fec2b/transformed/jetified-lifecycle-service-2.8.7/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-service:2.8.7] /Users/vamsisai/.gradle/caches/8.13/transforms/0301cc9168035e13e87689f4a37fec2b/transformed/jetified-lifecycle-service-2.8.7/AndroidManifest.xml:5:5-44
 MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.7] /Users/vamsisai/.gradle/caches/8.13/transforms/fb0b56a551c3f4fb68033a179d2da3f4/transformed/jetified-lifecycle-runtime-ktx-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.7] /Users/vamsisai/.gradle/caches/8.13/transforms/fb0b56a551c3f4fb68033a179d2da3f4/transformed/jetified-lifecycle-runtime-ktx-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.lifecycle:lifecycle-process:2.8.7] /Users/vamsisai/.gradle/caches/8.13/transforms/60d77d2c6b94b0a4facad7f289f0fb54/transformed/jetified-lifecycle-process-2.8.7/AndroidManifest.xml:21:5-44
@@ -448,8 +543,6 @@ MERGED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Users/vam
 MERGED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Users/vamsisai/.gradle/caches/8.13/transforms/5e4ee54108d13a596389128c3fe0e080/transformed/jetified-ads-adservices-1.0.0-beta05/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /Users/vamsisai/.gradle/caches/8.13/transforms/5aeddd39414c42376549d2af1a079218/transformed/jetified-play-services-tasks-18.0.2/AndroidManifest.xml:4:5-43
 MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /Users/vamsisai/.gradle/caches/8.13/transforms/5aeddd39414c42376549d2af1a079218/transformed/jetified-play-services-tasks-18.0.2/AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/88cdb421971d4124237bdbc5d72d8459/transformed/jetified-play-services-ads-identifier-18.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/88cdb421971d4124237bdbc5d72d8459/transformed/jetified-play-services-ads-identifier-18.0.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/7e6dd6120b322163ad2b48af1b51afa1/transformed/jetified-play-services-measurement-sdk-api-21.5.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/7e6dd6120b322163ad2b48af1b51afa1/transformed/jetified-play-services-measurement-sdk-api-21.5.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-measurement-base:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/209bd190c52c1057974623f5e4470865/transformed/jetified-play-services-measurement-base-21.5.0/AndroidManifest.xml:5:5-44
@@ -464,16 +557,6 @@ MERGED from [androidx.fragment:fragment-ktx:1.8.5] /Users/vamsisai/.gradle/cache
 MERGED from [androidx.fragment:fragment-ktx:1.8.5] /Users/vamsisai/.gradle/caches/8.13/transforms/fc82ea3c4b833b3d5a0a4d42632d63a2/transformed/jetified-fragment-ktx-1.8.5/AndroidManifest.xml:5:5-44
 MERGED from [androidx.core:core-ktx:1.17.0] /Users/vamsisai/.gradle/caches/8.13/transforms/23d3196c0a34ca8051067d00a2010bea/transformed/jetified-core-ktx-1.17.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.core:core-ktx:1.17.0] /Users/vamsisai/.gradle/caches/8.13/transforms/23d3196c0a34ca8051067d00a2010bea/transformed/jetified-core-ktx-1.17.0/AndroidManifest.xml:5:5-44
-MERGED from [io.noties.markwon:html:4.6.2] /Users/vamsisai/.gradle/caches/8.13/transforms/4c70fb40258ef4c91bfdb3c7138d137c/transformed/jetified-html-4.6.2/AndroidManifest.xml:7:5-9:41
-MERGED from [io.noties.markwon:html:4.6.2] /Users/vamsisai/.gradle/caches/8.13/transforms/4c70fb40258ef4c91bfdb3c7138d137c/transformed/jetified-html-4.6.2/AndroidManifest.xml:7:5-9:41
-MERGED from [io.noties.markwon:image:4.6.2] /Users/vamsisai/.gradle/caches/8.13/transforms/0ce089e4453137bf6a09f9c63b6a6329/transformed/jetified-image-4.6.2/AndroidManifest.xml:7:5-9:41
-MERGED from [io.noties.markwon:image:4.6.2] /Users/vamsisai/.gradle/caches/8.13/transforms/0ce089e4453137bf6a09f9c63b6a6329/transformed/jetified-image-4.6.2/AndroidManifest.xml:7:5-9:41
-MERGED from [io.noties.markwon:syntax-highlight:4.6.2] /Users/vamsisai/.gradle/caches/8.13/transforms/2ac97d1190e804b67527c158fdb536f6/transformed/jetified-syntax-highlight-4.6.2/AndroidManifest.xml:7:5-9:41
-MERGED from [io.noties.markwon:syntax-highlight:4.6.2] /Users/vamsisai/.gradle/caches/8.13/transforms/2ac97d1190e804b67527c158fdb536f6/transformed/jetified-syntax-highlight-4.6.2/AndroidManifest.xml:7:5-9:41
-MERGED from [io.noties.markwon:linkify:4.6.2] /Users/vamsisai/.gradle/caches/8.13/transforms/9dc6f28fecd5406b59b67f682ccca818/transformed/jetified-linkify-4.6.2/AndroidManifest.xml:7:5-9:41
-MERGED from [io.noties.markwon:linkify:4.6.2] /Users/vamsisai/.gradle/caches/8.13/transforms/9dc6f28fecd5406b59b67f682ccca818/transformed/jetified-linkify-4.6.2/AndroidManifest.xml:7:5-9:41
-MERGED from [io.noties.markwon:core:4.6.2] /Users/vamsisai/.gradle/caches/8.13/transforms/aa9a1be1fd7874ae5b2d9f15766e6a04/transformed/jetified-core-4.6.2/AndroidManifest.xml:7:5-9:41
-MERGED from [io.noties.markwon:core:4.6.2] /Users/vamsisai/.gradle/caches/8.13/transforms/aa9a1be1fd7874ae5b2d9f15766e6a04/transformed/jetified-core-4.6.2/AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/612d2ff8bad3f0cd2ba6d0303049acc2/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/612d2ff8bad3f0cd2ba6d0303049acc2/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.cardview:cardview:1.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/fdc18f730afdfea0046d5e30095662dd/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
@@ -490,6 +573,8 @@ MERGED from [androidx.tracing:tracing:1.2.0] /Users/vamsisai/.gradle/caches/8.13
 MERGED from [androidx.tracing:tracing:1.2.0] /Users/vamsisai/.gradle/caches/8.13/transforms/1be691a64992cec9a7badb28377dc16d/transformed/jetified-tracing-1.2.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/vamsisai/.gradle/caches/8.13/transforms/16d98c97da8fbd5b4972dda33b942e43/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/vamsisai/.gradle/caches/8.13/transforms/16d98c97da8fbd5b4972dda33b942e43/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.room:room-runtime:2.2.5] /Users/vamsisai/.gradle/caches/8.13/transforms/4b57bc43fdd97a9059c907184e6d3f7a/transformed/room-runtime-2.2.5/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.room:room-runtime:2.2.5] /Users/vamsisai/.gradle/caches/8.13/transforms/4b57bc43fdd97a9059c907184e6d3f7a/transformed/room-runtime-2.2.5/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/vamsisai/.gradle/caches/8.13/transforms/1f6aa089a75648003cfad83206cb73fb/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/vamsisai/.gradle/caches/8.13/transforms/1f6aa089a75648003cfad83206cb73fb/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/a5c4db11f8876239abb634dbed9b3ee3/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
@@ -498,6 +583,10 @@ MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/vamsisai/.gradle/c
 MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/20a97db2af9366a6171025f443a60dc5/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.print:print:1.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/f8d446dad7d945e59da790c633d22429/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.print:print:1.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/f8d446dad7d945e59da790c633d22429/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite-framework:2.1.0] /Users/vamsisai/.gradle/caches/8.13/transforms/c992b3f5aa272fece12892e88903c38b/transformed/sqlite-framework-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.sqlite:sqlite-framework:2.1.0] /Users/vamsisai/.gradle/caches/8.13/transforms/c992b3f5aa272fece12892e88903c38b/transformed/sqlite-framework-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.sqlite:sqlite:2.1.0] /Users/vamsisai/.gradle/caches/8.13/transforms/c005cad77bf1f3550f5e340f83dc5ab6/transformed/sqlite-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.sqlite:sqlite:2.1.0] /Users/vamsisai/.gradle/caches/8.13/transforms/c005cad77bf1f3550f5e340f83dc5ab6/transformed/sqlite-2.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.annotation:annotation-experimental:1.4.1] /Users/vamsisai/.gradle/caches/8.13/transforms/247ff2bbb50733dcb0c300de847d7ce2/transformed/jetified-annotation-experimental-1.4.1/AndroidManifest.xml:5:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.4.1] /Users/vamsisai/.gradle/caches/8.13/transforms/247ff2bbb50733dcb0c300de847d7ce2/transformed/jetified-annotation-experimental-1.4.1/AndroidManifest.xml:5:5-44
 MERGED from [androidx.core:core-viewtree:1.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/514334e82674b5a3f5749b9d99888105/transformed/jetified-core-viewtree-1.0.0/AndroidManifest.xml:5:5-44
@@ -618,50 +707,146 @@ ADDED from [com.google.android.gms:play-services-base:18.0.1] /Users/vamsisai/.g
 		ADDED from [com.google.android.gms:play-services-base:18.0.1] /Users/vamsisai/.gradle/caches/8.13/transforms/390395656da0292db36e20118b715480/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
 	android:name
 		ADDED from [com.google.android.gms:play-services-base:18.0.1] /Users/vamsisai/.gradle/caches/8.13/transforms/390395656da0292db36e20118b715480/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+uses-permission#com.google.android.gms.permission.AD_ID
+ADDED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:26:5-79
+MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:25:5-79
+MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:25:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/e01dd3fea7e97b09e4cadf99f815180e/transformed/jetified-play-services-measurement-impl-21.5.0/AndroidManifest.xml:27:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/e01dd3fea7e97b09e4cadf99f815180e/transformed/jetified-play-services-measurement-impl-21.5.0/AndroidManifest.xml:27:5-79
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/88cdb421971d4124237bdbc5d72d8459/transformed/jetified-play-services-ads-identifier-18.0.0/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/88cdb421971d4124237bdbc5d72d8459/transformed/jetified-play-services-ads-identifier-18.0.0/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/7e6dd6120b322163ad2b48af1b51afa1/transformed/jetified-play-services-measurement-sdk-api-21.5.0/AndroidManifest.xml:26:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/7e6dd6120b322163ad2b48af1b51afa1/transformed/jetified-play-services-measurement-sdk-api-21.5.0/AndroidManifest.xml:26:5-79
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:26:22-76
+uses-permission#android.permission.ACCESS_ADSERVICES_AD_ID
+ADDED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:27:5-82
+MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:27:5-82
+MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:27:5-82
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/7e6dd6120b322163ad2b48af1b51afa1/transformed/jetified-play-services-measurement-sdk-api-21.5.0/AndroidManifest.xml:28:5-82
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/7e6dd6120b322163ad2b48af1b51afa1/transformed/jetified-play-services-measurement-sdk-api-21.5.0/AndroidManifest.xml:28:5-82
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:27:22-79
+uses-permission#android.permission.ACCESS_ADSERVICES_ATTRIBUTION
+ADDED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:28:5-88
+MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:26:5-88
+MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:26:5-88
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/7e6dd6120b322163ad2b48af1b51afa1/transformed/jetified-play-services-measurement-sdk-api-21.5.0/AndroidManifest.xml:27:5-88
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/7e6dd6120b322163ad2b48af1b51afa1/transformed/jetified-play-services-measurement-sdk-api-21.5.0/AndroidManifest.xml:27:5-88
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:28:22-85
+uses-permission#android.permission.ACCESS_ADSERVICES_TOPICS
+ADDED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:29:5-83
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:29:22-80
+queries
+ADDED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:35:5-51:15
+intent#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+data:scheme:https
+ADDED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:38:9-44:18
+intent#action:name:android.support.customtabs.action.CustomTabsService
+ADDED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:47:9-49:18
+action#android.support.customtabs.action.CustomTabsService
+ADDED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:48:13-90
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:48:21-87
+activity#com.google.android.gms.ads.AdActivity
+ADDED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:56:9-61:43
+	android:exported
+		ADDED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:59:13-37
+	tools:ignore
+		ADDED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:61:13-40
+	android:configChanges
+		ADDED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:58:13-122
+	android:theme
+		ADDED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:60:13-61
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:57:13-65
+provider#com.google.android.gms.ads.MobileAdsInitProvider
+ADDED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:63:9-68:43
+	android:authorities
+		ADDED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:65:13-73
+	android:exported
+		ADDED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:66:13-37
+	tools:ignore
+		ADDED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:68:13-40
+	android:initOrder
+		ADDED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:67:13-36
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:64:13-76
+service#com.google.android.gms.ads.AdService
+ADDED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:70:9-74:43
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:72:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:73:13-37
+	tools:ignore
+		ADDED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:74:13-40
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:71:13-64
+activity#com.google.android.gms.ads.OutOfContextTestingActivity
+ADDED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:76:9-80:43
+	android:exported
+		ADDED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:79:13-37
+	tools:ignore
+		ADDED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:80:13-40
+	android:configChanges
+		ADDED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:78:13-122
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:77:13-82
+activity#com.google.android.gms.ads.NotificationHandlerActivity
+ADDED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:81:9-88:43
+	android:excludeFromRecents
+		ADDED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:83:13-46
+	android:launchMode
+		ADDED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:85:13-44
+	android:exported
+		ADDED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:84:13-37
+	tools:ignore
+		ADDED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:88:13-40
+	android:theme
+		ADDED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:87:13-72
+	android:taskAffinity
+		ADDED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:86:13-36
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:22.6.0] /Users/vamsisai/.gradle/caches/8.13/transforms/4e9fa85fa89dd576a69d7b7d1bd0c937/transformed/jetified-play-services-ads-lite-22.6.0/AndroidManifest.xml:82:13-82
 meta-data#com.google.firebase.components:com.google.firebase.analytics.ktx.FirebaseAnalyticsLegacyRegistrar
 ADDED from [com.google.firebase:firebase-analytics-ktx:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2da891b90a5e3c6aeb7bfa8bfe8a2be9/transformed/jetified-firebase-analytics-ktx-21.5.0/AndroidManifest.xml:11:13-13:85
 	android:value
 		ADDED from [com.google.firebase:firebase-analytics-ktx:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2da891b90a5e3c6aeb7bfa8bfe8a2be9/transformed/jetified-firebase-analytics-ktx-21.5.0/AndroidManifest.xml:13:17-82
 	android:name
 		ADDED from [com.google.firebase:firebase-analytics-ktx:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2da891b90a5e3c6aeb7bfa8bfe8a2be9/transformed/jetified-firebase-analytics-ktx-21.5.0/AndroidManifest.xml:12:17-129
-uses-permission#android.permission.WAKE_LOCK
-ADDED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:24:5-68
-MERGED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:25:5-68
-MERGED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:25:5-68
-MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/e01dd3fea7e97b09e4cadf99f815180e/transformed/jetified-play-services-measurement-impl-21.5.0/AndroidManifest.xml:25:5-68
-MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/e01dd3fea7e97b09e4cadf99f815180e/transformed/jetified-play-services-measurement-impl-21.5.0/AndroidManifest.xml:25:5-68
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/7e6dd6120b322163ad2b48af1b51afa1/transformed/jetified-play-services-measurement-sdk-api-21.5.0/AndroidManifest.xml:25:5-68
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/7e6dd6120b322163ad2b48af1b51afa1/transformed/jetified-play-services-measurement-sdk-api-21.5.0/AndroidManifest.xml:25:5-68
+uses-permission#com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE
+ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:26:5-110
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/e01dd3fea7e97b09e4cadf99f815180e/transformed/jetified-play-services-measurement-impl-21.5.0/AndroidManifest.xml:26:5-110
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/e01dd3fea7e97b09e4cadf99f815180e/transformed/jetified-play-services-measurement-impl-21.5.0/AndroidManifest.xml:26:5-110
 	android:name
-		ADDED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:24:22-65
-uses-permission#com.google.android.gms.permission.AD_ID
-ADDED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:25:5-79
-MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/e01dd3fea7e97b09e4cadf99f815180e/transformed/jetified-play-services-measurement-impl-21.5.0/AndroidManifest.xml:27:5-79
-MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/e01dd3fea7e97b09e4cadf99f815180e/transformed/jetified-play-services-measurement-impl-21.5.0/AndroidManifest.xml:27:5-79
-MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/88cdb421971d4124237bdbc5d72d8459/transformed/jetified-play-services-ads-identifier-18.0.0/AndroidManifest.xml:23:5-79
-MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/88cdb421971d4124237bdbc5d72d8459/transformed/jetified-play-services-ads-identifier-18.0.0/AndroidManifest.xml:23:5-79
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/7e6dd6120b322163ad2b48af1b51afa1/transformed/jetified-play-services-measurement-sdk-api-21.5.0/AndroidManifest.xml:26:5-79
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/7e6dd6120b322163ad2b48af1b51afa1/transformed/jetified-play-services-measurement-sdk-api-21.5.0/AndroidManifest.xml:26:5-79
+		ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:26:22-107
+receiver#com.google.android.gms.measurement.AppMeasurementReceiver
+ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:29:9-33:20
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:31:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:32:13-37
 	android:name
-		ADDED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:25:22-76
-uses-permission#android.permission.ACCESS_ADSERVICES_ATTRIBUTION
-ADDED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:26:5-88
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/7e6dd6120b322163ad2b48af1b51afa1/transformed/jetified-play-services-measurement-sdk-api-21.5.0/AndroidManifest.xml:27:5-88
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/7e6dd6120b322163ad2b48af1b51afa1/transformed/jetified-play-services-measurement-sdk-api-21.5.0/AndroidManifest.xml:27:5-88
+		ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:30:13-85
+service#com.google.android.gms.measurement.AppMeasurementService
+ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:35:9-38:40
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:38:13-37
 	android:name
-		ADDED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:26:22-85
-uses-permission#android.permission.ACCESS_ADSERVICES_AD_ID
-ADDED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:27:5-82
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/7e6dd6120b322163ad2b48af1b51afa1/transformed/jetified-play-services-measurement-sdk-api-21.5.0/AndroidManifest.xml:28:5-82
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/7e6dd6120b322163ad2b48af1b51afa1/transformed/jetified-play-services-measurement-sdk-api-21.5.0/AndroidManifest.xml:28:5-82
+		ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:36:13-84
+service#com.google.android.gms.measurement.AppMeasurementJobService
+ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:39:9-43:72
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:41:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:42:13-37
+	android:permission
+		ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:43:13-69
 	android:name
-		ADDED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:27:22-79
-property#android.adservices.AD_SERVICES_CONFIG
-ADDED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:30:9-32:61
-	android:resource
-		ADDED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:32:13-58
-	android:name
-		ADDED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:31:13-65
+		ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:40:13-87
 meta-data#com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar
 ADDED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/570bda01daabfa90fc84984b99246b06/transformed/jetified-play-services-measurement-api-21.5.0/AndroidManifest.xml:37:13-39:85
 	android:value
@@ -704,40 +889,10 @@ ADDED from [com.google.firebase:firebase-common:20.4.2] /Users/vamsisai/.gradle/
 		ADDED from [com.google.firebase:firebase-common:20.4.2] /Users/vamsisai/.gradle/caches/8.13/transforms/5952104836f850703473c7f5c8d4d6ab/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:37:17-82
 	android:name
 		ADDED from [com.google.firebase:firebase-common:20.4.2] /Users/vamsisai/.gradle/caches/8.13/transforms/5952104836f850703473c7f5c8d4d6ab/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:36:17-109
-uses-permission#com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE
-ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:26:5-110
-MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/e01dd3fea7e97b09e4cadf99f815180e/transformed/jetified-play-services-measurement-impl-21.5.0/AndroidManifest.xml:26:5-110
-MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/e01dd3fea7e97b09e4cadf99f815180e/transformed/jetified-play-services-measurement-impl-21.5.0/AndroidManifest.xml:26:5-110
-	android:name
-		ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:26:22-107
-receiver#com.google.android.gms.measurement.AppMeasurementReceiver
-ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:29:9-33:20
-	android:enabled
-		ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:31:13-35
-	android:exported
-		ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:32:13-37
-	android:name
-		ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:30:13-85
-service#com.google.android.gms.measurement.AppMeasurementService
-ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:35:9-38:40
-	android:enabled
-		ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:37:13-35
-	android:exported
-		ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:38:13-37
-	android:name
-		ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:36:13-84
-service#com.google.android.gms.measurement.AppMeasurementJobService
-ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:39:9-43:72
-	android:enabled
-		ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:41:13-35
-	android:exported
-		ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:42:13-37
-	android:permission
-		ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:43:13-69
-	android:name
-		ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/vamsisai/.gradle/caches/8.13/transforms/2f8e149bd63ee05082420d5b9604aa5d/transformed/jetified-play-services-measurement-21.5.0/AndroidManifest.xml:40:13-87
 provider#androidx.startup.InitializationProvider
 ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ae1abe10971591039c92a2ca541835d2/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:31:9-39:20
+MERGED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:31:9-39:20
 MERGED from [androidx.lifecycle:lifecycle-process:2.8.7] /Users/vamsisai/.gradle/caches/8.13/transforms/60d77d2c6b94b0a4facad7f289f0fb54/transformed/jetified-lifecycle-process-2.8.7/AndroidManifest.xml:24:9-32:20
 MERGED from [androidx.lifecycle:lifecycle-process:2.8.7] /Users/vamsisai/.gradle/caches/8.13/transforms/60d77d2c6b94b0a4facad7f289f0fb54/transformed/jetified-lifecycle-process-2.8.7/AndroidManifest.xml:24:9-32:20
 MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:24:9-32:20
@@ -758,6 +913,210 @@ ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/vamsisai/.gradle/caches/8.13/tr
 		ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ae1abe10971591039c92a2ca541835d2/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:31:17-49
 	android:name
 		ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ae1abe10971591039c92a2ca541835d2/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:30:17-75
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:28:5-77
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:28:22-74
+meta-data#androidx.work.WorkManagerInitializer
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:36:13-38:52
+	android:value
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:38:17-49
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:37:17-68
+service#androidx.work.impl.background.systemalarm.SystemAlarmService
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:41:9-46:35
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:44:13-72
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:45:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:46:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:43:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:42:13-88
+service#androidx.work.impl.background.systemjob.SystemJobService
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:47:9-53:35
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:50:13-70
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:51:13-36
+	android:permission
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:52:13-69
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:53:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:49:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:48:13-84
+service#androidx.work.impl.foreground.SystemForegroundService
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:54:9-59:35
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:57:13-77
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:58:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:59:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:56:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:55:13-81
+receiver#androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:61:9-66:35
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:64:13-35
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:65:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:66:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:63:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:62:13-88
+receiver#androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:67:9-77:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:70:13-36
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:71:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:72:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:69:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:68:13-106
+intent-filter#action:name:android.intent.action.ACTION_POWER_CONNECTED+action:name:android.intent.action.ACTION_POWER_DISCONNECTED
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:73:13-76:29
+action#android.intent.action.ACTION_POWER_CONNECTED
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:74:17-87
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:74:25-84
+action#android.intent.action.ACTION_POWER_DISCONNECTED
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:75:17-90
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:75:25-87
+receiver#androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:78:9-88:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:81:13-36
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:82:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:83:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:80:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:79:13-104
+intent-filter#action:name:android.intent.action.BATTERY_LOW+action:name:android.intent.action.BATTERY_OKAY
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:84:13-87:29
+action#android.intent.action.BATTERY_OKAY
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:85:17-77
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:85:25-74
+action#android.intent.action.BATTERY_LOW
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:86:17-76
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:86:25-73
+receiver#androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:89:9-99:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:92:13-36
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:93:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:94:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:91:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:90:13-104
+intent-filter#action:name:android.intent.action.DEVICE_STORAGE_LOW+action:name:android.intent.action.DEVICE_STORAGE_OK
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:95:13-98:29
+action#android.intent.action.DEVICE_STORAGE_LOW
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:96:17-83
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:96:25-80
+action#android.intent.action.DEVICE_STORAGE_OK
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:97:17-82
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:97:25-79
+receiver#androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:100:9-109:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:103:13-36
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:104:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:105:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:102:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:101:13-103
+intent-filter#action:name:android.net.conn.CONNECTIVITY_CHANGE
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:106:13-108:29
+action#android.net.conn.CONNECTIVITY_CHANGE
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:107:17-79
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:107:25-76
+receiver#androidx.work.impl.background.systemalarm.RescheduleReceiver
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:110:9-121:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:113:13-36
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:114:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:115:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:112:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:111:13-88
+intent-filter#action:name:android.intent.action.BOOT_COMPLETED+action:name:android.intent.action.TIMEZONE_CHANGED+action:name:android.intent.action.TIME_SET
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:116:13-120:29
+action#android.intent.action.TIME_SET
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:118:17-73
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:118:25-70
+action#android.intent.action.TIMEZONE_CHANGED
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:119:17-81
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:119:25-78
+receiver#androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:122:9-131:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:125:13-72
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:126:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:127:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:124:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:123:13-99
+intent-filter#action:name:androidx.work.impl.background.systemalarm.UpdateProxies
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:128:13-130:29
+action#androidx.work.impl.background.systemalarm.UpdateProxies
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:129:17-98
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:129:25-95
+receiver#androidx.work.impl.diagnostics.DiagnosticsReceiver
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:132:9-142:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:135:13-35
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:136:13-36
+	android:permission
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:137:13-57
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:138:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:134:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:133:13-78
+intent-filter#action:name:androidx.work.diagnostics.REQUEST_DIAGNOSTICS
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:139:13-141:29
+action#androidx.work.diagnostics.REQUEST_DIAGNOSTICS
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:140:17-88
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/vamsisai/.gradle/caches/8.13/transforms/8773ef5903a61ef76d1fbdde980c41ac/transformed/work-runtime-2.7.0/AndroidManifest.xml:140:25-85
 uses-library#androidx.window.extensions
 ADDED from [androidx.window:window:1.0.0] /Users/vamsisai/.gradle/caches/8.13/transforms/190a1d405c8947bd65defbb59840bf2f/transformed/jetified-window-1.0.0/AndroidManifest.xml:25:9-27:40
 	android:required
@@ -850,3 +1209,11 @@ action#androidx.profileinstaller.action.BENCHMARK_OPERATION
 ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:50:17-95
 	android:name
 		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/vamsisai/.gradle/caches/8.13/transforms/ef5a7c9c9caeec3b4776d463f049ce0d/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:50:25-92
+service#androidx.room.MultiInstanceInvalidationService
+ADDED from [androidx.room:room-runtime:2.2.5] /Users/vamsisai/.gradle/caches/8.13/transforms/4b57bc43fdd97a9059c907184e6d3f7a/transformed/room-runtime-2.2.5/AndroidManifest.xml:25:9-28:40
+	android:exported
+		ADDED from [androidx.room:room-runtime:2.2.5] /Users/vamsisai/.gradle/caches/8.13/transforms/4b57bc43fdd97a9059c907184e6d3f7a/transformed/room-runtime-2.2.5/AndroidManifest.xml:28:13-37
+	android:directBootAware
+		ADDED from [androidx.room:room-runtime:2.2.5] /Users/vamsisai/.gradle/caches/8.13/transforms/4b57bc43fdd97a9059c907184e6d3f7a/transformed/room-runtime-2.2.5/AndroidManifest.xml:27:13-43
+	android:name
+		ADDED from [androidx.room:room-runtime:2.2.5] /Users/vamsisai/.gradle/caches/8.13/transforms/4b57bc43fdd97a9059c907184e6d3f7a/transformed/room-runtime-2.2.5/AndroidManifest.xml:26:13-74

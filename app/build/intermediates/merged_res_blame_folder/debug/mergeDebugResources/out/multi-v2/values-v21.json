@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.v7techsolution.interviewfire.app-mergeDebugResources-59:/values-v21/values-v21.xml",
+            "outputFile": "com.v7techsolution.interviewfire.app-mergeDebugResources-62:/values-v21/values-v21.xml",
             "map": [
                 {
                     "source": "/Users/vamsisai/.gradle/caches/8.13/transforms/d29ef8606abb89d799eeeb54460f73ef/transformed/core-1.17.0/res/values-v21/values-v21.xml",

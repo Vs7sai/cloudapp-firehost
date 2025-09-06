@@ -7,193 +7,399 @@
       {
         "id": 1,
         "text": "What is Kubernetes?",
+        "textSize": 24,
         "explanation": "Imagine you have many small digital boxes (containers) that contain your applications. Managing these boxes – making sure they are always running, updated, and have enough resources – can be very complicated. \n\n**Kubernetes (often called K8s)** is like a very smart **orchestra conductor** or a **robot manager** for these digital boxes. Its main job is to **automatically handle** where your application boxes run, make sure they stay healthy, and quickly give them more resources if many people start using your app. It ties everything together so your applications run smoothly and reliably, without you having to manually move or start each box."
       },
       {
         "id": 2,
         "text": "Why was Kubernetes created?",
+        "textSize": 24,
         "explanation": "Before Kubernetes, when companies used containers, they had a big problem: how do you manage hundreds or thousands of them across many different computers? It was like trying to manage a huge fleet of individual cars by hand – impossible!\n\n**Kubernetes was created to solve this 'container sprawl' problem.** It automates the messy parts of running applications in containers at a large scale. Think of it as building a smart city for your apps, where the infrastructure takes care of itself, so developers can focus on building new features rather than worrying about servers crashing or apps slowing down."
       },
       {
         "id": 3,
         "text": "What is a Kubernetes Cluster?",
+        "textSize": 24,
         "explanation": "A Kubernetes **cluster** is simply a **group of interconnected computers** (called 'nodes') that work together as a single, powerful machine to run your applications. Instead of running apps on one computer, you spread them across many.\n\nThis group has two main types of computers:\n\n* **Control Plane (the 'brain'):** This computer (or set of computers) makes all the decisions about where your apps run and how they behave.\n* **Worker Nodes (the 'workers'):** These are the computers where your actual applications (in their containers) live and run."
       },
       {
         "id": 4,
         "text": "What is a Node in Kubernetes?",
+        "textSize": 24,
         "explanation": "In a Kubernetes cluster, a **Node** is just **one single computer** that forms part of the group. It can be a real physical machine or a virtual one in the cloud.\n\nIts job is to:\n\n* **Provide computing power:** It has CPU, memory, and storage for your apps.\n* **Run your applications:** It hosts the small digital boxes (Pods) that contain your applications.\n* **Communicate with the brain:** It constantly talks to the 'Control Plane' to get instructions and report its status."
       },
       {
         "id": 5,
         "text": "What is the Control Plane (Master Node) in Kubernetes?",
-        "explanation": "The **Control Plane** (sometimes called the 'master node' in older terms) is the **decision-making center** of your Kubernetes cluster. It's like the main office or the general of an army.\n\nIts main responsibilities are to:\n\n* **Orchestrate everything:** Decides where to place your applications (Pods) on the worker nodes.\n* **Monitor health:** Keeps an eye on all worker nodes and applications to ensure they are healthy.\n* **Maintain desired state:** If you say you want 3 copies of your app running, the Control Plane makes sure exactly 3 are always active, even if one crashes.\n\nIt doesn't run your application containers directly, but it directs the worker nodes on what to do.",
+        "textSize": 20,
+        "explanation": "The **Control Plane** (sometimes called the 'master node' in older terms) is the **decision-making center** of your Kubernetes cluster. It's like the main office or the general of an army.\n\nIts main responsibilities are to:\n\n* **Orchestrate everything:** Decides where to place your applications (Pods) on the worker nodes.\n* **Monitor health:** Keeps an eye on all worker nodes and applications to ensure they are healthy.\n* **Maintain desired state:** If you say you want 3 copies of your app running, the Control Plane makes sure exactly 3 are always active, even if one crashes.\n\nIt doesn't run your application containers directly, but it directs the worker nodes on what to do."
       },
       {
         "id": 6,
         "text": "Name the key components of the Kubernetes Control Plane.",
-        "explanation": "The Control Plane has several specialized 'offices' or parts that work together:\n\n* **Kube-apiserver:** This is like the **main switchboard or receptionist**. Everyone (humans and other parts of Kubernetes) talks to this part to give instructions or ask for information about the cluster.\n* **etcd:** This is the **cluster's memory or database**. It stores *everything* about the cluster's current situation and your desired settings – like what apps should run, where they are, and how many copies you want.\n* **Kube-scheduler:** This is the **task allocator**. It looks for any new applications that need to run and intelligently decides *which* worker node is the best fit for them, considering their needs (like CPU or memory).\n* **Kube-controller-manager:** This is like a **group of persistent employees**. Each 'controller' within it has a specific job to ensure that the cluster's *actual* state matches your *desired* state (e.g., if you want 3 app copies, a controller ensures 3 are running).\n* **Cloud-controller-manager (optional):** If you're running Kubernetes in a cloud (like AWS, Google Cloud, Azure), this part helps Kubernetes talk to that specific cloud provider to manage things like network load balancers or storage.",
+        "textSize": 18,
+        "explanation": "The Control Plane has several specialized 'offices' or parts that work together:\n\n* **Kube-apiserver:** This is like the **main switchboard or receptionist**. Everyone (humans and other parts of Kubernetes) talks to this part to give instructions or ask for information about the cluster.\n* **etcd:** This is the **cluster's memory or database**. It stores *everything* about the cluster's current situation and your desired settings – like what apps should run, where they are, and how many copies you want.\n* **Kube-scheduler:** This is the **task allocator**. It looks for any new applications that need to run and intelligently decides *which* worker node is the best fit for them, considering their needs (like CPU or memory).\n* **Kube-controller-manager:** This is like a **group of persistent employees**. Each 'controller' within it has a specific job to ensure that the cluster's *actual* state matches your *desired* state (e.g., if you want 3 app copies, a controller ensures 3 are running).\n* **Cloud-controller-manager (optional):** If you're running Kubernetes in a cloud (like AWS, Google Cloud, Azure), this part helps Kubernetes talk to that specific cloud provider to manage things like network load balancers or storage."
       },
       {
         "id": 7,
         "text": "Name the key components of a Worker Node in Kubernetes.",
-        "explanation": "Each Worker Node has its own set of tools to perform its duties:\n\n* **Kubelet:** This is the **node's diligent agent**. It's the primary communicator with the Control Plane. It receives instructions (like 'run this application Pod') and ensures that the containers specified in those instructions are actually running and healthy on its node.\n* **Kube-proxy:** This is the **node's network traffic cop**. It manages the network rules on the node, making sure that when people try to reach your application, their requests are correctly sent to the right container (Pod) on that node. It also helps with basic load balancing.\n* **Container Runtime:** This is the **container engine itself** (like Docker, containerd, or CRI-O). It's the software responsible for actually starting, stopping, and managing the individual containers that make up your application Pods.",
+        "textSize": 20,
+        "explanation": "Each Worker Node has its own set of tools to perform its duties:\n\n* **Kubelet:** This is the **node's diligent agent**. It's the primary communicator with the Control Plane. It receives instructions (like 'run this application Pod') and ensures that the containers specified in those instructions are actually running and healthy on its node.\n* **Kube-proxy:** This is the **node's network traffic cop**. It manages the network rules on the node, making sure that when people try to reach your application, their requests are correctly sent to the right container (Pod) on that node. It also helps with basic load balancing.\n* **Container Runtime:** This is the **container engine itself** (like Docker, containerd, or CRI-O). It's the software responsible for actually starting, stopping, and managing the individual containers that make up your application Pods."
       },
       {
         "id": 8,
         "text": "What is a Pod in Kubernetes?",
-        "explanation": "Think of a **Pod** as the **smallest building block** in Kubernetes, like a tiny, self-contained apartment building.\n\nHere's what makes it special:\n\n* **It runs your application:** A Pod always contains at least one of your application containers.\n* **It can have helpers:** Sometimes, a Pod might have a main application container plus one or more smaller 'helper' containers (called sidecars) that do things like logging or monitoring for the main app.\n* **Shared resources:** All containers *inside the same Pod* share the same network address (IP address) and can easily share storage, making it perfect for tightly related parts of your application.",
+        "textSize": 24,
+        "explanation": "Think of a **Pod** as the **smallest building block** in Kubernetes, like a tiny, self-contained apartment building.\n\nHere's what makes it special:\n\n* **It runs your application:** A Pod always contains at least one of your application containers.\n* **It can have helpers:** Sometimes, a Pod might have a main application container plus one or more smaller 'helper' containers (called sidecars) that do things like logging or monitoring for the main app.\n* **Shared resources:** All containers *inside the same Pod* share the same network address (IP address) and can easily share storage, making it perfect for tightly related parts of your application."
       },
       {
         "id": 9,
         "text": "Why do Pods exist instead of just running containers directly?",
+        "textSize": 18,
         "explanation": "This is a great question! It might seem simpler to just run individual containers, but Pods offer important advantages:\n\n* **Grouped containers:** For applications with multiple, closely related parts (like a main app and a logging agent), Pods allow them to be grouped and managed as a single unit. They share resources naturally.\n* **Simplified networking:** All containers in a Pod share the same network identity, making it easy for them to talk to each other directly using `localhost`.\n* **Proper lifecycle:** Kubernetes manages Pods, not just individual containers. If a container crashes, Kubernetes can restart *only* that container within the Pod without affecting others. If the whole Pod needs to move to another node, Kubernetes handles the entire unit.\n\nSo, Pods are designed for the **application's runtime environment**, not just the container itself, making large-scale management much easier."
       },
       {
         "id": 10,
         "text": "What is a Deployment in Kubernetes?",
-        "explanation": "A **Deployment** is your blueprint for **how to run and update your application** in Kubernetes. It's like telling Kubernetes, 'I want this version of my app, with this many copies, and if I update it, here's how to do it safely.'\n\nIt helps you:\n\n* **Ensure copies are running:** If you say you want 3 copies (replicas) of your app, the Deployment constantly works to make sure 3 Pods are always active. If one crashes, it replaces it automatically.\n* **Update safely:** It manages rolling updates, meaning it replaces old versions of your app with new ones gradually, without downtime.\n* **Rollback easily:** If a new version has problems, it allows you to quickly revert to a previous, stable version.",
+        "textSize": 24,
+        "explanation": "A **Deployment** is your blueprint for **how to run and update your application** in Kubernetes. It's like telling Kubernetes, 'I want this version of my app, with this many copies, and if I update it, here's how to do it safely.'\n\nIt helps you:\n\n* **Ensure copies are running:** If you say you want 3 copies (replicas) of your app, the Deployment constantly works to make sure 3 Pods are always active. If one crashes, it replaces it automatically.\n* **Update safely:** It manages rolling updates, meaning it replaces old versions of your app with new ones gradually, without downtime.\n* **Rollback easily:** If a new version has problems, it allows you to quickly revert to a previous, stable version."
       },
       {
         "id": 11,
         "text": "What is a Service in Kubernetes?",
-        "explanation": "Imagine you have many copies of your web application (Pods) running, but their addresses (IPs) keep changing as they are created or restarted. How do other parts of your application or users find them?\n\nThat's where a **Service** comes in. A Service is like a **permanent, unchanging postal address** for a group of Pods. It provides:\n\n* **Stable access:** A single, consistent IP address and DNS name that never changes, even if the Pods behind it do.\n* **Load balancing:** It automatically distributes incoming traffic across all healthy Pods that belong to it.\n* **Decoupling:** It separates how your app is accessed from how it actually runs, making your system more flexible.",
+        "textSize": 24,
+        "explanation": "Imagine you have many copies of your web application (Pods) running, but their addresses (IPs) keep changing as they are created or restarted. How do other parts of your application or users find them?\n\nThat's where a **Service** comes in. A Service is like a **permanent, unchanging postal address** for a group of Pods. It provides:\n\n* **Stable access:** A single, consistent IP address and DNS name that never changes, even if the Pods behind it do.\n* **Load balancing:** It automatically distributes incoming traffic across all healthy Pods that belong to it.\n* **Decoupling:** It separates how your app is accessed from how it actually runs, making your system more flexible."
       },
       {
         "id": 12,
         "text": "What is kubectl get?",
+        "textSize": 24,
         "explanation": "### Purpose: Display existing Kubernetes resources.\n\n**Explanation:** This is your primary 'read' command. Think of it as asking Kubernetes, 'Show me what's running!' You can view different types of objects like Pods, Deployments, Services, Nodes, and more. It helps you quickly see the current state of your cluster's components.\n\n**Basic Example: List all Pods in the current Namespace.**\n```bash\nkubectl get pods\n```\n\n**Advanced Example: List all Deployments in the 'production' Namespace, showing more details (like internal IP, node name) and outputting in YAML format for full configuration.**\n```bash\nkubectl get deployments -n production -o yaml\n```"
       },
       {
         "id": 13,
         "text": "What is kubectl describe?",
+        "textSize": 20,
         "explanation": "### Purpose: Show detailed information about a specific resource.\n\n**Explanation:** When `kubectl get` gives you a summary, `kubectl describe` gives you the full story. It's like asking for a comprehensive report or dossier on a specific object. It's invaluable for debugging because it shows recent events, current status, configurations, and related objects, helping you understand *why* something is or isn't working.\n\n**Basic Example: Get detailed information about a Pod named 'my-web-app-pod'.**\n```bash\nkubectl describe pod my-web-app-pod\n```\n\n**Advanced Example: Get details for a Service named 'my-database-service' in the 'dev' Namespace.**\n```bash\nkubectl describe service my-database-service -n dev\n```"
       },
       {
         "id": 14,
         "text": "What is kubectl apply?",
+        "textSize": 24,
         "explanation": "### Purpose: Create or update resources from a file (YAML/JSON).\n\n**Explanation:** This is how you tell Kubernetes your desired state for your applications and infrastructure. You define your Pods, Deployments, Services, ConfigMaps, etc., in configuration files (usually YAML). `kubectl apply` reads these files and pushes those definitions to the cluster. Kubernetes then works to make the cluster's *actual* state match your *desired* state defined in the file.\n\n**Basic Example: Apply a configuration defined in 'my-app-deployment.yaml' to create or update a Deployment.**\n```bash\nkubectl apply -f my-app-deployment.yaml\n```\n\n**Advanced Example: Apply all configuration files found within a directory named 'k8s-configs'. This is common for deploying entire applications.**\n```bash\nkubectl apply -f ./k8s-configs/\n```"
       },
       {
         "id": 15,
         "text": "What is kubectl delete?",
+        "textSize": 20,
         "explanation": "### Purpose: Delete resources by file, name, type, or labels.\n\n**Explanation:** This command removes resources from your Kubernetes cluster. You can specify what to delete in several ways: by pointing to the same configuration file you used with `apply`, by naming the specific object, or by deleting all objects of a certain type that have specific labels.\n\n**Basic Example: Delete a Deployment named 'my-web-app'.**\n```bash\nkubectl delete deployment my-web-app\n```\n\n**Advanced Example: Delete all Pods that have the label `app: my-old-service` in the 'legacy' Namespace.**\n```bash\nkubectl delete pods -l app=my-old-service -n legacy\n```"
       },
       {
         "id": 16,
         "text": "What is kubectl exec?",
+        "textSize": 24,
         "explanation": "### Purpose: Execute a command inside a running container within a Pod.\n\n**Explanation:** This command lets you run commands directly inside a container that's already running within a Pod. It's incredibly useful for debugging, inspecting the container's environment, checking file systems, or interacting with the application directly, without needing to expose ports or modify the application.\n\n**Basic Example: Open an interactive shell (like Bash) inside a container of a Pod named 'my-app-pod'. The `--` separates `kubectl exec` arguments from the command to be run inside the container.**\n```bash\nkubectl exec -it my-app-pod -- bash\n```\n\n**Advanced Example: Run a specific command (e.g., `ls -l /app`) inside a specific container named 'sidecar-logger' within a Pod that has multiple containers.**\n```bash\nkubectl exec my-multi-container-pod -c sidecar-logger -- ls -l /app\n```"
       },
       {
         "id": 17,
         "text": "What is kubectl logs?",
+        "textSize": 24,
         "explanation": "### Purpose: Print logs from a container in a Pod.\n\n**Explanation:** This command allows you to view the output (logs) from your application's containers. Logs are essential for understanding what your application is doing, diagnosing errors, and monitoring its behavior. You can view past logs or stream new logs as they are generated.\n\n**Basic Example: Show the logs for a Pod named 'my-processor-pod'.**\n```bash\nkubectl logs my-processor-pod\n```\n\n**Advanced Example: Follow (stream) the logs for a container named 'worker-c' within 'my-job-pod', showing only logs from the last 5 minutes.**\n```bash\nkubectl logs -f my-job-pod -c worker-c --since 5m\n```"
       },
       {
         "id": 18,
         "text": "What is kubectl rollout?",
+        "textSize": 20,
         "explanation": "### Purpose: Manage the rollout of a Deployment or DaemonSet.\n\n**Explanation:** This command is specifically for managing how new versions of your application are deployed and updated, especially with Deployments. It allows you to check the status of an update, pause it, resume it, or even revert to a previous working version if something goes wrong, ensuring a smooth and safe release process.\n\n**Basic Example: Check the status of the latest rollout for a Deployment named 'my-api-deployment'.**\n```bash\nkubectl rollout status deployment/my-api-deployment\n```\n\n**Advanced Example: Undo the last rollout for a Deployment, effectively reverting to the previous version of the application.**\n```bash\nkubectl rollout undo deployment/my-api-deployment\n```"
       },
       {
         "id": 19,
         "text": "What is kubectl scale?",
+        "textSize": 24,
         "explanation": "### Purpose: Manually scale a Deployment, ReplicaSet, StatefulSet, or ReplicationController.\n\n**Explanation:** This command lets you manually adjust the number of running copies (replicas) of your application. If your application needs to handle more users, you can increase the replica count. If traffic is low, you can reduce it to save resources. Kubernetes will then automatically create or delete Pods to match your desired number.\n\n**Basic Example: Scale the 'my-web-app' Deployment to have 5 running Pods.**\n```bash\nkubectl scale deployment my-web-app --replicas=5\n```\n\n**Advanced Example: Scale a StatefulSet named 'my-database' to 3 replicas.**\n```bash\nkubectl scale statefulset my-database --replicas=3\n```"
       },
       {
         "id": 20,
         "text": "What is kubectl port-forward?",
+        "textSize": 18,
         "explanation": "### Purpose: Forward one or more local ports to a Pod.\n\n**Explanation:** This command creates a secure, temporary connection from a port on your local machine directly to a port on a Pod (or Service) in the cluster. It's super useful for accessing internal services (like a database or an internal API) running in your cluster directly from your local development environment, without exposing them publicly.\n\n**Basic Example: Forward local port 8080 to port 80 of a Pod named 'my-frontend-pod'. Now you can access the Pod via `localhost:8080`.**\n```bash\nkubectl port-forward my-frontend-pod 8080:80\n```\n\n**Advanced Example: Forward local port 3306 to a MySQL Service named 'mysql-service' on its default port 3306, allowing you to connect locally.**\n```bash\nkubectl port-forward service/mysql-service 3306:3306\n```"
       },
       {
         "id": 21,
         "text": "What is kubectl edit?",
+        "textSize": 24,
         "explanation": "### Purpose: Edit a resource's configuration live in the cluster.\n\n**Explanation:** This command allows you to directly open and modify the configuration of an existing Kubernetes resource (like a Pod, Service, or Deployment) using your default text editor. When you save and exit the editor, Kubernetes applies your changes to the live object. Use with caution, as direct edits can sometimes bypass validation layers that `kubectl apply` uses.\n\n**Basic Example: Open the configuration of the 'my-configmap' ConfigMap for editing.**\n```bash\nkubectl edit configmap my-configmap\n```\n\n**Advanced Example: Edit a Deployment named 'backend-service' in the 'staging' Namespace.**\n```bash\nkubectl edit deployment backend-service -n staging\n```"
       },
       {
         "id": 22,
         "text": "What is kubectl cp?",
+        "textSize": 24,
         "explanation": "### Purpose: Copy files and directories to and from containers.\n\n**Explanation:** This command allows you to transfer files between your local machine and a container running inside a Pod. It's incredibly handy for debugging (e.g., pulling log files) or deploying small configuration updates without needing to rebuild a Docker image.\n\n**Basic Example: Copy a file named 'config.txt' from your current local directory into the '/app' directory inside a container of 'my-pod'.**\n```bash\nkubectl cp config.txt my-pod:/app/config.txt\n```\n\n**Advanced Example: Copy a directory named 'logs' from a specific container named 'processor' in 'my-pod' to your local current directory.**\n```bash\nkubectl cp my-pod:/var/log/app/logs ./logs -c processor\n```"
       },
       {
         "id": 23,
         "text": "What is kubectl top?",
+        "textSize": 24,
         "explanation": "### Purpose: Display resource (CPU/memory) usage for nodes or pods.\n\n**Explanation:** This command gives you a quick snapshot of how much CPU and memory your nodes and Pods are currently consuming. It's a fundamental tool for monitoring your cluster's resource utilization and identifying potential performance bottlenecks or runaway processes. This command requires the Kubernetes Metrics Server to be running in your cluster.\n\n**Basic Example: Show CPU and memory usage for all Pods in the current Namespace.**\n```bash\nkubectl top pods\n```\n\n**Advanced Example: Show CPU and memory usage for all Nodes, ordered by CPU usage.**\n```bash\nkubectl top nodes --sort-by=cpu\n```"
       },
       {
         "id": 24,
         "text": "What is kubectl diff?",
+        "textSize": 24,
         "explanation": "### Purpose: Show a diff between the live state and a proposed update.\n\n**Explanation:** Before you apply changes to your cluster (e.g., from a YAML file), `kubectl diff` allows you to see exactly what changes `kubectl apply` would make. It compares the configuration in your local file(s) with the current state of the resources in the cluster, showing you additions, deletions, and modifications. This prevents accidental changes and helps in validating your YAML files.\n\n**Basic Example: Show the differences between the live Deployment 'my-app' and the configuration in 'my-app.yaml' before applying.**\n```bash\nkubectl diff -f my-app.yaml\n```\n\n**Advanced Example: Show differences for all configurations in a directory, useful for large deployments.**\n```bash\nkubectl diff -f ./app-configs/\n```"
       },
       {
         "id": 25,
         "text": "What is kubectl label?",
+        "textSize": 24,
         "explanation": "### Purpose: Update the labels on a resource.\n\n**Explanation:** Labels are key-value pairs that help organize and select Kubernetes resources. This command allows you to add, modify, or remove labels on existing objects without changing their underlying configuration. This is often used to group resources for management by other Kubernetes objects like Services or to mark specific objects for particular operations.\n\n**Basic Example: Add a label `environment=production` to a Pod named 'my-database-pod'.**\n```bash\nkubectl label pod my-database-pod environment=production\n```\n\n**Advanced Example: Remove the label `old-feature` from a Deployment.**\n```bash\nkubectl label deployment my-app old-feature-\n```"
       },
       {
         "id": 26,
         "text": "What is kubectl annotate?",
+        "textSize": 20,
         "explanation": "### Purpose: Add or update annotations on a resource.\n\n**Explanation:** Annotations are also key-value pairs, similar to labels, but they are used for non-identifying metadata. This means they are not used for selecting or grouping resources (like labels are). Instead, they store arbitrary, non-critical information about a resource that might be useful for humans or automated tools, such as build information, contact details, or specific tool configurations.\n\n**Basic Example: Add an annotation with a build ID to a Deployment.**\n```bash\nkubectl annotate deployment my-app build-id=\"abc-123\"\n```\n\n**Advanced Example: Add a description annotation to a Service.**\n```bash\nkubectl annotate service my-service description=\"Main API gateway for customer facing services\"\n```"
       },
       {
         "id": 27,
         "text": "What is kubectl cordon?",
+        "textSize": 24,
         "explanation": "### Purpose: Mark a node as unschedulable.\n\n**Explanation:** This command tells the Kubernetes scheduler *not* to place any new Pods on a specific node. Existing Pods on that node will continue to run, but no new ones will be added. This is useful when you need to perform maintenance on a node (like updating its operating system) and want to gracefully stop new workloads from being assigned to it.\n\n**Basic Example: Mark 'node1' as unschedulable for new Pods.**\n```bash\nkubectl cordon node1\n```"
       },
       {
         "id": 28,
         "text": "What is kubectl uncordon?",
+        "textSize": 24,
         "explanation": "### Purpose: Mark a node as schedulable.\n\n**Explanation:** After you've finished maintenance on a node that was previously 'cordoned' (marked unschedulable), this command tells the Kubernetes scheduler that it can now start placing new Pods on that node again.\n\n**Basic Example: Allow 'node1' to receive new Pods again.**\n```bash\nkubectl uncordon node1\n```"
       },
       {
         "id": 29,
         "text": "What is kubectl drain?",
+        "textSize": 24,
         "explanation": "### Purpose: Evict all Pods from a node safely.\n\n**Explanation:** This is a more comprehensive command for taking a node out of service. It first marks the node as unschedulable (like `cordon`), and then it *evicts* (gracefully shuts down and moves) all Pods from that node to other available nodes in the cluster. This is used when you need to take a node completely offline for maintenance and ensure all its workloads are safely migrated.\n\n**Basic Example: Drain all Pods from 'node1', respecting any Pod Disruption Budgets.**\n```bash\nkubectl drain node1\n```\n\n**Advanced Example: Drain 'node1' even if it has Pods using `emptyDir` volumes (data might be lost) and ignore DaemonSet Pods (which will be recreated on other nodes).**\n```bash\nkubectl drain node1 --delete-emptydir-data --ignore-daemonsets\n```"
       },
       {
         "id": 30,
         "text": "What is kubectl auth can-i?",
+        "textSize": 18,
         "explanation": "### Purpose: Check API access permissions for a user or service account.\n\n**Explanation:** This is a powerful command for understanding Kubernetes' Role-Based Access Control (RBAC). It allows you to ask, 'Can I (or a specific user/Service Account) perform this action on this resource?' It's essential for troubleshooting permission issues and verifying security configurations.\n\n**Basic Example: Check if the current user can get (list) Pods in the current Namespace.**\n```bash\nkubectl auth can-i get pods\n```\n\n**Advanced Example: Check if the 'deployer-sa' Service Account in the 'ci-cd' Namespace can create Deployments in the 'production' Namespace.**\n```bash\nkubectl auth can-i create deployments --as=system:serviceaccount:ci-cd:deployer-sa -n production\n```"
       },
       {
         "id": 31,
         "text": "What is kubectl config use-context?",
+        "textSize": 18,
         "explanation": "### Purpose: Switch between different Kubernetes clusters/contexts.\n\n**Explanation:** If you work with multiple Kubernetes clusters (e.g., development, staging, production) or different authentication methods, your `kubeconfig` file stores all these configurations. This command allows you to quickly switch which cluster `kubectl` is currently interacting with.\n\n**Basic Example: Switch to a context named 'my-dev-cluster'.**\n```bash\nkubectl config use-context my-dev-cluster\n```"
       },
       {
         "id": 32,
         "text": "What is kubectl completion?",
+        "textSize": 20,
         "explanation": "### Purpose: Generate shell completion scripts for kubectl.\n\n**Explanation:** This command doesn't interact with the cluster directly. Instead, it generates a script that, when sourced in your shell (like Bash or Zsh), enables autocompletion for `kubectl` commands, flags, and resource names. This drastically speeds up your command-line work by allowing you to press Tab for suggestions.\n\n**Basic Example: Add kubectl autocompletion for Bash (add this line to your ~/.bashrc or ~/.bash_profile).**\n```bash\nsource <(kubectl completion bash)\n```"
       },
       {
         "id": 33,
         "text": "What is kubectl explain?",
+        "textSize": 24,
         "explanation": "### Purpose: Get documentation for Kubernetes resources.\n\n**Explanation:** This is like having a built-in dictionary for Kubernetes object definitions. You can use it to understand the structure and purpose of fields within different Kubernetes resource types (like Pods, Deployments, Services). It's great for learning what options are available when writing your YAML files and understanding their purpose.\n\n**Basic Example: Get a high-level explanation of the Deployment resource.**\n```bash\nkubectl explain deployment\n```\n\n**Advanced Example: Get a detailed explanation of the 'spec.containers' field within a Pod definition.**\n```bash\nkubectl explain pod.spec.containers\n```"
       },
       {
         "id": 34,
         "text": "What is kubectl autoscale?",
+        "textSize": 20,
         "explanation": "### Purpose: Automatically scale a Deployment, ReplicaSet, or StatefulSet.\n\n**Explanation:** This command creates a Horizontal Pod Autoscaler (HPA) resource, which automatically scales the number of Pods in your Deployment (or other workload) up or down based on observed CPU utilization or other metrics. It's crucial for efficiently handling varying workloads by adding or removing Pods as needed, optimizing resource usage and cost.\n\n**Basic Example: Autoscale the 'my-web-app' Deployment to maintain 80% CPU utilization, with a minimum of 2 and a maximum of 10 replicas.**\n```bash\nkubectl autoscale deployment my-web-app --cpu-percent=80 --min=2 --max=10\n```"
       },
       {
         "id": 35,
         "text": "What is kubectl rollout history?",
+        "textSize": 18,
         "explanation": "### Purpose: View the revision history of a Deployment.\n\n**Explanation:** When you update a Deployment, Kubernetes creates a new 'revision' (a snapshot of its configuration). This command lets you see the history of these revisions, which is very useful for understanding what changes have been applied over time and for identifying specific versions for potential rollback.\n\n**Basic Example: Show the revision history for 'my-api-deployment'.**\n```bash\nkubectl rollout history deployment/my-api-deployment\n```"
       },
       {
         "id": 36,
         "text": "What is kubectl rollout undo?",
+        "textSize": 18,
         "explanation": "### Purpose: Roll back a Deployment to a previous revision.\n\n**Explanation:** If a new deployment causes issues, this command allows you to quickly revert your application to a previous, stable version. It's a critical safety feature for managing application updates in production, letting you undo changes with minimal downtime.\n\n**Basic Example: Roll back 'my-api-deployment' to its immediately previous version.**\n```bash\nkubectl rollout undo deployment/my-api-deployment\n```\n\n**Advanced Example: Roll back 'my-api-deployment' to a specific revision number (e.g., revision 2).**\n```bash\nkubectl rollout undo deployment/my-api-deployment --to-revision=2\n```"
       },
       {
         "id": 37,
         "text": "What is kubectl taint?",
+        "textSize": 24,
         "explanation": "### Purpose: Add or remove a taint from a node.\n\n**Explanation:** Taints are used to 'repel' Pods from a node. You can add a taint to a node to ensure that only Pods with a matching 'toleration' (a special permission) can be scheduled on that node. This is useful for dedicating nodes for specific types of workloads (e.g., sensitive data processing, GPU workloads) or for isolating problematic nodes.\n\n**Basic Example: Add a taint to 'node1' so only Pods tolerating 'special-use=true:NoSchedule' can be scheduled.**\n```bash\nkubectl taint node node1 special-use=true:NoSchedule\n```\n\n**Advanced Example: Remove the 'special-use' taint from 'node1'.**\n```bash\nkubectl taint node node1 special-use:NoSchedule-\n```"
       },
       {
         "id": 38,
         "text": "What is kubectl apply --prune?",
+        "textSize": 18,
         "explanation": "### Purpose: Apply changes and prune (delete) resources not in the local configuration.\n\n**Explanation:** This is an advanced use of `kubectl apply` that helps maintain a strict desired state for your cluster. When used with `--prune`, it will not only create/update resources defined in your local configuration files but also *delete* any other Kubernetes resources (of the same type, in the same namespace, matching any provided labels) that are *not* defined in those files. It's useful for ensuring your live cluster's state precisely matches your configuration repository, removing anything extra.\n\n**Basic Example: Apply configurations from a folder, and delete any other resources (like Pods, Deployments, Services) in the 'my-app' Namespace that have the label `app=my-app` but are not defined in the specified files.**\n```bash\nkubectl apply -f ./my-app-configs/ --prune -l app=my-app -n my-app\n```"
+      },
+      {
+        "id": 39,
+        "text": "Name different types of Services in Kubernetes.",
+        "textSize": 18,
+        "explanation": "Kubernetes offers different ways to expose your application, depending on who needs to access it:\n\n* **ClusterIP (Internal Only):** This is the default. It gives your Service an IP address that's only accessible *from within the cluster*. Perfect for internal communication between different parts of your application.\n* **NodePort (Expose via Node's IP):** This exposes your Service on a specific port on *every single worker node's IP address*. So, you can reach your app using `NodeIP:NodePort` from outside the cluster.\n* **LoadBalancer (Cloud Provider):** If you're on a cloud platform (like AWS, Google Cloud, Azure), this type automatically creates a **cloud load balancer** (like an Elastic Load Balancer in AWS) that directs external traffic to your Service. This is common for publicly accessible web apps.\n* **ExternalName (Alias for External Service):** This isn't for exposing your own Pods. Instead, it lets you define a Kubernetes Service that acts as an **alias for an external service** (like a database outside your cluster). It simply returns a CNAME record."
+      },
+      {
+        "id": 40,
+        "text": "What is Ingress in Kubernetes?",
+        "textSize": 24,
+        "explanation": "While Services help expose applications, they don't always offer advanced routing or SSL encryption. **Ingress** is like the **smart gateway or traffic controller** for your web applications (HTTP/HTTPS traffic) coming from outside the cluster.\n\nIt allows you to:\n\n* **Route by URL:** Send requests to `yourdomain.com/api` to one app, and `yourdomain.com/blog` to another.\n* **Route by hostname:** Send requests for `app1.yourdomain.com` to app 1, and `app2.yourdomain.com` to app 2.\n* **Handle SSL/TLS:** Encrypt traffic coming into your cluster.\n\nEssentially, it gives you more control and flexibility over how external users access your various web services, all through a single entry point."
+      },
+      {
+        "id": 41,
+        "text": "What is a Namespace in Kubernetes?",
+        "textSize": 24,
+        "explanation": "Imagine a large office building (your Kubernetes cluster) where many different teams work. To keep things organized and prevent conflicts, each team gets its own floor or dedicated section.\n\nA **Namespace** in Kubernetes is exactly like that: it's a way to **divide your single cluster into multiple virtual sub-clusters or isolated areas**. Each Namespace:\n\n* **Organizes resources:** Helps you group related applications and resources (like Pods, Deployments) for a specific team or project.\n* **Prevents naming conflicts:** You can have two different teams use the same application name if they are in different Namespaces.\n* **Limits access:** You can set rules so that Team A can only see and manage things in its Namespace, not Team B's."
+      },
+      {
+        "id": 42,
+        "text": "What is a Volume in Kubernetes?",
+        "textSize": 24,
+        "explanation": "Containers are designed to be temporary; when a container restarts, any data saved inside it is usually lost. This is a problem for applications that need to keep data, like databases.\n\nA **Volume** in Kubernetes is like a **special external hard drive** that you can attach to your Pods. Here's why it's crucial:\n\n* **Persistence:** Data stored on a Volume **persists** (stays safe) even if the containers inside the Pod stop, restart, or the Pod itself is deleted.\n* **Sharing:** If a Pod has multiple containers, they can all access and share data on the same Volume.\n* **Lifetime:** A Volume lives as long as the Pod lives. If the Pod dies, the Volume usually goes with it, unless you use a more advanced type of volume for longer persistence."
+      },
+      {
+        "id": 43,
+        "text": "Explain PersistentVolume (PV) and PersistentVolumeClaim (PVC).",
+        "textSize": 18,
+        "explanation": "Volumes are great, but managing the actual storage (like specific hard drives) can be complex. Kubernetes simplifies this with a two-part system:\n\n* **PersistentVolume (PV): The Actual Storage (Admin's Job):** Think of a **PV as a piece of real, available storage** in your cluster. It's like a specific parking spot that has been prepared and is ready to be used (e.g., '100GB of fast SSD storage'). A cluster administrator typically sets these up.\n* **PersistentVolumeClaim (PVC): Requesting Storage (User's Job):** A **PVC is like a request from your application (or Pod) for storage**. It's saying, 'I need a parking spot of at least 50GB.' Kubernetes then matches this request to an available PV. The application doesn't need to know the exact details of the storage; it just asks for what it needs."
+      },
+      {
+        "id": 44,
+        "text": "What is a ConfigMap in Kubernetes?",
+        "textSize": 24,
+        "explanation": "Applications often need configuration settings, like database connection strings or API keys. If you bake these directly into your container image, every time a setting changes, you have to rebuild and redeploy your app – a big hassle.\n\nA **ConfigMap** is a Kubernetes object that acts like a **digital sticky note or a central bulletin board for non-sensitive configuration data**. It stores simple text configurations as key-value pairs.\n\n* **Separation:** It keeps your configuration separate from your application code.\n* **Flexibility:** Your application Pods can easily read this configuration, either as environment variables or as files mounted directly into the container.\n\nThis means you can update settings without touching your application code."
+      },
+      {
+        "id": 45,
+        "text": "What is a Secret in Kubernetes?",
+        "textSize": 24,
+        "explanation": "Similar to ConfigMaps, **Secrets** are Kubernetes objects designed to store important configuration data. However, Secrets are specifically for **sensitive information** like passwords, API tokens, or encryption keys.\n\n* **Security:** Kubernetes handles Secrets with more care. They are (by default) base64 encoded, and Kubernetes offers ways to restrict who can access them.\n* **Injection:** Like ConfigMaps, Pods can consume Secrets as environment variables or as files mounted into their containers.\n\nThe goal is to keep sensitive information out of your application code and Docker images, making your deployments more secure."
+      },
+      {
+        "id": 46,
+        "text": "What is a ReplicaSet in Kubernetes?",
+        "textSize": 24,
+        "explanation": "A **ReplicaSet** is like a **dedicated manager for a specific group of identical application copies (Pods)**. Its sole purpose is to ensure that a certain, desired number of those Pods are *always* running.\n\n* **High availability:** If a Pod crashes or a node fails, the ReplicaSet will automatically create a new Pod to replace it, maintaining the desired count.\n* **Scaling:** If you need more copies of your app, you tell the ReplicaSet, and it creates the additional Pods.\n\nWhile Deployments are often used to manage ReplicaSets, the ReplicaSet itself is the unsung hero that keeps your application available by fixing Pod counts."
+      },
+      {
+        "id": 47,
+        "text": "What is `kube-apiserver` responsible for?",
+        "textSize": 20,
+        "explanation": "The `kube-apiserver` is the **central communication hub** for your entire Kubernetes cluster. It's the only component that everyone (humans, other Kubernetes parts, external tools) directly talks to when they want to:\n\n* **Give instructions:** Like 'deploy this application' or 'scale up my web server.'\n* **Get information:** Like 'show me all running applications' or 'what's the status of this node?'\n\nIt acts as the front door for all interactions with the cluster, handling requests, making sure they are valid, and updating the cluster's main database (`etcd`)."
+      },
+      {
+        "id": 48,
+        "text": "What is `etcd`'s role in Kubernetes?",
+        "textSize": 20,
+        "explanation": "`etcd` is the **ultimate source of truth** for your Kubernetes cluster. Think of it as the cluster's highly reliable and secure **memory or central database**.\n\n* **Stores everything:** It keeps track of the entire cluster's configuration, its current state (which apps are running, where they are, their IPs), and all your desired settings (how many copies you want, what storage they need).\n* **Highly available:** It's designed to be very reliable, so even if some parts of your control plane go down, the crucial cluster data is safe.\n\nAll Kubernetes components constantly read from and write to `etcd` through the API Server to understand and manage the cluster."
+      },
+      {
+        "id": 49,
+        "text": "What is `kube-scheduler`'s role?",
+        "textSize": 20,
+        "explanation": "The `kube-scheduler` is like the **task assignment officer** in the Kubernetes Control Plane. Its job is to:\n\n* **Watch for new tasks:** It constantly looks for new applications (Pods) that need to be run but haven't been assigned to a specific computer (node) yet.\n* **Find the best fit:** It then intelligently decides *which* worker node is the most suitable place for that new application to run. It considers many factors, like:\n    * How much CPU and memory the app needs vs. what's available on each node.\n    * Any special requirements you've set (e.g., 'this app needs a special graphics card').\n    * Rules about keeping certain apps together or apart.\n\nIt essentially finds the best 'parking spot' for each new application Pod."
+      },
+      {
+        "id": 50,
+        "text": "What is `kube-controller-manager` responsible for?",
+        "textSize": 18,
+        "explanation": "The `kube-controller-manager` is actually a collection of many tireless **'watchdog' controllers** within the Kubernetes Control Plane. Each controller has a specific job to ensure the cluster's **actual state matches your desired state**.\n\n* **Always checking:** They constantly observe the cluster's current situation through the API Server.\n* **Taking action:** If they see a mismatch (e.g., you asked for 3 copies of an app, but only 2 are running), they take action (e.g., start a new Pod) to fix it and bring the cluster back to your desired state.\n\nExamples of its jobs include ensuring the correct number of application copies (ReplicaSet controller), managing nodes, and handling background tasks (Job controller)."
+      },
+      {
+        "id": 51,
+        "text": "What is `kubelet`'s role on a worker node?",
+        "textSize": 20,
+        "explanation": "The `kubelet` is the **primary agent or messenger** that runs on *every single worker node* in your Kubernetes cluster. It's the direct link between the node and the Control Plane.\n\nIts key responsibilities are:\n\n* **Receiving instructions:** It gets commands from the Control Plane (via the API Server) like 'start this specific application Pod on this node.'\n* **Running Pods:** It talks to the container runtime (like Docker) to actually start, stop, and manage the containers that make up the Pods on its node.\n* **Reporting status:** It regularly reports the health and status of its node and the Pods running on it back to the Control Plane.\n\nIt's the essential piece that makes worker nodes execute the Control Plane's orders."
+      },
+      {
+        "id": 52,
+        "text": "What is `kube-proxy`'s role on a worker node?",
+        "textSize": 20,
+        "explanation": "The `kube-proxy` is like the **local network director** that runs on *every worker node*. Its main job is to make sure network traffic can correctly reach your applications (Pods).\n\n* **Updates network rules:** It constantly updates the network rules (like a smart router) on the node.\n* **Directs traffic:** These rules ensure that when someone (or another application) tries to connect to one of your Kubernetes Services, the traffic is correctly forwarded to the right Pod(s) that are running on that node, even if those Pods' actual addresses change.\n\nIt's crucial for enabling smooth communication within your cluster and for external access."
+      },
+      {
+        "id": 53,
+        "text": "What is a StatefulSet in Kubernetes?",
+        "textSize": 24,
+        "explanation": "Most web applications are 'stateless' (meaning they don't remember information between requests, like a simple website). But some apps, like databases, need to remember things; they are 'stateful'.\n\nA **StatefulSet** is a special kind of Deployment that's designed for these **stateful applications**. It gives extra guarantees that Deployments don't:\n\n* **Stable identities:** Each Pod gets a unique, predictable name and network address that stays the same even if the Pod restarts.\n* **Ordered deployment/scaling:** It deploys and scales Pods in a strict, predictable order.\n* **Persistent storage:** Each Pod gets its own persistent storage volume that stays with it even if the Pod moves to a different node.\n\nThis makes it ideal for running databases, message queues, or other applications that need stable identities and persistent data."
+      },
+      {
+        "id": 54,
+        "text": "What is a DaemonSet in Kubernetes?",
+        "textSize": 24,
+        "explanation": "Imagine you have a task that needs to run on *every single computer* (node) in your cluster. For example, a logging agent that collects logs from each node, or a monitoring tool.\n\nA **DaemonSet** is a Kubernetes object that ensures a **copy of a specific application Pod runs on all (or a selected group of) worker nodes** in your cluster. If a new node joins the cluster, a new Pod for that DaemonSet automatically starts on it. If a node is removed, the Pod on that node is removed too.\n\nIt's perfect for background services that need to be present on every machine."
+      },
+      {
+        "id": 55,
+        "text": "What is a Job in Kubernetes?",
+        "textSize": 24,
+        "explanation": "Most Kubernetes applications like web servers run continuously. But what if you have a task that just needs to **run once and then finish**? For example, a script to process some data, or a one-time database migration.\n\nA **Job** is a Kubernetes object designed for these **batch processing** or one-off tasks. It creates one or more Pods, runs your task within them, and then considers itself 'complete' once the task successfully finishes. If a Pod fails, the Job will try to restart it until the task is done."
+      },
+      {
+        "id": 56,
+        "text": "What is a CronJob in Kubernetes?",
+        "textSize": 24,
+        "explanation": "Building on the idea of a Job, a **CronJob** is for tasks that need to **run on a regular, repeating schedule**. It's very similar to the 'cron' system found in Linux.\n\n* **Scheduled execution:** You define a schedule (e.g., 'every day at midnight,' 'every Monday morning').\n* **Creates Jobs:** At each scheduled time, the CronJob creates a new Job, which then runs your specified task.\n\nThis is ideal for automated backups, periodic report generation, or data synchronization tasks."
+      },
+      {
+        "id": 57,
+        "text": "What is a Service Account in Kubernetes?",
+        "textSize": 20,
+        "explanation": "When your application (a process inside a Pod) needs to talk to the Kubernetes system itself (the API Server), it needs an identity to prove who it is and what it's allowed to do. \n\nA **Service Account** provides this **identity for processes running inside Pods**. It's like a special username and password that a robot (your application) uses to interact with the Kubernetes control panel. This is a key part of securing your cluster, ensuring that applications only have the necessary permissions."
+      },
+      {
+        "id": 58,
+        "text": "What is Role-Based Access Control (RBAC) in Kubernetes?",
+        "textSize": 18,
+        "explanation": "Imagine a company where different employees have different levels of access: a junior developer might only view certain files, while a senior manager can approve big changes. **RBAC** is the system that makes this kind of permission control possible in Kubernetes.\n\n**RBAC** (Role-Based Access Control) allows cluster administrators to **define exactly who (users or Service Accounts) can do what actions (read, write, delete) on which resources (Pods, Deployments, Services)** within the cluster. It works by:\n\n* **Roles:** Define a set of permissions (e.g., 'can read Pods' or 'can manage Deployments').\n* **RoleBindings:** Link a Role to a specific user or Service Account, giving them those permissions.\n\nThis ensures strong security and prevents unauthorized actions."
+      },
+      {
+        "id": 59,
+        "text": "What is a Label in Kubernetes?",
+        "textSize": 24,
+        "explanation": "A **Label** is simply a **tag or a sticky note** that you attach to any Kubernetes object (like a Pod, a Node, or a Service). It's a key-value pair, like `app: frontend` or `environment: production`.\n\nThey are super useful for:\n\n* **Organization:** Grouping similar objects together.\n* **Identification:** Quickly finding specific groups of resources.\n* **Flexibility:** You can filter and select objects based on their labels, which is how other Kubernetes components (like Services or Deployments) find the Pods they need to manage."
+      },
+      {
+        "id": 60,
+        "text": "What is a Selector in Kubernetes?",
+        "textSize": 24,
+        "explanation": "If a Label is the sticky note, a **Selector** is the **magnifying glass or search query** that uses those sticky notes. It's a way to tell Kubernetes, 'Find me all objects that have this specific label.'\n\n* **Dynamic Grouping:** For example, a Service might have a selector `app: web`. This means the Service will *automatically* include and route traffic to any Pod that has the label `app: web`, regardless of its actual name or IP address.\n\nSelectors allow Kubernetes to dynamically manage groups of resources without needing you to manually list each one."
+      },
+      {
+        "id": 61,
+        "text": "What is Taint and Toleration in Kubernetes?",
+        "textSize": 18,
+        "explanation": "Sometimes you want to reserve certain nodes for specific workloads, or prevent regular applications from running on nodes that are having problems. This is where Taints and Tolerations come in:\n\n* **Taint (on a Node):** A **Taint** is like a 'do not enter' or 'special access only' sign on a Node. It marks a node to **repel Pods**, meaning that regular Pods *will not* be scheduled on this node unless they explicitly allow it.\n* **Toleration (on a Pod):** A **Toleration** is like a special 'pass' that a Pod carries. If a Pod has a Toleration that matches a Taint on a node, then that Pod is *allowed* to be scheduled on that otherwise 'tainted' node.\n\nThis is used for things like dedicated nodes for critical databases, or temporarily marking a node as unavailable during maintenance."
+      },
+      {
+        "id": 62,
+        "text": "What is Node Affinity in Kubernetes?",
+        "textSize": 20,
+        "explanation": "**Node Affinity** is a rule you set on a Pod that **attracts it towards certain nodes** (or prevents it from going to others) based on the labels those nodes have. It's like telling your app, 'I prefer to run on a computer that has an SSD hard drive' or 'I must run on a computer in the 'us-east-1' region.'\n\n* **Preferences:** You can express preferences (like 'try to go here, but it's okay if you can't').\n* **Requirements:** Or strict requirements (like 'you *must* go here, otherwise don't run').\n\nThis gives you fine-grained control over where your Pods land, optimizing for performance, cost, or data locality."
+      },
+      {
+        "id": 63,
+        "text": "What is Pod Affinity/Anti-affinity in Kubernetes?",
+        "textSize": 18,
+        "explanation": "Sometimes, where one application Pod runs depends on where *another* application Pod is running:\n\n* **Pod Affinity (Attraction):** This rule **attracts a Pod to a node where another specific Pod (or group of Pods) is already running**. For example, 'Run my backend Pod on the same node as its frontend Pod to reduce network latency.'\n* **Pod Anti-affinity (Repulsion):** This rule **repels a Pod from a node where another specific Pod is running**. For example, 'Don't run two copies of my database Pod on the same node' (for high availability, so if one node fails, you still have a working copy on another node).\n\nThese rules help you distribute your applications intelligently across the cluster for performance or resilience."
+      },
+      {
+        "id": 64,
+        "text": "What is the Kubernetes API?",
+        "textSize": 24,
+        "explanation": "The **Kubernetes API** is the **language or set of rules that all components of Kubernetes (and you!) use to talk to each other and manage the cluster**. \n\n* **Central communication:** Every instruction you give, every status update, every piece of information about your cluster goes through this API. It's the only way to interact with the Kubernetes 'brain' (the API Server).\n* **Consistent interface:** Whether you're using a command-line tool, a dashboard, or another part of Kubernetes itself, everyone uses the same API to ensure consistency and proper operation.\n\nThink of it as the shared communication standard for everything happening in your Kubernetes world."
+      },
+      {
+        "id": 65,
+        "text": "What is a Kubeconfig file?",
+        "textSize": 24,
+        "explanation": "When you want to tell Kubernetes to do something (like 'show me my applications' or 'deploy a new version'), you use a tool. This tool needs to know *which* Kubernetes cluster to talk to, and *how* to prove it's you.\n\nA **Kubeconfig file** is a plain text file (usually in YAML format) that acts like your **address book and ID card for Kubernetes clusters**. It contains:\n\n* **Cluster addresses:** The network locations of one or more Kubernetes clusters.\n* **User credentials:** Your username and password/certificate/token for authenticating with those clusters.\n* **Contexts:** Shortcuts that combine a cluster and a user, making it easy to switch between different Kubernetes environments (e.g., 'my dev cluster as a developer' or 'my production cluster as an admin').\n\nIt's how your tools (like the `kubectl` command-line tool) know how to connect securely to the right cluster."
       }
     ]
+  },
+  "user": {
+    "uid": "static-user",
+    "email": "static@example.com",
+    "name": "Static User",
+    "emailVerified": true
   }
 }

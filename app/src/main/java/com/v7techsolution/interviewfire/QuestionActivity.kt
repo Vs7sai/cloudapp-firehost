@@ -18,10 +18,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import android.widget.LinearLayout
 import android.widget.ScrollView
-import android.widget.Button
-import androidx.core.content.ContextCompat
 import com.v7techsolution.interviewfire.api.CloudInterviewApiService
-import com.v7techsolution.interviewfire.api.models.DifficultiesResponse
 
 class QuestionActivity : AppCompatActivity() {
     
@@ -35,11 +32,10 @@ class QuestionActivity : AppCompatActivity() {
     private lateinit var nextButton: android.widget.ImageView
     private lateinit var prevButton: android.widget.ImageView
     private lateinit var difficultyText: TextView
-    private lateinit var bottomNavigation: LinearLayout
+    private lateinit var beginnerButton: android.widget.Button
+    private lateinit var mediumButton: android.widget.Button
+    private lateinit var proButton: android.widget.Button
     private lateinit var searchInput: android.widget.EditText
-    private var currentTopic: String = ""
-    private var currentDifficulty: String = ""
-    private var availableDifficulties: List<String> = emptyList()
     private lateinit var swipeRefreshLayout: SwipeRefreshLayout
     
     companion object {
@@ -61,27 +57,25 @@ class QuestionActivity : AppCompatActivity() {
         // Hide the default action bar to remove any title
         supportActionBar?.hide()
         
-        currentTopic = intent.getStringExtra("topic") ?: "AWS"
-        currentDifficulty = intent.getStringExtra("difficulty") ?: "beginner"
+        val topic = intent.getStringExtra("topic") ?: "AWS"
+        val difficulty = intent.getStringExtra("difficulty") ?: "beginner"
         
         // Initialize views
         initializeViews()
         
         // Update the difficulty text
-        difficultyText.text = when (currentDifficulty.lowercase()) {
+        difficultyText.text = when (difficulty.lowercase()) {
             "beginner" -> "B"
             "medium" -> "M"
             "pro" -> "P"
-            "commands" -> "C"
-            "example" -> "E"
-            else -> currentDifficulty.take(1).uppercase()
+            else -> difficulty.capitalize()
         }
         
-        // Load available difficulties for this topic and setup bottom navigation
-        loadAvailableDifficulties()
+        // Update difficulty button states
+        updateDifficultyButtonStates(difficulty)
         
         // Load questions from backend
-        loadQuestions(currentTopic, currentDifficulty)
+        loadQuestions(topic, difficulty)
     }
     
     private fun initializeViews() {
@@ -91,7 +85,9 @@ class QuestionActivity : AppCompatActivity() {
         nextButton = findViewById(R.id.btn_next)
         prevButton = findViewById(R.id.btn_previous)
         difficultyText = findViewById(R.id.difficulty_text)
-        bottomNavigation = findViewById(R.id.bottom_navigation)
+        beginnerButton = findViewById(R.id.btn_beginner)
+        mediumButton = findViewById(R.id.btn_medium)
+        proButton = findViewById(R.id.btn_pro)
         searchInput = findViewById(R.id.search_question_input)
         swipeRefreshLayout = findViewById(R.id.swipeRefreshLayout)
 
@@ -127,7 +123,18 @@ class QuestionActivity : AppCompatActivity() {
             }
         }
         
-        // Dynamic difficulty buttons will be setup in loadAvailableDifficulties()
+        // Set up difficulty switching
+        beginnerButton.setOnClickListener {
+            switchDifficulty("beginner")
+        }
+        
+        mediumButton.setOnClickListener {
+            switchDifficulty("medium")
+        }
+        
+        proButton.setOnClickListener {
+            switchDifficulty("pro")
+        }
         
         // Set up search functionality with robust error handling
         setupSearchFunctionality()
@@ -685,31 +692,39 @@ class QuestionActivity : AppCompatActivity() {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show()
     }
     
+    private fun updateDifficultyButtonStates(selectedDifficulty: String) {
+        // Reset all buttons to unselected state
+        beginnerButton.background = getDrawable(R.drawable.button_glass_unselected)
+        mediumButton.background = getDrawable(R.drawable.button_glass_unselected)
+        proButton.background = getDrawable(R.drawable.button_glass_unselected)
+        
+        // Set selected button state
+        when (selectedDifficulty.lowercase()) {
+            "beginner" -> beginnerButton.background = getDrawable(R.drawable.button_glass_selected)
+            "medium" -> mediumButton.background = getDrawable(R.drawable.button_glass_selected)
+            "pro" -> proButton.background = getDrawable(R.drawable.button_glass_selected)
+        }
+    }
     
     private fun switchDifficulty(newDifficulty: String) {
-        Log.d(TAG, "Switching difficulty from $currentDifficulty to $newDifficulty")
-        
-        // Update current difficulty
-        currentDifficulty = newDifficulty
+        val topic = intent.getStringExtra("topic") ?: "AWS"
         
         // Update difficulty text
         difficultyText.text = when (newDifficulty.lowercase()) {
             "beginner" -> "B"
             "medium" -> "M"
             "pro" -> "P"
-            "commands" -> "C"
-            "example" -> "E"
-            else -> newDifficulty.take(1).uppercase()
+            else -> newDifficulty.capitalize()
         }
         
         // Update button states
-        updateBottomNavigationSelection()
+        updateDifficultyButtonStates(newDifficulty)
         
         // Reset question index
         currentQuestionIndex = 0
         
         // Load new questions
-        loadQuestions(currentTopic, newDifficulty)
+        loadQuestions(topic, newDifficulty)
     }
     
     private fun String.capitalize(): String {
@@ -845,149 +860,6 @@ class QuestionActivity : AppCompatActivity() {
                     false // Don't consume the event
                 }
                 else -> false
-            }
-        }
-    }
-
-    private fun loadAvailableDifficulties() {
-        Log.d(TAG, "Loading difficulties for topic: $currentTopic")
-        
-        val retrofit = ApiClient.createRetrofit(this)
-        val apiService = retrofit.create(CloudInterviewApiService::class.java)
-        val call = apiService.getDifficulties()
-        
-        call.enqueue(object : Callback<DifficultiesResponse> {
-            override fun onResponse(call: Call<DifficultiesResponse>, response: Response<DifficultiesResponse>) {
-                try {
-                    if (response.isSuccessful && response.body() != null) {
-                        val difficultiesResponse = response.body()!!
-                        if (difficultiesResponse.success) {
-                            val topicDifficulties = difficultiesResponse.data[currentTopic.lowercase()]
-                            if (topicDifficulties != null && topicDifficulties.isNotEmpty()) {
-                                Log.d(TAG, "Found ${topicDifficulties.size} difficulties for $currentTopic: $topicDifficulties")
-                                availableDifficulties = topicDifficulties
-                                setupDynamicBottomNavigation(topicDifficulties)
-                            } else {
-                                Log.w(TAG, "No difficulties found for topic: $currentTopic, using defaults")
-                                availableDifficulties = listOf("beginner", "medium", "pro")
-                                setupDynamicBottomNavigation(availableDifficulties)
-                            }
-                        } else {
-                            Log.e(TAG, "API returned success=false for difficulties")
-                            // Use fallback
-                            availableDifficulties = listOf("beginner", "medium", "pro")
-                            setupDynamicBottomNavigation(availableDifficulties)
-                        }
-                    } else {
-                        Log.e(TAG, "Failed to load difficulties: ${response.code()}")
-                        // Use fallback
-                        availableDifficulties = listOf("beginner", "medium", "pro")
-                        setupDynamicBottomNavigation(availableDifficulties)
-                    }
-                } catch (e: Exception) {
-                    Log.e(TAG, "Error processing difficulties response", e)
-                    // Use fallback
-                    availableDifficulties = listOf("beginner", "medium", "pro")
-                    setupDynamicBottomNavigation(availableDifficulties)
-                }
-            }
-            
-            override fun onFailure(call: Call<DifficultiesResponse>, t: Throwable) {
-                Log.e(TAG, "Network error loading difficulties", t)
-                // Use fallback
-                availableDifficulties = listOf("beginner", "medium", "pro")
-                setupDynamicBottomNavigation(availableDifficulties)
-            }
-        })
-    }
-    
-    private fun setupDynamicBottomNavigation(difficulties: List<String>) {
-        runOnUiThread {
-            try {
-                Log.d(TAG, "Setting up dynamic bottom navigation with ${difficulties.size} buttons: $difficulties")
-                bottomNavigation.removeAllViews()
-                
-                for ((index, difficulty) in difficulties.withIndex()) {
-                    val button = createDifficultyButton(difficulty, index, difficulties.size)
-                    bottomNavigation.addView(button)
-                }
-                
-                Log.d(TAG, "Successfully created ${difficulties.size} dynamic navigation buttons")
-            } catch (e: Exception) {
-                Log.e(TAG, "Error setting up dynamic bottom navigation", e)
-            }
-        }
-    }
-    
-    private fun createDifficultyButton(difficulty: String, index: Int, totalButtons: Int): Button {
-        val button = Button(this)
-        
-        // Set layout parameters with appropriate weight and margins
-        val layoutParams = LinearLayout.LayoutParams(
-            0,
-            resources.getDimensionPixelSize(R.dimen.button_height),
-            1f
-        )
-        
-        // Add margins between buttons
-        when (index) {
-            0 -> layoutParams.setMargins(0, 0, resources.getDimensionPixelSize(R.dimen.spacing_small), 0)
-            totalButtons - 1 -> layoutParams.setMargins(resources.getDimensionPixelSize(R.dimen.spacing_small), 0, 0, 0)
-            else -> layoutParams.setMargins(
-                resources.getDimensionPixelSize(R.dimen.spacing_micro),
-                0,
-                resources.getDimensionPixelSize(R.dimen.spacing_micro),
-                0
-            )
-        }
-        
-        button.layoutParams = layoutParams
-        
-        // Set button appearance
-        val isSelected = difficulty.lowercase() == currentDifficulty.lowercase()
-        button.background = ContextCompat.getDrawable(
-            this,
-            if (isSelected) R.drawable.button_glass_selected else R.drawable.button_glass_unselected
-        )
-        
-        button.text = difficulty.replaceFirstChar { if (it.isLowerCase()) it.titlecase() else it.toString() }
-        button.setTextColor(ContextCompat.getColor(this, if (isSelected) android.R.color.black else android.R.color.darker_gray))
-        button.textSize = resources.getDimension(R.dimen.text_size_medium) / resources.displayMetrics.scaledDensity
-        button.isAllCaps = false
-        button.gravity = android.view.Gravity.CENTER_HORIZONTAL or android.view.Gravity.BOTTOM
-        button.setPadding(0, 0, 0, resources.getDimensionPixelSize(R.dimen.spacing_small))
-        
-        if (isSelected) {
-            button.setTypeface(null, android.graphics.Typeface.BOLD)
-        }
-        
-        // Set click listener
-        button.setOnClickListener {
-            Log.d(TAG, "$difficulty difficulty button clicked")
-            switchDifficulty(difficulty)
-        }
-        
-        return button
-    }
-    
-    private fun updateBottomNavigationSelection() {
-        // Update the visual state of bottom navigation buttons
-        for (i in 0 until bottomNavigation.childCount) {
-            val button = bottomNavigation.getChildAt(i) as Button
-            val difficulty = availableDifficulties[i]
-            val isSelected = difficulty.lowercase() == currentDifficulty.lowercase()
-            
-            button.background = ContextCompat.getDrawable(
-                this,
-                if (isSelected) R.drawable.button_glass_selected else R.drawable.button_glass_unselected
-            )
-            
-            button.setTextColor(ContextCompat.getColor(this, if (isSelected) android.R.color.black else android.R.color.darker_gray))
-            
-            if (isSelected) {
-                button.setTypeface(null, android.graphics.Typeface.BOLD)
-            } else {
-                button.setTypeface(null, android.graphics.Typeface.NORMAL)
             }
         }
     }

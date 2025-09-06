@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.v7techsolution.interviewfire.app-mergeDebugResources-59:/values-small-v4/values-small-v4.xml",
+            "outputFile": "com.v7techsolution.interviewfire.app-mergeDebugResources-62:/values-small-v4/values-small-v4.xml",
             "map": [
                 {
                     "source": "/Users/vamsisai/.gradle/caches/8.13/transforms/4fa04e4edba2625de251bb863a8f9f99/transformed/material-1.12.0/res/values-small-v4/values-small-v4.xml",

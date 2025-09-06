@@ -13,6 +13,7 @@ color google_green
 color google_red
 color google_text
 color google_yellow
+color icon_tint
 color medium_orange
 color primary_color
 color pro_red
@@ -23,6 +24,7 @@ color purple_500
 color purple_700
 color teal_200
 color teal_700
+color text_hint
 color text_primary
 color text_secondary
 color white
@@ -194,6 +196,7 @@ string signed_out_successfully
 string signing_in_message
 string welcome_message
 string welcome_message_login
+style HintTextAppearance
 style Theme.M
 style TopicTitleStyle
 xml backup_rules

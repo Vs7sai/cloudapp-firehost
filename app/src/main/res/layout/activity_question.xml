@@ -308,7 +308,7 @@
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
-    <!-- Dynamic Bottom Navigation with Difficulty Levels -->
+    <!-- Bottom Navigation with Difficulty Levels -->
     <LinearLayout
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
@@ -322,7 +322,49 @@
         android:fitsSystemWindows="true"
         android:clipToPadding="false">
 
-        <!-- Dynamic buttons will be added here programmatically -->
+        <Button
+            android:id="@+id/btn_beginner"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_height"
+            android:layout_weight="1"
+            android:layout_marginEnd="@dimen/spacing_small"
+            android:background="@drawable/button_glass_selected"
+            android:text="@string/beginner"
+            android:textColor="#F0000000"
+            android:textSize="@dimen/text_size_medium"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:gravity="center_horizontal|bottom"
+            android:paddingBottom="@dimen/spacing_small" />
+
+        <Button
+            android:id="@+id/btn_medium"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_height"
+            android:layout_weight="1"
+            android:layout_marginStart="@dimen/spacing_micro"
+            android:layout_marginEnd="@dimen/spacing_micro"
+            android:background="@drawable/button_glass_unselected"
+            android:text="@string/medium"
+            android:textColor="#C0000000"
+            android:textSize="@dimen/text_size_medium"
+            android:textAllCaps="false"
+            android:gravity="center_horizontal|bottom"
+            android:paddingBottom="@dimen/spacing_small" />
+
+        <Button
+            android:id="@+id/btn_pro"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_height"
+            android:layout_weight="1"
+            android:layout_marginStart="@dimen/spacing_small"
+            android:background="@drawable/button_glass_unselected"
+            android:text="@string/pro"
+            android:textColor="#C0000000"
+            android:textSize="@dimen/text_size_medium"
+            android:textAllCaps="false"
+            android:gravity="center_horizontal|bottom"
+            android:paddingBottom="@dimen/spacing_small" />
 
     </LinearLayout>
 </RelativeLayout>

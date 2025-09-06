@@ -32,7 +32,7 @@ firebasehosting/
 ### Deploy Backend (Firebase Hosting)
 ```bash
 cd backend
-firebase deploy --only hosting
+
 ```
 
 ### Build & Install Frontend (Android)
@@ -103,3 +103,5 @@ adb install app/build/outputs/apk/debug/app-debug.apk
 - Frontend dynamically loads content from backend
 - No server-side processing required
 - Completely free to host and deploy
+# cloudapp-firebase-hosting
+# cloudappfirebasehost

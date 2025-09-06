@@ -1,15 +1,8 @@
 const functions = require('firebase-functions');
 const express = require('express');
 const cors = require('cors');
-const admin = require('firebase-admin');
+const admin = require('./firebase-admin.js');
 const path = require('path');
-
-// Initialize Firebase Admin with service account
-const serviceAccount = require('./firebase-service-account.json');
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  projectId: 'interviewfire-df24e'
-});
 
 const app = express();
 
@@ -229,10 +222,74 @@ const questions = {
   }
 };
 
+// Protected static file endpoints (replacing direct static access)
+
+// Serve static topics.json with authentication - PROTECTED
+app.get('/topics.json', authenticate, (req, res) => {
+  try {
+    console.log('📋 Static topics.json requested by user:', req.user.uid);
+    res.json({
+      success: true,
+      data: topics,
+      user: {
+        uid: req.user.uid,
+        email: req.user.email,
+        name: req.user.name,
+        emailVerified: req.user.email_verified
+      }
+    });
+  } catch (error) {
+    console.error('❌ Error serving static topics.json:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Internal server error',
+      message: 'Failed to serve topics.json'
+    });
+  }
+});
+
+// Serve static questions JSON files with authentication - PROTECTED
+app.get('/questions/:topicId/:difficulty.json', authenticate, (req, res) => {
+  try {
+    const { topicId, difficulty } = req.params;
+    console.log(`❓ Static questions JSON requested for ${topicId}/${difficulty} by user:`, req.user.uid);
+
+    if (!questions[topicId] || !questions[topicId][difficulty]) {
+      return res.status(404).json({
+        success: false,
+        error: 'Not found',
+        message: `No questions found for topic: ${topicId}, difficulty: ${difficulty}`
+      });
+    }
+
+    res.json({
+      success: true,
+      data: {
+        topic: topicId,
+        difficulty: difficulty,
+        questions: questions[topicId][difficulty]
+      },
+      user: {
+        uid: req.user.uid,
+        email: req.user.email,
+        name: req.user.name,
+        emailVerified: req.user.email_verified
+      }
+    });
+  } catch (error) {
+    console.error('❌ Error serving static questions JSON:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Internal server error',
+      message: 'Failed to serve questions JSON'
+    });
+  }
+});
+
 // Protected API endpoints
 
 // Get all topics - PROTECTED
-app.get('/api/topics', authenticate, (req, res) => {
+app.get('/topics', authenticate, (req, res) => {
   try {
     console.log('📋 Topics requested by user:', req.user.uid);
     res.json({
@@ -256,7 +313,7 @@ app.get('/api/topics', authenticate, (req, res) => {
 });
 
 // Get questions for a topic and difficulty - PROTECTED
-app.get('/api/questions/:topicId/:difficulty', authenticate, (req, res) => {
+app.get('/questions/:topicId/:difficulty', authenticate, (req, res) => {
   try {
     const { topicId, difficulty } = req.params;
     console.log(`❓ Questions requested for ${topicId}/${difficulty} by user:`, req.user.uid);
@@ -294,7 +351,7 @@ app.get('/api/questions/:topicId/:difficulty', authenticate, (req, res) => {
 });
 
 // Test authentication endpoint - PROTECTED
-app.get('/api/test-auth', authenticate, (req, res) => {
+app.get('/test-auth', authenticate, (req, res) => {
   res.json({
     success: true,
     message: 'Authentication successful',
@@ -308,12 +365,29 @@ app.get('/api/test-auth', authenticate, (req, res) => {
 });
 
 // Health check endpoint - PUBLIC
-app.get('/api/health', (req, res) => {
+app.get('/health', (req, res) => {
   res.json({
     success: true,
     message: 'Cloud Interview Prep API is running',
     timestamp: new Date().toISOString(),
-    platform: 'Firebase Cloud Functions',
+    platform: 'Express.js Server',
+    authentication: 'Required for data endpoints',
+    secureEndpoints: [
+      '/api/topics.json (protected)',
+      '/api/questions/:topicId/:difficulty.json (protected)',
+      '/api/topics (protected)',
+      '/api/questions/:topicId/:difficulty (protected)'
+    ]
+  });
+});
+
+// Serve static health.json with same format - PUBLIC
+app.get('/health.json', (req, res) => {
+  res.json({
+    success: true,
+    message: 'Cloud Interview Prep API is running',
+    timestamp: new Date().toISOString(),
+    platform: 'Express.js Server',
     authentication: 'Required for data endpoints'
   });
 });
